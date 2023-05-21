@@ -27,6 +27,7 @@ const isNotHover = () => {
 }; // =========> mobile device check function
 
 const topDivMain = document.querySelector('.screenxyz');  // ===============> main page
+const topDivSketch = document.querySelector('.sketchboxpage'); // ==========> sketchbox page
 const topDivMeow = document.querySelector('.meowartpage'); // ==============> meowart page
 const topDivGpu = document.querySelector('.gpupage'); // ===================> GPU page
 const topDivDesign = document.querySelector('.xyz-designpage'); // =========> desing page
@@ -241,6 +242,20 @@ if(topDivMain !== null && topDivMain !== undefined){
         mainContents[targetNum].classList.add('con-show'); // add classlist 
     }
 }
+
+/** ============== if meowart page do this ================ */
+if(topDivSketch !== null && topDivSketch !== undefined){
+    let brush = document.querySelectorAll('.xyzbrush img');
+
+    let brushrandom = (min, max) => {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    brush.forEach(function(e,a,i){
+        brush[a].style.top = `${brushrandom(0, window.innerHeight - 240)}px`;
+        brush[a].style.left = `${brushrandom(0, window.innerWidth - 240)}px`;
+    });
+};
 
 /** ============== if meowart page do this ================ */
 if(topDivMeow !== null && topDivMeow !== undefined){
