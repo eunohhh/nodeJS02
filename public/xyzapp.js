@@ -27,6 +27,7 @@ const isNotHover = () => {
 }; // =========> mobile device check function
 
 const topDivMain = document.querySelector('.screenxyz');  // ===============> main page
+const topDivScan = document.querySelector('.scanvaspage');  // =============> scanvas page
 const topDivSketch = document.querySelector('.sketchboxpage'); // ==========> sketchbox page
 const topDivMeow = document.querySelector('.meowartpage'); // ==============> meowart page
 const topDivGpu = document.querySelector('.gpupage'); // ===================> GPU page
@@ -243,7 +244,54 @@ if(topDivMain !== null && topDivMain !== undefined){
     }
 }
 
-/** ============== if meowart page do this ================ */
+/** ============== if scanvas page do this ================ */
+if(topDivScan !== null && topDivScan !== undefined){
+    let xyzcl = document.querySelector('.xyz-closefolder');
+    let xyzex = document.querySelector('.xyz-exfolder');
+    
+    xyzcl.addEventListener('click', function(){
+        this.style.display = 'none';
+        xyzex.style.display = 'block';
+    })
+
+    let xyzDownLoad = document.querySelector('.xyzpc p');
+        xyzDownLoad.style.cursor = 'crosshair';
+    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
+    xyzDownLoad.addEventListener('click', function(){
+        window.open(downHref);
+    });
+
+    let xyzMouse = document.querySelector('.xyzmouse');
+        xyzMouse.style.cursor = 'crosshair';
+    let goHref = 'https://screenxyz.net/help';
+    xyzMouse.addEventListener('click',function(){
+        window.open(goHref);
+    });
+
+    let xyzSerB = document.querySelector('.xyz-service-b');
+        xyzSerB.style.cursor = 'crosshair';
+    xyzSerB.addEventListener('click', function(){
+        window.open('https://screenxyz.net/contact/');
+    });
+
+
+
+
+
+    let scanBtn = document.querySelectorAll('.xyz-focus div');
+
+    scanBtn.forEach(function(e,i,a){
+        e.style.cursor = 'crosshair';
+        let scanHref = ['https://screenxyz.net','https://screenxyz.net/spaces','https://screenxyz.net/contact'];
+        e.addEventListener('click', function(){
+            window.open(scanHref[i])
+        });
+    });
+
+};
+
+
+/** ============== if sketchbox page do this ================ */
 if(topDivSketch !== null && topDivSketch !== undefined){
     let brush = document.querySelectorAll('.xyzbrush img');
 
@@ -251,9 +299,9 @@ if(topDivSketch !== null && topDivSketch !== undefined){
         return Math.round(Math.random() * (max - min) + min);
     }
 
-    brush.forEach(function(e,a,i){
-        brush[a].style.top = `${brushrandom(0, window.innerHeight - 240)}px`;
-        brush[a].style.left = `${brushrandom(0, window.innerWidth - 240)}px`;
+    brush.forEach(function(e,i,a){
+        brush[i].style.top = `${brushrandom(0, window.innerHeight - 240)}px`;
+        brush[i].style.left = `${brushrandom(0, window.innerWidth - 240)}px`;
     });
 };
 
