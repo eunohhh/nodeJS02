@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .xyzworm{
+            width: 20vw;
+            height: 20vh;
+            margin: 0 auto;
+        }
+
+        .cls-1 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3s linear forwards infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+
+    <div class="xyzworm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.32 34.34">
+            <path class="cls-1" fill="white" stroke="black" stroke-width="4" stroke-linecap="round" d="m2.61,4.52c5.48-.06,11.24,25.9,16.72,25.84S29.99,4.22,35.47,4.15s11.24,25.9,16.72,25.84S62.85,3.85,68.33,3.78s11.24,25.9,16.72,25.84S95.71,3.48,101.18,3.42s11.24,25.9,16.72,25.84"/>
+            <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" />
+        </svg>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,2106 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/************************ main ************************/
+
+/************** font **************/
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.screenxyz{
+    background-color: #88fd93;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-con{
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 60vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+.leftbox{
+    width: 5vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+.box-con .leftbox .lefticon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    color: #88fd93;
+}
+.lefticon-show{
+    color: #00ee17;
+}
+.midbox{
+    width: 18vw;
+    height: 40vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    border-left: 0.18rem solid #88fd93;
+    border-right: 0.18rem solid #88fd93;
+}
+.box-con .midbox .li-group{
+    padding-left: 0.8vw; /**/
+    list-style: none;
+    font-family: "D2Coding ligature", "sans-serif";
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin: 0;
+    color: #00ee17;
+    
+}
+.li-group{
+    display: none;
+}
+.li-group-show {
+    display: block;
+}
+.box-con .midbox .li-group .li-group-item{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.list-show{
+    color: #88fd93;
+}
+.inputWrap {
+    position: relative;
+    height: 4vh;
+    width: 16vw;
+    left: 1vh;
+    bottom: 8.5vh;
+    display: none;
+}
+.inputWrap-show{
+    display: inline-block;
+}
+.inputWrap input {
+    padding-right: 2rem;
+    height: inherit;
+    width: 16vw;
+    border: none;
+    border-style: solid;
+    border-width: 0.13rem;
+    border-radius: 3px;
+    border-color: #00ee17;
+    color: #88fd93;
+}
+.inputWrap input:focus {
+    outline-color: #00ee17;
+    color: #00ee17;
+}
+.inputWrap input:focus::-ms-clear,
+.inputWrap input:focus::-ms-reveal{
+	display: none;
+    width:0;
+    height:0;
+}
+.inputWrap input:focus::-webkit-search-decoration,
+.inputWrap input:focus::-webkit-search-cancel-button,
+.inputWrap input:focus::-webkit-search-results-button,
+.inputWrap input:focus::-webkit-search-results-decoration{
+	display:none;
+}
+.inputWrap input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #88fd93;
+}
+.inputWrap input::-moz-placeholder{ /* Firefox 19+ */
+    color: #88fd93;
+}
+.inputWrap input:-ms-input-placeholder { /* IE 10+ */
+    color: #88fd93;
+}
+.btnClear {
+    font-family: 'UhBeemysen', 'sans-serif';
+    color: #00ee17;
+    background-color: rgba(0,0,0,0);
+    font-size: 1.8rem;
+    text-align: center;
+    position: absolute;
+    top: -0.3vw;
+    left: calc(100% - 2vw);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.rightbox{
+    width: 37vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+.box-con .rightbox .li-contents-box{
+    padding-left: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.box-con .rightbox .li-contents-box .li-contents{
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: "D2Coding ligature", "sans-serif";
+    color: #00ee17;
+    height: 100%;
+}
+.li-contents p:nth-of-type(1){
+    height: 10%;
+    padding-top: 2.5rem;
+}
+.li-contents p:nth-of-type(2){
+    height: 45%;
+}
+.li-contents p:nth-of-type(3){
+    text-align: right;
+    padding-right: 1rem;
+    height: 10%;
+}
+.li-contents{
+    display: none;
+    box-sizing: border-box;
+}
+.con-show{
+    display: block;
+}
+.meowartfont{
+    font-family: 'Rubik Puddles', "cursive";
+    font-weight: 600;
+    font-size: 2rem;
+}
+.logo-imgbox{
+    display: flex;
+    justify-content: right;
+    height: 25%;
+    align-items: center;
+}
+.material-icons-outlined {
+    font-family: 'Material Icons';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.2rem;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+.sbtn {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3.8vw);
+    padding: 1vh 0.8vh;
+    color: #00ee17;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+.search-res-div{
+    width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+    padding-left: 2.5vw;
+    color: #00ee17;
+}
+.search-res-div a{
+    color: #00ee17;
+}
+/* .concopy{
+    font-weight: 100;
+} */
+
+/************************ scanvas ************************/
+.scanvaspage{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: block;
+    overflow-y: auto;
+}
+.scanvaspage .scanvas-logoimg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: 2rem;
+    width: 19rem;
+    padding-top: 20rem;
+}
+.xyzfolder-upper{
+    display: flex;
+    justify-content: center;
+}
+.scanvaspage .xyzfolder{
+    display: flex;
+    max-width: 55rem;
+    gap: 7vh 4vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 100;
+}
+.scanvaspage .xyzfolder >div{
+    width: 16.5rem;
+    height: 11rem;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 1.3rem;
+    font-family: 'raleway', 'sans-serif';
+}
+.xyzline{
+    width: 4.45rem;
+    height: 0.75rem;
+    margin-top: 1rem;
+}
+.threedscan{
+    background-color: #e5e5e5;
+    /* margin-bottom: 5em;
+    margin-right: 3em; */
+}
+.threedscan p{
+    text-align: center;
+    position: relative;
+    top: 43%;
+    font-size: 1.875rem;
+}
+.threedscan >div{
+    width: 4.45rem;
+    height: 1rem;
+    margin-top: -1.2rem;
+    margin-left: -1px;
+    background-color: #e5e5e5;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 0 0;
+}
+.xyzline.grey{
+    background-color: #e5e5e5;
+}
+.xyzfeatures{
+    background-color: #88fd93;
+}
+.xyzfeatures p{
+    text-align: center;
+    position: relative;
+    top: 43%;
+    font-size: 1.875rem;
+}
+.xyzfeatures >div{
+    width: 4.45rem;
+    height: 1rem;
+    margin-top: -1.2rem;
+    margin-left: -1px;
+    background-color: #88fd93;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 0 0;
+}
+.xyzline.green{
+    background-color: #88fd93;
+}
+.xyzservice{
+    background-color: #99dced;
+    /* margin-right: 3em; */
+}
+.xyzservice p{
+    text-align: center;
+    position: relative;
+    top: 43%;
+    font-size: 1.875rem;
+}
+.xyzservice >div{
+    width: 4.45rem;
+    height: 1rem;
+    margin-top: -1.2rem;
+    margin-left: -1px;
+    background-color: #99dced;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 0 0;
+}
+.xyzline.sky{
+    background-color: #99dced;
+}
+.xyzspace{
+    background-color: #ffff00;
+}
+.xyzspace p{
+    text-align: center;
+    position: relative;
+    top: 43%;
+    font-size: 1.875rem;
+}
+.xyzspace >div{
+    width: 4.45rem;
+    height: 1rem;
+    margin-top: -1.2rem;
+    margin-left: -1px;
+    background-color: #ffff00;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 0 0;
+}
+.xyzline.yellow{
+    background-color: #ffff00;
+}
+.xyzfolder-wrap{
+    position: relative;
+    margin-top: 4%;
+}
+.xyzfolder-wrap .wrapone{
+    position: relative;
+    top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.xyzfolder-wrap .xyzforward{
+    width: 16.5rem;
+    height: 11rem;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 1.3rem;
+    background-color: #e5e5e5;
+    font-family: 'raleway', 'sans-serif';
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.xyzforward >div{
+    width: 4.45rem;
+    height: 1rem;
+    margin-top: -1.2rem;
+    margin-left: -1px;
+    background-color: #e5e5e5;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 0 0;
+}
+.xyz-grey.line{
+    width: 4.45rem;
+    height: 0.75rem;
+    margin-top: 1rem;
+    background-color: #e5e5e5;
+}
+.xyzforward p{
+    font-family: 'raleway', 'sans-serif';
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 43%;
+}
+.xyzlinewrap{
+    width: 4.45rem;
+    height: 2rem;
+    border: 1px solid #707070;
+    border-radius: 0 1.3rem 0 0;
+    position: relative;
+}
+.xyzlinewrap.green{
+    background-color: #88fd93;
+    left: 1.5rem;
+    z-index: -1;
+}
+.xyzlinewrap.sky{
+    background-color: #99dced;
+    left: -0.55rem;
+    z-index: -2;
+}
+.xyzlinewrap.yellow{
+    background-color: #ffff00;
+    left: -2.5rem;
+    z-index: -3;
+}
+.xyz-exfolder .scanvas-contents .xyz-3dscan{
+    font-family: 'DungGeunMo', 'NeoDunggeunmo','sans-serif';
+    font-size: 1.3rem;
+    color: #fff;
+    background-color: #000;
+    height: 30rem;
+    position: relative;
+    margin-top: 15rem;
+}
+.xyz-3dscan p{
+    height: 30rem;
+    display: flex;
+    position: absolute;
+    word-break: keep-all;
+    text-align: center;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 2.3rem;
+}
+.xyz-focus{
+    display: flex;
+}
+.xyz-lefttop{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+.xyz-lefttop >div{
+    background-color: #fff;
+}
+.xyz-lefttop div:nth-child(1){
+    width:0.1rem;
+    height: 3.56rem;
+    margin-top: -0.8rem;
+}
+.xyz-lefttop div:nth-child(2){
+    width:3.56rem;
+    height: 0.1rem;
+    margin-left: -1rem;
+}
+.xyz-righttop{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding-right: 2rem;
+    padding-top: 2rem;
+}
+.xyz-righttop >div{
+    background-color: #fff;
+    /* border-radius: 50%; */
+}
+.xyz-righttop div:nth-child(1){
+    width:3.56rem;
+    height: 0.1rem;
+    margin-right: -1rem;
+}
+.xyz-righttop div:nth-child(2){
+    width:0.1rem;
+    height: 3.56rem;
+    margin-top: -0.8rem;
+}
+.xyz3d{
+    font-family: 'raleway', 'sans-serif';
+    font-size: 3.125rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 7.3rem;
+}
+.xyzvr{
+    height: 60vh;
+}
+.xyzphoto{
+    height: 60vh;
+}
+.xyz-features{
+    font-family: 'DungGeunMo', 'NeoDunggeunmo','sans-serif';
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 8rem;
+}
+.xyzpc p{
+    color: #fff;
+    font-family: 'D2Coding','serif';
+    font-size: 1.7rem;
+    padding-top: 21%;
+}
+.xyz-service{
+    color: #fff;
+    background-color: #000;
+    height: 30rem;
+    position: relative;
+    margin-top: 15rem;
+    margin-bottom: 23rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px 30px #000;
+}
+.xyz-service p{
+    font-family: 'DungGeunMo', 'NeoDunggeunmo','sans-serif';
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 2.3rem;
+    align-items: center;
+    word-break: keep-all;
+}
+.xyz-service .xyz-servicetltle{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+.xyz-service-b{
+    margin-top: 2rem;
+    padding: 0.2rem 1rem;
+    border: 1px solid #fff;
+}
+.xyz-exfolder{
+    display: block;
+}
+.xyz-closefolder{
+    display: none;
+}
+
+/************************ meowart ************************/
+.meowartpage{
+    background-color: #88fd93;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: block;
+    overflow-y: auto;
+}
+.meowart-logo-img{
+    padding-top: 14rem;
+}
+.meowart-logo-img .meowart-logo-white{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60vw;
+    height: 20vh;
+    margin-left: 6.9rem;
+}
+.cat-img{
+    display: flex;
+    justify-content: right;
+    /* height: 25%; */
+    align-items: center;
+    margin: -3rem 0;
+}
+.cat-img img{
+    position: relative;
+    /* width: 15vw; */
+    height: 25vh;
+    margin-right: 18vw;
+    animation: catfloat 2s ease-in Infinite Alternate;
+}
+.meowart-youtube{
+    /* width: 100vw; //가로 스크롤생김*/
+    font-family: 'Rubik Puddles', "cursive";
+    color: #fff;
+    font-size: 8vw;
+    padding-left: 6.9vw;
+    box-sizing: border-box; /**/
+}
+.meowaccount{
+    text-decoration: none;
+    color: #fff;
+}
+.meowaccount:hover{
+    color: #ffaced;
+    /* color:#00ee17; */
+    cursor: crosshair;
+}
+.cat-img-jelly{
+    display: flex;
+    /* justify-content: right; */
+    height: 45%;
+    align-items: flex-end;
+}
+.cat-img-jelly img{
+    position: relative;
+    /* width: 13vw; */
+    height: 12vh;
+    margin-left: 4vw;
+    margin-bottom: 20vh;
+    animation: jellyfloat 2s ease-in Infinite Alternate;
+}
+
+/** 애니메이션효과 **/
+@keyframes catfloat {
+    0% { top: 0; }
+    50% { top: 1vh; }
+    100% { top: 0; }
+}
+@keyframes jellyfloat {
+    0% { top: 1vh; }
+    50% { top: 0; }
+    100% { top: 1vh; }
+}
+
+/************************ gpu ************************/
+.gpupage{
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.post-contents{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* width: 25vw; */
+    /* height: auto; */
+    font-family: 'IBM Plex Sans KR', 'sans-serif';
+    font-weight: 500;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20rem;
+    
+}
+.gpu-logoimg{
+    display: flex;
+    justify-content: right;
+    margin-right: -3rem;
+}
+.post-contents .gpu-text{
+    margin-left: -3rem;
+    margin-top: -1rem;
+    line-height: 3rem;
+    padding-bottom: 2rem;
+}
+.gpu-text .smile{
+    font-size: 2.5rem;
+}
+.gpu-adress{
+    margin-left: -3rem;
+    width: 10rem;
+}
+.gpu-adress .gpu-web{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+.gpu-web:hover{
+    cursor: crosshair;
+    color: #88fd93;
+}
+.gpu-insta:hover{
+    cursor: crosshair;
+}
+
+/*************************************** design ***************************************/
+.xyzdesign-title{
+    display: flex;
+}
+.xyz-designpage{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xyz-d-circle{
+    width: 3.25rem;
+    height: 3.25rem;
+    background-color: #ffff00;
+    border-radius: 100%;
+}
+.xyzd-logobox{
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+}
+.xyz-d-circle.logo{
+    margin-left: -6.2rem;
+}
+.xyzd-l-background{
+    width: 14.625rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.xyzd-l-background .xyz-l-b.top >div{
+    width: 0.94rem;
+    height: 1.33rem;
+    background-color: #88fd93;
+}
+.xyz-l-b.top{
+    display: flex;
+    justify-content: space-between;
+}
+.xyz-l-b.mid{
+    width: 14.625rem;
+    height: 29.368rem;
+    background-color: #88fd93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.xyzd-l-background .xyz-l-b.bottom >div{
+    width: 0.94rem;
+    height: 1.33rem;
+    background-color: #88fd93;
+}
+.xyz-l-b.bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.xyzd-l-con{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.xyz-designpage .xyzd-l-background .xyzd-l-con .scanvas-logoimg{
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 10rem;
+    height: 1.83rem;
+    margin-bottom: 2rem;
+}
+.sketchbox_logo_black img{
+    width: 12.876rem;
+    height: 1.948rem;
+    margin-bottom: 2rem;
+}
+.xyzd-p-background{
+    width: 14.625rem;
+    height: 32rem;
+    padding-right: 1rem;
+}
+
+.xyz-d-circle.palette{
+    margin-left: 4rem;
+    margin-top: -0.8rem;
+}
+.xyzd-f-background{
+    width: 14.625rem;
+    height: 32rem;
+    
+}
+.xyz-d-circle.font{
+    margin-left: 8.6rem;
+    margin-top: -1.5rem;
+}
+.xyzd-f-background .xyz-f-b.top >div{
+    width: 0.94rem;
+    height: 1.33rem;
+    background-color: #88fd93;
+}
+.xyz-f-b.top{
+    display: flex;
+    justify-content: space-between;
+}
+.xyz-f-b.mid{
+    width: 14.625rem;
+    height: 29.368rem;
+    background-color: #88fd93;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xyzd-f-background .xyz-f-b.bottom >div{
+    width: 0.94rem;
+    height: 1.33rem;
+    background-color: #88fd93;
+}
+.xyz-f-b.bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.xyzd-f-con{
+    font-size: 1.25rem;
+    line-height: 3.7rem;
+    text-align: center;
+}
+.xyzd-f-con :nth-child(1) {
+    font-family: 'D2Coding', 'sans-serif';
+}
+.xyzd-f-con :nth-child(2) {
+    font-family: 'Rubik Puddles', "cursive";
+    font-weight: 600;
+}
+.xyzd-f-con :nth-child(3) {
+    font-family: 'DungGeunMo', 'NeoDunggeunmo','sans-serif';
+}
+.xyzd-f-con :nth-child(4) {
+    font-family: 'IBM Plex Sans KR', 'sans-serif';
+}
+.xyzd-f-con :nth-child(5) {
+    font-family: 'UhBeemysen', "sans-serif";
+    font-size: 2.3rem;
+}
+.xyzd-f-con :nth-child(6) {
+    font-family: 'raleway', 'sans-serif';
+}
+
+/******************** svgs ********************/
+.scanvas-logo{
+    background-image: url("data:image/svg+xml,%3Csvg id='그룹_431' data-name='그룹 431' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='261.092' height='47.843' viewBox='0 0 261.092 47.843'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1223' data-name='사각형 1223' width='261.092' height='47.843' fill='%2300ee17'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_391' data-name='그룹 391' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_936' data-name='패스 936' d='M425.862,40.749c-1.615.267-3.1.575-4.591.745-2.366.27-4.74.595-7.115.633a9.979,9.979,0,0,1-8.973-5.085,14.522,14.522,0,0,1-2.092-7.171c-.123-2.422-.221-4.848-.249-7.273a41.383,41.383,0,0,1,1.218-9.781,26.555,26.555,0,0,1,2.729-7.611A9.512,9.512,0,0,1,413.1.375a15.636,15.636,0,0,1,7.264.108,7.106,7.106,0,0,1,4.515,3.428,20.878,20.878,0,0,1,2.933,9.446c.122,2.227.443,4.452.432,6.676-.022,4.213-.156,8.429-.366,12.637-.138,2.766-.479,5.523-.75,8.282-.149,1.521-.339,3.038-.516,4.555-.049.425-.159.852-.695.839s-.688-.448-.652-.867c.083-.963.242-1.919.366-2.878.076-.591.146-1.183.228-1.854M426,39.467c.138-1.66.338-3.394.416-5.134.213-4.752.442-9.5.524-14.26.036-2.067-.313-4.138-.414-6.21a20.486,20.486,0,0,0-2.667-9.054A6.123,6.123,0,0,0,419.6,1.674a15.444,15.444,0,0,0-4.8-.224A8.19,8.19,0,0,0,408.5,5.033a21.765,21.765,0,0,0-3.035,7.609,44.353,44.353,0,0,0-1.321,9.888c0,1.883,0,3.773.141,5.649a28.083,28.083,0,0,0,.7,5c1.208,4.629,4.686,7.865,9.637,7.633,2.993-.141,5.973-.6,8.956-.941.759-.086,1.509-.247,2.42-.4' transform='translate(-280.741 0)' fill='%2300ee17'/%3E%3Cpath id='패스_937' data-name='패스 937' d='M709.725,41.515c-1.37.236-2.635.507-3.913.663-2.365.288-4.732.593-7.108.741a10.6,10.6,0,0,1-10.594-6.924,15.465,15.465,0,0,1-1.128-4.961c-.159-2.556-.24-5.119-.269-7.68a41.366,41.366,0,0,1,1.222-9.78,26.628,26.628,0,0,1,2.733-7.61,9.439,9.439,0,0,1,6.95-4.941,14.356,14.356,0,0,1,7.62.59,6.8,6.8,0,0,1,3.331,2.8,20.667,20.667,0,0,1,3.114,9.682c.125,2.033.445,4.063.431,6.093q-.044,6.611-.362,13.22c-.131,2.766-.476,5.523-.747,8.282-.151,1.54-.341,3.076-.523,4.613-.05.426-.176.85-.713.818s-.672-.468-.634-.886c.088-.962.249-1.918.373-2.877.076-.59.138-1.181.216-1.844m.142-1.266c.138-1.649.338-3.383.419-5.122.214-4.635.456-9.271.525-13.909.035-2.339-.288-4.683-.44-7.026a20.524,20.524,0,0,0-2.514-8.39,6.265,6.265,0,0,0-4.428-3.362,15.49,15.49,0,0,0-4.8-.21,8.166,8.166,0,0,0-6.208,3.517,21.546,21.546,0,0,0-3.074,7.654,44.466,44.466,0,0,0-1.326,9.946c0,1.884,0,3.773.143,5.649a27.957,27.957,0,0,0,.7,4.939c1.224,4.713,4.768,7.9,9.681,7.651,2.993-.151,5.972-.612,8.955-.952.757-.086,1.506-.242,2.377-.384' transform='translate(-478.571 -0.542)' fill='%2300ee17'/%3E%3Cpath id='패스_938' data-name='패스 938' d='M506.06,36.669c0,2.373-.007,4.747.01,7.12a4.932,4.932,0,0,0,.213.793c.046.239.15.579.031.709a1.029,1.029,0,0,1-.77.227.819.819,0,0,1-.773-.842c-.018-.918-.012-1.836-.012-2.754,0-3.97-.012-7.94.015-11.91a50.676,50.676,0,0,1,.929-8.581c.519-2.894.963-5.8,1.533-8.686a21.722,21.722,0,0,1,4.571-9.993A7.615,7.615,0,0,1,517.4.032c4.3-.313,7.142,1.7,9.294,5a20.678,20.678,0,0,1,2.935,8.35c.512,3.331.918,6.679,1.275,10.029.227,2.134.288,4.283.415,6.427.159,2.694.44,5.39.426,8.084-.013,2.588-.333,5.174-.523,7.76a.708.708,0,0,1-.883.733.907.907,0,0,1-.679-1.086c.23-1.653.519-3.306.606-4.968a77.507,77.507,0,0,0-.459-10.656c-.186-2.179-.226-4.369-.426-6.547-.216-2.357-.479-4.713-.838-7.054A52.06,52.06,0,0,0,527.3,9.859a13.224,13.224,0,0,0-4.332-6.885,7.583,7.583,0,0,0-5.644-1.539,6.553,6.553,0,0,0-4.893,2.875,21.723,21.723,0,0,0-3.9,9.421c-.694,3.694-1.375,7.394-1.885,11.114-.319,2.324-.346,4.687-.439,7.035-.063,1.594-.012,3.192-.012,4.788h-.14' transform='translate(-351.766 0)' fill='%2300ee17'/%3E%3Cpath id='패스_939' data-name='패스 939' d='M792.856,45.585c-1.871-.131-3.632-.258-5.393-.376-.522-.035-1.046-.047-1.569-.071-.58-.027-.934-.29-.9-.7.049-.534.446-.643.885-.618,1.685.093,3.374.153,5.053.313a16.216,16.216,0,0,0,9.209-1.6,9.344,9.344,0,0,0,4.872-6.43,9.775,9.775,0,0,0-3-9.989,11.438,11.438,0,0,0-6.706-2.891,16.093,16.093,0,0,1-6.416-1.671c-2.852-1.677-5.105-3.885-5.781-7.28a9.776,9.776,0,0,1,3.648-9.99,15.248,15.248,0,0,1,7.54-3.226A30,30,0,0,1,801.953.7c1.06.095,2.129.094,3.194.109.418.006.781.1.8.558.019.487-.328.645-.784.635-2.053-.045-4.108-.162-6.158-.1a23.777,23.777,0,0,0-8.248,1.5,11.268,11.268,0,0,0-5.032,3.922,8.528,8.528,0,0,0,1.1,11.005A11.843,11.843,0,0,0,794.1,21.71a16.773,16.773,0,0,1,5.528,1.244c5.081,2.452,7.506,6.6,6.982,11.778a10.785,10.785,0,0,1-7.281,9.6,19.656,19.656,0,0,1-3.228.923c-1.1.209-2.232.235-3.249.332' transform='translate(-545.593 -0.412)' fill='%2300ee17'/%3E%3Cpath id='패스_940' data-name='패스 940' d='M232.722,45.962c-1.761-.122-3.522-.246-5.283-.363-.542-.036-1.085-.048-1.627-.079-.439-.025-.851-.149-.858-.67s.407-.669.851-.644c1.724.1,3.449.177,5.168.326a16.143,16.143,0,0,0,9.248-1.69A9.443,9.443,0,0,0,245.082,36a9.743,9.743,0,0,0-3.051-9.452,11.456,11.456,0,0,0-6.743-2.945,16.243,16.243,0,0,1-6.42-1.659c-2.823-1.645-5.077-3.825-5.779-7.153-.92-4.362.61-7.823,4.1-10.514a15.533,15.533,0,0,1,7.092-2.844,29.714,29.714,0,0,1,7.651-.353c1.06.093,2.129.091,3.194.108.426.007.768.125.768.588s-.323.614-.757.6c-2.072-.045-4.147-.163-6.216-.1A23.414,23.414,0,0,0,230.678,3.8a11.111,11.111,0,0,0-5.214,4.226,8.53,8.53,0,0,0,1.254,10.628,11.793,11.793,0,0,0,7.31,3.441,16.2,16.2,0,0,1,5.9,1.4c5.06,2.675,7.136,6.678,6.63,11.653a10.878,10.878,0,0,1-7.406,9.642,17.3,17.3,0,0,1-6.431,1.172' transform='translate(-155.289 -0.681)' fill='%2300ee17'/%3E%3Cpath id='패스_941' data-name='패스 941' d='M611.561,43.219c.287-1.219.608-2.439.86-3.677,1.254-6.17,2.47-12.349,3.74-18.514.834-4.051,1.752-8.081,2.6-12.127.48-2.279.9-4.576,1.366-6.858a5.9,5.9,0,0,1,.461-1.287A.718.718,0,0,1,621.73.419c.358.3.269.745.054,1.281a17.315,17.315,0,0,0-.944,3.042c-.754,3.8-1.387,7.634-2.169,11.428-1.155,5.6-2.406,11.182-3.6,16.774-.773,3.613-1.512,7.235-2.294,10.845a15.5,15.5,0,0,1-.724,2.381c-.119.3-.478.681-.715.67s-.59-.429-.659-.737c-.443-1.995-.771-4.025-1.236-6.012-.589-2.522-1.3-5.005-1.907-7.523q-1.953-8.132-3.847-16.283c-.873-3.744-1.712-7.5-2.562-11.248a8.766,8.766,0,0,0-1.552-3.671.918.918,0,0,1,.009-1.244c.34-.278.716-.054,1.048.422,1.706,2.445,2.007,5.479,2.695,8.346,1.961,8.178,3.883,16.367,5.836,24.548.774,3.243,1.587,6.474,2.4,9.782' transform='translate(-417.68 0)' fill='%2300ee17'/%3E%3Cpath id='패스_942' data-name='패스 942' d='M334.238,47.433a28.555,28.555,0,0,1-7.594-.92c-6.2-1.883-9.951-6.146-11.512-12.342a41.408,41.408,0,0,1-.84-5.8,33.321,33.321,0,0,1-.222-4.646,32.517,32.517,0,0,1,1.734-10.5,17.381,17.381,0,0,1,5.836-8.04,15.765,15.765,0,0,1,7.269-2.889c1.683-.24,3.4-.256,5.1-.371a9.315,9.315,0,0,1,1.451-.075,1.388,1.388,0,0,1,.82.409.676.676,0,0,1-.091.664,1.984,1.984,0,0,1-.82.193,1.7,1.7,0,0,1-.23-.022c-3.7.076-7.359.319-10.762,2a14.8,14.8,0,0,0-6.524,6.8,22.3,22.3,0,0,0-2.15,7.911,32.783,32.783,0,0,0-.324,4.99c.134,3.621.276,7.284,1.524,10.724a14.687,14.687,0,0,0,8.37,9.084,20.984,20.984,0,0,0,6.56,1.38c1.429.1,2.868.085,4.3.109.461.008.756.191.777.668s-.26.665-.7.67c-.66.007-1.321,0-1.981,0' transform='translate(-218.867 -1.279)' fill='%2300ee17'/%3E%3Cpath id='패스_943' data-name='패스 943' d='M56.31,22.886l-.607-1.6-2.494-6.554-1.236-3.249a4.661,4.661,0,0,0-.641-1.457c-.417-.464-.949-.313-1.455-.116q-3.2,1.243-6.375,2.542-3.432,1.4-6.836,2.869a50.344,50.344,0,0,1-7.168-4.38q-.406-.3-.806-.6a1.835,1.835,0,0,0-1-.532c-.724-.025-1.1.893-1.415,1.411a36.373,36.373,0,0,0-1.986,3.738Q23.574,16.523,23,18.15l-2.227-5.585L20.1,10.874a2.3,2.3,0,0,0-.812-1.246,1.742,1.742,0,0,0-1.6.134l-1.7.688L9.221,13.18l-1.7.688a9.76,9.76,0,0,0-1.558.66A1.182,1.182,0,0,0,5.4,15.895a14.558,14.558,0,0,0,.671,1.632l2.984,7.125c-.926.165-1.85.337-2.772.521q-.858.172-1.713.355a3.638,3.638,0,0,0-1.322.413,1.3,1.3,0,0,0-.464,1.409c.1.574.217,1.146.326,1.719l.645,3.4q.318,1.672.635,3.344a14.726,14.726,0,0,0-2.484.3,4.217,4.217,0,0,0-1.437.439,1.178,1.178,0,0,0-.41,1.363c.132.477.342.938.491,1.412.155.5.292,1,.413,1.5.248,1.032.433,2.077.593,3.126.319,2.09.536,4.2.94,6.272a4.375,4.375,0,0,0,.41,1.482,1.3,1.3,0,0,0,1.232.564,12.072,12.072,0,0,0,1.61-.309L7.418,51.6l7.426-1.583.552,2.448c.181.8.256,1.9,1.288,1.974a5.2,5.2,0,0,0,1.32-.2l1.442-.281,2.763-.538,11.292-2.2a2.2,2.2,0,0,0,1.257-.527,1.5,1.5,0,0,0,.385-1.008c.016-.49-.191-1.008-.209-1.507l1.176.907A19.111,19.111,0,0,0,37.64,50.26a1.364,1.364,0,0,0,1.68-.28q.725-.566,1.427-1.161a48.5,48.5,0,0,0,5.1-5c.79-.9,1.542-1.828,2.266-2.78q2.266.035,4.532.035.61,0,1.22,0a6.978,6.978,0,0,0,1.159-.035.885.885,0,0,0,.71-.556,2.432,2.432,0,0,0-.028-1.108c-.4-2.986-1.239-5.886-1.817-8.838a28.934,28.934,0,0,1-.542-4.206.561.561,0,0,0,.218-.078l1.5-.9a4.5,4.5,0,0,0,1.275-.873c.4-.5.178-1.064-.024-1.594M1.1,37.442c-.009-.029.006-.022,0,0M55.309,23.9c-.251.156-.507.3-.761.456l-1.4.836a.56.56,0,0,0-.947.39c.045,3.928,1.218,7.7,1.988,11.522.106.524.2,1.051.29,1.579.045.277.088.554.125.832.017.125.062.293.072.444-.144.008-.374-.01-.453-.009l-.854,0q-.915,0-1.83,0c-1.06,0-2.12-.016-3.18-.032a.5.5,0,0,0-.115-.1.569.569,0,0,0-.761.2,47.836,47.836,0,0,1-4.35,5.059q-1.179,1.194-2.439,2.3-.629.555-1.278,1.087-.314.257-.632.51c-.115.091-.369.368-.512.353-.08-.008-.2-.133-.267-.183-.145-.109-.287-.222-.43-.332l-.813-.628-1.722-1.329a.55.55,0,0,0-.717.14.534.534,0,0,0-.4.37,3.779,3.779,0,0,0,.067,1.854,1.525,1.525,0,0,1,.024.573c-.057.2-.322.244-.568.294-1.719.349-3.444.671-5.166,1.006L17.948,53.122l-.721.14c-.1.02-.369.12-.48.073a.067.067,0,0,0-.017-.03.935.935,0,0,1-.072-.3q-.082-.359-.162-.718L15.822,49.3a.5.5,0,0,0-.714-.354.551.551,0,0,0-.365-.041L8.611,50.212l-3.1.66a11.712,11.712,0,0,1-1.374.282c-.089.008-.215.03-.284-.035-.12-.112-.129-.438-.162-.59-.806-3.757-.9-7.654-2.02-11.345-.153-.5-.353-.987-.514-1.485-.022-.07-.025-.174-.054-.238a.11.11,0,0,1,.024-.011,7.163,7.163,0,0,0,.737-.2,13.387,13.387,0,0,1,3.33-.338.559.559,0,0,0,.347-.984L4.377,29.785q-.147-.775-.294-1.549l-.147-.774c-.024-.128-.157-.473-.081-.594.035-.055.211-.086.265-.1.246-.067.5-.112.747-.165q.767-.164,1.536-.319,1.774-.358,3.558-.667a.561.561,0,0,0,.389-.684c0-.015-.012-.028-.017-.043a.376.376,0,0,0-.028-.112L7.731,18.628l-.655-1.565-.3-.727a2.638,2.638,0,0,1-.311-.785c0-.008,0-.012,0-.018s0,0,.008,0a.6.6,0,0,1,.2-.122c.222-.108.458-.19.687-.282l1.59-.642L15.2,11.959c1.041-.421,2.079-.852,3.124-1.262.113-.044.3-.158.418-.095s.194.337.242.455l.607,1.522,2.81,7.045a.683.683,0,0,0,.266.33.576.576,0,0,0,.973-.2A35.948,35.948,0,0,1,26.758,12.6q.236-.411.482-.816.116-.19.234-.379a4.509,4.509,0,0,0,.27-.391c.018.011.036.022.051.033.142.108.282.218.423.326q.4.305.808.6,1.582,1.155,3.251,2.183,1.906,1.174,3.911,2.175h0a.59.59,0,0,0,.692.1q5.794-2.5,11.666-4.81L50,11.052l.337-.131c.052-.02.1-.041.156-.06a.31.31,0,0,1,.048-.012l0,.009c.037.119.09.236.135.353l1.149,3.021,2.277,5.985c.419,1.1.854,2.2,1.258,3.306.083.228.146.255-.057.381' transform='translate(0 -6.604)' fill='%2300ee17'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 17vw;
+    height: 5vh;
+    margin-right: 1rem;
+}
+
+.sketchbox-logo{
+    background-image: url("./0_main/sketchbox-logo.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 17vw;
+    height: 5vh;
+    margin-right: 1rem;
+}
+
+.meowart-logo{
+    background-image: url("data:image/svg+xml,%3Csvg id='그룹_437' data-name='그룹 437' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='291.703' height='51.091' viewBox='0 0 291.703 51.091'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1221' data-name='사각형 1221' width='291.703' height='51.091' fill='%2300ee17'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_387' data-name='그룹 387' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_922' data-name='패스 922' d='M573.991,36.191c.63-.051,1.257-.117,1.885-.151,1.544-.085,3.091-.132,4.633-.24,1.524-.107,3.044-.264,4.565-.415.383-.038.76-.137,1.14-.206.5-.091,1-.2,1.5-.268,1.025-.143,2.053-.266,3.079-.4.035,0,.07-.007.105-.008,1.482-.043,1.615.223,1.985,1.315.41,1.209.74,2.444,1.116,3.665.278.9.58,1.8.857,2.7.128.418.408.533.821.59a33.21,33.21,0,0,0,5.527.139c.861-.025,1.723,0,2.584-.008a2.7,2.7,0,0,1,1.731.46c.1-.493.205-.892.251-1.3a5.455,5.455,0,0,1,.552-1.8c.4-.817.746-1.661,1.128-2.487a11.043,11.043,0,0,1,.686-1.356,1.649,1.649,0,0,1,1.905-.77c.564.132,1.13.272,1.7.35,1.164.159,2.336.267,3.5.42a16.246,16.246,0,0,1,1.76.32,14.864,14.864,0,0,0,2.658.346c1.629.1,3.264.208,4.878.436a14.218,14.218,0,0,1,3.749,1.238c-.1.8-.165,1.6-.317,2.384-.226,1.168-.589,2.313-.762,3.487-.266,1.8-.445,3.613-.614,5.424a29.439,29.439,0,0,1-.547,4,26.166,26.166,0,0,0-.458,3.007,14.264,14.264,0,0,1-.809,3.414,35.949,35.949,0,0,0-1.84,7,18.464,18.464,0,0,1-1.414,4.608c-.3.671-.53,1.37-.793,2.057a4.412,4.412,0,0,1-.82,1.516.9.9,0,0,1-1.306.226,4.077,4.077,0,0,1-1.791-1.652,41.316,41.316,0,0,0-3.4-4.54,4.183,4.183,0,0,0-.33-.34,1.654,1.654,0,0,0-1.313-.52,16.622,16.622,0,0,0-3.64.544,18.594,18.594,0,0,1-4.329.542c-2.953-.032-5.9-.092-8.857-.149-.579-.011-1.159-.048-1.736-.1a4.239,4.239,0,0,0-2.5.689,11.166,11.166,0,0,0-1.082.747c-.592.439-1.163.905-1.763,1.333a9.843,9.843,0,0,0-2.155,2.289c-.415.564-.84,1.123-1.294,1.656a4.962,4.962,0,0,1-.795.687c-.28.214-.407.21-.612-.084a5.642,5.642,0,0,1-.55-1.01,51.779,51.779,0,0,1-2.832-8.623c-.535-2.3-1.109-4.6-1.622-6.9-.426-1.913-.779-3.843-1.179-5.762-.447-2.142-.941-4.275-1.353-6.424-.251-1.3-.423-2.626-.567-3.946a60.019,60.019,0,0,0-1.032-6.955,2.049,2.049,0,0,1,.108-1.185m39.546,19.281a1.321,1.321,0,0,0-.916-.5,23.714,23.714,0,0,0-2.379-.4,7.293,7.293,0,0,0-1.77.085c-.456.071-.55.274-.57.8a1.793,1.793,0,0,0,1.264.166,3.409,3.409,0,0,1,1.4-.151c.75.052,1.5.126,2.246.191a.765.765,0,0,0,.726-.189m-18.127,4.752c.353.008.391-.014.578-.339a4.409,4.409,0,0,1,.292-.5,1.96,1.96,0,0,0,.368-1.859c-.106-.363-.36-.393-.622-.454a.45.45,0,0,0-.593.3c-.169.55-.329,1.1-.466,1.664-.043.176.032.38-.008.558-.107.469-.013.618.452.628m-2.951-5.629.073.173a8.474,8.474,0,0,0,.97-.092c.375-.077.739-.212,1.108-.32a1.913,1.913,0,0,1,1.562-.037,1.026,1.026,0,0,0,1.223-.189,1.218,1.218,0,0,0-.7-.689,2.049,2.049,0,0,0-1.633-.006c-.8.316-1.594.625-2.386.948-.088.036-.149.139-.222.211m14.467,5.11c.62.462,1,.392,1.252-.291a12.466,12.466,0,0,0,.388-1.514.412.412,0,0,0-.039-.294.813.813,0,0,0-1.358.119c-.151.348-.27.711-.421,1.114.6.166.083.571.178.867m-.264-6.107a1.506,1.506,0,0,0,1.449.51.352.352,0,0,0,.26-.144c.193-.423.546-.437.929-.4.331.032.662.059.993.091a3.7,3.7,0,0,0,1.394-.035,2.347,2.347,0,0,0-.656-.254c-.719-.154-1.438-.308-2.162-.431a4.325,4.325,0,0,0-1.044-.061,1.235,1.235,0,0,0-1.164.725m.186-1.558c.478.42,1.076.562,1.409.262a.732.732,0,0,1,.716-.137c.485.075.971.152,1.459.2a1.662,1.662,0,0,0,.982-.15.939.939,0,0,0-.744-.369c-.448-.08-.9-.165-1.345-.239-.466-.077-.931-.167-1.4-.209a1.04,1.04,0,0,0-1.077.645m-8.651.878a1.032,1.032,0,0,0-.128-.295,1.472,1.472,0,0,0-1.6-.515c-1.091.371-2.167.789-3.243,1.2-.12.046-.2.191-.389.378a2.417,2.417,0,0,0,.393-.027c.5-.153,1-.316,1.5-.472s1-.312,1.505-.46a.564.564,0,0,1,.632.1c.4.409.849.3,1.333.088m.138-1.42a7.761,7.761,0,0,0-5.371-.418c.01.339.252.305.483.305.77,0,1.541-.01,2.311.01a4.443,4.443,0,0,1,1.547.243.98.98,0,0,0,1.03-.14m3.373,4.25c.7.131,1.006-.071,1.132-.723.113-.586.042-.679-.546-.7a.877.877,0,0,0-.181.027,1.556,1.556,0,0,0-.4,1.4' transform='translate(-434.776 -26.141)' fill='%2300ee17'/%3E%3Cpath id='패스_923' data-name='패스 923' d='M22.671,62.107c-.075.364-.176.734-.223,1.111a5.892,5.892,0,0,1-.622,1.992c-.4.778-.719,1.6-1.078,2.394a11.834,11.834,0,0,1-.543,1.137,1.744,1.744,0,0,1-2.17.937q-.747-.161-1.494-.316a13.638,13.638,0,0,0-2.191-.271,15.054,15.054,0,0,1-3.172-.479,13.339,13.339,0,0,0-2.707-.36c-1.629-.085-3.261-.217-4.877-.436a14.513,14.513,0,0,1-3.3-1.058c-.258-.1-.3-.265-.286-.532a18.714,18.714,0,0,1,.662-3.61,33.362,33.362,0,0,0,.775-4.926c.178-1.566.27-3.141.431-4.708.05-.484.217-.955.3-1.437.171-.983.372-1.965.467-2.956a14.363,14.363,0,0,1,.837-3.728A35.354,35.354,0,0,0,5.3,37.912,18.286,18.286,0,0,1,6.65,33.447c.336-.769.615-1.564.918-2.347a4,4,0,0,1,.822-1.453.844.844,0,0,1,1.137-.205,3.683,3.683,0,0,1,1.7,1.449,42.11,42.11,0,0,0,3.306,4.48c.082.113.183.213.271.322a2.1,2.1,0,0,0,1.871.83,22.293,22.293,0,0,0,3.739-.6,17.608,17.608,0,0,1,3.915-.476c1.476.014,2.951.06,4.427.083.9.014,1.794,0,2.69.02,1.194.029,2.39.053,3.581.131a3.769,3.769,0,0,0,2.449-.654c1.293-.9,2.567-1.841,3.767-2.86A10.925,10.925,0,0,0,42.768,30.3,9.165,9.165,0,0,1,44.4,28.454c.5-.387.652-.369.979.179a5.675,5.675,0,0,1,.318.662,54.744,54.744,0,0,1,3.114,9.743c.607,2.7,1.261,5.387,1.848,8.09.576,2.651,1.077,5.319,1.644,7.972.351,1.645.709,3.287.9,4.958.157,1.356.265,2.719.45,4.071.161,1.178.407,2.344.6,3.518a8.391,8.391,0,0,1,.083,1.09.418.418,0,0,1-.448.47c-.543.033-1.085.089-1.629.108a52.377,52.377,0,0,0-5.413.383c-.33.046-.666.05-1,.065a36.008,36.008,0,0,0-4.856.617,32.625,32.625,0,0,1-3.652.476c-1.594.109-1.619-.305-1.976-1.313-.4-1.121-.711-2.271-1.064-3.408-.311-1-.632-2-.934-3.008a.659.659,0,0,0-.647-.514,29.762,29.762,0,0,0-4.256-.2c-1.5.111-3.023.056-4.534.022a5.686,5.686,0,0,1-1.262-.334m-7.8-12.913c.56.409.837.353,1.146-.207.034-.061.05-.16.1-.179.413-.16.407-.564.541-.887a1.683,1.683,0,0,0-.177-1.5.643.643,0,0,0-.654-.342.852.852,0,0,0-.758.978c0,.052,0,.105.014.157a4.012,4.012,0,0,1-.212,1.986m5.583,4.982.046-.138a1.9,1.9,0,0,0-.526-.278,2.876,2.876,0,0,0-1.087-.06c-1.024.237-2.034.537-3.043.834a3.08,3.08,0,0,0-.757.362c-.332.21-.357.49-.052.718a2.124,2.124,0,0,0,.617.236c.038.012.094-.031.148-.051l-.108-.469.485-.132c.878-.244,1.754-.5,2.635-.727.37-.1.754-.143,1.131-.211.17-.03.34-.055.511-.083m12.354-5.214c.435.276.773.046,1.13-.091a.818.818,0,0,0,.641-.842,4.144,4.144,0,0,1,.11-.562c.023-.2.178-.407-.008-.6a1.049,1.049,0,0,0-.822-.4c-.292.02-.618.015-.759.35a3.407,3.407,0,0,0-.293,2.144M17.346,58.592a.788.788,0,0,0,.985.136c.411-.2.825-.388,1.229-.6a2.805,2.805,0,0,1,1.609-.391.727.727,0,0,0,.711-.236,2.629,2.629,0,0,0-.474-.411,1.959,1.959,0,0,0-1.681-.1,8.737,8.737,0,0,0-2.379,1.6m.2-1.06a8.187,8.187,0,0,1,.849-.932c.488-.393,1.026-.724,1.541-1.084a1.137,1.137,0,0,1,.84-.209.83.83,0,0,0,.791-.259,1.546,1.546,0,0,0-2.062-.217,19.318,19.318,0,0,0-1.733,1.516,2.377,2.377,0,0,0-.424.709.328.328,0,0,0,.2.477m15.47-.649a.709.709,0,0,0-.819-.077.8.8,0,0,1-.443.1c-.522-.038-1.041-.107-1.562-.156A1.239,1.239,0,0,0,29,57.157a.79.79,0,0,0,.716.382c.838-.04,1.676-.088,2.512-.162a1.059,1.059,0,0,0,.783-.493m-8.973-3.43c.68.154.724.131.982-.415a.835.835,0,0,1,.209-.286,1,1,0,0,0,.285-.953c-.018-.232-.355-.4-.666-.4a.416.416,0,0,0-.463.391c-.069.394-.183.78-.271,1.172-.036.162-.053.329-.077.489m8.669,2.586a.594.594,0,0,0-.392-.84c-.455-.174-.914-.346-1.383-.476A3.886,3.886,0,0,0,30,54.6a.55.55,0,0,0-.59.441,1.335,1.335,0,0,0,1.456.309,1.185,1.185,0,0,1,1.48.688Zm-3.882-2.682a1.729,1.729,0,0,0,.444.164c1.248.035,2.5.057,3.759.083-.051-.285-.26-.252-.447-.272-.9-.1-1.8-.2-2.7-.312a1.234,1.234,0,0,0-1.052.336' transform='translate(0 -21.358)' fill='%2300ee17'/%3E%3Cpath id='패스_924' data-name='패스 924' d='M834.555,72.36c-.237-1.131-.4-2.233-.678-3.329-.352.073-.466.275-.426.509.139.8-.364,1.236-.917,1.634a8.193,8.193,0,0,1-1.155.731c-1.387.68-2.775,1.361-4.187,1.986a9.079,9.079,0,0,1-5.3.7,8.186,8.186,0,0,1-1.417-.39,13.887,13.887,0,0,1-2.877-1.53,4.517,4.517,0,0,1-1.212-1.231,12.113,12.113,0,0,1-1.889-4.915,6,6,0,0,1,.034-1.673c.137-1.181.348-2.355.477-3.536.076-.694.046-1.4.081-2.1a3.362,3.362,0,0,1,.128-.93c.271-.775.559-1.548.9-2.294a3.728,3.728,0,0,1,1.3-1.5q1.277-.881,2.607-1.685a7.417,7.417,0,0,1,2.863-.837c1.182-.168,2.362-.357,3.549-.478a8.34,8.34,0,0,1,1.786.035c1.308.151,2.612.34,3.913.541.5.077.989.229,1.495.35.006-.021.04-.071.032-.114-.139-.756-.235-1.525-.437-2.264a3.876,3.876,0,0,0-2.9-2.969c-.867-.218-1.747-.393-2.627-.546a9.554,9.554,0,0,0-3.095.071c-1.753.267-3.515.474-5.266.753a11.838,11.838,0,0,1-2.868.324l-.392-.036a2.609,2.609,0,0,1-.036-.418c.051-.681.119-1.36.17-2.041.028-.366.047-.734.049-1.1,0-1.559-.005-3.119,0-4.678.007-1.256.257-1.571,1.495-1.816a15.689,15.689,0,0,1,1.721-.219,14.422,14.422,0,0,0,3.027-.678,14.189,14.189,0,0,1,5.666-.635c1.607.162,3.224.234,4.836.357a17.292,17.292,0,0,1,4.02.792,37.914,37.914,0,0,0,3.72.966,8.062,8.062,0,0,1,4.2,2.46,9.3,9.3,0,0,1,2.149,3.441c.472,1.354,1.057,2.67,1.628,3.987a11.192,11.192,0,0,1,.986,4.426c.007,1,.154,1.991.173,2.987a31.681,31.681,0,0,1-.1,4.463c-.053.434-.052.873-.085,1.31-.107,1.414-.222,2.827-.325,4.241-.063.873-.092,1.749-.169,2.62-.1,1.149-.237,2.3-.35,3.444a.8.8,0,0,1-.438.616,2.363,2.363,0,0,1-1.83.283,15.106,15.106,0,0,0-4.186-.325c-1.789.1-3.583.108-5.374.165-.632.02-1.263.073-1.894.1a5.726,5.726,0,0,1-.573-.03m-3.691-15.155c-.57.337-.76,0-1.126.445a6.167,6.167,0,0,1-.782.847,1.758,1.758,0,0,0-.644,1.731c.051.329.123.654.175.982a5.145,5.145,0,0,0,.672,1.757,1,1,0,0,0,1.246.526,7.157,7.157,0,0,0,.907-.274,3.168,3.168,0,0,0,2.022-2.488,10.2,10.2,0,0,0,.105-1.255,1.668,1.668,0,0,0-.585-1.4.7.7,0,0,0-.457-.2.484.484,0,0,1-.465-.267c-.282-.378-.749.023-1.068-.4' transform='translate(-617.075 -27.271)' fill='%2300ee17'/%3E%3Cpath id='패스_925' data-name='패스 925' d='M260.747,59a4.921,4.921,0,0,0,.154.923,14.422,14.422,0,0,0,1.88,3.451,3.353,3.353,0,0,0,1.293,1.058c.62.287,1.254.549,1.9.78a2.49,2.49,0,0,0,.829.1,27.491,27.491,0,0,0,4.157-.185c.623-.094,1.255-.129,1.879-.221a10.832,10.832,0,0,0,3.229-1.244,7.244,7.244,0,0,1,.86-.4c.526-.182.823-.029.93.513a11.6,11.6,0,0,1,.221,1.713c.037.822.045,1.649,0,2.47a14.493,14.493,0,0,0,.515,4.1c.128.542.187,1.1.265,1.654a.716.716,0,0,1-.433.771,8.847,8.847,0,0,1-1.045.5c-1.452.529-2.917,1.019-4.365,1.557a12.9,12.9,0,0,1-5.456.592c-.263-.017-.527-.047-.789-.04a17.711,17.711,0,0,1-3.4-.324c-1.489-.25-2.979-.492-4.469-.734a10.544,10.544,0,0,1-2.91-.891,23.483,23.483,0,0,1-4.41-2.663,14.545,14.545,0,0,1-4.609-6.033,36.506,36.506,0,0,1-2.081-7.527c-.06-.345-.134-.688-.168-1.036a6.521,6.521,0,0,1,.316-2.945c.525-1.428.93-2.9,1.406-4.347.257-.781.53-1.559.844-2.319a7.061,7.061,0,0,1,.76-1.435,17.452,17.452,0,0,1,4.18-4.267,2.968,2.968,0,0,0,.34-.249,8.977,8.977,0,0,1,3.693-1.831c1.008-.3,2.007-.639,3.02-.922a16.339,16.339,0,0,1,3.586-.548,20.725,20.725,0,0,1,8.879,1.688,6.028,6.028,0,0,1,3.294,2.861c.556,1.074,1.14,2.133,1.673,3.218.245.5.388,1.05.592,1.571.42,1.076.837,2.155,1.28,3.222a9.537,9.537,0,0,1,.572,4.541,1.319,1.319,0,0,1-1.012,1.267,21.646,21.646,0,0,1-2.252.527q-2.262.36-4.54.622c-.819.1-1.648.109-2.473.153-1.141.061-2.281.124-3.422.171-1.351.055-2.7.095-4.055.139-.189.006-.378,0-.653,0m6.047-6.121c-.071-.588-.146-1.1-.192-1.621a7.266,7.266,0,0,0-1.059-3.426,2.409,2.409,0,0,0-.624-.688,1.837,1.837,0,0,0-2.359.2c-.2.176-.389.355-.578.538a3.846,3.846,0,0,0-1.08,1.834,9.684,9.684,0,0,0-.282,1.334,4.54,4.54,0,0,0,.028,2.119c.2-.376.522-.37.841-.365q2.425.037,4.849.078c.12,0,.24,0,.455,0' transform='translate(-185.382 -29.55)' fill='%2300ee17'/%3E%3Cpath id='패스_926' data-name='패스 926' d='M437.781,62.047c-.1,1.2-.2,2.406-.293,3.61-.052.68-.073,1.363-.131,2.043a10.123,10.123,0,0,1-.177,1.194,5.779,5.779,0,0,1-1.262,2.564c-.775.927-1.526,1.879-2.226,2.864a8.576,8.576,0,0,1-3.638,2.773,22.733,22.733,0,0,1-3.928,1.179,13.706,13.706,0,0,1-3.082.356c-1.333.025-2.669-.062-4-.119a4.586,4.586,0,0,1-.932-.158c-1.121-.287-2.249-.557-3.356-.893a21.487,21.487,0,0,1-5.059-2.053c-.851-.519-1.78-.909-2.67-1.365a5.585,5.585,0,0,1-1.531-1.189c-.228-.244-.456-.488-.7-.715a9.968,9.968,0,0,1-2.757-5.277,18.553,18.553,0,0,1-.255-2.083c-.024-.209-.032-.42-.071-.626a11.138,11.138,0,0,1,.074-4.381c.184-.89.311-1.793.451-2.692a13.9,13.9,0,0,1,1.126-3.433c.513-1.171,1.06-2.33,1.511-3.524a6.46,6.46,0,0,1,2.887-3.289,30.914,30.914,0,0,1,5-2.331,14.716,14.716,0,0,1,4.521-.939c1.051-.055,2.1-.14,3.153-.195a1.078,1.078,0,0,1,.851.154c.064.056.2.033.307.035a31.36,31.36,0,0,1,4.332.548,12.145,12.145,0,0,1,3.752,1.608c.434.23.867.466,1.282.727a9.455,9.455,0,0,1,3.666,3.751c.588,1.194,1.136,2.407,1.694,3.614a17.336,17.336,0,0,1,.911,3.337,23.6,23.6,0,0,1,.545,4.9m-13.681-.5h-.076c0-1.068.01-2.136,0-3.2-.009-.7-.056-1.4-.079-2.1a12.42,12.42,0,0,0-1.134-4.556.633.633,0,0,0-.264-.294,14.9,14.9,0,0,0-1.662-.794,4.833,4.833,0,0,0-1.238-.193.577.577,0,0,0-.355.174A2.479,2.479,0,0,0,418.6,51.8c-.213.721-.417,1.446-.631,2.167a4.013,4.013,0,0,0-.111,1.667c.149,1.163.318,2.325.472,3.487a13.278,13.278,0,0,1,.069,3.04,13.65,13.65,0,0,0-.037,3.512,8.687,8.687,0,0,1,.1.94,12.217,12.217,0,0,0,.57,2.986,6.568,6.568,0,0,0,.645,1.373,2.239,2.239,0,0,0,1.123.917,1.519,1.519,0,0,0,2.114-1.02c.191-.8.469-1.579.659-2.379A15.771,15.771,0,0,0,424.1,64.8c0-1.086,0-2.172,0-3.258' transform='translate(-304.223 -32.845)' fill='%2300ee17'/%3E%3Cpath id='패스_927' data-name='패스 927' d='M1111.29,20.508a10.991,10.991,0,0,0-4.142.178,11.648,11.648,0,0,1-1.247.248,77.94,77.94,0,0,1-.6-10.527l3.823-.962a40.188,40.188,0,0,1,0-9.409c.12-.011.254-.035.388-.035q5.09,0,10.18.014c.474,0,.947.083,1.421.083.754,0,1.509-.043,2.263-.063.276-.007.554,0,.847,0a49.707,49.707,0,0,1-.5,9.892,3.336,3.336,0,0,0,.4-.051,14.846,14.846,0,0,1,4.026-.4c.506.006.657.115.783.6a8.2,8.2,0,0,1,.116,3.077,15.522,15.522,0,0,0-.118,1.989,21.355,21.355,0,0,1-.633,5.2c-.015.064-.042.126-.067.2-.661-.285-1.288-.6-1.943-.827a5.541,5.541,0,0,0-2.132-.12c-.051,1.083-.121,2.13-.144,3.179-.026,1.191-.039,2.383,0,3.573.038,1.207.145,2.412.22,3.618.019.3.047.594.047.891,0,1.682,0,3.364,0,5.046a9.686,9.686,0,0,0,.173,1.978,10.994,10.994,0,0,1,.149,2.248,8.584,8.584,0,0,0,.247,2.394,1.957,1.957,0,0,1-.266,1.654c-.18,0-.387.008-.595,0a15.448,15.448,0,0,0-3.771.328,8.575,8.575,0,0,1-2.883.013,15.471,15.471,0,0,0-2.1-.113,8.909,8.909,0,0,1-2.594-.4,6.887,6.887,0,0,1-1.3-.672.426.426,0,0,1-.175-.252,8.68,8.68,0,0,1-.368-1.736c-.047-1.891-.044-3.785-.007-5.677.02-1.031.17-2.059.223-3.09.08-1.539.153-3.079.18-4.619.031-1.734,0-3.47.012-5.2,0-.576.066-1.152.1-1.728.008-.153,0-.307,0-.52' transform='translate(-837.422)' fill='%2300ee17'/%3E%3Cpath id='패스_928' data-name='패스 928' d='M993.369,46.5a3.865,3.865,0,0,1,1.231-2.372,10.179,10.179,0,0,1,3.9-2.414c1.589-.5,3.148-1.1,4.72-1.662a1.975,1.975,0,0,1,.3-.089.486.486,0,0,1,.643.443,2.919,2.919,0,0,1,0,.835c-.133,1.024-.283,2.046-.433,3.068a44.085,44.085,0,0,0-.646,7.423,19.355,19.355,0,0,1-.3,2.657c-.039.33-.064.662-.1.992-.013.115-.04.228-.071.4-.219-.056-.4-.1-.581-.15-.846-.232-1.682-.5-2.538-.685a16.569,16.569,0,0,0-2.09-.252,3.875,3.875,0,0,0-1.9.35c-.688.308-1.365.648-2.019,1.023a1.4,1.4,0,0,0-.537.615,6.826,6.826,0,0,0-.6,2.648c-.08,4.029-.121,8.058-.23,12.086-.036,1.309-.235,2.613-.36,3.92-.017.174-.031.349-.048.523-.048.5-.2.678-.683.681a22.271,22.271,0,0,1-5.818-.406c-1.427-.369-2.879-.638-4.315-.973a14.293,14.293,0,0,1-3.02-1.081,2.517,2.517,0,0,1-1.491-1.793,3.9,3.9,0,0,1-.075-.623c-.094-2.349.024-4.694.128-7.041.138-3.1.109-6.2-.049-9.3a54.816,54.816,0,0,1,.006-5.885c.041-.734.045-1.472.026-2.207a15.735,15.735,0,0,1,.4-3.752,6.9,6.9,0,0,1,.468-1.716.618.618,0,0,1,.6-.4c1.315-.045,2.63-.091,3.943-.171a16.367,16.367,0,0,0,1.722-.232,36.863,36.863,0,0,1,3.716-.406c1.3-.086,2.589-.224,3.894-.209.448.005.742.1.862.553.17.641.389,1.272.515,1.921.187.962.3,1.937.466,2.9a6.914,6.914,0,0,0,.245.824l.11-.038' transform='translate(-739.693 -30.269)' fill='%2300ee17'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 17vw;
+    height: 5vh;
+    margin-right: 1rem;
+}
+.meowart-logo-white{
+    background-image: url("data:image/svg+xml,%3Csvg id='그룹_388' data-name='그룹 388' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1203.703' height='210.826' viewBox='0 0 1203.703 210.826'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1221' data-name='사각형 1221' width='1203.703' height='210.826' fill='%23fff'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_387' data-name='그룹 387' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_922' data-name='패스 922' d='M574.47,41.471c2.6-.212,5.185-.481,7.778-.624,6.371-.351,12.753-.543,19.116-.99,6.288-.443,12.563-1.091,18.837-1.714,1.58-.157,3.136-.564,4.7-.849,2.065-.376,4.123-.814,6.2-1.1,4.229-.589,8.471-1.1,12.707-1.638.144-.019.289-.027.434-.032,6.117-.179,6.665.919,8.193,5.425,1.692,4.988,3.054,10.087,4.6,15.125,1.147,3.726,2.4,7.422,3.538,11.149.529,1.723,1.685,2.2,3.387,2.433,7.589,1.046,15.193.8,22.807.574,3.552-.1,7.11-.013,10.664-.033a11.137,11.137,0,0,1,7.144,1.9c.4-2.034.846-3.679,1.037-5.352A22.512,22.512,0,0,1,707.9,58.33c1.651-3.373,3.078-6.853,4.654-10.262a45.548,45.548,0,0,1,2.829-5.6,6.8,6.8,0,0,1,7.862-3.178c2.328.545,4.662,1.121,7.026,1.444,4.8.656,9.639,1.1,14.448,1.733a67.046,67.046,0,0,1,7.261,1.322,61.333,61.333,0,0,0,10.968,1.428c6.723.414,13.467.858,20.129,1.8,5.307.75,10.316,2.813,15.472,5.109-.425,3.3-.679,6.607-1.306,9.839-.934,4.819-2.431,9.543-3.146,14.387-1.1,7.424-1.836,14.907-2.533,22.383a121.455,121.455,0,0,1-2.257,16.508,107.974,107.974,0,0,0-1.89,12.408,58.867,58.867,0,0,1-3.339,14.087,148.329,148.329,0,0,0-7.591,28.875,76.183,76.183,0,0,1-5.837,19.014c-1.229,2.768-2.189,5.655-3.273,8.487a18.206,18.206,0,0,1-3.383,6.254c-1.821,1.942-3.011,2.155-5.388.934a16.824,16.824,0,0,1-7.392-6.817c-3.8-6.9-9.366-12.479-14.027-18.736a17.243,17.243,0,0,0-1.36-1.4,6.826,6.826,0,0,0-5.419-2.146c-5.138.015-10.088,1.124-15.02,2.245a76.726,76.726,0,0,1-17.864,2.235c-12.184-.132-24.366-.379-36.549-.615-2.389-.046-4.781-.2-7.163-.4-3.8-.324-7.134,1.024-10.308,2.842a46.088,46.088,0,0,0-4.466,3.082c-2.442,1.811-4.8,3.736-7.275,5.5a40.617,40.617,0,0,0-8.891,9.445c-1.712,2.328-3.466,4.634-5.341,6.832a20.471,20.471,0,0,1-3.28,2.836c-1.157.881-1.679.868-2.526-.347a23.288,23.288,0,0,1-2.271-4.168,213.676,213.676,0,0,1-11.686-35.583c-2.207-9.5-4.576-18.963-6.692-28.482-1.756-7.9-3.216-15.856-4.866-23.775-1.843-8.84-3.881-17.642-5.585-26.508-1.034-5.381-1.744-10.835-2.34-16.285-1.053-9.624-2.085-19.244-4.259-28.7a8.455,8.455,0,0,1,.445-4.891m163.184,79.561a5.449,5.449,0,0,0-3.781-2.046,97.848,97.848,0,0,0-9.815-1.662,30.09,30.09,0,0,0-7.3.349c-1.883.292-2.269,1.131-2.352,3.287,1.674.632,3.386,1.333,5.214.686a14.067,14.067,0,0,1,5.772-.624c3.093.215,6.181.518,9.27.79a3.156,3.156,0,0,0,3-.78m-74.8,19.607c1.458.032,1.613-.059,2.384-1.4a18.211,18.211,0,0,1,1.2-2.055,8.088,8.088,0,0,0,1.517-7.672c-.437-1.5-1.485-1.623-2.568-1.873a1.859,1.859,0,0,0-2.446,1.236c-.7,2.271-1.356,4.559-1.923,6.866-.178.726.134,1.57-.033,2.3-.443,1.937-.054,2.55,1.864,2.592m-12.179-23.227.3.713a34.967,34.967,0,0,0,4-.378c1.549-.318,3.049-.873,4.572-1.322,2.128-.627,4.136-1.357,6.446-.153a4.235,4.235,0,0,0,5.046-.779,5.027,5.027,0,0,0-2.87-2.842,8.454,8.454,0,0,0-6.737-.023c-3.283,1.3-6.576,2.581-9.847,3.913-.363.148-.613.574-.916.871m59.7,21.086c2.559,1.9,4.129,1.618,5.168-1.2a51.426,51.426,0,0,0,1.6-6.247,1.7,1.7,0,0,0-.159-1.214,3.353,3.353,0,0,0-5.6.489c-.625,1.438-1.115,2.935-1.738,4.6,2.456.685.342,2.357.734,3.576m-1.091-25.2c1.629,2.1,3.765,2.258,5.979,2.106a1.454,1.454,0,0,0,1.072-.6c.8-1.745,2.252-1.8,3.835-1.647,1.365.133,2.733.244,4.1.374a15.269,15.269,0,0,0,5.754-.144,9.69,9.69,0,0,0-2.706-1.05c-2.965-.635-5.934-1.269-8.922-1.78a17.847,17.847,0,0,0-4.308-.253c-1.989.151-3.823.779-4.8,2.99m.768-6.43c1.972,1.733,4.439,2.318,5.815,1.081,1.018-.915,1.889-.729,2.953-.566,2,.308,4.006.627,6.021.813a6.856,6.856,0,0,0,4.051-.621c-.788-1.223-1.953-1.323-3.068-1.522-1.85-.33-3.7-.68-5.551-.986-1.921-.318-3.841-.691-5.777-.861a4.29,4.29,0,0,0-4.444,2.662m-35.7,3.624a4.253,4.253,0,0,0-.527-1.216c-1.8-1.913-4.008-3.011-6.617-2.124-4.5,1.532-8.941,3.256-13.382,4.962-.5.191-.834.79-1.606,1.56a9.977,9.977,0,0,0,1.62-.113c2.07-.633,4.127-1.3,6.192-1.948s4.134-1.289,6.211-1.9a2.326,2.326,0,0,1,2.607.415c1.659,1.686,3.5,1.218,5.5.364m.568-5.858c-4.06-3.019-17.658-4-22.162-1.726.042,1.4,1.04,1.26,1.991,1.259,3.179,0,6.36-.042,9.537.043a18.332,18.332,0,0,1,6.384,1,4.044,4.044,0,0,0,4.25-.579m13.919,17.537c2.886.54,4.151-.293,4.67-2.984.467-2.419.174-2.8-2.254-2.9a3.62,3.62,0,0,0-.747.111c-1.3,1.735-2.277,3.455-1.669,5.773' fill='%23fff'/%3E%3Cpath id='패스_923' data-name='패스 923' d='M93.55,168.15c-.309,1.5-.728,3.029-.92,4.585a24.315,24.315,0,0,1-2.567,8.218c-1.645,3.21-2.965,6.585-4.448,9.878a48.831,48.831,0,0,1-2.239,4.69c-2.193,3.74-4.725,4.778-8.954,3.866q-3.081-.666-6.167-1.3a56.279,56.279,0,0,0-9.04-1.12,62.119,62.119,0,0,1-13.091-1.978A55.045,55.045,0,0,0,34.953,193.5c-6.723-.349-13.456-.894-20.124-1.8-4.739-.643-9.181-2.613-13.633-4.366-1.064-.419-1.256-1.092-1.182-2.195a77.223,77.223,0,0,1,2.731-14.9c1.79-6.661,2.422-13.511,3.2-20.325.736-6.46,1.116-12.96,1.78-19.429.2-2,.9-3.941,1.242-5.931.7-4.056,1.536-8.107,1.925-12.2a59.269,59.269,0,0,1,3.453-15.384,145.887,145.887,0,0,0,7.545-28.664A75.457,75.457,0,0,1,27.44,49.885c1.387-3.175,2.538-6.452,3.787-9.685a16.493,16.493,0,0,1,3.391-6c1.507-1.515,2.774-1.813,4.692-.846,2.814,1.418,5.47,3.143,7.009,5.979,3.69,6.8,9.141,12.291,13.642,18.485.339.467.754.879,1.119,1.329A8.658,8.658,0,0,0,68.8,62.575,91.99,91.99,0,0,0,84.226,60.1a72.659,72.659,0,0,1,16.154-1.966c6.09.057,12.178.246,18.268.342,3.7.058,7.4-.005,11.1.083,4.928.118,9.861.218,14.778.54a15.553,15.553,0,0,0,10.107-2.7c5.337-3.717,10.592-7.6,15.543-11.8,2.491-2.116,4.317-5.043,6.3-7.705a37.82,37.82,0,0,1,6.75-7.608c2.05-1.6,2.691-1.521,4.038.738a23.417,23.417,0,0,1,1.311,2.733,225.9,225.9,0,0,1,12.851,40.2c2.506,11.136,5.2,22.23,7.626,33.383,2.377,10.941,4.446,21.948,6.785,32.9,1.45,6.786,2.925,13.562,3.724,20.46.648,5.6,1.093,11.22,1.855,16.8.665,4.86,1.681,9.671,2.47,14.515a34.628,34.628,0,0,1,.341,4.5,1.727,1.727,0,0,1-1.85,1.939c-2.241.137-4.478.368-6.721.445a216.126,216.126,0,0,0-22.337,1.579c-1.361.188-2.747.205-4.123.269a148.59,148.59,0,0,0-20.038,2.548,134.621,134.621,0,0,1-15.069,1.965c-6.578.451-6.68-1.26-8.155-5.417-1.641-4.625-2.935-9.372-4.389-14.062-1.283-4.138-2.609-8.262-3.853-12.411a2.718,2.718,0,0,0-2.669-2.119c-5.845-.4-11.632-1.244-17.563-.808-6.206.456-12.473.231-18.708.09-1.669-.038-3.321-.857-5.206-1.379M61.365,114.863c2.311,1.686,3.453,1.455,4.73-.856.139-.252.207-.662.409-.74,1.7-.659,1.679-2.328,2.233-3.661.917-2.208.32-4.243-.73-6.208a2.653,2.653,0,0,0-2.7-1.413,3.515,3.515,0,0,0-3.126,4.037c.017.216.02.435.058.647a16.557,16.557,0,0,1-.875,8.194M84.4,135.42c.063-.19.127-.38.19-.57A7.832,7.832,0,0,0,82.42,133.7a11.867,11.867,0,0,0-4.487-.249c-4.226.978-8.393,2.215-12.557,3.441a12.709,12.709,0,0,0-3.122,1.493c-1.368.866-1.473,2.023-.215,2.963a8.766,8.766,0,0,0,2.545.975c.156.05.386-.127.609-.209-.144-.628-.282-1.224-.445-1.936.767-.209,1.385-.375,2-.546,3.624-1.006,7.236-2.054,10.875-3,1.528-.4,3.11-.591,4.669-.869.7-.125,1.4-.229,2.108-.342m50.98-21.517c1.795,1.14,3.189.188,4.664-.376,1.639-.627,2.7-1.55,2.645-3.476a17.1,17.1,0,0,1,.455-2.321c.1-.815.734-1.678-.033-2.46a4.328,4.328,0,0,0-3.391-1.659c-1.206.084-2.552.061-3.133,1.445-1.184,2.824-1.94,5.721-1.207,8.847m-63.8,39.744a3.252,3.252,0,0,0,4.064.56c1.7-.813,3.4-1.6,5.072-2.468a11.576,11.576,0,0,1,6.641-1.614,3,3,0,0,0,2.932-.973,10.85,10.85,0,0,0-1.957-1.695,8.083,8.083,0,0,0-6.937-.4,36.053,36.053,0,0,0-9.815,6.593m.805-4.375a33.783,33.783,0,0,1,3.5-3.847c2.014-1.621,4.234-2.987,6.359-4.473a4.693,4.693,0,0,1,3.466-.863,3.425,3.425,0,0,0,3.264-1.07,6.378,6.378,0,0,0-8.509-.9,79.716,79.716,0,0,0-7.15,6.255,9.809,9.809,0,0,0-1.75,2.926,1.352,1.352,0,0,0,.818,1.967m63.836-2.679c-1.221-.75-2.2-1.021-3.378-.317a3.3,3.3,0,0,1-1.828.4c-2.153-.156-4.3-.441-6.446-.644-1.855-.175-3.585.059-4.9,1.686a3.258,3.258,0,0,0,2.955,1.576c3.458-.163,6.917-.364,10.365-.669a4.37,4.37,0,0,0,3.231-2.036M99.191,132.441c2.805.636,2.986.539,4.053-1.714a3.447,3.447,0,0,1,.862-1.18c1.3-1.06,1.289-2.514,1.177-3.934-.075-.958-1.465-1.666-2.747-1.638a1.717,1.717,0,0,0-1.909,1.612c-.285,1.627-.757,3.22-1.117,4.835-.15.67-.217,1.358-.319,2.019m35.773,10.67a2.45,2.45,0,0,0-1.617-3.467c-1.879-.718-3.771-1.428-5.706-1.965a16.036,16.036,0,0,0-3.83-.5A2.271,2.271,0,0,0,121.375,139a5.509,5.509,0,0,0,6.008,1.276c2.88-.665,4.933.344,6.107,2.839Zm-16.017-11.068a7.133,7.133,0,0,0,1.832.678c5.15.146,10.3.237,15.511.344-.212-1.178-1.073-1.039-1.846-1.124-3.721-.409-7.443-.8-11.154-1.286a5.092,5.092,0,0,0-4.343,1.388' fill='%23fff'/%3E%3Cpath id='패스_924' data-name='패스 924' d='M897.424,186.058c-.976-4.666-1.656-9.215-2.8-13.736-1.452.3-1.924,1.134-1.757,2.1.574,3.312-1.5,5.1-3.783,6.743a33.8,33.8,0,0,1-4.767,3.017c-5.722,2.808-11.449,5.618-17.276,8.2a37.464,37.464,0,0,1-21.887,2.892,33.779,33.779,0,0,1-5.848-1.61,57.3,57.3,0,0,1-11.87-6.315,18.642,18.642,0,0,1-5-5.079,49.987,49.987,0,0,1-7.8-20.282,24.755,24.755,0,0,1,.14-6.9c.566-4.875,1.435-9.716,1.97-14.593.314-2.865.188-5.775.336-8.661a13.878,13.878,0,0,1,.529-3.838c1.12-3.2,2.307-6.386,3.717-9.466a15.382,15.382,0,0,1,5.367-6.17q5.268-3.636,10.758-6.952c3.606-2.174,7.71-2.87,11.814-3.453,4.877-.693,9.747-1.475,14.646-1.973a34.415,34.415,0,0,1,7.37.144c5.4.624,10.777,1.4,16.146,2.233,2.064.319,4.08.946,6.167,1.445.027-.086.167-.294.134-.47-.574-3.121-.969-6.292-1.8-9.344-1.7-6.219-5.487-10.628-11.949-12.253-3.578-.9-7.207-1.623-10.842-2.254a39.425,39.425,0,0,0-12.77.294c-7.233,1.1-14.506,1.954-21.73,3.106-3.933.627-7.8,1.678-11.834,1.339-.494-.042-.987-.09-1.617-.147a10.738,10.738,0,0,1-.149-1.724c.212-2.809.489-5.613.7-8.422.114-1.511.2-3.028.2-4.543.02-6.435-.022-12.87.011-19.305.027-5.184,1.061-6.482,6.169-7.495a64.742,64.742,0,0,1,7.1-.9,59.51,59.51,0,0,0,12.491-2.8,58.552,58.552,0,0,1,23.382-2.62c6.633.669,13.3.965,19.954,1.472A71.354,71.354,0,0,1,907.638,41a156.478,156.478,0,0,0,15.35,3.987c6.946,1.486,12.451,5.1,17.314,10.15a38.362,38.362,0,0,1,8.869,14.2c1.949,5.586,4.362,11.017,6.719,16.452a46.183,46.183,0,0,1,4.069,18.262c.028,4.11.637,8.215.714,12.327.116,6.139.323,12.288-.427,18.415-.219,1.789-.216,3.6-.352,5.4-.44,5.834-.916,11.664-1.34,17.5-.261,3.6-.381,7.216-.7,10.813-.417,4.743-.98,9.473-1.446,14.212a3.321,3.321,0,0,1-1.807,2.541,9.75,9.75,0,0,1-7.55,1.167,62.333,62.333,0,0,0-17.273-1.34c-7.382.406-14.784.445-22.177.681-2.607.083-5.21.3-7.817.413a23.627,23.627,0,0,1-2.363-.125m-15.23-62.536c-2.354,1.39-3.138-.017-4.647,1.835a25.433,25.433,0,0,1-3.226,3.5,7.255,7.255,0,0,0-2.658,7.143c.211,1.356.507,2.7.721,4.054a21.228,21.228,0,0,0,2.771,7.25,4.146,4.146,0,0,0,5.141,2.172,29.543,29.543,0,0,0,3.743-1.131c4.759-1.81,7.328-5.466,8.343-10.268a42.092,42.092,0,0,0,.434-5.179,6.883,6.883,0,0,0-2.414-5.787,2.872,2.872,0,0,0-1.885-.826,2,2,0,0,1-1.918-1.1c-1.164-1.56-3.089.093-4.405-1.656' fill='%23fff'/%3E%3Cpath id='패스_925' data-name='패스 925' d='M310.989,121.536a20.308,20.308,0,0,0,.635,3.807,59.517,59.517,0,0,0,7.757,14.24,13.835,13.835,0,0,0,5.337,4.364c2.559,1.183,5.174,2.265,7.827,3.218a10.278,10.278,0,0,0,3.423.408c5.728,0,11.459.1,17.154-.765,2.571-.389,5.179-.531,7.752-.911,4.819-.71,9.046-2.994,13.323-5.135a29.888,29.888,0,0,1,3.55-1.632c2.171-.752,3.4-.121,3.837,2.118a47.884,47.884,0,0,1,.913,7.068c.152,3.392.185,6.8.006,10.192-.3,5.784.813,11.348,2.124,16.919.527,2.238.773,4.544,1.094,6.827a2.954,2.954,0,0,1-1.786,3.181,36.5,36.5,0,0,1-4.311,2.048c-5.99,2.181-12.038,4.2-18.011,6.426-7.314,2.722-14.864,2.95-22.513,2.442-1.085-.072-2.173-.194-3.257-.166a73.084,73.084,0,0,1-14.047-1.339c-6.143-1.033-12.293-2.03-18.443-3.028a43.511,43.511,0,0,1-12.008-3.676,96.9,96.9,0,0,1-18.2-10.99,60.02,60.02,0,0,1-19.019-24.893,150.638,150.638,0,0,1-8.588-31.058c-.246-1.423-.554-2.841-.692-4.275a26.907,26.907,0,0,1,1.306-12.151c2.165-5.894,3.837-11.967,5.8-17.936,1.06-3.224,2.188-6.435,3.483-9.57a29.137,29.137,0,0,1,3.137-5.921,72.018,72.018,0,0,1,17.247-17.606,12.247,12.247,0,0,0,1.4-1.028c4.333-4.021,9.729-5.894,15.24-7.554,4.16-1.253,8.281-2.638,12.464-3.806a67.423,67.423,0,0,1,14.8-2.262c12.785-.643,24.85,2.212,36.638,6.965,6.013,2.424,10.623,6.072,13.591,11.805,2.294,4.431,4.706,8.8,6.9,13.279,1.013,2.065,1.6,4.332,2.444,6.484,1.735,4.442,3.453,8.891,5.282,13.295,2.508,6.043,2.9,12.331,2.36,18.737a5.444,5.444,0,0,1-4.178,5.228,89.311,89.311,0,0,1-9.294,2.173q-9.334,1.485-18.734,2.567c-3.379.395-6.8.448-10.2.63-4.707.25-9.413.512-14.122.7-5.576.228-11.154.391-16.731.573-.779.026-1.56,0-2.694,0m24.952-25.26c-.291-2.428-.6-4.555-.791-6.691-.448-5.028-1.563-9.853-4.368-14.136a9.939,9.939,0,0,0-2.573-2.839,7.581,7.581,0,0,0-9.735.814c-.807.727-1.606,1.464-2.386,2.22a15.871,15.871,0,0,0-4.457,7.569,39.967,39.967,0,0,0-1.162,5.506c-.308,2.814-.959,5.663.115,8.742.822-1.551,2.154-1.527,3.47-1.507q10.005.153,20.011.321c.5.008.992,0,1.876,0' fill='%23fff'/%3E%3Cpath id='패스_926' data-name='패스 926' d='M551.12,120.5c-.406,4.965-.831,9.928-1.209,14.895-.213,2.808-.3,5.625-.541,8.43a41.766,41.766,0,0,1-.732,4.926,23.845,23.845,0,0,1-5.206,10.579c-3.2,3.827-6.3,7.755-9.184,11.82-3.837,5.4-9.127,8.776-15.01,11.441-5.183,2.347-10.726,3.493-16.207,4.865a56.558,56.558,0,0,1-12.718,1.469c-5.5.1-11.012-.255-16.515-.491a18.925,18.925,0,0,1-3.845-.652c-4.627-1.184-9.281-2.3-13.849-3.684-7.207-2.186-14.358-4.5-20.874-8.472-3.51-2.14-7.346-3.751-11.018-5.632a23.048,23.048,0,0,1-6.319-4.906c-.94-1.005-1.88-2.014-2.886-2.95-6.368-5.924-9.467-13.572-11.378-21.775a76.581,76.581,0,0,1-1.052-8.6c-.1-.861-.133-1.733-.293-2.582a45.96,45.96,0,0,1,.306-18.077c.76-3.673,1.284-7.4,1.861-11.108A57.36,57.36,0,0,1,409.1,85.836c2.117-4.832,4.372-9.615,6.234-14.543,2.293-6.069,6.461-10.274,11.913-13.572A127.564,127.564,0,0,1,447.9,48.1a60.727,60.727,0,0,1,18.657-3.875c4.339-.226,8.672-.578,13.012-.8,1.186-.062,2.442-.293,3.512.637.264.23.837.137,1.268.144,6.043.106,11.934,1.326,17.875,2.263,5.779.911,10.509,4,15.483,6.634,1.792.949,3.576,1.924,5.292,3,6.281,3.949,11.787,8.7,15.127,15.478,2.426,4.925,4.688,9.931,6.991,14.915,2.023,4.377,2.653,9.143,3.758,13.772A97.376,97.376,0,0,1,551.12,120.5m-56.456-2.078h-.315c0-4.408.043-8.816-.013-13.223-.038-2.887-.233-5.771-.324-8.658a51.251,51.251,0,0,0-4.68-18.8,2.614,2.614,0,0,0-1.091-1.214,61.5,61.5,0,0,0-6.858-3.278,19.944,19.944,0,0,0-5.107-.8,2.382,2.382,0,0,0-1.466.72,10.228,10.228,0,0,0-2.823,5.044c-.88,2.976-1.72,5.965-2.6,8.94a16.561,16.561,0,0,0-.459,6.878c.614,4.8,1.311,9.592,1.949,14.391a54.8,54.8,0,0,1,.283,12.543c-.469,4.816-.93,9.651-.151,14.492a35.851,35.851,0,0,1,.432,3.877,50.413,50.413,0,0,0,2.353,12.322,27.1,27.1,0,0,0,2.66,5.665,9.24,9.24,0,0,0,4.633,3.782,6.269,6.269,0,0,0,8.725-4.21c.789-3.3,1.937-6.514,2.719-9.815a65.076,65.076,0,0,0,2.138-15.212c-.016-4.481,0-8.963,0-13.445' fill='%23fff'/%3E%3Cpath id='패스_927' data-name='패스 927' d='M1130.1,84.625c-5.914-.419-11.533-1-17.092.734a48.039,48.039,0,0,1-5.146,1.023c-1.455-14.617-3.013-28.952-2.493-43.44l15.773-3.97a165.865,165.865,0,0,1,0-38.826c.5-.047,1.048-.146,1.6-.146q21,.012,42.006.059c1.954.007,3.908.344,5.862.341,3.113,0,6.225-.177,9.338-.258,1.141-.03,2.284-.005,3.495-.005.9,13.7-.255,27.181-2.082,40.818a13.768,13.768,0,0,0,1.643-.21,61.261,61.261,0,0,1,16.612-1.642c2.086.026,2.71.473,3.231,2.471a33.843,33.843,0,0,1,.479,12.7,63.989,63.989,0,0,0-.486,8.206,88.115,88.115,0,0,1-2.611,21.463c-.063.265-.173.518-.275.82-2.728-1.178-5.314-2.464-8.018-3.414-2.773-.974-5.7-.646-8.8-.5-.211,4.471-.5,8.791-.594,13.116-.106,4.913-.161,9.834-.006,14.744.156,4.98.6,9.952.909,14.928.077,1.225.192,2.452.2,3.678.019,6.941.006,13.883.011,20.824a39.97,39.97,0,0,0,.713,8.163,45.38,45.38,0,0,1,.614,9.276,35.427,35.427,0,0,0,1.02,9.879,8.076,8.076,0,0,1-1.1,6.826c-.741,0-1.6.033-2.455-.006a63.747,63.747,0,0,0-15.561,1.352,35.385,35.385,0,0,1-11.9.055,63.839,63.839,0,0,0-8.672-.468,36.764,36.764,0,0,1-10.7-1.634,28.421,28.421,0,0,1-5.368-2.773,1.759,1.759,0,0,1-.721-1.038c-.566-2.38-1.461-4.764-1.52-7.165-.192-7.8-.181-15.619-.027-23.425.084-4.254.7-8.495.921-12.75.33-6.349.632-12.7.744-19.061.126-7.156-.006-14.317.049-21.474.018-2.377.272-4.752.4-7.129.034-.631.005-1.266.005-2.146' fill='%23fff'/%3E%3Cpath id='패스_928' data-name='패스 928' d='M1046.784,66.993a15.947,15.947,0,0,1,5.08-9.789,42,42,0,0,1,16.11-9.963c6.557-2.082,12.989-4.559,19.475-6.859a8.152,8.152,0,0,1,1.252-.368,2.007,2.007,0,0,1,2.653,1.828,12.043,12.043,0,0,1,.014,3.444c-.547,4.226-1.167,8.443-1.786,12.66-1.492,10.157-2.9,20.3-2.665,30.63.082,3.644-.813,7.308-1.245,10.966-.161,1.362-.265,2.731-.414,4.094-.052.474-.166.941-.293,1.631-.9-.232-1.653-.413-2.4-.617-3.489-.956-6.942-2.082-10.474-2.826a68.371,68.371,0,0,0-8.623-1.041,15.991,15.991,0,0,0-7.842,1.444c-2.84,1.273-5.632,2.676-8.33,4.22a5.776,5.776,0,0,0-2.216,2.538,28.166,28.166,0,0,0-2.472,10.926c-.331,16.624-.5,33.252-.951,49.873-.147,5.4-.971,10.783-1.484,16.174-.07.72-.129,1.44-.2,2.16-.2,2.058-.827,2.8-2.817,2.81-8.043.058-16.087.372-24.01-1.677-5.887-1.523-11.879-2.633-17.8-4.014a58.984,58.984,0,0,1-12.461-4.461c-3.151-1.536-5.426-3.849-6.153-7.4a16.112,16.112,0,0,1-.308-2.572c-.386-9.694.1-19.37.528-29.053.568-12.793.45-25.587-.2-38.382a226.11,226.11,0,0,1,.024-24.284c.171-3.029.187-6.075.107-9.108a64.923,64.923,0,0,1,1.646-15.484c.518-2.4.795-4.83,1.93-7.081a2.55,2.55,0,0,1,2.475-1.652c5.426-.184,10.853-.377,16.271-.705a67.531,67.531,0,0,0,7.106-.956,152.114,152.114,0,0,1,15.336-1.677c5.354-.354,10.683-.925,16.067-.864,1.849.021,3.061.412,3.557,2.281.7,2.645,1.6,5.249,2.125,7.928.77,3.968,1.244,7.993,1.923,11.98a28.546,28.546,0,0,0,1.011,3.4l.455-.156' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E");
+}
+.gpu-logo{
+    background-image: url("data:image/svg+xml,%3Csvg id='그룹_440' data-name='그룹 440' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='93.88' height='93.88' viewBox='0 0 93.88 93.88'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1288' data-name='사각형 1288' width='93.88' height='93.88' fill='%2300ee17'/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath id='패스_971' data-name='패스 971' d='M.143,48.508V50.05l7.037.491V48.017Z' transform='translate(-0.075 -25.124)' fill='%2300ee17'/%3E%3Cpath id='패스_972' data-name='패스 972' d='M.143,68.212v1.541l7.037.491V67.722Z' transform='translate(-0.075 -35.434)' fill='%2300ee17'/%3E%3Cpath id='패스_973' data-name='패스 973' d='M.143,87.916v1.541l7.037.491V87.425Z' transform='translate(-0.075 -45.742)' fill='%2300ee17'/%3E%3Cpath id='패스_974' data-name='패스 974' d='M.143,107.62v1.543l7.037.489V107.13Z' transform='translate(-0.075 -56.052)' fill='%2300ee17'/%3E%3Cpath id='패스_975' data-name='패스 975' d='M.143,147.028v1.542l7.037.491v-2.524Z' transform='translate(-0.075 -76.671)' fill='%2300ee17'/%3E%3Cpath id='패스_976' data-name='패스 976' d='M.143,127.324v1.543l7.037.489v-2.522Z' transform='translate(-0.075 -66.362)' fill='%2300ee17'/%3E%3Cpath id='패스_977' data-name='패스 977' d='M182,49.279v1.262l7.037-.491V48.509L182,48.018Z' transform='translate(-95.227 -25.124)' fill='%2300ee17'/%3E%3Cpath id='패스_978' data-name='패스 978' d='M182,68.983v1.262l7.037-.491V68.213L182,67.723Z' transform='translate(-95.227 -35.434)' fill='%2300ee17'/%3E%3Cpath id='패스_979' data-name='패스 979' d='M182,88.686v1.262l7.037-.491V87.916L182,87.425Z' transform='translate(-95.227 -45.743)' fill='%2300ee17'/%3E%3Cpath id='패스_980' data-name='패스 980' d='M182,108.391v1.261l7.037-.49V107.62L182,107.13Z' transform='translate(-95.227 -56.052)' fill='%2300ee17'/%3E%3Cpath id='패스_981' data-name='패스 981' d='M182,147.8v1.263l7.037-.491v-1.541L182,146.537Z' transform='translate(-95.227 -76.671)' fill='%2300ee17'/%3E%3Cpath id='패스_982' data-name='패스 982' d='M182,128.1v1.261l7.037-.49v-1.542l-7.037-.49Z' transform='translate(-95.227 -66.362)' fill='%2300ee17'/%3E%3Cpath id='패스_983' data-name='패스 983' d='M32.107,19.673H30.566l-.491,7.037H32.6Z' transform='translate(-15.736 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_984' data-name='패스 984' d='M51.053,19.673H49.511L49.02,26.71h2.523Z' transform='translate(-25.648 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_985' data-name='패스 985' d='M70,19.673H68.456l-.491,7.037h2.523Z' transform='translate(-35.561 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_986' data-name='패스 986' d='M88.943,19.673H87.4L86.91,26.71h2.523Z' transform='translate(-45.473 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_987' data-name='패스 987' d='M107.888,19.673h-1.542l-.491,7.037h2.523Z' transform='translate(-55.386 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_988' data-name='패스 988' d='M126.834,19.673h-1.542L124.8,26.71h2.523Z' transform='translate(-65.298 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_989' data-name='패스 989' d='M145.778,19.673h-1.541l-.491,7.037h2.524Z' transform='translate(-75.21 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_990' data-name='패스 990' d='M164.723,19.673h-1.541l-.491,7.037h2.524Z' transform='translate(-85.123 -10.293)' fill='%2300ee17'/%3E%3Cpath id='패스_991' data-name='패스 991' d='M32.107,169.508H30.566l-.491-7.037H32.6Z' transform='translate(-15.736 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_992' data-name='패스 992' d='M51.053,169.508H49.511l-.491-7.037h2.523Z' transform='translate(-25.648 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_993' data-name='패스 993' d='M70,169.508H68.456l-.491-7.037h2.523Z' transform='translate(-35.561 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_994' data-name='패스 994' d='M88.943,169.508H87.4l-.491-7.037h2.523Z' transform='translate(-45.473 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_995' data-name='패스 995' d='M107.888,169.508h-1.542l-.491-7.037h2.523Z' transform='translate(-55.386 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_996' data-name='패스 996' d='M126.834,169.508h-1.542l-.491-7.037h2.523Z' transform='translate(-65.298 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_997' data-name='패스 997' d='M145.778,169.508h-1.541l-.491-7.037h2.524Z' transform='translate(-75.21 -85.008)' fill='%2300ee17'/%3E%3Cpath id='패스_998' data-name='패스 998' d='M164.723,169.508h-1.541l-.491-7.037h2.524Z' transform='translate(-85.123 -85.008)' fill='%2300ee17'/%3E%3Cg id='그룹_439' data-name='그룹 439'%3E%3Cg id='그룹_438' data-name='그룹 438' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_999' data-name='패스 999' d='M93.51,39.143H20.965a1.431,1.431,0,0,0-1.431,1.43V94.268A1.431,1.431,0,0,0,20.965,95.7H93.51a1.43,1.43,0,0,0,1.43-1.431V40.573a1.43,1.43,0,0,0-1.43-1.43M40.474,73.834a9.435,9.435,0,0,0,2.691-.3V69.369l-3.547.009V65.867l7.543.01V76.412a23.641,23.641,0,0,1-6.776,1.051c-3.629,0-6.21-.956-8.039-2.726A9.558,9.558,0,0,1,29.5,67.549c.03-6.609,4.839-10.386,11.36-10.386a18.351,18.351,0,0,1,6.509,1.357L46.08,61.976a14.051,14.051,0,0,0-5.282-1.1c-3.748,0-6.916,2.125-6.916,6.433a6.233,6.233,0,0,0,6.592,6.521M63.443,68.2a9.222,9.222,0,0,1-6.462,2.095,11.867,11.867,0,0,1-1.534-.054v7.076H50.991V57.695a36.819,36.819,0,0,1,6.078-.413c2.773,0,4.75.531,6.078,1.592a5.817,5.817,0,0,1,2.124,4.6A6.356,6.356,0,0,1,63.443,68.2m20.619.323c0,6.138-3.045,9.158-8.238,9.158-5.017,0-8.019-2.872-8.019-9.216V57.369h4.514V68.817c0,3.423,1.313,4.858,3.614,4.858,2.36,0,3.644-1.347,3.644-4.858V57.369h4.485Z' transform='translate(-10.221 -20.48)' fill='%2300ee17'/%3E%3Cpath id='패스_1000' data-name='패스 1000' d='M96.7,84.222a7.534,7.534,0,0,0-1.852.177v5.717a7.2,7.2,0,0,0,1.5.082c2.39,0,3.872-.98,3.872-3.015,0-1.83-1.278-2.96-3.52-2.96' transform='translate(-49.629 -44.067)' fill='%2300ee17'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 12vw;
+    height: 9vh;
+    margin-right: 1rem;
+}
+
+.postoutline{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='547' height='539.514' viewBox='0 0 547 539.514'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Crect width='547' height='539.514' fill='%23070203'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M.007,24.412c0,66.786.71,133.569,1.639,200.351.933,66.837,2.094,133.673,3.02,200.51q.764,55,1.22,110c0,.5.563.9,1.234.909q95.121,1.7,190.266,2.378,95.259.685,190.522.375,47.423-.154,94.839-.559,23.766-.2,47.531-.471c4.76-.052,10.665.1,14.031-2.863,3.764-3.314,2.476-8.924,2.486-12.875q.183-66.2-.131-132.4-.285-64.787-.893-129.573-.583-65.964-1.273-131.928-.34-34.474-.661-68.948c-.146-15.8.045-31.681-2.015-47.431a43,43,0,0,0-1.614-8.547C539.615,1.628,538.084,1.081,535.8.7,528.309-.558,519.933.2,512.341.517c-12.636.526-25.362.378-38.017.514q-23.4.25-46.8.5-94.99,1.014-189.982,2.015Q142.355,4.554,47.16,5.57L1.243,6.064c-.669.006-1.234.41-1.236.908-.016,5.814,0,11.626,0,17.44,0,1.17,2.47,1.171,2.47,0,0-5.814-.016-11.626,0-17.44l-1.234.909q93.11-1,186.221-1.987Q281.152,4.9,374.838,3.91q46.56-.494,93.117-.993c13.848-.149,27.759-.031,41.595-.469,7.633-.242,15.358-.848,22.989-.28,1.219.091,3.4.122,4.458.7s1.016,1.586,1.238,2.523a79.52,79.52,0,0,1,1.539,10.1c.743,7.108,1.109,14.24,1.323,21.367.615,20.373.439,40.773.636,61.149q.633,65.47,1.283,130.941.6,63.633,1.006,127.267.377,64.47.364,128.939-.01,16.464-.051,32.929-.01,4.094-.023,8.186c-.009,2.87.439,6.443-3.067,8.368-2.666,1.465-6.378,1.4-9.552,1.439-4.013.051-8.027.088-12.038.132q-46.231.49-92.463.742-93.769.51-187.543.05-93.58-.456-187.147-1.879-22.692-.348-45.383-.753l1.236.908c-.5-65.806-1.5-131.608-2.528-197.41C4.782,270.755,3.7,203.645,3.06,136.532q-.539-56.059-.582-112.12c0-1.17-2.47-1.171-2.47,0' transform='translate(0 0)' fill='%23070203'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* width: 45vw;
+    height: 45vh; */
+    /* display: flex;
+    justify-content: center; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 30rem;
+}
+
+.gpu-logo-post{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='122' height='122' viewBox='0 0 122 122'%3E%3Cimage width='122' height='122' xlink:href='data:image/png;base64,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tTIbvpX7ZpUEgP2EWz2rxiHbCcuf1jpkO2Y/WggAtV4/o86PRhpbdQMCEgD249kzQB3cj0cSAJbTwiQbs2yJoJWGpIXrVW3/GQkA+xlzozBkO6+dX8mseMh2zPGtdR/GbFeV59PIR0o1L489Zj9qDT1j7k9GAEYSAPbTwmShVhK21xnXx+tzlZgwj6ZG5gCMJAAAQEACwHIk7FIRv4EAAAJbSURBVDrUPGQ7pkdca++5lVGMms+TXYV7S4lxBID9tPCMrRuxPG7N+7DrjaLmIdudz6dah2xHblfNN/ddz5Oa92HX67XG5bGnMGFwJAFgD42UMe1MnoHQmrj+G5rPtBgBYDkaWWBJ1lngUQLAQiqfZbvrRWbIdl677kPtQ7a7bl/NPbZdz5OaG6hd7znV7kMjbydUSwDYXwu1qlu4yFY//DdiCLP2XtFO29fIkK3JvXWwZsAEAgAABCQALMMs23p4pjg/z57r0MqkuFbun9URAPa3y0VW+81kpyHAyodsdx3GrH24c5ehzNrfjd7lGNc+ZLv682nE9Vp7UNjl/ukNgAkEgP3pFVegoVcyWZFGzrsW7mECwAQCAAA1E+5nIgAso4VylmuYZbvL8qe1PwLYpSdTe28nymOxNSy36y0lHiQA7G/1jXvFy+OO9eSNYgVDtlECQNU39R3PkyYapkaufyFhAgEAgLXzmGCC7z5//ry6jQYA9mMEAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAAIJqu6/4PgX2LkIiLIkoAAAAASUVORK5CYII='/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+}
+
+.xyzinsta{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='38.395' height='40.08' viewBox='0 0 38.395 40.08'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Crect width='38.395' height='40.08' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M38.218,8.356a8.187,8.187,0,0,0-6.486-7.241,1.154,1.154,0,0,0-.974-.7A118.989,118.989,0,0,0,14.46.17C10.127.414,5.769.735,2.983,4.494.183,8.273.291,13.162.217,17.646c-.073,4.621-.784,9.865.842,14.3,3.165,8.638,14.657,8.3,22.19,8.034,3.788-.131,8.156-.253,11.336-2.61,3.569-2.649,3.706-7.494,3.759-11.555.039-3.053,0-6.111,0-9.164a76.058,76.058,0,0,0-.122-8.3M33.461,35.108c-2.629,2.323-6.929,2.274-10.211,2.391-6.277.219-17.272.959-19.887-6.481-1.266-3.6-.75-7.8-.691-11.54C2.735,15.441,2.3,10.8,4.259,7.114,6.65,2.6,11.743,2.751,16.233,2.571a118.561,118.561,0,0,1,12.48.219A1,1,0,0,0,29.7,3.4a5.93,5.93,0,0,1,4.631,1.826c1.48,1.578,1.5,3.706,1.51,5.746.029,4.261.019,8.526.024,12.787,0,3.535.536,8.755-2.405,11.351' transform='translate(0.002 -0.001)' fill='%231a1311'/%3E%3Cpath d='M10.139,2.34a1,1,0,0,0-.789.711A8.233,8.233,0,0,0,1.895,10,11.864,11.864,0,0,0,6.438,21.3a10.1,10.1,0,0,0,11.589.3,10.788,10.788,0,0,0,3.569-5.58,11.9,11.9,0,0,0,.618-6.963C20.764,3.864,15.193,1.278,10.139,2.34m9.534,11.472a12.3,12.3,0,0,1-2.2,4.967c-1.982,2.259-5.648,2.547-8.263,1.31a9.155,9.155,0,0,1-4.981-7.752,6.906,6.906,0,0,1,1.66-5.181,5.274,5.274,0,0,1,4.981-1.539,1.2,1.2,0,0,0,1.49-.969A7.536,7.536,0,0,1,19.41,8.626a7.218,7.218,0,0,1,.263,5.186' transform='translate(6.749 8.143)' fill='%231a1311'/%3E%3Cpath d='M6.295,1.7l-.044-.015h0l.049.015' transform='translate(24.168 6.515)' fill='%231a1311'/%3E%3Cpath d='M10.2,1.721a1.118,1.118,0,0,0-1.057-.657A4.163,4.163,0,0,0,5.557,3.8,3.974,3.974,0,0,0,6.565,7.9a3.77,3.77,0,0,0,4.285.716,3.7,3.7,0,0,0,2.181-3.55A3.989,3.989,0,0,0,11.97,2.69,3.489,3.489,0,0,0,10.2,1.721m.258,3.107.019.029c.039.068.019.088-.019-.029m-.394,1.378c-.049.029-.107.073-.136.093l-.161.088c-.054.029-.195.068-.019.015.214-.058-.136.049-.195.063s-.243.049-.195.049l-.049,0H9.092l-.049,0c-.1-.024-.195-.054-.292-.083l-.088-.044-.127-.073-.063-.044A1.8,1.8,0,0,1,8.3,6.108c-.088-.088-.248-.351-.073-.058-.058-.093-.127-.18-.185-.278-.029-.054-.054-.107-.088-.161-.029-.088-.058-.175-.083-.263l-.029-.131a2.643,2.643,0,0,1-.01-.278l0-.078,0-.034c.015-.068.063-.185.083-.278,0-.015-.01,0,0-.029l.01-.015.015-.039-.01.034c.029-.063.063-.122.1-.18l.088-.141A3.538,3.538,0,0,1,8.4,3.907a1.116,1.116,0,0,0,.112-.1c-.19.209-.112.083-.01.015s.175-.1.263-.146l0,.015a1.449,1.449,0,0,0,.881.365c-.4-.049-.029.015.083.044-.015,0-.019,0,0,0l.01,0,.136.049a.6.6,0,0,1-.1-.034c.088.049.166.1.248.151a1.678,1.678,0,0,1,.136.127l.088.093c.044.073.1.146.136.209l.068.122c.024.1.063.19.088.287l.01.063,0,.039,0,.229-.034.127a1.119,1.119,0,0,1-.039.122l-.01.019a2.292,2.292,0,0,1-.141.234l-.063.073c-.063.068-.136.131-.2.195m.492-.779c0-.131.034-.131.01-.039l-.01.039' transform='translate(20.684 4.097)' fill='%231a1311'/%3E%3Cpath d='M5.9,1.766l0,0-.01.044c-.019.058.01.024.015-.049' transform='translate(22.731 6.832)' fill='%231a1311'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 2.3rem;
+    height: 2.5rem;
+    padding-top: 1.75rem;
+}
+
+.scanvas-logoimg{
+    background-image: url("data:image/svg+xml,%3Csvg id='그룹_393' data-name='그룹 393' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='341.163' height='62.515' viewBox='0 0 341.163 62.515'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1223' data-name='사각형 1223' width='341.163' height='62.515' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_391' data-name='그룹 391' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_936' data-name='패스 936' d='M432.923,53.245c-2.11.349-4.044.751-6,.974-3.092.353-6.194.777-9.3.827-5.134.083-9.009-2.347-11.725-6.645a18.976,18.976,0,0,1-2.734-9.37c-.161-3.165-.288-6.334-.325-9.5a54.073,54.073,0,0,1,1.591-12.78A34.7,34.7,0,0,1,408,6.8,12.429,12.429,0,0,1,416.251.49a20.431,20.431,0,0,1,9.491.141,9.285,9.285,0,0,1,5.9,4.48,27.28,27.28,0,0,1,3.833,12.343c.159,2.91.579,5.817.564,8.723-.029,5.505-.2,11.013-.478,16.512-.18,3.615-.626,7.217-.98,10.822-.2,1.987-.442,3.969-.674,5.952-.065.555-.208,1.114-.908,1.1s-.9-.585-.852-1.132c.109-1.258.316-2.507.479-3.761.1-.772.19-1.545.3-2.422m.182-1.674c.18-2.169.441-4.435.543-6.709.278-6.209.577-12.419.685-18.633.047-2.7-.41-5.407-.541-8.115a26.768,26.768,0,0,0-3.484-11.83,8,8,0,0,0-5.571-4.1,20.181,20.181,0,0,0-6.275-.293,10.7,10.7,0,0,0-8.22,4.682,28.439,28.439,0,0,0-3.966,9.943,57.95,57.95,0,0,0-1.726,12.92c0,2.461,0,4.93.184,7.382a36.692,36.692,0,0,0,.915,6.529c1.579,6.048,6.123,10.277,12.592,9.973,3.911-.184,7.8-.789,11.7-1.23.991-.112,1.972-.323,3.162-.523' transform='translate(-243.296 0)' fill='%231a1311'/%3E%3Cpath id='패스_937' data-name='패스 937' d='M716.783,54.008c-1.79.309-3.443.662-5.113.866-3.09.377-6.183.775-9.287.968-6.587.409-11.583-3.563-13.843-9.047a20.207,20.207,0,0,1-1.474-6.483c-.207-3.34-.313-6.689-.352-10.035a54.058,54.058,0,0,1,1.6-12.779,34.8,34.8,0,0,1,3.571-9.943A12.334,12.334,0,0,1,700.962,1.1a18.758,18.758,0,0,1,9.957.77,8.884,8.884,0,0,1,4.352,3.66,27,27,0,0,1,4.069,12.651c.163,2.656.581,5.309.564,7.962q-.057,8.638-.472,17.274c-.172,3.615-.623,7.217-.976,10.822-.2,2.012-.446,4.02-.683,6.028-.066.557-.23,1.11-.931,1.069-.685-.04-.878-.611-.828-1.158.115-1.257.326-2.506.488-3.759.1-.771.181-1.544.282-2.409m.185-1.655c.181-2.155.442-4.42.547-6.693.279-6.056.6-12.115.686-18.175.045-3.057-.376-6.12-.575-9.181A26.817,26.817,0,0,0,714.342,7.34a8.186,8.186,0,0,0-5.787-4.393,20.24,20.24,0,0,0-6.277-.275,10.671,10.671,0,0,0-8.112,4.6,28.153,28.153,0,0,0-4.017,10,58.1,58.1,0,0,0-1.733,13c0,2.461,0,4.93.187,7.382a36.532,36.532,0,0,0,.908,6.454c1.6,6.158,6.23,10.321,12.649,10,3.911-.2,7.8-.8,11.7-1.244.989-.112,1.968-.316,3.106-.5' transform='translate(-414.739 -0.47)' fill='%231a1311'/%3E%3Cpath id='패스_938' data-name='패스 938' d='M506.459,47.914c0,3.1-.01,6.2.013,9.3a6.436,6.436,0,0,0,.279,1.036c.059.313.2.757.04.927a1.344,1.344,0,0,1-1.007.3,1.07,1.07,0,0,1-1.011-1.1c-.024-1.2-.015-2.4-.015-3.6,0-5.187-.016-10.375.02-15.563A66.226,66.226,0,0,1,505.993,28c.678-3.781,1.258-7.58,2-11.35a28.384,28.384,0,0,1,5.972-13.057A9.951,9.951,0,0,1,521.28.041c5.617-.409,9.333,2.218,12.144,6.528a27.019,27.019,0,0,1,3.835,10.911c.669,4.353,1.2,8.727,1.666,13.1.3,2.788.377,5.6.542,8.4.208,3.52.574,7.043.556,10.563-.017,3.381-.435,6.761-.683,10.14a.924.924,0,0,1-1.153.958,1.185,1.185,0,0,1-.887-1.419c.3-2.16.678-4.32.792-6.492a101.262,101.262,0,0,0-.6-13.924c-.243-2.847-.3-5.709-.556-8.555-.282-3.08-.625-6.159-1.095-9.217a68.024,68.024,0,0,0-1.628-8.155,17.279,17.279,0,0,0-5.661-9,9.909,9.909,0,0,0-7.375-2.011,8.562,8.562,0,0,0-6.393,3.757,28.386,28.386,0,0,0-5.09,12.31c-.907,4.827-1.8,9.662-2.463,14.522-.417,3.037-.453,6.125-.573,9.193-.082,2.083-.016,4.171-.016,6.257h-.183' transform='translate(-304.848 0)' fill='%231a1311'/%3E%3Cpath id='패스_939' data-name='패스 939' d='M795.915,59.383c-2.445-.171-4.746-.337-7.047-.492-.682-.046-1.367-.061-2.05-.093-.757-.036-1.22-.379-1.17-.913.065-.7.583-.84,1.157-.808,2.2.121,4.408.2,6.6.41a21.189,21.189,0,0,0,12.033-2.1,12.21,12.21,0,0,0,6.367-8.4,12.772,12.772,0,0,0-3.92-13.052,14.945,14.945,0,0,0-8.763-3.778c-2.894-.353-5.811-.671-8.384-2.183-3.726-2.191-6.671-5.077-7.553-9.513-1.052-5.289.655-9.6,4.767-13.053A19.924,19.924,0,0,1,797.8,1.193a39.2,39.2,0,0,1,10-.465c1.385.124,2.782.123,4.174.143.546.008,1.02.126,1.044.729.025.636-.429.843-1.024.83-2.682-.059-5.368-.211-8.047-.132a31.068,31.068,0,0,0-10.777,1.966A14.723,14.723,0,0,0,786.6,9.387a11.143,11.143,0,0,0,1.442,14.381,15.475,15.475,0,0,0,9.508,4.42,21.918,21.918,0,0,1,7.224,1.625c6.639,3.2,9.807,8.626,9.123,15.39-.6,5.942-3.726,10.367-9.514,12.542a25.684,25.684,0,0,1-4.218,1.206c-1.436.273-2.917.307-4.246.433' transform='translate(-472.821 -0.357)' fill='%231a1311'/%3E%3Cpath id='패스_940' data-name='패스 940' d='M235.757,59.758c-2.3-.159-4.6-.321-6.9-.474-.708-.047-1.417-.062-2.126-.1-.573-.032-1.112-.2-1.121-.876-.008-.7.532-.874,1.112-.842,2.252.126,4.507.231,6.753.426a21.093,21.093,0,0,0,12.085-2.209,12.34,12.34,0,0,0,6.35-8.937,12.731,12.731,0,0,0-3.987-12.35,14.969,14.969,0,0,0-8.811-3.848c-2.894-.353-5.81-.665-8.389-2.168-3.689-2.15-6.634-5-7.551-9.347-1.2-5.7.8-10.222,5.361-13.739A20.3,20.3,0,0,1,237.8,1.576a38.827,38.827,0,0,1,10-.461c1.385.122,2.782.118,4.174.141.557.009,1,.164,1,.768,0,.589-.422.8-.989.79-2.707-.058-5.419-.213-8.122-.131a30.594,30.594,0,0,0-10.774,1.98,14.518,14.518,0,0,0-6.813,5.522,11.145,11.145,0,0,0,1.638,13.887,15.41,15.41,0,0,0,9.552,4.5c2.639.3,5.321.568,7.711,1.832,6.611,3.495,9.325,8.726,8.664,15.227a14.214,14.214,0,0,1-9.677,12.6,22.6,22.6,0,0,1-8.4,1.532' transform='translate(-134.576 -0.59)' fill='%231a1311'/%3E%3Cpath id='패스_941' data-name='패스 941' d='M615.31,56.473c.375-1.593.794-3.187,1.124-4.8,1.639-8.062,3.228-16.136,4.887-24.192,1.09-5.294,2.289-10.559,3.4-15.846.628-2.978,1.171-5.979,1.785-8.961a7.708,7.708,0,0,1,.6-1.682A.938.938,0,0,1,628.6.547c.468.387.352.973.071,1.674A22.618,22.618,0,0,0,627.436,6.2c-.985,4.967-1.813,9.975-2.835,14.932-1.51,7.322-3.144,14.611-4.708,21.918-1.011,4.721-1.976,9.454-3,14.171a20.242,20.242,0,0,1-.947,3.111c-.156.4-.625.89-.935.875s-.771-.56-.861-.962c-.579-2.607-1.008-5.259-1.615-7.856-.77-3.3-1.7-6.54-2.492-9.83Q607.5,31.93,605.022,21.279c-1.141-4.892-2.237-9.8-3.347-14.7a11.452,11.452,0,0,0-2.029-4.8,1.2,1.2,0,0,1,.012-1.625c.444-.363.935-.07,1.369.552,2.23,3.2,2.623,7.16,3.521,10.905C607.11,22.3,609.622,33,612.173,43.692c1.011,4.237,2.074,8.459,3.137,12.781' transform='translate(-361.97 0)' fill='%231a1311'/%3E%3Cpath id='패스_942' data-name='패스 942' d='M340.427,61.416a37.312,37.312,0,0,1-9.923-1.2c-8.106-2.461-13-8.03-15.042-16.127a54.113,54.113,0,0,1-1.1-7.578,43.539,43.539,0,0,1-.29-6.071,42.49,42.49,0,0,1,2.266-13.724,22.712,22.712,0,0,1,7.626-10.505,20.6,20.6,0,0,1,9.5-3.775c2.2-.314,4.441-.334,6.664-.485a12.171,12.171,0,0,1,1.9-.1,1.813,1.813,0,0,1,1.072.534.884.884,0,0,1-.118.868,2.593,2.593,0,0,1-1.072.252,2.216,2.216,0,0,1-.3-.029c-4.831.1-9.616.417-14.063,2.614a19.343,19.343,0,0,0-8.525,8.891,29.145,29.145,0,0,0-2.81,10.337,42.841,42.841,0,0,0-.423,6.52c.175,4.732.36,9.518,1.992,14.012,1.968,5.422,5.418,9.6,10.937,11.87a27.419,27.419,0,0,0,8.572,1.8c1.867.137,3.747.112,5.622.142.6.01.987.25,1.016.873.028.606-.34.869-.909.875-.863.009-1.726,0-2.589,0' transform='translate(-189.674 -1.109)' fill='%231a1311'/%3E%3Cpath id='패스_943' data-name='패스 943' d='M73.579,27l-.793-2.086-3.259-8.565L67.911,12.1a6.09,6.09,0,0,0-.838-1.9c-.545-.607-1.24-.409-1.9-.152q-4.179,1.625-8.33,3.322-4.484,1.832-8.933,3.748a65.783,65.783,0,0,1-9.366-5.723q-.531-.389-1.053-.789a2.4,2.4,0,0,0-1.3-.7c-.946-.033-1.438,1.167-1.85,1.844a47.528,47.528,0,0,0-2.6,4.884q-.939,2.047-1.688,4.172l-2.911-7.3-.881-2.21A3.007,3.007,0,0,0,25.2,9.675a2.276,2.276,0,0,0-2.094.175l-2.226.9-8.832,3.568-2.227.9a12.753,12.753,0,0,0-2.036.863,1.545,1.545,0,0,0-.729,1.785A19.023,19.023,0,0,0,7.935,20l3.9,9.31c-1.21.215-2.417.44-3.622.681q-1.121.225-2.239.464a4.754,4.754,0,0,0-1.727.539,1.692,1.692,0,0,0-.606,1.842c.129.751.284,1.5.426,2.246l.843,4.438q.415,2.184.83,4.37a19.241,19.241,0,0,0-3.245.389,5.509,5.509,0,0,0-1.877.573A1.54,1.54,0,0,0,.08,46.628c.173.624.447,1.225.641,1.845.2.648.381,1.3.54,1.963.324,1.348.566,2.715.775,4.085.416,2.731.7,5.483,1.229,8.2A5.717,5.717,0,0,0,3.8,64.653a1.7,1.7,0,0,0,1.61.737,15.776,15.776,0,0,0,2.1-.4l2.178-.464,9.7-2.068.722,3.2c.236,1.047.334,2.48,1.683,2.58a6.8,6.8,0,0,0,1.724-.261l1.884-.367,3.61-.7,14.756-2.874a2.881,2.881,0,0,0,1.642-.689,1.954,1.954,0,0,0,.5-1.318c.021-.641-.25-1.318-.273-1.969l1.536,1.186a24.97,24.97,0,0,0,2,1.53,1.783,1.783,0,0,0,2.2-.366q.947-.74,1.865-1.518A63.377,63.377,0,0,0,59.9,54.352c1.032-1.174,2.015-2.388,2.961-3.632q2.961.046,5.922.045.8,0,1.594-.006a9.117,9.117,0,0,0,1.514-.045,1.156,1.156,0,0,0,.927-.726,3.179,3.179,0,0,0-.037-1.447c-.523-3.9-1.619-7.69-2.375-11.548a37.808,37.808,0,0,1-.709-5.5.733.733,0,0,0,.285-.1l1.957-1.173a5.885,5.885,0,0,0,1.666-1.141c.519-.655.232-1.391-.031-2.083M1.438,46.019c-.012-.038.008-.029,0,0M72.271,28.33c-.328.2-.663.4-.994.6l-1.823,1.093a.732.732,0,0,0-1.237.51c.058,5.133,1.592,10.064,2.6,15.055.138.685.266,1.373.379,2.063.059.362.114.724.163,1.088.022.163.08.383.094.58-.189.01-.488-.013-.592-.012l-1.116.006q-1.2,0-2.391,0c-1.385,0-2.77-.021-4.155-.041a.655.655,0,0,0-.15-.126.744.744,0,0,0-.995.261,62.508,62.508,0,0,1-5.684,6.611q-1.541,1.56-3.187,3.01-.822.725-1.67,1.421-.41.336-.825.666c-.15.119-.483.481-.669.462-.1-.011-.262-.174-.349-.239-.189-.143-.375-.29-.562-.434l-1.062-.82-2.25-1.737a.719.719,0,0,0-.937.183.7.7,0,0,0-.528.484,4.938,4.938,0,0,0,.087,2.423,1.992,1.992,0,0,1,.031.748c-.074.263-.42.319-.743.385-2.246.456-4.5.876-6.75,1.315l-13.5,2.629-.942.183c-.136.027-.482.157-.628.1a.087.087,0,0,0-.022-.04,1.221,1.221,0,0,1-.093-.387q-.107-.469-.212-.938l-.882-3.909a.659.659,0,0,0-.933-.463A.72.72,0,0,0,19.265,61L11.252,62.7l-4.046.862a15.3,15.3,0,0,1-1.8.368c-.116.01-.28.039-.371-.046-.157-.146-.168-.572-.211-.772-1.053-4.909-1.171-10-2.64-14.824-.2-.656-.461-1.289-.671-1.941-.029-.091-.033-.227-.071-.311a.144.144,0,0,1,.031-.014,9.357,9.357,0,0,0,.962-.256,17.492,17.492,0,0,1,4.351-.442.73.73,0,0,0,.454-1.286L5.719,36.014Q5.527,35,5.335,33.99l-.192-1.012c-.032-.168-.206-.619-.106-.777.046-.072.276-.112.346-.131.321-.087.652-.147.977-.216q1-.214,2.007-.417,2.319-.468,4.65-.871a.733.733,0,0,0,.508-.894c-.006-.02-.015-.037-.022-.056a.492.492,0,0,0-.036-.146L10.1,21.435,9.246,19.39l-.4-.949a3.448,3.448,0,0,1-.406-1.026c0-.01,0-.016,0-.023s.006,0,.01-.006a.781.781,0,0,1,.266-.159c.29-.141.6-.248.9-.369l2.078-.839,8.164-3.3c1.36-.55,2.716-1.114,4.082-1.649.148-.058.392-.206.547-.124s.254.44.316.594l.793,1.988,3.671,9.2a.893.893,0,0,0,.347.432.752.752,0,0,0,1.272-.261,46.972,46.972,0,0,1,4.08-9.352q.308-.537.63-1.066.151-.249.306-.5a5.891,5.891,0,0,0,.352-.511c.023.014.048.029.066.043.185.141.368.285.553.425q.524.4,1.055.787,2.067,1.509,4.248,2.852,2.491,1.534,5.111,2.842h0a.771.771,0,0,0,.9.135q7.571-3.263,15.244-6.285.952-.374,1.9-.746l.44-.171c.068-.026.135-.054.2-.078a.405.405,0,0,1,.062-.015l.005.011c.048.156.118.309.176.462l1.5,3.947,2.976,7.82c.548,1.44,1.115,2.873,1.644,4.32.109.3.19.333-.075.5' transform='translate(0 -5.723)' fill='%231a1311'/%3E%3C/g%3E%3C/svg%3E");
+}
+.xyzpc{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='435.44' height='313.733' viewBox='0 0 435.44 313.733'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1098' data-name='사각형 1098' width='435.441' height='313.733' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_486' data-name='그룹 486' transform='translate(-723.559 -3663.633)'%3E%3Cg id='그룹_276' data-name='그룹 276' transform='translate(723.559 3663.633)'%3E%3Cg id='그룹_267' data-name='그룹 267' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_214' data-name='패스 214' d='M208.761,2.782C162.672,5.91,116.461,8.9,70.91,16.936c-18.6,3.284-39.083,7.026-51.534,22.678C7.971,53.953,5.651,73.163,4.175,90.822c-4,47.983-6.016,96.4-1.947,144.448.957,11.3,2.046,22.691,4.006,33.869,1.531,8.739,4.373,17.755,11.316,23.731,7.31,6.287,17.081,8.442,26.259,10.4,11.164,2.383,22.441,4.191,33.763,5.623,47.366,5.986,95.026,5.267,142.64,3.891,45.046-1.3,90.195-1.142,135.172-4.148q17.335-1.158,34.608-3.006c9.131-.987,17.887-3.046,25.675-8.145a37.6,37.6,0,0,0,15.9-21.513c2.766-9.778,2.7-20.282,3.076-30.354,1.835-48.61.32-97.287-2.812-145.815-1.558-24.14-2.884-48.485-5.729-72.513-.983-8.316-3.64-16.22-11.356-20.527-8.26-4.61-18.652-4.449-27.813-4.986C339.508-1.013,291.983-.06,244.528,1.528q-17.885.6-35.766,1.254c-2.891.1-2.9,4.607,0,4.5,45.449-1.6,90.921-3.429,136.406-2.591q16.85.312,33.691,1.142c9.712.488,20.556.026,29.872,3.191,11.237,3.815,12.554,14.138,13.471,24.539q1.544,17.568,2.917,35.143c3.538,45.772,5.96,91.66,5.811,137.581q-.054,17.618-.64,35.228c-.36,10.55-.1,21.675-2.719,31.971a33.989,33.989,0,0,1-17.425,22.035c-9.234,4.973-19.553,5.6-29.79,6.58-42.264,4.056-84.7,4.369-127.11,5.293-45.1.983-90.244,3.389-135.334.67-22.625-1.363-45.281-3.65-67.536-8.042-9.412-1.855-20.078-3.412-28.067-9.121-8.26-5.9-10.689-16.048-12.151-25.533-7-45.4-6.6-91.983-4.039-137.726,1.139-20.269,1.363-41.5,6.042-61.345,2.066-8.745,5.363-17.464,11.164-24.447,6.445-7.762,15.378-12.4,24.886-15.332,9.748-3,19.933-4.61,29.971-6.287q16.306-2.718,32.724-4.68c21.411-2.594,42.911-4.392,64.421-5.957,11.141-.809,22.289-1.558,33.433-2.313,2.878-.195,2.9-4.7,0-4.5' transform='translate(-0.001 -0.001)' fill='%231a1311'/%3E%3Cpath id='패스_215' data-name='패스 215' d='M373.882,11.027A2305.339,2305.339,0,0,0,89.529,17.591c-20.853,1.772-42.594,4.135-60.141,15.54C26.243,35.174,23.2,37.569,21.3,40.8a30.13,30.13,0,0,0-3,9.062C5.08,111.148,9.928,173.447,9.624,235.677c-.033,7.158,4.8,14.1,10.758,18.068,4.785,3.178,10.808,3.683,16.543,4.056,33.14,2.152,66.338,4.2,99.544,3.878,77.826-.762,149.686-4.386,226.485-15.055a25.08,25.08,0,0,0,12.24-5.165c5.557-4.491,8.722-11.834,8.993-18.972,2.683-71.285-1.228-133.865-5.313-211.348' transform='translate(20.701 21.402)' fill='%231a1311'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 27.215rem;
+    height: 19.6rem;
+}
+
+.xyz-d-logotitle{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='97.742' height='67.153' viewBox='0 0 97.742 67.153'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1394' data-name='사각형 1394' width='97.742' height='67.153' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_505' data-name='그룹 505' transform='translate(0 0)'%3E%3Cg id='그룹_504' data-name='그룹 504' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_1035' data-name='패스 1035' d='M74.886,37.293a28.423,28.423,0,0,0-10.546,1.736c-2.528.942-5.577,2.655-5.05,5.841.45,2.721,3.121,4.621,5.689,5.092a9.87,9.87,0,0,0,7.67-1.8,17.235,17.235,0,0,0,5.637-8.564H75.97A99.1,99.1,0,0,1,78.008,63.73q-.055,1.434-.152,2.866a11.95,11.95,0,0,1-.322,3.028c-.358,1.022-1.222.905-2.107.674-2.357-.616-4.643-1.907-7.056-.75-1.392.668-.176,2.738,1.212,2.073,1.027-.492,2.368.067,3.358.4a10.651,10.651,0,0,0,3.644.844c3.944-.137,3.625-5.1,3.768-7.9a101.732,101.732,0,0,0-2.069-26c-.259-1.235-1.96-1.043-2.315,0-.968,2.854-2.482,5.793-5.062,7.5a7.125,7.125,0,0,1-7.054.614c-1.052-.548-2.314-1.693-2.223-3,.09-1.276,1.605-2.014,2.627-2.455a25.478,25.478,0,0,1,10.629-1.931,1.2,1.2,0,0,0,0-2.4' transform='translate(-9.076 -5.713)' fill='%231a1311'/%3E%3Cpath id='패스_1036' data-name='패스 1036' d='M.283,1.154A131.469,131.469,0,0,0,.6,22.393q.5,5.145,1.39,10.244.459,2.619,1.025,5.217A25.185,25.185,0,0,0,4.23,42.371C5.28,44.846,7.572,47.415,10.458,46c1.387-.678.172-2.749-1.212-2.072-1.18.577-2.213-1.247-2.628-2.076A20.316,20.316,0,0,1,5.29,37.015q-1.283-5.938-2-11.98a131.45,131.45,0,0,1-.6-23.881c.1-1.542-2.3-1.536-2.4,0' transform='translate(0 0)' fill='%231a1311'/%3E%3Cpath id='패스_1037' data-name='패스 1037' d='M26.3,36.609a11.247,11.247,0,0,0,2,10.7,10.509,10.509,0,0,0,10.2,3.545,11.267,11.267,0,0,0,5.081-2.384c1.461-1.2,3.067-3.093,2.53-5.122-.5-1.88-2.18-3.675-3.61-4.921a17.58,17.58,0,0,0-4.884-3,16.809,16.809,0,0,0-12.637-.165c-1.41.577-.793,2.9.638,2.314a14.9,14.9,0,0,1,16.79,4.182,7.828,7.828,0,0,1,1.266,1.882c.362.879-.255,1.594-.828,2.223a8.52,8.52,0,0,1-3.692,2.351,8.289,8.289,0,0,1-8.257-1.627,8.887,8.887,0,0,1-2.279-9.335c.519-1.459-1.8-2.086-2.314-.638' transform='translate(-3.705 -5.226)' fill='%231a1311'/%3E%3Cpath id='패스_1038' data-name='패스 1038' d='M105.477,30.711c-3.923.018-8.115,1.207-10.469,4.565a10,10,0,0,0-.533,10.051,9.475,9.475,0,0,0,16.895-.9,9.853,9.853,0,0,0-2.36-10.739c-1.145-1.032-2.847.66-1.7,1.7a7.412,7.412,0,0,1,2.13,7.205,6.633,6.633,0,0,1-5.461,5,7,7,0,0,1-6.934-2.626,7.593,7.593,0,0,1-.479-7.634c1.686-3.214,5.537-4.2,8.908-4.215a1.2,1.2,0,0,0,0-2.4' transform='translate(-14.308 -4.706)' fill='%231a1311'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: 3.6rem;
+    height: 2.611rem;
+    margin-left: -1rem;
+    margin-top: -0.4rem;
+}
+
+.xyz-d-fonttitle{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='232.998' height='57.582' viewBox='0 0 232.998 57.582'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1393' data-name='사각형 1393' width='232.998' height='57.582'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_503' data-name='그룹 503' transform='translate(0 0)'%3E%3Cg id='그룹_502' data-name='그룹 502' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_1022' data-name='패스 1022' d='M.919,31.853H17.038a.953.953,0,0,0,0-1.9H.919a.953.953,0,0,0,0,1.9' transform='translate(0 -9.835)'/%3E%3Cpath id='패스_1023' data-name='패스 1023' d='M12.952,19.917V46.782a.953.953,0,0,0,1.9,0V19.917a.953.953,0,0,0-1.9,0' transform='translate(-4.253 -6.238)'/%3E%3Cpath id='패스_1024' data-name='패스 1024' d='M35.223,27.046c.584,2.686,1.12,5.388,1.754,8.063.4,1.69,1.412,3.806,3.478,3.618a3.951,3.951,0,0,0,2.5-1.549c.866-.985,1.694-2.007,2.513-3.031q2.561-3.2,4.9-6.568L48.59,27.1q.972,17.7,1.945,35.392c.066,1.218,1.971,1.226,1.9,0L50.494,27.1a.96.96,0,0,0-1.774-.48q-1.927,2.772-4.008,5.435-1.033,1.312-2.1,2.594a7.5,7.5,0,0,1-1.983,2.077c-1.491.725-1.9-2.527-2.079-3.339q-.743-3.423-1.488-6.846c-.26-1.2-2.1-.69-1.836.506' transform='translate(-11.558 -8.491)'/%3E%3Cpath id='패스_1025' data-name='패스 1025' d='M76.786,22.93a212.364,212.364,0,0,0,4.261,30.45c.257,1.2,2.093.69,1.836-.506A208.781,208.781,0,0,1,78.69,22.93c-.081-1.216-1.986-1.225-1.9,0' transform='translate(-25.214 -7.229)'/%3E%3Cpath id='패스_1026' data-name='패스 1026' d='M81.174,28.855c3-.662,6.53.277,8.147,3.053,1.455,2.5,1.054,5.875-1.628,7.326a4.362,4.362,0,0,1-4.1.13c-1.08-.579-2.042,1.064-.961,1.644A6.579,6.579,0,0,0,91.6,37.57c1.512-3.757-.622-8.155-4.156-9.842a10.441,10.441,0,0,0-6.775-.709c-1.2.264-.69,2.1.506,1.836' transform='translate(-26.265 -8.785)'/%3E%3Cpath id='패스_1027' data-name='패스 1027' d='M104.9,4.917q.05,13.517.1,27.033a.96.96,0,0,0,1.774.48l3.845-5.392c.966-1.354,1.968-3.03,3.533-3.762a3.767,3.767,0,0,1,4.385,1.373c1.25,1.49,1.67,3.524,2.1,5.368.277,1.193,2.114.688,1.836-.506a14.126,14.126,0,0,0-2.589-6.208,5.8,5.8,0,0,0-5.562-2.091c-1.969.46-3.339,2.1-4.478,3.653-1.6,2.181-3.143,4.4-4.712,6.6l1.774.48q-.05-13.517-.1-27.033a.953.953,0,0,0-1.9,0' transform='translate(-34.449 -1.313)'/%3E%3Cpath id='패스_1028' data-name='패스 1028' d='M154.35,31.177a22.544,22.544,0,0,0-8.365,1.377c-2.005.748-4.423,2.106-4.006,4.633.357,2.158,2.476,3.665,4.512,4.038a7.828,7.828,0,0,0,6.084-1.431A13.67,13.67,0,0,0,157.046,33H155.21a78.606,78.606,0,0,1,1.617,19.145q-.043,1.137-.12,2.273a9.478,9.478,0,0,1-.255,2.4c-.284.811-.969.718-1.671.535-1.869-.489-3.682-1.512-5.6-.6-1.1.53-.14,2.172.961,1.644.815-.39,1.878.053,2.664.316a8.448,8.448,0,0,0,2.89.67c3.128-.109,2.875-4.042,2.989-6.27A80.69,80.69,0,0,0,157.046,32.5c-.206-.979-1.555-.827-1.836,0a11.264,11.264,0,0,1-4.015,5.953,5.651,5.651,0,0,1-5.6.487c-.834-.435-1.836-1.343-1.763-2.376.071-1.012,1.273-1.6,2.083-1.947a20.208,20.208,0,0,1,8.43-1.531.953.953,0,0,0,0-1.9' transform='translate(-46.608 -10.236)'/%3E%3Cpath id='패스_1029' data-name='패스 1029' d='M181.995,25.672A21.893,21.893,0,0,0,184.445,39.8a.959.959,0,0,0,1.774-.481c-.173-5.242,5.572-7.552,9.643-9.027,1.143-.414.65-2.255-.506-1.836-2.724.987-5.512,2.014-7.729,3.942a9.02,9.02,0,0,0-3.312,6.92l1.774-.48a19.779,19.779,0,0,1-2.259-12.665.983.983,0,0,0-.665-1.171.959.959,0,0,0-1.171.665' transform='translate(-59.671 -8.201)'/%3E%3Cpath id='패스_1030' data-name='패스 1030' d='M217.8,18.98a4.177,4.177,0,0,1,4.392.681,7.1,7.1,0,0,1,2.38,4.572,23.533,23.533,0,0,1-.026,6.282c-.1.989-.249,1.973-.431,2.95a8.834,8.834,0,0,1-.889,2.974c-1.561,2.573-5.717,1.609-6.533-1.075-1.032-3.392,1.8-6.359,5.109-6.46,4.361-.134,6.973,3.695,9.078,6.961.662,1.026,2.31.073,1.643-.961-2.426-3.765-5.419-7.82-10.346-7.906-4.437-.077-8.209,3.553-7.49,8.105a5.743,5.743,0,0,0,8.7,3.854c1.977-1.32,2.38-3.76,2.733-5.942a31.489,31.489,0,0,0,.453-8.055c-.254-2.566-1.112-5.159-3.218-6.788a6.064,6.064,0,0,0-6.513-.835c-1.089.563-.127,2.207.961,1.644' transform='translate(-70.471 -5.493)'/%3E%3Cpath id='패스_1031' data-name='패스 1031' d='M251.729,22.2q2.581,15.409,5.163,30.817c.2,1.206,2.037.694,1.836-.506q-2.581-15.409-5.163-30.817c-.2-1.206-2.036-.694-1.836.506' transform='translate(-82.658 -6.899)'/%3E%3Cpath id='패스_1032' data-name='패스 1032' d='M256.489,28.361a3.862,3.862,0,0,1,3.433-2.263,4.9,4.9,0,0,1,4.165,1.609c2.363,2.849.385,7.669-2.727,9.156-1.6.765-4.05.831-5-.864a.952.952,0,0,0-1.643.961c1.236,2.208,4.022,2.67,6.3,2.047a8.284,8.284,0,0,0,5.218-4.73,7.8,7.8,0,0,0-.177-7.055,6.552,6.552,0,0,0-5.409-3.034,5.923,5.923,0,0,0-5.8,3.212.984.984,0,0,0,.342,1.3.958.958,0,0,0,1.3-.341' transform='translate(-83.602 -7.94)'/%3E%3Cpath id='패스_1033' data-name='패스 1033' d='M279.879.917a122.959,122.959,0,0,0,1.548,25.7.961.961,0,0,0,1.74.227,20.508,20.508,0,0,1,3.251-4.58,20.9,20.9,0,0,1,2.005-1.857,7.449,7.449,0,0,1,2.478-1.547c1.705-.465,3.428,1.656,4.391,2.8a15.394,15.394,0,0,1,2.781,5.022c.385,1.157,2.225.661,1.836-.506a17.856,17.856,0,0,0-3.271-5.863c-1.3-1.552-3.245-3.59-5.461-3.427-2.151.159-4.17,2.1-5.628,3.539a22.259,22.259,0,0,0-4.028,5.455l1.74.227A120.621,120.621,0,0,1,281.783.917c.056-1.225-1.848-1.222-1.9,0' transform='translate(-91.866 0)'/%3E%3Cpath id='패스_1034' data-name='패스 1034' d='M317.849,24.971a30.978,30.978,0,0,0,3.658,5.292,29.308,29.308,0,0,0,2.347,2.434,8.727,8.727,0,0,0,2.545,1.862c2.232.885,3.809-1.019,5.149-2.5l5.29-5.847-1.625-.673q.108,19.426.216,38.853a.952.952,0,0,0,1.9,0l-.215-38.853a.963.963,0,0,0-1.625-.674l-4.5,4.977c-.669.74-1.316,1.511-2.023,2.216s-1.4,1.085-2.333.488a19.109,19.109,0,0,1-3.963-3.844,28.49,28.49,0,0,1-3.178-4.692c-.589-1.075-2.233-.115-1.644.961' transform='translate(-104.334 -7.73)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: 10rem;
+    height: 2.745rem;
+}
+
+.xyz-d-p-title{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='322.702' height='38.715' viewBox='0 0 322.702 38.715'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1539' data-name='사각형 1539' width='322.702' height='38.715' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_538' data-name='그룹 538' transform='translate(0 0)'%3E%3Cg id='그룹_537' data-name='그룹 537' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_1043' data-name='패스 1043' d='M7.409,15.865C3.4,18.014-.551,21.716.063,26.7c.289,2.351,1.723,3.911,3.365,5.481,1.467,1.4,2.7,2.933,2.041,5.059A4.447,4.447,0,0,1,.986,40.487c-1.138-.106-1.131,1.672,0,1.778,3.911.363,7.3-3.923,6.281-7.663-.592-2.175-2.54-3.482-3.982-5.063A6,6,0,0,1,2.4,22.91c1.127-2.544,3.531-4.237,5.907-5.51,1.008-.54.112-2.075-.9-1.535' transform='translate(0 -5.875)' fill='%23070203'/%3E%3Cpath id='패스_1044' data-name='패스 1044' d='M25.192,13.99l1.877-.64a.942.942,0,0,0,.531-.408.908.908,0,0,0,.09-.685.9.9,0,0,0-.408-.531.888.888,0,0,0-.685-.09l-1.877.64a.945.945,0,0,0-.531.408.907.907,0,0,0-.089.685.9.9,0,0,0,.408.531.888.888,0,0,0,.685.09' transform='translate(-8.976 -4.327)' fill='%23070203'/%3E%3Cpath id='패스_1045' data-name='패스 1045' d='M30.933,30.874a39.227,39.227,0,0,1,1.346,12.9c-.07,1.142,1.707,1.138,1.777,0A40.77,40.77,0,0,0,32.647,30.4a.889.889,0,0,0-1.714.473' transform='translate(-11.524 -11.105)' fill='%23070203'/%3E%3Cpath id='패스_1046' data-name='패스 1046' d='M40.994,35.723a68.034,68.034,0,0,0,15.285-1.286c1.121-.223.646-1.936-.473-1.714a65.882,65.882,0,0,1-14.812,1.222c-1.144-.034-1.143,1.744,0,1.778' transform='translate(-14.97 -12.197)' fill='%23070203'/%3E%3Cpath id='패스_1047' data-name='패스 1047' d='M49.311,17.784l4.227,25.108c.19,1.126,1.9.648,1.714-.473L51.025,17.311c-.189-1.126-1.9-.648-1.714.473' transform='translate(-18.387 -6.217)' fill='%23070203'/%3E%3Cpath id='패스_1048' data-name='패스 1048' d='M79.6,34.591c3.089.379,7.056.344,8.361-3.134,1.1-2.931-1.706-5.318-4.515-4.844-3.136.53-4.442,4.109-4.159,6.921a20.64,20.64,0,0,0,1.384,5.18,11.286,11.286,0,0,0,2.239,3.913c2.879,3,7.016,1.636,10.294.174,1.042-.465.139-2-.9-1.534-2.181.973-5.076,2.21-7.332.779-1.907-1.211-2.651-3.8-3.288-5.83-.707-2.254-1.258-5.185.615-7.061a2.663,2.663,0,0,1,2.544-.761,1.868,1.868,0,0,1,1.588,1.8,3.116,3.116,0,0,1-2.369,2.595,11.134,11.134,0,0,1-4.464.025c-1.132-.139-1.122,1.64,0,1.778' transform='translate(-29.374 -9.903)' fill='%23070203'/%3E%3Cpath id='패스_1049' data-name='패스 1049' d='M154.7,25.83a10.2,10.2,0,0,0-9.491,6.029A9.585,9.585,0,0,0,147.6,42.668a9.844,9.844,0,0,0,6.021,2.7c1.141.088,1.135-1.689,0-1.778a8.356,8.356,0,0,1-7.433-8.531,8.356,8.356,0,0,1,8.509-7.457c1.144.05,1.141-1.728,0-1.778' transform='translate(-53.873 -9.631)' fill='%23070203'/%3E%3Cpath id='패스_1050' data-name='패스 1050' d='M179.471,29.77c-2.677-.574-4.523,1.721-5.5,3.918-1.183,2.662-2.013,5.879.293,8.186,2.245,2.248,5.558,2.24,8.437,1.452a10.7,10.7,0,0,0,4.233-1.9,4.819,4.819,0,0,0,1.578-3.47c.148-3.388-2.619-5.775-5.45-7.053-1.034-.467-1.939,1.064-.9,1.535,1.908.862,3.933,2.164,4.459,4.332a3.572,3.572,0,0,1-.379,2.772,5.127,5.127,0,0,1-2.846,1.709c-2.226.742-4.864,1.341-7.007.043a3.782,3.782,0,0,1-1.77-2.191,6.617,6.617,0,0,1,.574-3.719c.523-1.5,1.778-4.338,3.8-3.9,1.115.24,1.593-1.474.473-1.714' transform='translate(-64.452 -11.07)' fill='%23070203'/%3E%3Cpath id='패스_1051' data-name='패스 1051' d='M210.085,5.747q-.138,8.4.064,16.795c.088,3.582-.166,8.9,3.708,10.721,1.029.485,1.932-1.047.9-1.535-1.588-.749-2.2-2.351-2.5-3.984A39.6,39.6,0,0,1,211.9,21.3q-.166-7.774-.035-15.551a.889.889,0,0,0-1.778,0' transform='translate(-78.336 -1.823)' fill='%23070203'/%3E%3Cpath id='패스_1052' data-name='패스 1052' d='M233.892,29.07c-1.79,2.356-2.913,5.548-1.788,8.441a5.685,5.685,0,0,0,6.42,3.771,6.916,6.916,0,0,0,5.321-5.312,7.72,7.72,0,0,0-2.326-7.389,7.842,7.842,0,0,0-8.484-1.064c-1.027.5-.127,2.037.9,1.535a6.03,6.03,0,0,1,5.839.424,5.792,5.792,0,0,1,2.465,5.24,5.225,5.225,0,0,1-3.393,4.639,3.855,3.855,0,0,1-4.907-2.057c-1.226-2.486-.057-5.293,1.491-7.331a.9.9,0,0,0-.319-1.216.91.91,0,0,0-1.216.319' transform='translate(-86.402 -9.969)' fill='%23070203'/%3E%3Cpath id='패스_1053' data-name='패스 1053' d='M261.543,28.054A37.609,37.609,0,0,0,263.2,42.247a.9.9,0,0,0,1.714,0,12.9,12.9,0,0,1,10.573-9.6.9.9,0,0,0,.621-1.093.91.91,0,0,0-1.093-.621A14.623,14.623,0,0,0,263.2,41.774h1.714a36.208,36.208,0,0,1-1.594-13.72c.086-1.141-1.692-1.136-1.778,0' transform='translate(-97.51 -10.145)' fill='%23070203'/%3E%3Cpath id='패스_1054' data-name='패스 1054' d='M321.93,18.333q2.064,13.08,4.128,26.16c.178,1.126,1.891.648,1.714-.473l-4.129-26.16c-.177-1.126-1.89-.648-1.714.473' transform='translate(-120.068 -6.422)' fill='%23070203'/%3E%3Cpath id='패스_1055' data-name='패스 1055' d='M326.13,21.518a3.461,3.461,0,0,1,3.314-1.169A5.55,5.55,0,0,1,333,22.741a9.74,9.74,0,0,1,2,4.691,3.138,3.138,0,0,1-1.808,2.965,11.749,11.749,0,0,1-4.3,1.221.918.918,0,0,0-.888.888.893.893,0,0,0,.888.888c3.2-.4,7.6-1.509,7.883-5.424a7.333,7.333,0,0,0-.71-3.282A14.316,14.316,0,0,0,334.644,22,7.557,7.557,0,0,0,330,18.65a5.3,5.3,0,0,0-5.4,1.971c-.665.933.875,1.821,1.535.9' transform='translate(-121.006 -6.916)' fill='%23070203'/%3E%3Cpath id='패스_1056' data-name='패스 1056' d='M356.158,16.635a5.011,5.011,0,0,1,4.821.591A9.716,9.716,0,0,1,364,21.338c1.527,3.244,2.4,7.288-.7,9.9-2.37,1.991-6.682,2.136-8.28-.942a2.966,2.966,0,0,1,1.027-3.73,5.719,5.719,0,0,1,5.037-.95,17.757,17.757,0,0,1,5.35,2.255c1.237.8,2.75,2.077,2.415,3.726-.205,1.007,1.34,1.438,1.546.426.861-4.234-4.46-6.526-7.649-7.589a8.2,8.2,0,0,0-6.742.243,5.173,5.173,0,0,0-2.914,4.508,5.485,5.485,0,0,0,3.284,4.45,7.285,7.285,0,0,0,6.181-.043,7.847,7.847,0,0,0,3.991-4.149,9.889,9.889,0,0,0-.361-7.031c-.862-2.293-2.009-4.737-3.994-6.267a6.652,6.652,0,0,0-6.847-.891c-.928.451-.116,1.834.809,1.384' transform='translate(-131.695 -5.471)' fill='%23070203'/%3E%3Cpath id='패스_1057' data-name='패스 1057' d='M390.645.856q-.4,8.6-.738,17.2c-.126,3.2-.066,8.443,3.992,9.227,1.117.216,1.6-1.5.472-1.714-1.55-.3-2.179-1.706-2.491-3.122a23.283,23.283,0,0,1-.134-5.941q.313-7.828.677-15.654c.053-1.144-1.725-1.141-1.778,0' transform='translate(-145.415 0)' fill='%23070203'/%3E%3Cpath id='패스_1058' data-name='패스 1058' d='M411.867,31.988a6.4,6.4,0,0,0,6.936-2.77,4.906,4.906,0,0,0,.7-4.1,3.809,3.809,0,0,0-3.528-2.251,6.416,6.416,0,0,0-6.154,4.429,7.7,7.7,0,0,0,2.458,7.845c2.733,2.435,6.639,2.819,10.081,1.987,1.112-.268.641-1.983-.472-1.714a9.983,9.983,0,0,1-7.151-.692,6.533,6.533,0,0,1-3.432-5.26,4.71,4.71,0,0,1,3.12-4.6,3.4,3.4,0,0,1,2.764.132c.983.564.815,1.82.417,2.721a4.606,4.606,0,0,1-5.264,2.558.889.889,0,0,0-.473,1.714' transform='translate(-152.739 -8.525)' fill='%23070203'/%3E%3Cpath id='패스_1059' data-name='패스 1059' d='M442.435,25.286a29.7,29.7,0,0,0,9.154-1.146.89.89,0,0,0-.473-1.714,28.015,28.015,0,0,1-8.681,1.083c-1.144-.036-1.143,1.741,0,1.778' transform='translate(-164.699 -8.349)' fill='%23070203'/%3E%3Cpath id='패스_1060' data-name='패스 1060' d='M447.944,12.639q-.307,6.882-.4,13.771c-.026,1.971-.338,4.267.493,6.117a3.309,3.309,0,0,0,4.071,1.947c1.041-.433.584-2.153-.472-1.714-1.693.7-2.288-1.563-2.333-2.778-.07-1.907.017-3.831.051-5.739q.1-5.8.366-11.6c.051-1.144-1.727-1.141-1.778,0' transform='translate(-166.895 -4.394)' fill='%23070203'/%3E%3Cpath id='패스_1061' data-name='패스 1061' d='M467.285,26.294l6.134-.519a.911.911,0,0,0,.889-.888A.9.9,0,0,0,473.42,24l-6.134.519a.912.912,0,0,0-.888.889.9.9,0,0,0,.888.888' transform='translate(-173.956 -8.949)' fill='%23070203'/%3E%3Cpath id='패스_1062' data-name='패스 1062' d='M471.677,10.864a88.765,88.765,0,0,0,1.048,14.87c.309,1.99.625,4.2,2.079,5.717a4.057,4.057,0,0,0,5.011.84c.958-.618.068-2.158-.9-1.535-1.463.945-3.013-.415-3.6-1.73a20.562,20.562,0,0,1-1.149-5.649,87.239,87.239,0,0,1-.714-12.514.889.889,0,0,0-1.778,0' transform='translate(-175.922 -3.732)' fill='%23070203'/%3E%3Cpath id='패스_1063' data-name='패스 1063' d='M494.9,27.882a7.622,7.622,0,0,0,5.142-1.031,5.123,5.123,0,0,0,2.3-4.066c.038-3.146-3.39-4.8-6.147-4.1-3.225.827-4.8,4.4-5.086,7.425a9.816,9.816,0,0,0,2.946,8.281c3.286,2.8,7.8,1.867,11.35.114,1.025-.507.126-2.04-.9-1.534-2.45,1.211-5.644,2.161-8.234.8a7.019,7.019,0,0,1-3.383-5.626c-.237-2.368.32-5.125,2.122-6.8,1.393-1.3,4.207-1.584,5.278.321a2.919,2.919,0,0,1-.983,3.532,5.882,5.882,0,0,1-4.4.907c-1.134-.129-1.125,1.649,0,1.778' transform='translate(-183.155 -6.91)' fill='%23070203'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 14.56rem;
+    height: 2rem;
+    position: absolute;
+    margin-left: -1rem;
+}
+
+.xyzlogo_black{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='44.566' height='45.8' viewBox='0 0 44.566 45.8'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_9' data-name='사각형 9' width='44.566' height='45.8'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_493' data-name='그룹 493' transform='translate(-5.233 -4.63)'%3E%3Cg id='그룹_467' data-name='그룹 467' transform='translate(5.233 4.63)' style='isolation: isolate'%3E%3Cg id='그룹_18' data-name='그룹 18' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_49' data-name='패스 49' d='M44.536,32.741a20.725,20.725,0,0,1-.269-2.27l-.009-.146c-.166-2.621-.337-5.333-.419-8-.026-.79-.062-1.593-.1-2.37-.035-.747-.071-1.52-.095-2.28-.036-1.075-.052-1.976-.023-2.883a29.476,29.476,0,0,0-.2-3.74l-.042-.422a.3.3,0,0,0-.143-.255l-.179-.106a3.568,3.568,0,0,0-.857-.409,6.978,6.978,0,0,1-.75-.271l-.14-.057c-1.372-.549-2.72-1.21-4.024-1.849-.659-.322-1.339-.657-2.017-.972a26.543,26.543,0,0,0-3.165-1.3.474.474,0,0,0-.412,0c-.207.119-.417.236-.626.353l-.574.322-.948.542c-.545.312-1.088.623-1.634.929-1.023.572-2.023,1.215-2.99,1.837-.376.243-.752.485-1.129.723-1.129.711-2.308,1.381-3.45,2.028-.533.3-1.066.6-1.6.913-.413.241-.83.474-1.25.709-.543.3-1.1.619-1.648.943-1.3.775-2.671,1.6-4.434,2.694a.678.678,0,0,1-.681.048c-.582-.228-1.155-.5-1.712-.754-.505-.234-1.028-.477-1.554-.691-.86-.349-1.774-.725-2.655-1.13l-.55-.253c-.9-.411-1.832-.838-2.725-1.308a4.278,4.278,0,0,0-.451-.195l-.1-.038.171-.112c.195-.127.382-.249.569-.37.434-.282.9-.542,1.343-.793.336-.189.684-.384,1.02-.59.662-.4,1.325-.836,1.962-1.254.395-.258.788-.516,1.185-.769,1.252-.8,2.552-1.562,3.81-2.3q.866-.508,1.727-1.02c.388-.231.773-.463,1.159-.695.879-.531,1.788-1.08,2.695-1.594.762-.431,1.527-.883,2.267-1.32.9-.529,1.824-1.077,2.75-1.591a.8.8,0,0,0,.3-.25A.267.267,0,0,0,21.971.1a.272.272,0,0,0-.287-.088.932.932,0,0,0-.313.143l-.117.076c-.1.061-.2.125-.3.178-.745.395-1.476.836-2.183,1.263-.527.318-1.073.648-1.617.955-.868.488-1.733,1.008-2.569,1.513-.68.408-1.381.831-2.079,1.234-.477.275-.952.558-1.425.84-.671.4-1.364.811-2.057,1.2-.84.468-1.658,1-2.452,1.509-.372.241-.747.482-1.122.718-.186.116-.37.233-.557.351-.745.473-1.516.96-2.313,1.378A16.151,16.151,0,0,0,.25,12.823a.55.55,0,0,0-.25.469c0,.128.006.258.006.386,0,.209,0,.425.015.636.017.309.041.617.065.926.036.453.073.922.09,1.383.022.586.05,1.17.078,1.754.031.643.062,1.308.082,1.962.021.589.084,1.183.145,1.757.067.624.136,1.269.149,1.9a.59.59,0,0,0,.324.535,18.88,18.88,0,0,0,2.222,1.145c.293.135.587.27.878.411.566.274,1.15.533,1.715.783.385.171.77.34,1.152.516.743.343,1.469.75,2.172,1.143.457.255.93.52,1.4.764.63.326,1.264.665,1.878.993.805.43,1.638.875,2.467,1.293s1.676.851,2.511,1.278c1.2.613,2.44,1.247,3.668,1.859.412.206.6.373.566.759a.55.55,0,0,0,.02.17.666.666,0,0,1,.019.095c.054.582.1,1.172.145,1.745.062.789.126,1.6.212,2.406.049.454.086.918.123,1.367.021.257.041.513.065.77q.128,1.418.261,2.836c0,.044,0,.066,0,.073a.282.282,0,0,1-.072-.026l-.552-.258c-.689-.321-1.4-.653-2.09-1.008l-.829-.432c-1.516-.79-3.081-1.607-4.689-2.273-.781-.321-1.421-.607-2.015-.9-.335-.165-.68-.323-1.014-.477-.568-.265-1.159-.536-1.719-.841-.622-.34-1.286-.621-1.928-.892-.405-.172-.826-.349-1.229-.54-1.452-.683-2.938-1.348-4.335-1.97a3.693,3.693,0,0,0-.68-.225l-.046-.012C1.15,35.064.96,35.01.9,35.2s.127.261.218.293l.039.014c.417.167.828.368,1.226.565.3.145.6.294.909.43.686.3,1.377.627,2.045.94.548.258,1.116.524,1.678.777.919.414,1.852.866,2.769,1.343,1.108.575,2.244,1.065,3.343,1.539,1.934.833,3.834,1.756,5.65,2.743.71.387,1.45.748,2.164,1.1.469.23.956.467,1.427.708l.035.018a.915.915,0,0,0,.4.136.349.349,0,0,0,.2-.061c.222-.151.462-.282.695-.408.195-.105.4-.214.588-.336l.628-.4c1.643-1.05,3.342-2.135,5.063-3.136.721-.419,1.466-.852,2.185-1.3.352-.22.706-.435,1.059-.652.244-.15.488-.3.732-.45a.736.736,0,0,0,.372-.835c-.013-.126-.031-.252-.05-.378-.029-.207-.06-.42-.072-.629-.05-.889-.131-1.79-.211-2.661-.076-.843-.153-1.714-.205-2.572-.033-.556-.093-1.117-.151-1.659-.039-.371-.08-.742-.112-1.114-.043-.513-.1-1.032-.151-1.536-.084-.777-.169-1.582-.216-2.374q-.065-1.137-.127-2.274c-.078-1.372-.153-2.743-.238-4.115-.011-.2-.028-.4-.043-.6-.021-.255-.043-.519-.056-.778a.356.356,0,0,1,.22-.383,22.59,22.59,0,0,0,2.549-1.592c.937-.655,1.929-1.234,2.775-1.714l.377-.211c.284-.159.577-.323.864-.495l.36-.219c.9-.548,1.84-1.117,2.8-1.593a1.212,1.212,0,0,1,.127-.057c0,.032.009.093.012.129l.017.336c.013.263.026.526.046.789.067.938.062,1.9.057,2.821,0,.368,0,.735,0,1.1.009,1,.069,2.019.127,3l.036.612c.041.724.068,1.46.1,2.173.036.993.076,2.02.155,3.029.056.728.1,1.47.14,2.187.048.855.1,1.739.173,2.607l.011.124c.058.66.118,1.344.2,2.013.036.3.082.613.141.949.047.289.211.321.321.31s.267-.07.264-.36a2.6,2.6,0,0,0-.031-.351M42.251,10.823c-.174.083-.356.17-.526.267q-.812.463-1.624.934-.577.334-1.157.666c-.285.164-.574.324-.862.483-.636.355-1.293.72-1.919,1.122-.336.217-.669.439-1,.661-.581.387-1.183.788-1.792,1.151-.129.078-.26.153-.389.229-.159.092-.315.183-.473.278a.149.149,0,0,1-.193,0,23.338,23.338,0,0,0-4.9-2.374,16.721,16.721,0,0,1-1.541-.684c-.263-.128-.526-.256-.794-.377-.877-.4-1.793-.734-2.677-1.06l-.41-.15-.086-.035c1.259-.7,2.489-1.491,3.681-2.253.289-.185.58-.371.869-.554.648-.41,1.329-.79,1.989-1.157.183-.1.366-.2.546-.3l.15-.084c.85-.477,1.729-.97,2.578-1.489a.445.445,0,0,1,.475-.035c1.7.719,3.457,1.539,5.211,2.434a36.864,36.864,0,0,0,4.663,2.025c.121.043.243.1.361.154l.021.01a.247.247,0,0,1,.039.022.4.4,0,0,1-.041.023l-.2.1m-31,18.08c.015.077.011.087,0,.094s-.06-.03-.08-.044a.5.5,0,0,0-.057-.039c-.207-.121-.426-.221-.636-.319l-.188-.089c-.546-.259-1.079-.565-1.6-.86-.419-.242-.853-.491-1.292-.715-.537-.271-1.094-.52-1.633-.759-.4-.179-.821-.365-1.224-.56s-.8-.372-1.2-.549c-.653-.292-1.328-.6-1.969-.941-.1-.055-.141-.105-.143-.194-.017-.6-.086-1.185-.153-1.752a15.34,15.34,0,0,1-.131-1.532l0,0C.921,20.1.906,19.586.89,19.093.871,18.438.852,17.82.8,17.2.7,16.022.626,14.861.571,13.749c0-.074-.007-.15,0-.186a1.745,1.745,0,0,1,.185.073c.394.172.786.374,1.164.571.318.166.651.338.985.491l.673.309c1.362.625,2.772,1.272,4.191,1.837.483.193.964.42,1.427.637.245.116.49.231.736.341.2.09.418.179.693.284.094.036.12.073.12.162a31.94,31.94,0,0,0,.294,4.012,16.2,16.2,0,0,1,.093,1.874c0,.186,0,.372.007.558.009.409.012.819.016,1.228.007.95.013,1.931.089,2.9a.643.643,0,0,0,.011.067m10.082-5.45c-2.228,1.255-4.355,2.609-6.522,4-.665.428-1.367.823-2.045,1.206q-.372.208-.741.421a.221.221,0,0,1-.095.036s-.017-.016-.023-.091q-.036-.594-.065-1.188l-.015-.075h-.012l-.02-1.09c-.017-.914-.035-1.857-.08-2.785-.007-.162-.014-.325-.019-.487a12.9,12.9,0,0,0-.145-1.721l-.007-.038a.556.556,0,0,1-.009-.061l-.036-.522c-.067-.939-.136-1.91-.177-2.868,0-.081.007-.1.063-.129a18.572,18.572,0,0,0,1.709-.992c.212-.133.422-.266.636-.4,1.681-1.025,3.18-1.9,4.578-2.685.6-.338,1.207-.683,1.808-1.028l.82-.469.095-.053c0,.03,0,.074.009.116.013.249.026.5.039.747.038.735.076,1.5.153,2.244.081.8.088,1.611.093,2.4,0,.451.007.915.024,1.374.045,1.191.107,2.364.187,3.759a.341.341,0,0,1-.2.37M12.36,29.543c1.4-.747,2.769-1.607,4.09-2.438.848-.536,1.727-1.089,2.606-1.607q1.011-.594,2.027-1.177l.574-.33A1.162,1.162,0,0,1,22,23.837l.022.007a.408.408,0,0,1,.064.019c.414.191.843.368,1.257.539.609.251,1.238.511,1.831.819a19.263,19.263,0,0,0,1.8.781,18.064,18.064,0,0,1,1.863.817,26.485,26.485,0,0,0,3.208,1.43l.017.006-.011.007c-.015.011-.033.02-.045.03a17.425,17.425,0,0,1-2.12,1.392c-1.416.805-2.828,1.67-4.193,2.506q-.926.568-1.854,1.13c-.4.241-.825.446-1.238.645-.252.12-.51.245-.762.377-.065.035-.119.022-.218-.023-1.1-.516-2.011-.961-2.858-1.4q-1.643-.858-3.295-1.711l-2.192-1.138c-.17-.088-.336-.178-.5-.27-.131-.071-.264-.144-.395-.214l-.046-.025a.268.268,0,0,0,.027-.015M22.172,34.9a39.27,39.27,0,0,0,3.972-2.336l.723-.463c1.285-.818,2.576-1.562,3.667-2.182a10.362,10.362,0,0,0,1.28-.821,4.181,4.181,0,0,1,.65-.392c.086-.045.171-.089.255-.136a.182.182,0,0,1,.076-.029h0s.019.014.026.1c.054.684.131,1.377.205,2.048.091.817.185,1.66.238,2.5.038.618.088,1.245.136,1.852.054.678.111,1.378.152,2.068,0,.114.02.226.035.342a4.079,4.079,0,0,1,.041.569l.007.029c.125.3.011.512-.406.746-.64.358-1.478.833-2.3,1.336l-.3.186c-2.152,1.316-4.378,2.677-6.511,4.108-.219.145-.45.283-.672.417l-.155.093A1.331,1.331,0,0,0,23.15,45a.505.505,0,0,1-.031-.161q-.029-.272-.058-.544c-.04-.355-.081-.721-.112-1.082-.054-.66-.129-1.328-.2-1.973-.078-.682-.156-1.388-.212-2.084-.08-1.05-.183-2.111-.293-3.195a6.572,6.572,0,0,0-.127-.718l-.033-.147c-.024-.112,0-.158.093-.205M32.72,27.8c-.007,0-.031.012-.081,0-.234-.066-.43-.126-.618-.2a23.982,23.982,0,0,1-2.284-1.012,21.563,21.563,0,0,0-2.942-1.25,9.2,9.2,0,0,1-1.108-.49c-.2-.1-.4-.2-.606-.289-.745-.331-1.516-.63-2.261-.918l-.462-.179c-.123-.048-.174-.086-.181-.2q-.065-1.3-.14-2.588l-.012-.075h-.009c-.012-.359-.026-.718-.04-1.077-.028-.756-.057-1.538-.076-2.306-.026-.908-.1-1.825-.179-2.714-.057-.667-.116-1.356-.151-2.037,0-.027,0-.058,0-.08a.354.354,0,0,1,.058.019q.784.319,1.572.633c.613.246,1.224.492,1.837.741a9.411,9.411,0,0,1,.877.415,17.14,17.14,0,0,0,1.669.742l.263.105a30.439,30.439,0,0,1,2.863,1.378,13.934,13.934,0,0,1,1.308.776c.07.047.093.077.089.154a20,20,0,0,0,.09,2.61c.012.174.026.346.039.52.06.814.105,1.627.131,2.415l.013.352c.031.9.065,1.836.162,2.751.021.192.038.385.058.577.034.381.07.774.128,1.159.008.042,0,.061,0,.066' transform='translate(0 0)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+}
+.screenxyz_logo_black{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='179.658' height='25.064' viewBox='0 0 179.658 25.064'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1038' data-name='사각형 1038' width='179.658' height='25.064'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_523' data-name='그룹 523' transform='translate(-27.461 -19.365)'%3E%3Cg id='그룹_468' data-name='그룹 468' transform='translate(27.461 19.365)'%3E%3Cg id='그룹_205' data-name='그룹 205' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_113' data-name='패스 113' d='M243.365,23.731l0,0c-.056-.107-.117-.213-.178-.321l-.056-.1a6.417,6.417,0,0,1-.336-.632c-.543-1.224-1.163-2.433-1.763-3.6-.514-1-1.1-2.131-1.615-3.274-.4-.868-.882-1.7-1.353-2.51-.126-.212-.255-.434-.4-.679-.087-.15-.086-.215-.077-.239s.046-.072.206-.132c.207-.076.41-.17.589-.252l.065-.03c.108-.049.242-.111.374-.164a5,5,0,0,0,3.147-4.772,6.256,6.256,0,0,0-3.756-5.728,9.751,9.751,0,0,0-4.121-.836c-.068,0-.139.008-.207.014L233.52.5c-.688.06-1.544.135-2.36.149-.889.013-1.119.137-1.166,1.04V1.7c-.022.388-.044.776-.069,1.167a52.466,52.466,0,0,0-.128,5.605,24.406,24.406,0,0,1-.082,2.837l0,.029c-.053.789-.109,1.605-.1,2.414.012.629.034,1.23.061,1.951a44.067,44.067,0,0,1-.018,5.261l0,1.725c0,.493,0,1.02,0,1.548a1.292,1.292,0,0,0,.275.937.6.6,0,0,0,.445.164h.017c.314-.017.691-.224.7-1.112q.015-.878.029-1.756c.027-1.453.051-2.874.053-4.28,0-1.527-.035-3.028-.084-4.831a.435.435,0,0,1,.059-.3.454.454,0,0,1,.326-.074c1.772-.02,3.108-.063,4.331-.138h.011c.281-.015.387.018.507.253,2.056,3.957,3.657,7.227,5.036,10.293a6.966,6.966,0,0,0,1,1.716.781.781,0,0,0,.59.31H243a.711.711,0,0,0,.309-.094.733.733,0,0,0,.344-.935,4.2,4.2,0,0,0-.287-.655M232.553,11.466h-.375c-.259,0-.5,0-.743,0-.15,0-.2-.032-.21-.046a.224.224,0,0,1-.019-.167,19.05,19.05,0,0,0,.091-3.3l0-.084c-.006-.222-.013-.444-.017-.665-.031-1.324.039-2.675.1-3.867l.041-.852c.015-.285.074-.348.349-.379l.425-.046a19.838,19.838,0,0,1,2.15-.157,7.4,7.4,0,0,1,1.413.124l.157.031a7.464,7.464,0,0,1,2.2.661,4.53,4.53,0,0,1,2.461,3.892,4.018,4.018,0,0,1-2.142,3.662c-2.106,1.013-2.546,1.1-5.882,1.19' transform='translate(-182.191 -0.352)'/%3E%3Cpath id='패스_114' data-name='패스 114' d='M524.523,18.5c0-.66,0-1.19,0-1.669,0-.292-.009-.585-.015-.884q-.007-.423-.014-.846c-.043-2.5-.087-5.1.018-7.661.052-1.275.02-2.566-.012-3.817l0-.058c-.021-.793-.048-1.78-.042-2.723,0-.332-.132-.53-.4-.586l-.015,0a.531.531,0,0,0-.619.372,2.765,2.765,0,0,0-.215,1.162c0,.292.006.585.01.877v.039c.011.674.021,1.333.008,1.973-.053,2.717-.045,5.476-.037,8.143v.068q.006,1.066.009,2.132c0,.4.014.806.028,1.155.019.533.044,1.2.016,1.819a28.876,28.876,0,0,0,.027,3.311c.034.483.063,1.012.09,1.667,0,.02,0,.041.006.063v.009c.012.112,0,.117,0,.119s-.021.009-.1-.056l-.013-.012a.561.561,0,0,0-.057-.045l-.13-.093a5.126,5.126,0,0,1-.5-.39l-.554-.506a45.291,45.291,0,0,1-7.123-7.593c-.233-.342-.462-.664-.736-1.049l-.005-.007a21.886,21.886,0,0,1-2.076-3.331c-.7-1.511-1.331-3.066-1.915-4.53a7.837,7.837,0,0,1-.678-2.963,7.916,7.916,0,0,0-.121-1.248c-.008-.059-.017-.119-.026-.178s-.017-.11-.025-.164a.588.588,0,0,0-.6-.585h-.017c-.439.035-.441.459-.441.662,0,.028,0,.057,0,.086s0,.057,0,.094c-.029,1.13.012,2.3.048,3.327.03.823.067,1.848.06,2.82,0,.224-.01.449-.017.668l0,.062c-.014.4-.029.812-.011,1.219.055,1.208.015,2.462-.021,3.571-.023.739-.049,1.576-.047,2.383,0,.545-.033,1.116-.063,1.619l0,.043a16.632,16.632,0,0,0-.008,2.641,22.233,22.233,0,0,1,.093,3.807,4.078,4.078,0,0,0,.069,1.306.6.6,0,0,0,.606.488h.042a.6.6,0,0,0,.565-.507,1.874,1.874,0,0,0,.031-.442v-.042c-.005-.348,0-.693,0-1.077a28.68,28.68,0,0,0-.127-3.363,15.791,15.791,0,0,1,0-2.772v-.012c.038-.6.076-1.23.067-1.849-.014-.757.007-1.529.027-2.276l0-.114c.032-1.2.064-2.444-.026-3.671a9.168,9.168,0,0,1,0-1.559,29.087,29.087,0,0,0,3.178,6.11,40.857,40.857,0,0,0,5.844,6.979c.624.562,1.351,1.232,2.021,1.931a13.112,13.112,0,0,0,1.9,1.548l.092.065c.262.188.534.381.793.58a.806.806,0,0,0,.508.189.526.526,0,0,0,.159-.033.782.782,0,0,0,.435-.636,7.43,7.43,0,0,0,.154-2.015c-.1-1.25-.1-2.517-.094-3.743' transform='translate(-403.183 -0.193)'/%3E%3Cpath id='패스_115' data-name='패스 115' d='M336.224,24.5a.759.759,0,0,0-.147-.011h-.008a20.681,20.681,0,0,1-2.819.011c-.719-.031-1.461-.062-2.192-.032a44.284,44.284,0,0,1-4.794-.157l-.162-.01a.347.347,0,0,1-.235-.073.315.315,0,0,1-.029-.23,15.215,15.215,0,0,0,.043-2.274c-.063-1.57-.107-3.169-.148-4.714q-.042-1.653-.094-3.3a.5.5,0,0,1,.081-.363.412.412,0,0,1,.289-.1l.033,0c1.783-.048,3.684-.113,5.575-.337.667-.082,1.356-.1,2.023-.114.39-.01.788-.012,1.185-.043a.851.851,0,0,0,.608-.236.6.6,0,0,0,.138-.446c-.031-.583-.614-.606-.805-.614-.12,0-.239.01-.354.018a1.582,1.582,0,0,1-.394.013,12.571,12.571,0,0,0-3.091.116,33.543,33.543,0,0,1-3.555.254c-.479.018-.959.036-1.438.062l-.05,0a.385.385,0,0,1-.276-.053.335.335,0,0,1-.068-.243c-.013-.911-.088-1.832-.159-2.723-.084-1.051-.171-2.136-.158-3.208,0-.152,0-.3.009-.458a13.843,13.843,0,0,0-.073-2.15.2.2,0,0,1,.021-.148c.043-.049.172-.044.243-.039a24.758,24.758,0,0,0,2.755-.077c.68-.043,1.378-.089,2.07-.09.753,0,1.518-.014,2.26-.027,1.073-.018,2.184-.037,3.276-.021a2.134,2.134,0,0,0,.586-.069A.541.541,0,0,0,336.834,2a.561.561,0,0,0-.563-.516,34.343,34.343,0,0,0-4.593-.129l-.291.018c-1.346.088-2.722.134-4.048.178q-.811.024-1.621.055a3.006,3.006,0,0,1-.446-.027,2.211,2.211,0,0,0-.7,0c-.677.131-.836.33-.816,1.015.008.219.019.437.031.657.021.4.044.812.028,1.221l0,.07a26.036,26.036,0,0,0,.009,3.291c.27,2.995.421,5.956.45,8.8.009.946.073,1.9.135,2.826.052.788.109,1.6.127,2.407l.01.3a8.647,8.647,0,0,1-.172,2.534.582.582,0,0,0,.4.745,1.974,1.974,0,0,0,.583.108c.589.034,1.177.076,1.764.119a44.276,44.276,0,0,0,5.525.167h.4c.229,0,.455,0,.682,0l.5-.006c.644-.008,1.31-.016,1.966-.034h.044c.456-.025.7-.225.719-.595.036-.59-.514-.668-.728-.7' transform='translate(-256.888 -1.052)'/%3E%3Cpath id='패스_116' data-name='패스 116' d='M426.594,24.225c-.913-.006-1.839-.032-2.737-.057-1.353-.038-2.753-.078-4.134-.05-.572.011-1.154-.008-1.72-.027-.708-.024-1.442-.047-2.166-.012a.348.348,0,0,1-.272-.064.241.241,0,0,1-.03-.2,5.4,5.4,0,0,0,.012-1.142c-.012-.186-.025-.379-.027-.568l-.006-.9c-.021-2.49-.044-5.064.062-7.6.015-.351.112-.464.436-.482l.069,0c2.308-.029,4.786-.075,7.579-.141l.174,0a10.668,10.668,0,0,0,1.68-.13c.328-.062.495-.235.494-.515a.541.541,0,0,0-.555-.534,1.776,1.776,0,0,0-.23-.023c-3.035-.025-6.113.024-9.142.145-.2.008-.311-.014-.369-.068s-.075-.158-.075-.349c.011-.928-.013-1.764-.07-2.556-.144-1.966-.239-3.947-.289-5.888-.006-.277.06-.294.315-.315,1.314-.105,2.652-.119,3.948-.127.512,0,1.023-.007,1.535-.017l1.265,0c.984,0,1.968,0,2.951-.014a11.054,11.054,0,0,0,1.192-.078.582.582,0,1,0-.029-1.164c-.3-.014-.609-.009-.906,0H425.5c-.51.01-1.021.024-1.53.039-1.081.032-2.2.065-3.3.045l-.552-.01a34.116,34.116,0,0,0-5.086.152c-.677.089-.881.317-.871.977.009.519.006,1.047,0,1.558,0,1.084-.012,2.206.084,3.312a25.674,25.674,0,0,1,.1,2.678c-.023,1.476-.058,2.977-.094,4.429-.034,1.581-.072,3.215-.1,4.822-.014.941.005,1.9.026,2.82.012.539.025,1.08.03,1.619.014,1.358.2,1.547,1.565,1.554q2.676.015,5.346.046l2.089.02,1.06.011c.771.01,1.566.019,2.351.018l.09,0a.763.763,0,0,0,.523-.19.55.55,0,0,0,.146-.406c-.011-.6-.605-.6-.8-.6' transform='translate(-328.625 -1.057)'/%3E%3Cpath id='패스_117' data-name='패스 117' d='M140.24,24.412c-.057,0-.108.007-.164.011a11.2,11.2,0,0,1-1.6-.068c-.244-.022-.488-.044-.734-.06a10.267,10.267,0,0,1-6.289-2.634c-.306-.271-.621-.575-.96-.931-2.34-2.457-3.345-4.905-3.161-7.7a8.41,8.41,0,0,1,1.083-3.79,17.559,17.559,0,0,1,1.637-2.291,9.456,9.456,0,0,1,4.2-2.938,18.233,18.233,0,0,1,5.962-1c.236,0,.765-.008.818-.553.038-.375-.2-.637-.675-.736a5.955,5.955,0,0,0-1.838-.135,19.53,19.53,0,0,0-3.8.839l-.2.059a10.611,10.611,0,0,0-5.1,3.12,12.216,12.216,0,0,0-3.535,6.932,10.364,10.364,0,0,0,.6,4.836,13.339,13.339,0,0,0,3.626,5.217,12.346,12.346,0,0,0,8.516,3.482h.006l.036,0c.187-.01.379-.01.562-.01s.377,0,.566-.01a3.62,3.62,0,0,0,.58-.074.783.783,0,0,0,.7-.821.758.758,0,0,0-.255-.536.794.794,0,0,0-.584-.205' transform='translate(-99.835 -1.241)'/%3E%3Cpath id='패스_118' data-name='패스 118' d='M23.528,2.519a1.712,1.712,0,0,0-.443-.113,9.354,9.354,0,0,0-2.612.051A11.249,11.249,0,0,0,11.2,12.673c-.052.584-.088,1.181-.121,1.758-.046.8-.1,1.634-.193,2.444A8.737,8.737,0,0,1,2.273,24.4h0c-.138,0-.277,0-.413-.005a7.108,7.108,0,0,0-.939.02.892.892,0,1,0,.07,1.78c.587.015,1.205.021,1.836-.012a9.1,9.1,0,0,0,4.171-1.125,10.385,10.385,0,0,0,4.583-5.01,16.485,16.485,0,0,0,1.014-5.516l.017-.276A14.645,14.645,0,0,1,13,11.276a9.452,9.452,0,0,1,2.34-4.394A9.289,9.289,0,0,1,20.59,3.92a16.644,16.644,0,0,1,2.454-.136h.268l.062,0a.6.6,0,0,0,.64-.5.655.655,0,0,0-.486-.764' transform='translate(0 -1.855)'/%3E%3Cpath id='패스_119' data-name='패스 119' d='M630.708.1c-.189-.114-.558-.229-.9.283q-.175.265-.349.532l-.005.007c-.167.256-.375.574-.578.876-.09.132-.187.263-.284.395l0,.006c-.132.178-.268.361-.394.562-.4.63-.783,1.258-1.157,1.866l-.069.112q-.3.487-.6.973c-.126.2-.255.405-.383.607l-.031.049c-.258.4-.551.863-.808,1.319-.113.2-.224.4-.335.6l-.008.013a22.629,22.629,0,0,1-1.584,2.569c-.075.1-.145.2-.223.314-.105-.163-.2-.305-.293-.447l-.281-.418a20.245,20.245,0,0,1-1.415-2.321c-.658-1.338-1.426-2.637-2.169-3.893l-.37-.627c-.325-.551-.645-1.12-.954-1.67l-.118-.21q-.171-.3-.343-.607l-.075-.13c-.055-.094-.123-.212-.181-.328a.569.569,0,0,0-.61-.355.609.609,0,0,0-.543.463.924.924,0,0,0,.139.745q.094.158.189.314l.019.031c.114.189.232.385.342.58.583,1.03,1.11,1.968,1.611,2.867l.372.665c.392.7.8,1.423,1.172,2.147a24.949,24.949,0,0,0,1.459,2.555c.264.391.532.8.747,1.137l.03.047q.227.35.455.7c.037.056.037.056.012.1-.121.2-.229.408-.335.611l-.006.012c-.059.113-.118.226-.18.338-.086.157-.171.314-.256.475a12.07,12.07,0,0,1-.879,1.475,6.741,6.741,0,0,0-.611.971,19.588,19.588,0,0,1-1.113,1.863l-.471.73c-.457.709-.929,1.441-1.384,2.179-.268.435-.405.692-.55.965-.115.216-.234.44-.438.786l-.2.341a1.811,1.811,0,0,0-.192.486.659.659,0,0,0,1.223.474l.13-.217c.153-.256.363-.606.552-.933.131-.228.255-.446.375-.657l.068-.119c.569-1,1.06-1.87,1.919-3.138.287-.423.556-.867.816-1.3l.208-.341c.14-.229.279-.466.4-.674l.055-.093c.119-.2.237-.4.358-.6.1-.156.2-.319.283-.449.139-.217.282-.442.416-.676.183-.321.348-.638.508-.946l.017-.033.136-.259a26.213,26.213,0,0,1,1.68,2.769c.357.685.734,1.35,1.122,1.977.161.261.326.519.472.746l.038.059c.409.639.832,1.3,1.183,1.989.226.442.476.881.743,1.3s.544.827.8,1.2l.276.405a1.384,1.384,0,0,0,.218.257.6.6,0,0,0,.4.155H630a.662.662,0,0,0,.25-.066.586.586,0,0,0,.366-.567,1.051,1.051,0,0,0-.112-.467c-.14-.249-.3-.489-.453-.724l-.032-.049c-.109-.165-.227-.333-.331-.481l-.011-.016a9.062,9.062,0,0,1-.623-.969c-.565-1.071-1.114-2.022-1.679-2.908l-.129-.2c-.4-.624-.81-1.269-1.151-1.929-.435-.844-.916-1.681-1.469-2.559-.227-.36-.47-.725-.686-1.048l-.139-.209c.039-.061.078-.122.118-.186l.026-.043c.074-.12.152-.245.235-.36a26.525,26.525,0,0,0,1.908-3.08c.3-.566.646-1.17,1.061-1.848.309-.5.63-1.008.939-1.5l.043-.068c.2-.311.445-.7.677-1.071.114-.183.221-.367.325-.545l.016-.028c.127-.219.271-.466.423-.7.251-.385.507-.762.756-1.126l.046-.068c.169-.248.337-.5.5-.745A.752.752,0,0,0,631,.5.629.629,0,0,0,630.708.1' transform='translate(-488.425 0)'/%3E%3Cpath id='패스_120' data-name='패스 120' d='M813.039,24.076c-.1,0-.209-.006-.338,0l-.973,0c-.526,0-1.122,0-1.691-.017-.214,0-.446-.023-.633-.038l-.023,0c-.214-.017-.456-.036-.7-.04-.575-.008-1.142-.005-1.691,0h-.071c-1.091.007-2.219.014-3.335-.067-.544-.039-1.126-.034-1.55-.031h-.013c-.183,0-.366,0-.549,0-.212,0-.413.011-.635.025l-.073,0,.092-.17c.229-.42.465-.855.708-1.281.28-.49.566-.979.819-1.41l.024-.042c.214-.364.506-.864.779-1.339.515-.9,1.037-1.817,1.5-2.627l.959-1.688c.36-.633.72-1.266,1.084-1.908l.02-.036c.87-1.533,1.769-3.118,2.674-4.68.665-1.149,1.37-2.289,2.053-3.392l.112-.182c.282-.454.592-.925.868-1.344l.01-.016q.224-.338.445-.677l.138-.211c.137-.209.279-.425.409-.651a.824.824,0,0,0,.086-.741.854.854,0,0,0-.578-.482,1.611,1.611,0,0,0-.44-.081l-.142,0c-.591-.007-1.327-.018-2.034-.006-.255,0-.516.022-.726.037H809.6c-.248.017-.5.035-.755.036-.519,0-1.073,0-1.517,0h-.033c-.713-.006-1.521-.013-2.317.005-.166,0-.332.009-.5.015h-.016a11.8,11.8,0,0,1-1.643-.021,9.93,9.93,0,0,0-2.728.076.612.612,0,0,0-.553.559.622.622,0,0,0,.438.663,1.245,1.245,0,0,0,.528.055,8.277,8.277,0,0,1,1.792-.043l.177.015.139.012c.314.028.639.057.97.057q3.166,0,6.145-.018l2.07-.008-.215.315-.013.019c-.254.373-.542.8-.81,1.218-.2.321-.392.643-.574.955l-.009.015c-.179.3-.364.619-.555.922l-.021.032c-.728,1.15-1.481,2.34-2.168,3.555-.864,1.529-1.744,3.051-2.6,4.522l-.13.226q-.634,1.1-1.265,2.193c-.678,1.179-1.355,2.368-2.013,3.534-.473.838-.965,1.717-1.324,2.359l-.843,1.5a1.007,1.007,0,0,0-.122.761c.018.072.031.146.046.224l0,.011a.655.655,0,0,0,.789.588c.1-.011.194-.023.291-.035.19-.025.392-.05.594-.057.767-.019,1.4-.022,2-.009.345.007.692.027,1.027.047l.044,0c.232.013.52.03.8.04.258.009.527.009.723.008h.092c.185,0,.331,0,.486,0,.288.007.6.023.811.033l.06,0a13.678,13.678,0,0,0,1.781.01,8.043,8.043,0,0,1,1.171.032l.371.027c.394.025.915.053,1.457.053.263,0,.507-.006.747-.019.219-.012.434-.029.638-.053.588-.066.655-.469.656-.64a.69.69,0,0,0-.685-.7' transform='translate(-634.066 -0.739)'/%3E%3Cpath id='패스_121' data-name='패스 121' d='M723.065.811a.907.907,0,0,0-.331.3c-.432.7-.769,1.254-1.061,1.75-.253.431-.516.889-.69,1.191l-.025.043c-.4.693-.811,1.409-1.239,2.105-.7,1.146-1.45,2.279-2.171,3.374l-.065.1c-.224.341-.465.677-.7,1l-.012.017c-.171.239-.313.438-.458.646-.032.045-.063.094-.1.151q-.408-.594-.814-1.188c-.049-.071-.1-.141-.148-.211l-.022-.032c-.112-.158-.239-.337-.345-.514-.4-.655-.787-1.317-1.167-1.957l-.523-.881c-.04-.067-.078-.126-.115-.178a14.26,14.26,0,0,1-1.557-2.672,13.476,13.476,0,0,0-1.117-2.016c-.151-.238-.314-.458-.472-.672L709.8.982a.593.593,0,0,0-.7-.238.619.619,0,0,0-.42.6.933.933,0,0,0,.241.62,11.529,11.529,0,0,1,1.316,2.186l.086.19a14.808,14.808,0,0,0,.714,1.429c.4.672.812,1.332,1.216,1.977l.012.019c.249.4.506.808.757,1.217.12.2.233.4.343.6.135.244.274.5.433.744.422.66.869,1.319,1.3,1.957l.156.231a.918.918,0,0,0,.2.2l.007.006a.6.6,0,0,1,.066.059l.011.012c.007.151.011.3.015.475v.029c0,.147.009.329.017.507.006.115.019.228.031.329a3.26,3.26,0,0,1,.029.341c.021,1.675.04,3.435.054,5.234.005.656,0,1.239-.012,1.783,0,.184-.021.378-.036.566-.014.173-.029.352-.035.533-.012.336-.013.679-.014.985l0,.393c0,.035,0,.069,0,.1v.023a2.191,2.191,0,0,0,.008.363.628.628,0,0,0,.385.515.611.611,0,0,0,.226.043h.033a.67.67,0,0,0,.387-.154.749.749,0,0,0,.283-.607c0-.3.009-.608.025-.917.006-.121.019-.249.03-.352a5.327,5.327,0,0,0,.036-.579c-.016-2.1-.039-4.28-.059-6.2l-.018-1.762c0-.091-.007-.178-.012-.251l-.027-.349c-.021-.259-.041-.527-.053-.786a.277.277,0,0,1,.045-.1c.081-.131.171-.263.251-.381l.018-.026c.052-.076.1-.152.154-.229q.108-.165.214-.331c.1-.15.226-.355.355-.541.158-.228.325-.461.472-.666l.015-.02c.278-.387.565-.787.83-1.2.766-1.191,1.457-2.3,2.112-3.4.357-.6.7-1.211,1.022-1.8l.013-.023c.156-.282.311-.564.469-.845l.061-.109c.09-.16.191-.342.3-.513.166-.271.329-.532.5-.8l.235-.375a.589.589,0,0,0-.037-.758.615.615,0,0,0-.778-.12' transform='translate(-562.313 -0.561)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 11.228rem;
+    height: 1.566rem;
+    margin-bottom: 2rem;
+}
+.meowart_logo_black{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='185.683' height='32.522' viewBox='0 0 185.683 32.522'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1221' data-name='사각형 1221' width='185.683' height='32.522'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_520' data-name='그룹 520' transform='translate(0)'%3E%3Cg id='그룹_387' data-name='그룹 387' transform='translate(0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_922' data-name='패스 922' d='M573.936,35.577c.4-.033.8-.074,1.2-.1.983-.054,1.967-.084,2.949-.153s1.938-.168,2.906-.264c.244-.024.484-.087.725-.131.319-.058.636-.126.957-.17.653-.091,1.307-.169,1.96-.253.022,0,.045,0,.067,0,.944-.028,1.028.142,1.264.837.261.769.471,1.556.71,2.333.177.575.37,1.145.546,1.72.082.266.26.339.522.375a21.139,21.139,0,0,0,3.518.089c.548-.016,1.1,0,1.645-.005a1.718,1.718,0,0,1,1.1.293c.062-.314.13-.568.16-.826a3.473,3.473,0,0,1,.351-1.143c.255-.52.475-1.057.718-1.583a7.017,7.017,0,0,1,.437-.863,1.049,1.049,0,0,1,1.213-.49c.359.084.719.173,1.084.223.741.1,1.487.17,2.229.267a10.345,10.345,0,0,1,1.12.2,9.46,9.46,0,0,0,1.692.22c1.037.064,2.077.132,3.105.278a9.051,9.051,0,0,1,2.387.788c-.066.51-.1,1.019-.2,1.518-.144.743-.375,1.472-.485,2.219-.169,1.145-.283,2.3-.391,3.453a18.734,18.734,0,0,1-.348,2.547,16.671,16.671,0,0,0-.292,1.914,9.073,9.073,0,0,1-.515,2.173A22.875,22.875,0,0,0,605.1,55.5a11.747,11.747,0,0,1-.9,2.933c-.19.427-.338.872-.5,1.309a2.807,2.807,0,0,1-.522.965.572.572,0,0,1-.831.144A2.6,2.6,0,0,1,601.2,59.8a26.3,26.3,0,0,0-2.164-2.89,2.664,2.664,0,0,0-.21-.216,1.053,1.053,0,0,0-.836-.331,10.58,10.58,0,0,0-2.317.346,11.837,11.837,0,0,1-2.756.345c-1.879-.02-3.759-.058-5.638-.095-.368-.007-.737-.03-1.1-.062a2.7,2.7,0,0,0-1.59.438,7.1,7.1,0,0,0-.689.475c-.377.279-.74.576-1.122.848a6.266,6.266,0,0,0-1.371,1.457c-.264.359-.535.715-.824,1.054a3.153,3.153,0,0,1-.506.437c-.178.136-.259.134-.39-.054a3.593,3.593,0,0,1-.35-.643,32.954,32.954,0,0,1-1.8-5.489c-.34-1.465-.706-2.925-1.032-4.394-.271-1.218-.5-2.446-.751-3.668-.284-1.364-.6-2.721-.861-4.089-.16-.83-.269-1.671-.361-2.512a38.156,38.156,0,0,0-.657-4.427,1.305,1.305,0,0,1,.069-.754M599.109,47.85a.841.841,0,0,0-.583-.316,15.086,15.086,0,0,0-1.514-.256,4.641,4.641,0,0,0-1.127.054c-.291.045-.35.174-.363.507a1.142,1.142,0,0,0,.8.106,2.171,2.171,0,0,1,.891-.1c.477.033.953.08,1.43.122a.487.487,0,0,0,.462-.12M587.57,50.875c.225,0,.249-.009.368-.215a2.809,2.809,0,0,1,.186-.317,1.247,1.247,0,0,0,.234-1.183c-.068-.231-.229-.25-.4-.289a.287.287,0,0,0-.377.191c-.108.35-.209.7-.3,1.059-.027.112.021.242-.005.355-.068.3-.008.393.288.4m-1.879-3.583.047.11a5.392,5.392,0,0,0,.618-.058c.239-.049.47-.135.705-.2a1.218,1.218,0,0,1,.994-.024.653.653,0,0,0,.778-.12.775.775,0,0,0-.443-.438,1.3,1.3,0,0,0-1.039,0c-.506.2-1.015.4-1.519.6-.056.023-.095.089-.141.134m9.209,3.253c.395.294.637.25.8-.185a7.944,7.944,0,0,0,.247-.964.263.263,0,0,0-.024-.187.517.517,0,0,0-.865.075c-.1.222-.172.453-.268.709.379.106.053.364.113.552m-.168-3.887a.959.959,0,0,0,.922.325.224.224,0,0,0,.165-.092c.123-.269.347-.278.592-.254.211.021.422.038.632.058a2.355,2.355,0,0,0,.888-.022,1.5,1.5,0,0,0-.417-.162c-.458-.1-.916-.2-1.376-.275a2.753,2.753,0,0,0-.665-.039.786.786,0,0,0-.741.461m.118-.992c.3.267.685.358.9.167a.466.466,0,0,1,.455-.087c.309.048.618.1.929.125a1.057,1.057,0,0,0,.625-.1.6.6,0,0,0-.473-.235c-.285-.051-.57-.1-.856-.152s-.592-.107-.891-.133a.662.662,0,0,0-.686.411m-5.507.559a.657.657,0,0,0-.081-.188.937.937,0,0,0-1.021-.328c-.695.236-1.379.5-2.064.765-.076.029-.129.122-.248.241a1.538,1.538,0,0,0,.25-.017c.319-.1.637-.2.955-.3s.638-.2.958-.293a.359.359,0,0,1,.4.064c.256.26.54.188.849.056m.087-.9a4.94,4.94,0,0,0-3.419-.266c.007.216.16.194.307.194.49,0,.981-.006,1.471.007a2.827,2.827,0,0,1,.985.155.624.624,0,0,0,.656-.089m2.147,2.705c.445.083.64-.045.72-.46.072-.373.027-.432-.348-.447a.558.558,0,0,0-.115.017.99.99,0,0,0-.258.891' transform='translate(-485.318 -29.18)'/%3E%3Cpath id='패스_923' data-name='패스 923' d='M14.431,49.78c-.048.232-.112.467-.142.707a3.751,3.751,0,0,1-.4,1.268c-.254.5-.457,1.016-.686,1.524a7.533,7.533,0,0,1-.345.723,1.11,1.11,0,0,1-1.381.6q-.475-.1-.951-.2a8.683,8.683,0,0,0-1.395-.173,9.583,9.583,0,0,1-2.019-.305,8.49,8.49,0,0,0-1.723-.229c-1.037-.054-2.076-.138-3.1-.278a9.239,9.239,0,0,1-2.1-.674C.02,52.674-.009,52.57,0,52.4a11.912,11.912,0,0,1,.421-2.3,21.236,21.236,0,0,0,.493-3.135c.114-1,.172-2,.275-3,.032-.308.138-.608.192-.915.109-.626.237-1.251.3-1.882A9.143,9.143,0,0,1,2.212,38.8a22.5,22.5,0,0,0,1.164-4.422,11.64,11.64,0,0,1,.857-2.843c.214-.49.392-1,.584-1.494a2.544,2.544,0,0,1,.523-.925.537.537,0,0,1,.724-.131,2.345,2.345,0,0,1,1.081.922,26.805,26.805,0,0,0,2.1,2.852c.052.072.116.136.173.205a1.336,1.336,0,0,0,1.191.528,14.191,14.191,0,0,0,2.38-.382,11.208,11.208,0,0,1,2.492-.3c.939.009,1.879.038,2.818.053.571.009,1.142,0,1.712.013.76.018,1.521.034,2.28.083a2.4,2.4,0,0,0,1.559-.417c.823-.573,1.634-1.172,2.4-1.82a6.955,6.955,0,0,0,.973-1.189,5.834,5.834,0,0,1,1.041-1.174c.316-.246.415-.235.623.114a3.613,3.613,0,0,1,.2.422,34.847,34.847,0,0,1,1.982,6.2c.387,1.718.8,3.429,1.176,5.15.367,1.688.686,3.386,1.047,5.075.224,1.047.451,2.092.574,3.156.1.863.169,1.731.286,2.592.1.75.259,1.492.381,2.239A5.342,5.342,0,0,1,34.59,54a.266.266,0,0,1-.285.3c-.346.021-.691.057-1.037.069a33.343,33.343,0,0,0-3.446.244c-.21.029-.424.032-.636.042a22.92,22.92,0,0,0-3.091.393,20.766,20.766,0,0,1-2.325.3c-1.015.07-1.03-.194-1.258-.836-.253-.713-.453-1.446-.677-2.169-.2-.638-.4-1.275-.594-1.915a.419.419,0,0,0-.412-.327,18.944,18.944,0,0,0-2.709-.125c-.957.07-1.924.036-2.886.014a3.62,3.62,0,0,1-.8-.213M9.466,41.56c.356.26.533.224.73-.132.021-.039.032-.1.063-.114.263-.1.259-.359.344-.565a1.071,1.071,0,0,0-.113-.958.409.409,0,0,0-.416-.218.542.542,0,0,0-.482.623c0,.033,0,.067.009.1a2.554,2.554,0,0,1-.135,1.264m3.554,3.171.029-.088a1.208,1.208,0,0,0-.335-.177,1.831,1.831,0,0,0-.692-.038c-.652.151-1.295.342-1.937.531a1.96,1.96,0,0,0-.482.23c-.211.134-.227.312-.033.457a1.352,1.352,0,0,0,.393.15c.024.008.06-.02.094-.032l-.069-.3.309-.084c.559-.155,1.116-.317,1.678-.463.236-.061.48-.091.72-.134.108-.019.217-.035.325-.053m7.864-3.319c.277.176.492.029.719-.058a.521.521,0,0,0,.408-.536,2.637,2.637,0,0,1,.07-.358c.015-.126.113-.259-.005-.379a.668.668,0,0,0-.523-.256c-.186.013-.394.009-.483.223a2.169,2.169,0,0,0-.186,1.365m-9.842,6.131a.5.5,0,0,0,.627.086c.262-.125.525-.247.782-.381A1.786,1.786,0,0,1,13.475,47a.463.463,0,0,0,.452-.15,1.674,1.674,0,0,0-.3-.261,1.247,1.247,0,0,0-1.07-.062,5.562,5.562,0,0,0-1.514,1.017m.124-.675a5.211,5.211,0,0,1,.54-.593c.311-.25.653-.461.981-.69a.724.724,0,0,1,.535-.133.528.528,0,0,0,.5-.165.984.984,0,0,0-1.313-.138,12.3,12.3,0,0,0-1.1.965,1.513,1.513,0,0,0-.27.451.209.209,0,0,0,.126.3m9.847-.413a.451.451,0,0,0-.521-.049.509.509,0,0,1-.282.062c-.332-.024-.663-.068-.994-.1a.788.788,0,0,0-.756.26.5.5,0,0,0,.456.243c.533-.025,1.067-.056,1.6-.1a.674.674,0,0,0,.5-.314M15.3,44.271c.433.1.461.083.625-.264a.532.532,0,0,1,.133-.182.639.639,0,0,0,.182-.607c-.012-.148-.226-.257-.424-.253a.265.265,0,0,0-.294.249c-.044.251-.117.5-.172.746-.023.1-.033.209-.049.311m5.518,1.646a.378.378,0,0,0-.249-.535c-.29-.111-.582-.22-.88-.3A2.474,2.474,0,0,0,19.1,45a.35.35,0,0,0-.376.28.85.85,0,0,0,.927.2.754.754,0,0,1,.942.438ZM18.349,44.21a1.1,1.1,0,0,0,.283.1c.794.023,1.589.037,2.393.053-.033-.182-.166-.16-.285-.173-.574-.063-1.148-.124-1.721-.2a.785.785,0,0,0-.67.214' transform='translate(0 -23.841)'/%3E%3Cpath id='패스_924' data-name='패스 924' d='M827.246,59.143c-.151-.72-.256-1.422-.432-2.119-.224.046-.3.175-.271.324.089.511-.232.787-.583,1.04a5.22,5.22,0,0,1-.735.465c-.883.433-1.766.867-2.665,1.264a5.779,5.779,0,0,1-3.376.446,5.214,5.214,0,0,1-.9-.248,8.843,8.843,0,0,1-1.831-.974,2.874,2.874,0,0,1-.772-.783,7.713,7.713,0,0,1-1.2-3.129,3.823,3.823,0,0,1,.022-1.065c.087-.752.221-1.5.3-2.251.049-.442.029-.891.052-1.336a2.134,2.134,0,0,1,.082-.592c.173-.493.356-.985.573-1.46a2.371,2.371,0,0,1,.828-.952q.813-.561,1.659-1.072a4.722,4.722,0,0,1,1.823-.533c.752-.107,1.5-.228,2.259-.3a5.308,5.308,0,0,1,1.137.022c.833.1,1.663.217,2.491.344.318.049.629.146.951.223,0-.013.026-.045.021-.073-.089-.481-.149-.971-.278-1.441a2.468,2.468,0,0,0-1.843-1.89c-.552-.139-1.112-.25-1.673-.348a6.081,6.081,0,0,0-1.97.045c-1.116.17-2.238.3-3.352.479a7.535,7.535,0,0,1-1.826.207l-.249-.023a1.64,1.64,0,0,1-.023-.266c.033-.433.075-.866.108-1.3.018-.233.03-.467.031-.7,0-.993,0-1.985,0-2.978,0-.8.164-1,.952-1.156a9.991,9.991,0,0,1,1.1-.139,9.179,9.179,0,0,0,1.927-.432,9.033,9.033,0,0,1,3.607-.4c1.023.1,2.052.149,3.078.227a11.006,11.006,0,0,1,2.559.5,24.138,24.138,0,0,0,2.368.615,5.132,5.132,0,0,1,2.671,1.566,5.917,5.917,0,0,1,1.368,2.19c.3.862.673,1.7,1.037,2.538a7.122,7.122,0,0,1,.628,2.817c0,.634.1,1.267.11,1.9a20.2,20.2,0,0,1-.066,2.841c-.034.276-.033.556-.054.834-.068.9-.141,1.8-.207,2.7-.04.556-.059,1.113-.107,1.668-.064.732-.151,1.461-.223,2.192a.512.512,0,0,1-.279.392,1.5,1.5,0,0,1-1.165.18,9.614,9.614,0,0,0-2.664-.207c-1.139.063-2.281.069-3.421.105-.4.013-.8.046-1.206.064a3.64,3.64,0,0,1-.364-.019M824.9,49.5c-.363.214-.484,0-.717.283a3.923,3.923,0,0,1-.5.539,1.119,1.119,0,0,0-.41,1.1c.032.209.078.416.111.625a3.283,3.283,0,0,0,.428,1.118.64.64,0,0,0,.793.335,4.547,4.547,0,0,0,.577-.174,2.017,2.017,0,0,0,1.287-1.584,6.52,6.52,0,0,0,.067-.8,1.062,1.062,0,0,0-.372-.893.444.444,0,0,0-.291-.127.308.308,0,0,1-.3-.17c-.18-.241-.476.014-.679-.255' transform='translate(-688.809 -30.442)'/%3E%3Cpath id='패스_925' data-name='패스 925' d='M254.906,51.734a3.13,3.13,0,0,0,.1.587,9.18,9.18,0,0,0,1.2,2.2,2.134,2.134,0,0,0,.823.673c.395.182.8.349,1.207.5a1.585,1.585,0,0,0,.528.063,17.5,17.5,0,0,0,2.646-.118c.4-.06.8-.082,1.2-.141a6.9,6.9,0,0,0,2.055-.792,4.609,4.609,0,0,1,.548-.252c.335-.116.524-.019.592.327a7.391,7.391,0,0,1,.141,1.09c.023.523.029,1.049,0,1.572a9.227,9.227,0,0,0,.328,2.61c.081.345.119.7.169,1.053a.456.456,0,0,1-.276.491,5.62,5.62,0,0,1-.665.316c-.924.336-1.857.648-2.778.991a8.214,8.214,0,0,1-3.473.377c-.167-.011-.335-.03-.5-.026a11.273,11.273,0,0,1-2.167-.207c-.948-.159-1.9-.313-2.845-.467a6.711,6.711,0,0,1-1.852-.567,14.947,14.947,0,0,1-2.807-1.7,9.259,9.259,0,0,1-2.934-3.84,23.237,23.237,0,0,1-1.325-4.791c-.038-.22-.085-.438-.107-.659a4.15,4.15,0,0,1,.2-1.874c.334-.909.592-1.846.9-2.767.163-.5.337-.993.537-1.476a4.491,4.491,0,0,1,.484-.913,11.11,11.11,0,0,1,2.661-2.716,1.89,1.89,0,0,0,.216-.159,5.714,5.714,0,0,1,2.351-1.165c.642-.193,1.277-.407,1.923-.587a10.4,10.4,0,0,1,2.283-.349,13.192,13.192,0,0,1,5.652,1.074,3.837,3.837,0,0,1,2.1,1.821c.354.684.726,1.358,1.065,2.048.156.319.247.668.377,1,.268.685.533,1.372.815,2.051a6.07,6.07,0,0,1,.364,2.89.84.84,0,0,1-.644.806,13.776,13.776,0,0,1-1.434.335q-1.44.229-2.89.4c-.521.061-1.049.069-1.574.1-.726.039-1.452.079-2.178.109-.86.035-1.721.06-2.581.088-.12,0-.241,0-.416,0m3.849-3.9c-.045-.375-.093-.7-.122-1.032a4.625,4.625,0,0,0-.674-2.181,1.532,1.532,0,0,0-.4-.438,1.169,1.169,0,0,0-1.5.126c-.124.112-.248.226-.368.342a2.448,2.448,0,0,0-.688,1.168,6.16,6.16,0,0,0-.179.849,2.889,2.889,0,0,0,.018,1.349c.127-.239.332-.236.535-.232l3.087.05c.076,0,.153,0,.289,0' transform='translate(-206.933 -32.986)'/%3E%3Cpath id='패스_926' data-name='패스 926' d='M424.605,55.252c-.063.766-.128,1.531-.186,2.3-.033.433-.047.868-.083,1.3a6.453,6.453,0,0,1-.113.76,3.678,3.678,0,0,1-.8,1.632c-.493.59-.971,1.2-1.417,1.823a5.459,5.459,0,0,1-2.315,1.765,14.473,14.473,0,0,1-2.5.75,8.724,8.724,0,0,1-1.962.227c-.848.016-1.7-.039-2.548-.076a2.921,2.921,0,0,1-.593-.1c-.714-.183-1.432-.354-2.136-.568a13.677,13.677,0,0,1-3.22-1.307c-.541-.33-1.133-.579-1.7-.869a3.557,3.557,0,0,1-.975-.757c-.145-.155-.29-.311-.445-.455a6.346,6.346,0,0,1-1.755-3.359,11.8,11.8,0,0,1-.162-1.326c-.015-.133-.02-.267-.045-.4a7.091,7.091,0,0,1,.047-2.789c.117-.567.2-1.141.287-1.714A8.847,8.847,0,0,1,402.7,49.9c.327-.745.674-1.483.962-2.243a4.112,4.112,0,0,1,1.838-2.094,19.678,19.678,0,0,1,3.186-1.484,9.368,9.368,0,0,1,2.878-.6c.669-.035,1.338-.089,2.007-.124a.686.686,0,0,1,.542.1c.041.035.129.021.2.022a19.965,19.965,0,0,1,2.757.349,7.731,7.731,0,0,1,2.388,1.023c.276.146.552.3.816.463a6.019,6.019,0,0,1,2.334,2.388c.374.76.723,1.532,1.078,2.3a11.038,11.038,0,0,1,.58,2.124,15.014,15.014,0,0,1,.347,3.121m-8.709-.321h-.049c0-.68.007-1.36,0-2.04-.006-.445-.036-.89-.05-1.336a7.9,7.9,0,0,0-.722-2.9.4.4,0,0,0-.168-.187,9.49,9.49,0,0,0-1.058-.506,3.077,3.077,0,0,0-.788-.123.367.367,0,0,0-.226.111,1.577,1.577,0,0,0-.435.778c-.136.459-.265.92-.4,1.379a2.555,2.555,0,0,0-.071,1.061c.095.741.2,1.48.3,2.22a8.447,8.447,0,0,1,.044,1.935,8.7,8.7,0,0,0-.023,2.236,5.53,5.53,0,0,1,.067.6,7.775,7.775,0,0,0,.363,1.9,4.177,4.177,0,0,0,.41.874,1.425,1.425,0,0,0,.715.583.967.967,0,0,0,1.346-.649c.122-.509.3-1,.419-1.514a10.04,10.04,0,0,0,.33-2.347c0-.691,0-1.383,0-2.074' transform='translate(-339.589 -36.664)'/%3E%3Cpath id='패스_927' data-name='패스 927' d='M1109.1,13.054a7,7,0,0,0-2.637.113,7.421,7.421,0,0,1-.794.158,49.61,49.61,0,0,1-.385-6.7l2.433-.612a25.59,25.59,0,0,1,0-5.989c.077-.007.162-.023.247-.023q3.24,0,6.48.009c.3,0,.6.053.9.053.48,0,.96-.027,1.44-.04.176,0,.353,0,.539,0a31.634,31.634,0,0,1-.321,6.3,2.125,2.125,0,0,0,.253-.032,9.449,9.449,0,0,1,2.562-.253c.322,0,.418.073.5.381a5.217,5.217,0,0,1,.074,1.959,9.909,9.909,0,0,0-.075,1.266,13.59,13.59,0,0,1-.4,3.311c-.01.041-.027.08-.042.126-.421-.182-.82-.38-1.237-.527a3.527,3.527,0,0,0-1.357-.076c-.032.69-.077,1.356-.092,2.023-.016.758-.025,1.517,0,2.274s.092,1.535.14,2.3c.012.189.03.378.03.567,0,1.071,0,2.142,0,3.212a6.163,6.163,0,0,0,.11,1.259,6.963,6.963,0,0,1,.094,1.431,5.471,5.471,0,0,0,.158,1.524,1.247,1.247,0,0,1-.169,1.053c-.114,0-.247.005-.379,0a9.833,9.833,0,0,0-2.4.209,5.46,5.46,0,0,1-1.836.008,9.844,9.844,0,0,0-1.337-.072,5.671,5.671,0,0,1-1.651-.252,4.391,4.391,0,0,1-.828-.428.272.272,0,0,1-.111-.16,5.534,5.534,0,0,1-.235-1.105c-.03-1.2-.028-2.409,0-3.614.013-.656.109-1.31.142-1.967.051-.979.1-1.96.115-2.94.019-1.1,0-2.209.008-3.313,0-.367.042-.733.062-1.1.005-.1,0-.2,0-.331' transform='translate(-934.772)'/%3E%3Cpath id='패스_928' data-name='패스 928' d='M987.159,44.123a2.461,2.461,0,0,1,.784-1.51,6.483,6.483,0,0,1,2.485-1.537c1.012-.321,2-.7,3-1.058a1.255,1.255,0,0,1,.193-.057.31.31,0,0,1,.409.282,1.862,1.862,0,0,1,0,.531c-.085.652-.18,1.3-.276,1.953a28.073,28.073,0,0,0-.411,4.725,12.344,12.344,0,0,1-.192,1.692c-.025.21-.041.421-.064.632-.008.073-.026.145-.045.252-.139-.036-.255-.064-.37-.1-.538-.147-1.071-.321-1.616-.436a10.539,10.539,0,0,0-1.33-.161,2.466,2.466,0,0,0-1.21.223c-.438.2-.869.413-1.285.651a.892.892,0,0,0-.342.392,4.349,4.349,0,0,0-.381,1.685c-.051,2.564-.077,5.129-.147,7.693-.023.833-.15,1.663-.229,2.495-.011.111-.02.222-.03.333-.03.317-.127.431-.435.433a14.177,14.177,0,0,1-3.7-.259c-.908-.235-1.832-.406-2.746-.619a9.093,9.093,0,0,1-1.922-.688,1.6,1.6,0,0,1-.949-1.141,2.456,2.456,0,0,1-.047-.4c-.06-1.5.015-2.988.081-4.482.088-1.973.07-3.947-.031-5.921a34.909,34.909,0,0,1,0-3.746c.027-.467.029-.937.016-1.405a10.016,10.016,0,0,1,.254-2.389,4.39,4.39,0,0,1,.3-1.092.394.394,0,0,1,.382-.255c.837-.028,1.674-.058,2.51-.109a10.424,10.424,0,0,0,1.1-.147,23.46,23.46,0,0,1,2.365-.259c.826-.055,1.648-.143,2.478-.133.285,0,.472.064.549.352.108.408.247.81.328,1.223.119.612.192,1.233.3,1.848a4.44,4.44,0,0,0,.156.524l.07-.024' transform='translate(-825.683 -33.788)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 11.605rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+}
+.gpu_logo_black{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='59.76' height='59.76' viewBox='0 0 59.76 59.76'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1288' data-name='사각형 1288' width='59.76' height='59.76'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_521' data-name='그룹 521' transform='translate(0.001)'%3E%3Cpath id='패스_971' data-name='패스 971' d='M.143,48.33v.981l4.48.312V48.017Z' transform='translate(-0.1 -33.444)'/%3E%3Cpath id='패스_972' data-name='패스 972' d='M.143,68.034v.981l4.48.312V67.722Z' transform='translate(-0.1 -47.169)'/%3E%3Cpath id='패스_973' data-name='패스 973' d='M.143,87.737v.981l4.48.312V87.425Z' transform='translate(-0.1 -60.892)'/%3E%3Cpath id='패스_974' data-name='패스 974' d='M.143,107.442v.982l4.48.311V107.13Z' transform='translate(-0.1 -74.616)'/%3E%3Cpath id='패스_975' data-name='패스 975' d='M.143,146.849v.982l4.48.312v-1.606Z' transform='translate(-0.1 -102.063)'/%3E%3Cpath id='패스_976' data-name='패스 976' d='M.143,127.146v.982l4.48.311v-1.605Z' transform='translate(-0.1 -88.34)'/%3E%3Cpath id='패스_977' data-name='패스 977' d='M182,48.821v.8l4.479-.313v-.981L182,48.018Z' transform='translate(-126.765 -33.445)'/%3E%3Cpath id='패스_978' data-name='패스 978' d='M182,68.525v.8l4.479-.313v-.981L182,67.723Z' transform='translate(-126.765 -47.169)'/%3E%3Cpath id='패스_979' data-name='패스 979' d='M182,88.228v.8l4.479-.313v-.981L182,87.425Z' transform='translate(-126.765 -60.892)'/%3E%3Cpath id='패스_980' data-name='패스 980' d='M182,107.933v.8l4.479-.312v-.982L182,107.13Z' transform='translate(-126.765 -74.616)'/%3E%3Cpath id='패스_981' data-name='패스 981' d='M182,147.34v.8l4.479-.313v-.981L182,146.537Z' transform='translate(-126.765 -102.064)'/%3E%3Cpath id='패스_982' data-name='패스 982' d='M182,127.637v.8l4.479-.312v-.982L182,126.835Z' transform='translate(-126.765 -88.34)'/%3E%3Cpath id='패스_983' data-name='패스 983' d='M31.369,19.673h-.981l-.313,4.479h1.606Z' transform='translate(-20.948 -13.702)'/%3E%3Cpath id='패스_984' data-name='패스 984' d='M50.314,19.673h-.981l-.313,4.479h1.606Z' transform='translate(-34.143 -13.702)'/%3E%3Cpath id='패스_985' data-name='패스 985' d='M69.259,19.673h-.981l-.312,4.479h1.606Z' transform='translate(-47.339 -13.702)'/%3E%3Cpath id='패스_986' data-name='패스 986' d='M88.2,19.673h-.982l-.312,4.479h1.606Z' transform='translate(-60.534 -13.702)'/%3E%3Cpath id='패스_987' data-name='패스 987' d='M107.149,19.673h-.982l-.312,4.479h1.606Z' transform='translate(-73.729 -13.702)'/%3E%3Cpath id='패스_988' data-name='패스 988' d='M126.095,19.673h-.982l-.312,4.479h1.606Z' transform='translate(-86.925 -13.702)'/%3E%3Cpath id='패스_989' data-name='패스 989' d='M145.039,19.673h-.981l-.313,4.479h1.606Z' transform='translate(-100.12 -13.702)'/%3E%3Cpath id='패스_990' data-name='패스 990' d='M163.984,19.673H163l-.313,4.479H164.3Z' transform='translate(-113.315 -13.702)'/%3E%3Cpath id='패스_991' data-name='패스 991' d='M31.369,166.95h-.981l-.313-4.479h1.606Z' transform='translate(-20.948 -113.161)'/%3E%3Cpath id='패스_992' data-name='패스 992' d='M50.314,166.95h-.981l-.313-4.479h1.606Z' transform='translate(-34.143 -113.161)'/%3E%3Cpath id='패스_993' data-name='패스 993' d='M69.259,166.95h-.981l-.312-4.479h1.606Z' transform='translate(-47.339 -113.161)'/%3E%3Cpath id='패스_994' data-name='패스 994' d='M88.2,166.95h-.982l-.312-4.479h1.606Z' transform='translate(-60.534 -113.161)'/%3E%3Cpath id='패스_995' data-name='패스 995' d='M107.149,166.95h-.982l-.312-4.479h1.606Z' transform='translate(-73.729 -113.161)'/%3E%3Cpath id='패스_996' data-name='패스 996' d='M126.095,166.95h-.982l-.312-4.479h1.606Z' transform='translate(-86.925 -113.161)'/%3E%3Cpath id='패스_997' data-name='패스 997' d='M145.039,166.95h-.981l-.313-4.479h1.606Z' transform='translate(-100.12 -113.161)'/%3E%3Cpath id='패스_998' data-name='패스 998' d='M163.984,166.95H163l-.313-4.479H164.3Z' transform='translate(-113.315 -113.161)'/%3E%3Cg id='그룹_439' data-name='그룹 439' transform='translate(-0.001)'%3E%3Cg id='그룹_438' data-name='그룹 438' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_999' data-name='패스 999' d='M66.624,39.143H20.445a.911.911,0,0,0-.911.91v34.18a.911.911,0,0,0,.911.911H66.624a.911.911,0,0,0,.91-.911V40.053a.91.91,0,0,0-.91-.91M32.864,61.226a6.006,6.006,0,0,0,1.713-.193V58.384l-2.258.005V56.154l4.8.006v6.706a15.049,15.049,0,0,1-4.313.669A6.988,6.988,0,0,1,27.69,61.8a6.084,6.084,0,0,1-1.813-4.575c.019-4.207,3.08-6.611,7.231-6.611a11.682,11.682,0,0,1,4.143.864l-.819,2.2a8.944,8.944,0,0,0-3.362-.7c-2.385,0-4.4,1.352-4.4,4.095a3.967,3.967,0,0,0,4.2,4.151m14.621-3.587a5.871,5.871,0,0,1-4.114,1.334,7.555,7.555,0,0,1-.977-.034v4.5H39.558V50.952a23.438,23.438,0,0,1,3.869-.263A6.077,6.077,0,0,1,47.3,51.7a3.7,3.7,0,0,1,1.352,2.931,4.046,4.046,0,0,1-1.164,3.005m13.125.205c0,3.907-1.938,5.829-5.244,5.829-3.193,0-5.1-1.828-5.1-5.867V50.745h2.874v7.287c0,2.179.836,3.093,2.3,3.093,1.5,0,2.32-.858,2.32-3.093V50.745h2.855Z' transform='translate(-13.605 -27.263)'/%3E%3Cpath id='패스_1000' data-name='패스 1000' d='M96.032,84.222a4.794,4.794,0,0,0-1.179.113v3.639a4.581,4.581,0,0,0,.955.052c1.521,0,2.465-.624,2.465-1.919,0-1.165-.813-1.884-2.241-1.884' transform='translate(-66.065 -58.661)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 3.735rem;
+    height: 3.735rem;
+}
+.xyz-weave{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='234.291' height='512.9' viewBox='0 0 234.291 512.9'%3E%3Cg id='그룹_542' data-name='그룹 542' transform='translate(-1410.352 -371.324)'%3E%3Cg id='그룹_529' data-name='그룹 529' transform='translate(1410.352 371.324)'%3E%3Crect id='사각형_1474' data-name='사각형 1474' width='234.294' height='234.291' transform='translate(0 256.669) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1490' data-name='사각형 1490' width='234.294' height='234.291' transform='translate(0 490.525) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1498' data-name='사각형 1498' width='234.291' height='234.294' transform='translate(0 22.375)' fill='%2388fd93'/%3E%3Crect id='사각형_1506' data-name='사각형 1506' width='234.291' height='234.294' transform='translate(0 256.231)' fill='%2388fd93'/%3E%3Crect id='사각형_1475' data-name='사각형 1475' width='234.294' height='15.62' transform='translate(202.622 256.669) rotate(-90)'/%3E%3Crect id='사각형_1497' data-name='사각형 1497' width='234.294' height='15.62' transform='translate(202.622 490.525) rotate(-90)'/%3E%3Crect id='사각형_1499' data-name='사각형 1499' width='234.291' height='15.62' transform='translate(0 224.998)'/%3E%3Crect id='사각형_1507' data-name='사각형 1507' width='234.291' height='15.62' transform='translate(0 458.857)'/%3E%3Crect id='사각형_1481' data-name='사각형 1481' width='234.294' height='15.62' transform='translate(15.191 256.669) rotate(-90)' fill='%23ffaced'/%3E%3Crect id='사각형_1522' data-name='사각형 1522' width='22.375' height='15.191' transform='translate(0 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1523' data-name='사각형 1523' width='22.375' height='15.62' transform='translate(30.811 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1524' data-name='사각형 1524' width='22.375' height='15.62' transform='translate(62.048 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1525' data-name='사각형 1525' width='22.375' height='15.62' transform='translate(93.287 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1526' data-name='사각형 1526' width='22.375' height='15.62' transform='translate(124.525 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1527' data-name='사각형 1527' width='22.375' height='15.62' transform='translate(155.765 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1528' data-name='사각형 1528' width='22.375' height='15.62' transform='translate(187.003 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1529' data-name='사각형 1529' width='22.375' height='16.048' transform='translate(218.244 22.375) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1491' data-name='사각형 1491' width='234.294' height='15.62' transform='translate(15.191 490.525) rotate(-90)' fill='%23ffaced'/%3E%3Crect id='사각형_1505' data-name='사각형 1505' width='234.291' height='15.62' transform='translate(0 37.566)' fill='%23ffaced'/%3E%3Crect id='사각형_1513' data-name='사각형 1513' width='234.291' height='15.62' transform='translate(0 271.426)' fill='%23ffaced'/%3E%3Crect id='사각형_1480' data-name='사각형 1480' width='234.294' height='15.62' transform='translate(46.431 256.669) rotate(-90)' fill='%2300ee17'/%3E%3Crect id='사각형_1492' data-name='사각형 1492' width='234.294' height='15.62' transform='translate(46.431 490.525) rotate(-90)' fill='%2300ee17'/%3E%3Crect id='사각형_1503' data-name='사각형 1503' width='234.291' height='15.62' transform='translate(0 68.806)' fill='%2300ee17'/%3E%3Crect id='사각형_1511' data-name='사각형 1511' width='234.291' height='15.62' transform='translate(0 302.665)' fill='%2300ee17'/%3E%3Crect id='사각형_1479' data-name='사각형 1479' width='234.294' height='15.62' transform='translate(77.667 256.669) rotate(-90)' fill='%23e5e5e5'/%3E%3Crect id='사각형_1493' data-name='사각형 1493' width='234.294' height='15.62' transform='translate(77.667 490.525) rotate(-90)' fill='%23e5e5e5'/%3E%3Crect id='사각형_1504' data-name='사각형 1504' width='234.291' height='15.62' transform='translate(0 100.042)' fill='%23e5e5e5'/%3E%3Crect id='사각형_1512' data-name='사각형 1512' width='234.291' height='15.62' transform='translate(0 333.901)' fill='%23e5e5e5'/%3E%3Crect id='사각형_1478' data-name='사각형 1478' width='234.294' height='15.62' transform='translate(108.906 256.669) rotate(-90)' fill='%2399dced'/%3E%3Crect id='사각형_1494' data-name='사각형 1494' width='234.294' height='15.62' transform='translate(108.906 490.525) rotate(-90)' fill='%2399dced'/%3E%3Crect id='사각형_1502' data-name='사각형 1502' width='234.291' height='15.62' transform='translate(0 131.281)' fill='%2399dced'/%3E%3Crect id='사각형_1510' data-name='사각형 1510' width='234.291' height='15.62' transform='translate(0 365.14)' fill='%2399dced'/%3E%3Crect id='사각형_1476' data-name='사각형 1476' width='234.294' height='15.62' transform='translate(140.146 256.669) rotate(-90)' fill='%23ff0'/%3E%3Crect id='사각형_1495' data-name='사각형 1495' width='234.294' height='15.62' transform='translate(140.146 490.525) rotate(-90)' fill='%23ff0'/%3E%3Crect id='사각형_1500' data-name='사각형 1500' width='234.291' height='15.62' transform='translate(0 162.52)' fill='%23ff0'/%3E%3Crect id='사각형_1508' data-name='사각형 1508' width='234.291' height='15.62' transform='translate(0 396.379)' fill='%23ff0'/%3E%3Crect id='사각형_1477' data-name='사각형 1477' width='234.294' height='15.62' transform='translate(171.384 256.669) rotate(-90)' fill='%23fff'/%3E%3Crect id='사각형_1496' data-name='사각형 1496' width='234.294' height='15.62' transform='translate(171.384 490.525) rotate(-90)' fill='%23fff'/%3E%3Crect id='사각형_1501' data-name='사각형 1501' width='234.291' height='15.62' transform='translate(0 193.759)' fill='%23fff'/%3E%3Crect id='사각형_1509' data-name='사각형 1509' width='234.291' height='15.62' transform='translate(0 427.618)' fill='%23fff'/%3E%3Crect id='사각형_1530' data-name='사각형 1530' width='22.375' height='15.191' transform='translate(0.002 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1531' data-name='사각형 1531' width='22.375' height='15.62' transform='translate(30.813 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1532' data-name='사각형 1532' width='22.375' height='15.62' transform='translate(62.048 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1533' data-name='사각형 1533' width='22.375' height='15.62' transform='translate(93.289 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1534' data-name='사각형 1534' width='22.375' height='15.62' transform='translate(124.527 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1535' data-name='사각형 1535' width='22.375' height='15.62' transform='translate(155.765 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1536' data-name='사각형 1536' width='22.375' height='15.62' transform='translate(187.005 512.9) rotate(-90)' fill='%2388fd93'/%3E%3Crect id='사각형_1537' data-name='사각형 1537' width='22.375' height='16.048' transform='translate(218.244 512.9) rotate(-90)' fill='%2388fd93'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    width: 14.56rem;
+    height: 32rem;
+}
+
+/******************** media querys ********************/
+@media screen and (max-width : 575px) and (orientation: portrait) {
+    /************** main *******************/
+    .box-con{
+        flex-flow: row wrap;
+        width: 73vw;
+        height: auto;
+    }
+    .leftbox{
+        width: 20%;
+        box-sizing: border-box;
+        border-bottom: 0.18rem solid #88fd93;
+    }
+    .midbox{
+        width: 80%;
+        box-sizing: border-box;
+        border-right: none;
+        align-items: start;
+        border-bottom: 0.18rem solid #88fd93;
+        justify-content: flex-start;
+        padding-top: 1.2em;
+    }
+    .rightbox{
+        width: 100%;
+    }
+    .box-con .midbox .li-group {
+        font-size: 3.5vh;
+    }
+    .box-con .midbox .li-group .li-group-item {
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }
+    .inputWrap {
+        width: 50vw;
+        left: 1.5vh;
+        top: 8vh;
+    }
+    .inputWrap input {
+        width: inherit;
+        height: 4.5vh;
+    }
+    .sbtn {
+        left: calc(100% - 12vw);
+        font-size: 1.2em;
+        padding: 1vh 0.5vh;
+        line-height: 2.5vh;
+    }
+    .btnClear {
+        left: calc(100% - 5.5vw);
+        top: calc(100% - 9.5vw);
+    }
+    .box-con .rightbox .li-contents-box {
+        padding-right: 1rem;
+    }
+    .box-con .rightbox .li-contents-box .li-contents{
+        font-size: 1.2rem;
+    }
+    .li-contents p:nth-of-type(1){
+        padding-top: 1rem;
+        height: 20%;
+    }
+    .li-contents p:nth-of-type(2){
+        height: 42%;
+    }
+    .li-contents p:nth-of-type(3){
+        height: 8%;
+        line-height: 10vw;
+        padding-right: 0;
+    }
+    .logo-imgbox {
+        height: 22%;
+    }
+    .meowartfont {
+        font-size: 1.8rem;
+    }
+    .scanvas-logo{
+        width: 30vw;
+        margin-right: 0;
+    }
+    .sketchbox-logo{
+        width: 30vw;
+        margin-right: 0;
+    }
+    .meowart-logo{
+        width: 30vw;
+        margin-right: 0;
+    }
+    .gpu-logo{
+        width: 16vw;
+        margin-right: 0;
+    }
+    .search-res-h{
+        font-size: 1em;
+    }
+    
+    /****************** scanvas ********************/ 
+    .scanvaspage{
+        width: 100vw;
+        height: 100vh;
+    }
+    .xyz-exfolder .scanvas-contents .xyz-3dscan{
+        color: #fff;
+    }
+    .xyz-3dscan p{
+        height: 30rem;
+        width: 20rem;
+        line-height: 2.3rem;
+    }
+    .xyz3d{
+        font-size: 2.3rem;
+        margin-top: 6rem;
+    }
+    .xyz-features{
+        line-height: 4rem;
+    }
+    .xyzpc{
+        position: relative;
+        width: 14rem;
+        height: 10rem;
+        margin-top: 1rem;
+    }
+    .xyzpc p{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 1.7rem;
+        padding-top: 1rem;
+        text-align: center;
+    }
+
+    /****************** GPU ********************/ 
+    .postoutline{
+        width: 21rem;
+        height: 21rem;
+    }
+    .post-contents{
+        width: 90%;       
+    }
+    .gpu-logo-post{
+        height: 6vh;
+    }
+    .gpu-logoimg{
+        margin-right: 0;
+    }    
+    .post-contents .gpu-text{
+        margin: 0;
+        line-height: 2.5rem;
+        padding-bottom: 1.3rem;
+    }
+    .gpu-text .smile{
+        font-size: 2.5rem;
+    }
+    .gpu-adress{
+        margin-left: 0;
+        width: 10rem;
+    }
+    .gpu-adress .gpu-web{
+        font-weight: 400;
+    }
+    .gpu-web:hover{
+        cursor: crosshair;
+        color: #88fd93;
+    }
+    .gpuinsta{
+        width: 2rem;
+        height: 2rem;
+        padding-top: 1.2rem;
+    }
+    .gpu-insta:hover{
+        cursor: crosshair;
+    }
+    /************************ meowart ************************/
+    .meowartpage{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+    .meowart-logo-img{
+        padding-top: 14rem;
+    }
+    .meowart-logo-img .meowart-logo-white{
+        margin-left: 7%;
+    }
+    .cat-img{
+        margin-top: -14%;
+        margin-bottom: -6.5%;
+    }
+    .cat-img img{
+        height: 8.5vh;
+        margin-right: 8vw;
+    }
+    .meowart-youtube{
+        color: #fff;
+    }
+    .meowaccount{
+        color: #fff;
+    }
+    .meowaccount:hover{
+        color: #ffaced;
+    }
+    .cat-img-jelly{
+        height: 45%;
+    }
+    .cat-img-jelly img{
+        height: 7.5vh;
+        margin-bottom: 34vh;
+    }
+
+    /*************************************** design ***************************************/
+    .xyz-designpage{
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .xyz-d-circle{
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+    .xyzd-logobox{
+        height: 8rem;
+        align-items: center;
+    }
+    .xyz-d-circle.logo{
+        margin-left: -6.2rem;
+    }
+    .xyzd-l-background{
+        width: 75vw;
+        padding-right: 0;
+    }
+    .xyzd-l-background .xyz-l-b.top >div{
+        width: calc(100% /15);
+    }
+    .xyz-l-b.top{
+        width: 100%;
+        display: flex;
+    }
+    .xyz-l-b.mid{
+        width: 100%;
+    }
+    .xyzd-l-background .xyz-l-b.bottom >div{
+        width: calc(100% /15);
+    }
+    .xyz-l-b.bottom{
+        width: 100%;
+    }
+    .xyzd-l-con{
+        position: absolute;
+    }
+    .xyz-designpage .xyzd-l-background .xyzd-l-con .scanvas-logoimg{
+        width: 10rem;
+    }
+    .sketchbox_logo_black img{
+        width: 12.876rem;
+    }
+    .xyzd-p-background{
+        width: 100%;
+        height: auto;
+        padding-right: 0;
+    }
+    .palette{
+        width: 75vw;
+    }
+    .xyz-weave{
+        width: 100%;
+        height: calc((75vw / 15) * 32);;
+    }
+    .xyz-d-circle.logo{
+        margin-left: -5.2rem;
+    }
+    .xyz-d-logotitle{
+        margin-left: 0;
+    }
+    .xyz-d-circle.palette{
+        margin-left: 4rem;
+    }
+    .xyz-d-p-title{
+        margin-left: 0;
+    }
+    .xyzd-f-background{
+        width: 75vw;        
+    }
+    .xyz-d-circle.font{
+        margin-left: 8.6rem;
+    }
+    .xyzd-f-background .xyz-f-b.top >div{
+        width: calc(100% /15);
+    }
+    .xyz-f-b.top{
+        display: flex;
+    }
+    .xyz-f-b.mid{
+        width: 100%;
+    }
+    .xyzd-f-background .xyz-f-b.bottom >div{
+        width: calc(100% /15);
+    }
+    .xyz-f-b.bottom{
+        padding-bottom: 10vh;
+    }
+    .xyzd-f-con{
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width : 576px) and (max-width : 767px) and (orientation: landscape){
+    .box-con{
+        width: 85vw;
+        height: 80vh;
+    }
+    .leftbox{
+        width: 10%;
+        height: inherit;
+    }
+    .midbox{
+        width: 35%;
+        height: inherit;
+        box-sizing: border-box;
+        align-items: start;
+    }
+    .rightbox{
+        width: 55%;
+        height: inherit;
+    }
+    .box-con .midbox .li-group {
+        font-size: 5vh;
+    }
+    .inputWrap {
+        width: 27vw;
+        height: 7.5vh;
+        left: 2vh;
+        bottom: 11vh;
+    }
+    .inputWrap input {
+        width: inherit;
+    }
+    .sbtn {
+        left: calc(100% - 7vw);
+        line-height: 6vh;
+    }
+    .btnClear {
+        left: calc(100% - 3.2vw);
+        line-height: 6vh;
+    }
+    .box-con .rightbox .li-contents-box {
+        word-break: keep-all;
+    }
+    .box-con .rightbox .li-contents-box .li-contents{
+        font-size: 1rem;
+    }
+    .li-contents p:nth-of-type(1){
+        padding-top: 1.5rem;
+        height: 20%;
+    }
+    .li-contents p:nth-of-type(2){
+        height: 40%;
+    }
+    .li-contents p:nth-of-type(3){
+        height: 10%;
+        line-height: 10vw;
+    }
+    .logo-imgbox {
+        height: 22%;
+    }
+    .meowartfont {
+        font-size: 1.2rem;
+    }
+
+    /****** GPU *******/ 
+    .postoutline{
+        width: 21rem;
+        height: 21rem;
+    }
+    .post-contents{
+        width: 90%;       
+    }
+    .gpu-logo-post{
+        height: 6vh;
+    }
+    .gpu-logoimg{
+        margin-right: 0;
+    }    
+    .post-contents .gpu-text{
+        margin: 0;
+        line-height: 2.5rem;
+        padding-bottom: 1.3rem;
+    }
+    .gpu-text .smile{
+        font-size: 2.5rem;
+    }
+    .gpu-adress{
+        margin-left: 0;
+        width: 10rem;
+    }
+    .gpu-adress .gpu-web{
+        font-weight: 400;
+    }
+    .gpu-web:hover{
+        cursor: crosshair;
+        color: #88fd93;
+    }
+    .gpuinsta{
+        width: 2rem;
+        height: 2rem;
+        padding-top: 1.2rem;
+    }
+    .gpu-insta:hover{
+        cursor: crosshair;
+    }
+
+    /************************ meowart ************************/
+    .meowartpage{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+    .meowart-logo-img{
+        padding-top: 15vh;
+    }
+    .meowart-logo-img .meowart-logo-white{
+        margin-left: 1.9rem;
+    }
+    .cat-img{
+        margin: -12vh 0 0 0;
+    }
+    .cat-img img{
+        height: 22vh;
+        margin-right: 8vw;
+    }
+    .meowart-youtube{
+        font-size: 14.5vh;
+        padding-left: 5.9vw;
+        color: #fff;
+    }
+    .cat-img-jelly img{
+        height: 10vh;
+        margin-bottom: 30vh;
+    }
+
+    /*************************************** design ***************************************/
+    .xyz-designpage{
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        gap: 3vw;
+        padding-bottom: 10vh;
+    }
+    .xyz-d-logotitle{
+        width: 3rem;
+    }
+    .xyz-d-circle{
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+    .xyzd-logobox{
+        height: 8rem;
+        align-items: center;
+    }
+    .xyz-d-circle.logo{
+        margin-left: -6.2rem;
+    }
+    .xyzd-l-background{
+        width: 28vw;
+        padding-right: 0;
+    }
+    .xyzd-l-background .xyz-l-b.top >div{
+        width: calc(27vw / 15);
+        height: 1.1rem;
+    }
+    .xyz-l-b.top{
+        width: 100%;
+        display: flex;
+    }
+    .xyz-l-b.mid{
+        width: 100%;
+        height : calc(25vw / 15 * 32.5);
+    }
+    .xyzd-l-background .xyz-l-b.bottom >div{
+        width: calc(27vw /15);
+        height: 1.1rem;
+    }
+    .xyz-l-b.bottom{
+        width: 100%;
+    }
+    .xyzd-l-con{
+        position: absolute;
+    }
+    .xyzlogo_black{
+        width: 2rem;
+        margin-bottom: 0;
+    }
+    .screenxyz_logo_black{
+        width: 8rem;
+        margin-bottom: 1rem;
+    }
+    .xyz-designpage .xyzd-l-background .xyzd-l-con .scanvas-logoimg{
+        width: 8rem;
+        margin-bottom: 1rem;
+    }
+    .sketchbox_logo_black img{
+        width: 8rem;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .meowart_logo_black{
+        width: 8rem;
+        margin-bottom: 1rem;
+    }
+    .gpu_logo_black{
+        width: 2.4rem;
+    }
+    .xyzd-p-background{
+        width: 100%;
+        height: auto;
+        padding-right: 0;
+    }
+    .palette{
+        width: 28vw;
+    }
+    .xyz-weave{
+        width: 100%;
+        height: calc((28vw / 15) * 32);;
+    }
+    .xyz-d-circle.logo{
+        margin-left: -5.2rem;
+    }
+    .xyz-d-logotitle{
+        margin-left: 0;
+    }
+    .xyz-d-circle.palette{
+        margin-left: 4rem;
+    }
+    .xyz-d-p-title{
+        margin-left: 0;
+        width: 12rem;
+    }
+    .xyz-d-fonttitle{
+        width: 8rem;
+    }
+    .xyzd-f-background{
+        width: 28vw;        
+    }
+    .xyz-d-circle.font{
+        margin-left: 8.6rem;
+    }
+    .xyzd-f-background{
+        height: auto;
+    }
+    .xyzd-f-background .xyz-f-b.top >div{
+        width: calc(27vw /15);
+        height: 1.1rem;
+    }
+    .xyz-f-b.top{
+        display: flex;
+    }
+    .xyz-f-b.mid{
+        width: 100%;
+        height : calc(25vw / 15 * 32.5);
+    }
+    .xyzd-f-background .xyz-f-b.bottom >div{
+        width: calc(27vw /15);
+        height: 1.1rem;
+    }
+    .xyzd-f-con{
+        line-height: 3rem;
+        font-size: 1.25rem;
+    }
+    .xyzd-f-con :nth-child(5){
+        font-size: 1.4rem;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation:landscape){
+    .box-con{
+        width: 85vw;
+        height: 80vh;
+    }
+    .leftbox{
+        width: 10%;
+        height: inherit;
+    }
+    .midbox{
+        width: 35%;
+        height: inherit;
+        box-sizing: border-box;
+        align-items: start;
+    }
+    .rightbox{
+        width: 55%;
+        height: inherit;
+    }
+    .box-con .midbox .li-group {
+        font-size: 5vh;
+    }
+    .inputWrap {
+        width: 27vw;
+        height: 7.5vh;
+        left: 2vh;
+        bottom: 14vh;
+    }
+    .inputWrap input {
+        width: inherit;
+    }
+    .sbtn {
+        left: calc(100% - 6.5vw);
+        line-height: 6vh;
+    }
+    .btnClear {
+        left: calc(100% - 3.2vw);
+        line-height: 7vh;
+    }
+    .box-con .rightbox .li-contents-box {
+        word-break: keep-all;
+    }
+    .box-con .rightbox .li-contents-box .li-contents{
+        font-size: 1rem;
+    }
+    .li-contents p:nth-of-type(1){
+        padding-top: 1.5rem;
+        height: 20%;
+    }
+    .li-contents p:nth-of-type(2){
+        height: 40%;
+    }
+    .li-contents p:nth-of-type(3){
+        height: 10%;
+        line-height: 10vw;
+    }
+    .logo-imgbox {
+        height: 22%;
+    }
+    .meowartfont {
+        font-size: 1.2rem;
+    }
+
+    /****** GPU *******/ 
+    .postoutline{
+        width: 21rem;
+        height: 21rem;
+    }
+    .post-contents{
+        width: 90%;       
+    }
+    .gpu-logo-post{
+        height: 6vh;
+    }
+    .gpu-logoimg{
+        margin-right: 0;
+    }    
+    .post-contents .gpu-text{
+        margin: 0;
+        line-height: 2.5rem;
+        padding-bottom: 1.3rem;
+    }
+    .gpu-text .smile{
+        font-size: 2.5rem;
+    }
+    .gpu-adress{
+        margin-left: 0;
+        width: 10rem;
+    }
+    .gpu-adress .gpu-web{
+        font-weight: 400;
+    }
+    .gpu-web:hover{
+        cursor: crosshair;
+        color: #88fd93;
+    }
+    .gpuinsta{
+        width: 2rem;
+        height: 2rem;
+        padding-top: 1.2rem;
+    }
+    .gpu-insta:hover{
+        cursor: crosshair;
+    }
+
+    /************************ meowart ************************/
+    .meowartpage{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+    .meowart-logo-img{
+        padding-top: 17vh;
+    }
+    .meowart-logo-img .meowart-logo-white{
+        width: 55vw;
+        margin-left: 6%;
+    }
+    .cat-img{
+        margin: -12vh 0 0 0;
+    }
+    .cat-img img{
+        height: 22vh;
+        margin-right: 8vw;
+    }
+    .meowart-youtube{
+        padding-left: 6.9vw;
+        font-size: 6vw;
+    }
+    .cat-img-jelly img{
+        height: 10vh;
+        margin-bottom: 30vh;
+        margin-left: 5%;
+    }
+
+    /*************************************** design ***************************************/
+    .xyz-designpage{
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        gap: 3vw;
+        padding-bottom: 10vh;
+    }
+    .xyz-d-logotitle{
+        width: 3rem;
+    }
+    .xyz-d-circle{
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+    .xyzd-logobox{
+        height: 8rem;
+        align-items: center;
+    }
+    .xyz-d-circle.logo{
+        margin-left: -6.2rem;
+    }
+    .xyzd-l-background{
+        width: 28vw;
+        padding-right: 0;
+    }
+    .xyzd-l-background .xyz-l-b.top >div{
+        width: calc(27vw / 15);
+        height: 1.1rem;
+    }
+    .xyz-l-b.top{
+        width: 100%;
+        display: flex;
+    }
+    .xyz-l-b.mid{
+        width: 100%;
+        height : calc(25vw / 15 * 32.5);
+    }
+    .xyzd-l-background .xyz-l-b.bottom >div{
+        width: calc(27vw /15);
+        height: 1.1rem;
+    }
+    .xyz-l-b.bottom{
+        width: 100%;
+    }
+    .xyzd-l-con{
+        position: absolute;
+    }
+    .xyzlogo_black{
+        width: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    .screenxyz_logo_black{
+        width: 8rem;
+        margin-bottom: 2rem;
+    }
+    .xyz-designpage .xyzd-l-background .xyzd-l-con .scanvas-logoimg{
+        width: 8rem;
+        margin-bottom: 2rem;
+    }
+    .sketchbox_logo_black img{
+        width: 8rem;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    .meowart_logo_black{
+        width: 8rem;
+        margin-bottom: 2rem;
+    }
+    .gpu_logo_black{
+        width: 2.4rem;
+    }
+    .xyzd-p-background{
+        width: 100%;
+        height: auto;
+        padding-right: 0;
+    }
+    .palette{
+        width: 28vw;
+    }
+    .xyz-weave{
+        width: 100%;
+        height: calc((28vw / 15) * 31.2);;
+    }
+    .xyz-d-circle.logo{
+        margin-left: -5.2rem;
+    }
+    .xyz-d-logotitle{
+        margin-left: 0;
+    }
+    .xyz-d-circle.palette{
+        margin-left: 4rem;
+    }
+    .xyz-d-p-title{
+        margin-left: 0;
+        width: 12rem;
+    }
+    .xyz-d-fonttitle{
+        width: 8rem;
+    }
+    .xyzd-f-background{
+        width: 28vw;        
+    }
+    .xyz-d-circle.font{
+        margin-left: 8.6rem;
+    }
+    .xyzd-f-background{
+        height: auto;
+    }
+    .xyzd-f-background .xyz-f-b.top >div{
+        width: calc(27vw /15);
+        height: 1.1rem;
+    }
+    .xyz-f-b.top{
+        display: flex;
+    }
+    .xyz-f-b.mid{
+        width: 100%;
+        height : calc(25vw / 15 * 32.5);
+    }
+    .xyzd-f-background .xyz-f-b.bottom >div{
+        width: calc(27vw /15);
+        height: 1.1rem;
+    }
+    .xyzd-f-con{
+        line-height: 3.8rem;
+        font-size: 1.25rem;
+    }
+    .xyzd-f-con :nth-child(5){
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation:portrait){
+    .box-con{
+        flex-flow: row wrap;
+        width: 73vw;
+        height: auto;
+    }
+    .leftbox{
+        width: 20%;
+        box-sizing: border-box;
+        border-bottom: 0.18rem solid #88fd93;
+    }
+    .midbox{
+        width: 80%;
+        box-sizing: border-box;
+        border-right: none;
+        align-items: start;
+        border-bottom: 0.18rem solid #88fd93;
+        justify-content: flex-start;
+        padding-top: 1.2em;
+    }
+    .rightbox{
+        width: 100%;
+    }
+    .box-con .midbox .li-group {
+        font-size: 3.5vh;
+    }
+    .box-con .midbox .li-group .li-group-item {
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }
+    .material-icons-outlined{
+        font-size: 3.5vh;
+    }
+    .inputWrap {
+        width: 50vw;
+        left: 1.5vh;
+        top: 5vh;
+    }
+    .inputWrap input {
+        width: inherit;
+        height: 4.5vh;
+    }
+    .sbtn {
+        left: calc(100% - 12vw);
+        font-size: 1.2em;
+        padding: 1vh 0.5vh;
+        line-height: 2.5vh;
+    }
+    .btnClear {
+        left: calc(100% - 5.5vw);
+        top: 0.3vh;
+        line-height: 3vh;
+    }
+    .box-con .rightbox .li-contents-box {
+        padding-right: 1rem;
+    }
+    .box-con .rightbox .li-contents-box .li-contents{
+        font-size: 1.4rem;
+    }
+    .li-contents p:nth-of-type(1){
+        padding-top: 1rem;
+        height: 20%;
+    }
+    .li-contents p:nth-of-type(2){
+        height: 42%;
+    }
+    .li-contents p:nth-of-type(3){
+        height: 8%;
+        line-height: 10vw;
+        padding-right: 0;
+    }
+    .logo-imgbox {
+        height: 22%;
+    }
+    .meowartfont {
+        font-size: 1.8rem;
+    }
+    .scanvas-logo{
+        width: 30vw;
+        margin-right: 0;
+    }
+    .sketchbox-logo{
+        width: 30vw;
+        margin-right: 0;
+    }
+    .meowart-logo{
+        width: 30vw;
+        margin-right: 0;
+    }
+    .gpu-logo{
+        width: 10vw;
+        margin-top: 1rem;
+        margin-right: 0;
+    }
+    .search-res-h{
+        font-size: 1em;
+    }
+
+    /****** GPU *******/ 
+    .postoutline{
+        width: 50vw;
+        height: 50vh;
+    }
+    .post-contents{
+        width: 90%;       
+    }
+    .gpu-logo-post{
+        height: 6vh;
+    }
+    .gpu-logoimg{
+        margin-right: 0;
+    }    
+    .post-contents .gpu-text{
+        margin: 0;
+        line-height: 2.5rem;
+        padding-bottom: 1.3rem;
+    }
+    .gpu-text .smile{
+        font-size: 2.5rem;
+    }
+    .gpu-adress{
+        margin-left: 0;
+        width: 10rem;
+    }
+    .gpu-adress .gpu-web{
+        font-weight: 400;
+    }
+    .gpu-web:hover{
+        cursor: crosshair;
+        color: #88fd93;
+    }
+    .gpuinsta{
+        width: 2rem;
+        height: 2rem;
+        padding-top: 1.2rem;
+    }
+    .gpu-insta:hover{
+        cursor: crosshair;
+    }
+
+    /************************ meowart ************************/
+    .meowartpage{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+    .meowart-logo-img{
+        padding-top: 17vh;
+    }
+    .meowart-logo-img .meowart-logo-white{
+        width: 55vw;
+        margin-left: 6%;
+    }
+    .cat-img{
+        margin: -12vh 0 0 0;
+    }
+    .cat-img img{
+        height: 12vh;
+        margin-right: 8vw;
+    }
+    .meowart-youtube{
+        padding-left: 6.9vw;
+        font-size: 8vw;
+    }
+    .cat-img-jelly img{
+        height: 7vh;
+        margin-bottom: 33vh;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) and (orientation:landscape){
+    /************************ main ************************/
+    .box-con{
+        width: 80vw;
+    }
+    .midbox{
+        width: 20vw;
+    }
+    .rightbox{
+        width: 55vw;
+    }
+    .inputWrap input {
+        width: 18.5vw;
+    }
+    .sbtn{
+        left: calc(100% - 2.7vw);
+    }
+    .btnClear{
+        line-height: 4vh;
+        left: calc(100% - 0.08vw);
+    }
+
+    /************************ meowart ************************/
+    .meowartpage{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+    .meowart-logo-img{
+        padding-top: 17vh;
+    }
+    .meowart-logo-img .meowart-logo-white{
+        width: 55vw;
+        margin-left: 6%;
+    }
+    .cat-img{
+        margin: -12vh 0 0 0;
+    }
+    .cat-img img{
+        height: 15%;
+        width: 15%;
+        margin-right: 8vw;
+    }
+    .meowart-youtube{
+        padding-left: 6.9vw;
+        font-size: 8vw;
+    }
+    .cat-img-jelly img{
+        height: 7vh;
+        margin-bottom: 33vh;
+        margin-left: 5%;
+    }
+    
+    /*************************************** design ***************************************/
+    .xyzd-f-con :nth-child(5){
+        font-size: 1.8rem;
+    }
+} 
