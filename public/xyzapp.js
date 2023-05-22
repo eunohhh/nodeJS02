@@ -25,6 +25,9 @@ let reducedKeywords = [...new Set(everyKeywords)]; // reduce keywords
 const isNotHover = () => {
 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }; // =========> mobile device check function
+const isMobile = () => {
+	return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}; // =========> mobile device check function
 
 const topDivMain = document.querySelector('.screenxyz');  // ===============> main page
 const topDivScan = document.querySelector('.scanvaspage');  // =============> scanvas page
@@ -120,12 +123,12 @@ if(topDivMain !== null && topDivMain !== undefined){
     let searchInput = document.querySelector('.inputWrap').children[0]; // select searchInput input
     let searchIcon = document.querySelector('.inputWrap').children[1]; // select searchInput search icon
     let cancelSearchIcon = document.querySelector('.inputWrap').children[2]; // select search cancel icon
-
     let rightBox = document.querySelector('.rightbox'); // select right box
 
 
     /** ============== main page app ================ */
     mainContents[3].firstChild.setAttribute('class', 'meowartfont'); // append meowart font hardcoding...
+   
 
     leftIconBox.addEventListener('click', (e)=>{ // add event listner to left icons
         let ifSearched = document.querySelector('.search-res-div');
@@ -212,7 +215,7 @@ if(topDivMain !== null && topDivMain !== undefined){
         if(searchResult.length === 0){  // if no search result 
             let noRes = document.createElement('h3');
                 noRes.setAttribute('class', 'search-res-h');
-                noRes.innerHTML = '<h3>검색결과가 없어요 ㅠㅠ</h3>';
+                noRes.innerHTML = '검색결과가 없어요 ㅠㅠ';
             resDiv.insertAdjacentElement('beforeend', noRes);
             rightBox.insertAdjacentElement('beforeend', resDiv);
         } else {  // if search result 
@@ -239,6 +242,7 @@ if(topDivMain !== null && topDivMain !== undefined){
             mainLists[i].classList.remove('list-show'); // remove existing classlist
         })
         mainLists[targetNum].classList.add('list-show');
+        mainUl.style.color = `#88fd93`;
         mainContents[targetNum].classList.add('con-show'); // add classlist 
     }
 }
@@ -401,9 +405,14 @@ if(topDivMeow !== null && topDivMeow !== undefined){
     let catImg = `<div class="${meowart.catClass}"><img src="${meowart.catImg}"></div>`;
     topDivMeow.insertAdjacentHTML('beforeend', catImg);
 
-    let meowYoutube = `<div class="${meowart.youtubeClass}"><a href="${meowart.youtubeHref}" class="${meowart.youtubeHrefClass}" target="_blank">${meowart.youtubeStr}</a></div>`;
-    topDivMeow.insertAdjacentHTML('beforeend', meowYoutube);
-
+    if(isMobile()){
+        let meowYoutube = `<div class="${meowart.youtubeClass}"><a href="${meowart.youtubeHref}" class="${meowart.youtubeHrefClass}" target="_blank">${meowart.youtubeStr[1]}</a></div>`;
+        topDivMeow.insertAdjacentHTML('beforeend', meowYoutube);
+    } else {
+        let meowYoutube = `<div class="${meowart.youtubeClass}"><a href="${meowart.youtubeHref}" class="${meowart.youtubeHrefClass}" target="_blank">${meowart.youtubeStr[0]}</a></div>`;
+        topDivMeow.insertAdjacentHTML('beforeend', meowYoutube);
+    }
+    
     let catJelly = `<div class="${meowart.catJellyClass}"><img src="${meowart.catJellyImg}"></div>`;
 
     topDivMeow.insertAdjacentHTML('beforeend', catJelly);
@@ -463,6 +472,9 @@ if(topDivGpu !== null && topDivGpu !== undefined){
 /** ============== if Design page do this ================ */
 if(topDivDesign !== null && topDivDesign !== undefined){
     const de = forBind.design;
+
+    let cover = document.createElement('div');
+        cover.setAttribute('class', 'xyz-d-cover');
     
     makeLeftRight(de.logo);
 
@@ -471,12 +483,14 @@ if(topDivDesign !== null && topDivDesign !== undefined){
         makeLogoBox(de.palette, palMain);
         let palBg = document.createElement('div');
             palBg.setAttribute('class', de.palette.bg);
-        let weaveSvg = `<div class="${de.palette.bg}"><div class="${de.palette.weave}"></div></div>`;
+        let weaveSvg = `<div class="${de.palette.weave}"></div>`;
             palBg.insertAdjacentHTML('beforeend', weaveSvg);
         palMain.insertAdjacentElement('beforeend', palBg);
-    topDivDesign.insertAdjacentElement('beforeend', palMain);
+    cover.insertAdjacentElement('beforeend', palMain);
 
     makeLeftRight(de.font)
+
+    topDivDesign.insertAdjacentElement('beforeend', cover);
 
     function makeLogoBox(where, insert){
         let logoBox = document.createElement('div');
@@ -518,7 +532,7 @@ if(topDivDesign !== null && topDivDesign !== undefined){
             }            
             main.insertAdjacentElement('beforeend', bg)
             bg.insertBefore(mid, bg.childNodes[1]);
-        topDivDesign.insertAdjacentElement('beforeend', main);
+        cover.insertAdjacentElement('beforeend', main);
     }
 
     function makeWeave(order, bg){

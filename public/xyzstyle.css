@@ -1,6 +1,8 @@
 body{
     box-sizing: border-box;
     margin: 0;
+    /* height: 100vh;
+    overflow: visible; */
 }
 
 /************************ main ************************/
@@ -103,7 +105,7 @@ p{
     box-sizing: border-box;
 }
 .list-show{
-    color: #88fd93;
+    color: #00ee17;
 }
 .inputWrap {
     position: relative;
@@ -119,13 +121,15 @@ p{
 .inputWrap input {
     padding-right: 2rem;
     height: inherit;
-    width: 16vw;
+    width: 16.5vw;
     border: none;
     border-style: solid;
     border-width: 0.13rem;
     border-radius: 3px;
     border-color: #00ee17;
     color: #88fd93;
+    font-family: "D2Coding ligature", "sans-serif";
+    font-size: 1.1rem;
 }
 .inputWrap input:focus {
     outline-color: #00ee17;
@@ -160,7 +164,7 @@ p{
     text-align: center;
     position: absolute;
     top: -0.3vw;
-    left: calc(100% - 2vw);
+    left: calc(100% - 1vw);
     border: none;
     outline: none;
     cursor: pointer;
@@ -239,11 +243,11 @@ p{
 .sbtn {
     position: absolute;
     top: 0;
-    left: calc(100% - 3.8vw);
+    left: calc(100% - 2.8vw);
     padding: 1vh 0.8vh;
     color: #00ee17;
     font-size: 1.2rem;
-    font-weight: 600;
+    /* font-weight: 600; */
     cursor: pointer;
     border: none;
     outline: none;
@@ -251,11 +255,33 @@ p{
 }
 .search-res-div{
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     max-height: 100%;
-    overflow: scroll;
+    overflow: auto;
     padding-left: 2.5vw;
     color: #00ee17;
 }
+
+.search-res-h{
+    font-family: "D2Coding ligature", "sans-serif";
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.search-res-div::-webkit-scrollbar{
+    width: 5px;
+    background-color: #fff;
+}
+
+.search-res-div::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background-color: #88fd93;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+
 .search-res-div a{
     color: #00ee17;
 }
@@ -270,6 +296,15 @@ p{
     margin: 0;
     display: block;
     overflow-y: auto;
+}
+
+.scanvaspage::-webkit-scrollbar{
+    width: 5px;
+    background-color: #fff;
+}
+
+.scanvaspage::-webkit-scrollbar-thumb{
+    background-color: #88fd93;
 }
 .scanvaspage .scanvas-logoimg{
     background-repeat: no-repeat;
@@ -474,6 +509,8 @@ p{
     left: 50%;
     transform: translateX(-50%);
     line-height: 2.5rem;
+    width: 100%;
+    justify-content: center;
 }
 .xyz-focus{
     display: flex;
@@ -527,7 +564,7 @@ p{
     color: #fff;
     font-size: 1.5rem;
     line-height: 3rem;
-    padding-top: 6.5rem;
+    padding-top: 6rem;
 }
 .xyzpc p span{
     font-family: 'D2Coding','serif';
@@ -554,7 +591,7 @@ p{
     word-break: keep-all;
 }
 .xyz-service .xyz-servicetltle{
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding-bottom: 2rem;
 }
 .xyz-service-b{
@@ -577,9 +614,6 @@ p{
     width: 100vw;
     height: 100vh;
     margin: 0;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 .sketch-contents{
     position: absolute;
@@ -636,6 +670,7 @@ p{
 .skechboxinsta:hover{
     cursor: crosshair;
 }
+
 /************************ meowart ************************/
 .meowartpage{
     background-color: #88fd93;
@@ -644,6 +679,14 @@ p{
     margin: 0;
     display: block;
     overflow-y: auto;
+}
+
+.meowartpage::-webkit-scrollbar{
+    width:5px;
+    background-color: #88fd93;
+}
+.meowartpage::-webkit-scrollbar-thumb{
+    background-color: #FFF;
 }
 .meowart-logo-img{
     padding-top: 14rem;
@@ -771,34 +814,59 @@ p{
 }
 
 /*************************************** design ***************************************/
-.xyzdesign-title{
-    display: flex;
-}
 .xyz-designpage{
-    width: 100vw;
     height: 100vh;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.xyz-d-cover{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.xyzdesign{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .xyz-d-circle{
+    position: absolute;
+    z-index: -1;
     width: 3.25rem;
     height: 3.25rem;
     background-color: #ffff00;
     border-radius: 100%;
 }
 .xyzd-logobox{
+    width: 100%;
     height: 6rem;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    /* display: flex;
+    justify-content: center; */
 }
 .xyz-d-circle.logo{
-    margin-left: -6.2rem;
+   left: 3rem;
+}
+.xyz-d-circle.palette{
+    left: 8rem;
+}
+.xyz-d-circle.font{
+    right: 1rem;
 }
 .xyzd-l-background{
     width: 14.625rem;
-    padding-right: 1rem;
+    height: 32rem;
+    /* padding-right: 1rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -808,30 +876,33 @@ p{
     height: 1.33rem;
     background-color: #88fd93;
 }
-.xyz-l-b.top{
-    display: flex;
-    justify-content: space-between;
-}
-.xyz-l-b.mid{
-    width: 14.625rem;
-    height: 29.368rem;
-    background-color: #88fd93;
+.xyz-l-b{
+    /* width: 14.625rem;
+    height: 29.368rem; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.mid{
+    height: 32rem;
+    background-color: #88fd93;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
 }
 .xyzd-l-background .xyz-l-b.bottom >div{
     width: 0.94rem;
     height: 1.33rem;
     background-color: #88fd93;
 }
-.xyz-l-b.bottom{
-    display: flex;
-    justify-content: space-between;
-}
 
 .xyzd-l-con{
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -853,37 +924,39 @@ p{
 .xyzd-p-background{
     width: 14.625rem;
     height: 32rem;
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
 }
 
-.xyz-d-circle.palette{
+/* .xyz-d-circle.palette{
     margin-left: 4rem;
     margin-top: -0.8rem;
-}
+} */
 .xyzd-f-background{
     width: 14.625rem;
     height: 32rem;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.xyz-d-circle.font{
+/* .xyz-d-circle.font{
     margin-left: 8.6rem;
     margin-top: -1.5rem;
-}
+} */
 .xyzd-f-background .xyz-f-b.top >div{
     width: 0.94rem;
     height: 1.33rem;
     background-color: #88fd93;
 }
-.xyz-f-b.top{
+/* .xyz-f-b.top{
     display: flex;
     justify-content: space-between;
-}
-.xyz-f-b.mid{
-    width: 14.625rem;
+} */
+.xyz-f-b{
+    /* width: 14.625rem;
     height: 29.368rem;
-    background-color: #88fd93;
+    background-color: #88fd93; */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .xyzd-f-background .xyz-f-b.bottom >div{
@@ -891,11 +964,12 @@ p{
     height: 1.33rem;
     background-color: #88fd93;
 }
-.xyz-f-b.bottom{
+/* .xyz-f-b.bottom{
     display: flex;
     justify-content: space-between;
-}
+} */
 .xyzd-f-con{
+    width: 100%;
     font-size: 1.25rem;
     line-height: 3.7rem;
     text-align: center;
@@ -1013,8 +1087,8 @@ p{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 27.215rem;
-    height: 19.6rem;
+    width: 25rem;
+    height: 17rem;
 }
 
 .xyzmouse{
@@ -1045,11 +1119,12 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    position: absolute;
+    z-index: 10;
     width: 3.6rem;
     height: 2.611rem;
-    margin-left: -1rem;
-    margin-top: -0.4rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .xyz-d-fonttitle{
@@ -1057,9 +1132,12 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    position: absolute;
+    z-index: 10;
     width: 10rem;
     height: 2.745rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .xyz-d-p-title{
@@ -1069,8 +1147,10 @@ p{
     background-size: contain;
     width: 14.56rem;
     height: 2rem;
-    position: absolute;
-    margin-left: -1rem;
+    z-index: 10;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .xyzlogo_black{
@@ -1080,7 +1160,7 @@ p{
     background-size: contain;
     width: 3rem;
     height: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.7rem;
 }
 .screenxyz_logo_black{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='179.658' height='25.064' viewBox='0 0 179.658 25.064'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_1038' data-name='사각형 1038' width='179.658' height='25.064'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_523' data-name='그룹 523' transform='translate(-27.461 -19.365)'%3E%3Cg id='그룹_468' data-name='그룹 468' transform='translate(27.461 19.365)'%3E%3Cg id='그룹_205' data-name='그룹 205' transform='translate(0 0)' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_113' data-name='패스 113' d='M243.365,23.731l0,0c-.056-.107-.117-.213-.178-.321l-.056-.1a6.417,6.417,0,0,1-.336-.632c-.543-1.224-1.163-2.433-1.763-3.6-.514-1-1.1-2.131-1.615-3.274-.4-.868-.882-1.7-1.353-2.51-.126-.212-.255-.434-.4-.679-.087-.15-.086-.215-.077-.239s.046-.072.206-.132c.207-.076.41-.17.589-.252l.065-.03c.108-.049.242-.111.374-.164a5,5,0,0,0,3.147-4.772,6.256,6.256,0,0,0-3.756-5.728,9.751,9.751,0,0,0-4.121-.836c-.068,0-.139.008-.207.014L233.52.5c-.688.06-1.544.135-2.36.149-.889.013-1.119.137-1.166,1.04V1.7c-.022.388-.044.776-.069,1.167a52.466,52.466,0,0,0-.128,5.605,24.406,24.406,0,0,1-.082,2.837l0,.029c-.053.789-.109,1.605-.1,2.414.012.629.034,1.23.061,1.951a44.067,44.067,0,0,1-.018,5.261l0,1.725c0,.493,0,1.02,0,1.548a1.292,1.292,0,0,0,.275.937.6.6,0,0,0,.445.164h.017c.314-.017.691-.224.7-1.112q.015-.878.029-1.756c.027-1.453.051-2.874.053-4.28,0-1.527-.035-3.028-.084-4.831a.435.435,0,0,1,.059-.3.454.454,0,0,1,.326-.074c1.772-.02,3.108-.063,4.331-.138h.011c.281-.015.387.018.507.253,2.056,3.957,3.657,7.227,5.036,10.293a6.966,6.966,0,0,0,1,1.716.781.781,0,0,0,.59.31H243a.711.711,0,0,0,.309-.094.733.733,0,0,0,.344-.935,4.2,4.2,0,0,0-.287-.655M232.553,11.466h-.375c-.259,0-.5,0-.743,0-.15,0-.2-.032-.21-.046a.224.224,0,0,1-.019-.167,19.05,19.05,0,0,0,.091-3.3l0-.084c-.006-.222-.013-.444-.017-.665-.031-1.324.039-2.675.1-3.867l.041-.852c.015-.285.074-.348.349-.379l.425-.046a19.838,19.838,0,0,1,2.15-.157,7.4,7.4,0,0,1,1.413.124l.157.031a7.464,7.464,0,0,1,2.2.661,4.53,4.53,0,0,1,2.461,3.892,4.018,4.018,0,0,1-2.142,3.662c-2.106,1.013-2.546,1.1-5.882,1.19' transform='translate(-182.191 -0.352)'/%3E%3Cpath id='패스_114' data-name='패스 114' d='M524.523,18.5c0-.66,0-1.19,0-1.669,0-.292-.009-.585-.015-.884q-.007-.423-.014-.846c-.043-2.5-.087-5.1.018-7.661.052-1.275.02-2.566-.012-3.817l0-.058c-.021-.793-.048-1.78-.042-2.723,0-.332-.132-.53-.4-.586l-.015,0a.531.531,0,0,0-.619.372,2.765,2.765,0,0,0-.215,1.162c0,.292.006.585.01.877v.039c.011.674.021,1.333.008,1.973-.053,2.717-.045,5.476-.037,8.143v.068q.006,1.066.009,2.132c0,.4.014.806.028,1.155.019.533.044,1.2.016,1.819a28.876,28.876,0,0,0,.027,3.311c.034.483.063,1.012.09,1.667,0,.02,0,.041.006.063v.009c.012.112,0,.117,0,.119s-.021.009-.1-.056l-.013-.012a.561.561,0,0,0-.057-.045l-.13-.093a5.126,5.126,0,0,1-.5-.39l-.554-.506a45.291,45.291,0,0,1-7.123-7.593c-.233-.342-.462-.664-.736-1.049l-.005-.007a21.886,21.886,0,0,1-2.076-3.331c-.7-1.511-1.331-3.066-1.915-4.53a7.837,7.837,0,0,1-.678-2.963,7.916,7.916,0,0,0-.121-1.248c-.008-.059-.017-.119-.026-.178s-.017-.11-.025-.164a.588.588,0,0,0-.6-.585h-.017c-.439.035-.441.459-.441.662,0,.028,0,.057,0,.086s0,.057,0,.094c-.029,1.13.012,2.3.048,3.327.03.823.067,1.848.06,2.82,0,.224-.01.449-.017.668l0,.062c-.014.4-.029.812-.011,1.219.055,1.208.015,2.462-.021,3.571-.023.739-.049,1.576-.047,2.383,0,.545-.033,1.116-.063,1.619l0,.043a16.632,16.632,0,0,0-.008,2.641,22.233,22.233,0,0,1,.093,3.807,4.078,4.078,0,0,0,.069,1.306.6.6,0,0,0,.606.488h.042a.6.6,0,0,0,.565-.507,1.874,1.874,0,0,0,.031-.442v-.042c-.005-.348,0-.693,0-1.077a28.68,28.68,0,0,0-.127-3.363,15.791,15.791,0,0,1,0-2.772v-.012c.038-.6.076-1.23.067-1.849-.014-.757.007-1.529.027-2.276l0-.114c.032-1.2.064-2.444-.026-3.671a9.168,9.168,0,0,1,0-1.559,29.087,29.087,0,0,0,3.178,6.11,40.857,40.857,0,0,0,5.844,6.979c.624.562,1.351,1.232,2.021,1.931a13.112,13.112,0,0,0,1.9,1.548l.092.065c.262.188.534.381.793.58a.806.806,0,0,0,.508.189.526.526,0,0,0,.159-.033.782.782,0,0,0,.435-.636,7.43,7.43,0,0,0,.154-2.015c-.1-1.25-.1-2.517-.094-3.743' transform='translate(-403.183 -0.193)'/%3E%3Cpath id='패스_115' data-name='패스 115' d='M336.224,24.5a.759.759,0,0,0-.147-.011h-.008a20.681,20.681,0,0,1-2.819.011c-.719-.031-1.461-.062-2.192-.032a44.284,44.284,0,0,1-4.794-.157l-.162-.01a.347.347,0,0,1-.235-.073.315.315,0,0,1-.029-.23,15.215,15.215,0,0,0,.043-2.274c-.063-1.57-.107-3.169-.148-4.714q-.042-1.653-.094-3.3a.5.5,0,0,1,.081-.363.412.412,0,0,1,.289-.1l.033,0c1.783-.048,3.684-.113,5.575-.337.667-.082,1.356-.1,2.023-.114.39-.01.788-.012,1.185-.043a.851.851,0,0,0,.608-.236.6.6,0,0,0,.138-.446c-.031-.583-.614-.606-.805-.614-.12,0-.239.01-.354.018a1.582,1.582,0,0,1-.394.013,12.571,12.571,0,0,0-3.091.116,33.543,33.543,0,0,1-3.555.254c-.479.018-.959.036-1.438.062l-.05,0a.385.385,0,0,1-.276-.053.335.335,0,0,1-.068-.243c-.013-.911-.088-1.832-.159-2.723-.084-1.051-.171-2.136-.158-3.208,0-.152,0-.3.009-.458a13.843,13.843,0,0,0-.073-2.15.2.2,0,0,1,.021-.148c.043-.049.172-.044.243-.039a24.758,24.758,0,0,0,2.755-.077c.68-.043,1.378-.089,2.07-.09.753,0,1.518-.014,2.26-.027,1.073-.018,2.184-.037,3.276-.021a2.134,2.134,0,0,0,.586-.069A.541.541,0,0,0,336.834,2a.561.561,0,0,0-.563-.516,34.343,34.343,0,0,0-4.593-.129l-.291.018c-1.346.088-2.722.134-4.048.178q-.811.024-1.621.055a3.006,3.006,0,0,1-.446-.027,2.211,2.211,0,0,0-.7,0c-.677.131-.836.33-.816,1.015.008.219.019.437.031.657.021.4.044.812.028,1.221l0,.07a26.036,26.036,0,0,0,.009,3.291c.27,2.995.421,5.956.45,8.8.009.946.073,1.9.135,2.826.052.788.109,1.6.127,2.407l.01.3a8.647,8.647,0,0,1-.172,2.534.582.582,0,0,0,.4.745,1.974,1.974,0,0,0,.583.108c.589.034,1.177.076,1.764.119a44.276,44.276,0,0,0,5.525.167h.4c.229,0,.455,0,.682,0l.5-.006c.644-.008,1.31-.016,1.966-.034h.044c.456-.025.7-.225.719-.595.036-.59-.514-.668-.728-.7' transform='translate(-256.888 -1.052)'/%3E%3Cpath id='패스_116' data-name='패스 116' d='M426.594,24.225c-.913-.006-1.839-.032-2.737-.057-1.353-.038-2.753-.078-4.134-.05-.572.011-1.154-.008-1.72-.027-.708-.024-1.442-.047-2.166-.012a.348.348,0,0,1-.272-.064.241.241,0,0,1-.03-.2,5.4,5.4,0,0,0,.012-1.142c-.012-.186-.025-.379-.027-.568l-.006-.9c-.021-2.49-.044-5.064.062-7.6.015-.351.112-.464.436-.482l.069,0c2.308-.029,4.786-.075,7.579-.141l.174,0a10.668,10.668,0,0,0,1.68-.13c.328-.062.495-.235.494-.515a.541.541,0,0,0-.555-.534,1.776,1.776,0,0,0-.23-.023c-3.035-.025-6.113.024-9.142.145-.2.008-.311-.014-.369-.068s-.075-.158-.075-.349c.011-.928-.013-1.764-.07-2.556-.144-1.966-.239-3.947-.289-5.888-.006-.277.06-.294.315-.315,1.314-.105,2.652-.119,3.948-.127.512,0,1.023-.007,1.535-.017l1.265,0c.984,0,1.968,0,2.951-.014a11.054,11.054,0,0,0,1.192-.078.582.582,0,1,0-.029-1.164c-.3-.014-.609-.009-.906,0H425.5c-.51.01-1.021.024-1.53.039-1.081.032-2.2.065-3.3.045l-.552-.01a34.116,34.116,0,0,0-5.086.152c-.677.089-.881.317-.871.977.009.519.006,1.047,0,1.558,0,1.084-.012,2.206.084,3.312a25.674,25.674,0,0,1,.1,2.678c-.023,1.476-.058,2.977-.094,4.429-.034,1.581-.072,3.215-.1,4.822-.014.941.005,1.9.026,2.82.012.539.025,1.08.03,1.619.014,1.358.2,1.547,1.565,1.554q2.676.015,5.346.046l2.089.02,1.06.011c.771.01,1.566.019,2.351.018l.09,0a.763.763,0,0,0,.523-.19.55.55,0,0,0,.146-.406c-.011-.6-.605-.6-.8-.6' transform='translate(-328.625 -1.057)'/%3E%3Cpath id='패스_117' data-name='패스 117' d='M140.24,24.412c-.057,0-.108.007-.164.011a11.2,11.2,0,0,1-1.6-.068c-.244-.022-.488-.044-.734-.06a10.267,10.267,0,0,1-6.289-2.634c-.306-.271-.621-.575-.96-.931-2.34-2.457-3.345-4.905-3.161-7.7a8.41,8.41,0,0,1,1.083-3.79,17.559,17.559,0,0,1,1.637-2.291,9.456,9.456,0,0,1,4.2-2.938,18.233,18.233,0,0,1,5.962-1c.236,0,.765-.008.818-.553.038-.375-.2-.637-.675-.736a5.955,5.955,0,0,0-1.838-.135,19.53,19.53,0,0,0-3.8.839l-.2.059a10.611,10.611,0,0,0-5.1,3.12,12.216,12.216,0,0,0-3.535,6.932,10.364,10.364,0,0,0,.6,4.836,13.339,13.339,0,0,0,3.626,5.217,12.346,12.346,0,0,0,8.516,3.482h.006l.036,0c.187-.01.379-.01.562-.01s.377,0,.566-.01a3.62,3.62,0,0,0,.58-.074.783.783,0,0,0,.7-.821.758.758,0,0,0-.255-.536.794.794,0,0,0-.584-.205' transform='translate(-99.835 -1.241)'/%3E%3Cpath id='패스_118' data-name='패스 118' d='M23.528,2.519a1.712,1.712,0,0,0-.443-.113,9.354,9.354,0,0,0-2.612.051A11.249,11.249,0,0,0,11.2,12.673c-.052.584-.088,1.181-.121,1.758-.046.8-.1,1.634-.193,2.444A8.737,8.737,0,0,1,2.273,24.4h0c-.138,0-.277,0-.413-.005a7.108,7.108,0,0,0-.939.02.892.892,0,1,0,.07,1.78c.587.015,1.205.021,1.836-.012a9.1,9.1,0,0,0,4.171-1.125,10.385,10.385,0,0,0,4.583-5.01,16.485,16.485,0,0,0,1.014-5.516l.017-.276A14.645,14.645,0,0,1,13,11.276a9.452,9.452,0,0,1,2.34-4.394A9.289,9.289,0,0,1,20.59,3.92a16.644,16.644,0,0,1,2.454-.136h.268l.062,0a.6.6,0,0,0,.64-.5.655.655,0,0,0-.486-.764' transform='translate(0 -1.855)'/%3E%3Cpath id='패스_119' data-name='패스 119' d='M630.708.1c-.189-.114-.558-.229-.9.283q-.175.265-.349.532l-.005.007c-.167.256-.375.574-.578.876-.09.132-.187.263-.284.395l0,.006c-.132.178-.268.361-.394.562-.4.63-.783,1.258-1.157,1.866l-.069.112q-.3.487-.6.973c-.126.2-.255.405-.383.607l-.031.049c-.258.4-.551.863-.808,1.319-.113.2-.224.4-.335.6l-.008.013a22.629,22.629,0,0,1-1.584,2.569c-.075.1-.145.2-.223.314-.105-.163-.2-.305-.293-.447l-.281-.418a20.245,20.245,0,0,1-1.415-2.321c-.658-1.338-1.426-2.637-2.169-3.893l-.37-.627c-.325-.551-.645-1.12-.954-1.67l-.118-.21q-.171-.3-.343-.607l-.075-.13c-.055-.094-.123-.212-.181-.328a.569.569,0,0,0-.61-.355.609.609,0,0,0-.543.463.924.924,0,0,0,.139.745q.094.158.189.314l.019.031c.114.189.232.385.342.58.583,1.03,1.11,1.968,1.611,2.867l.372.665c.392.7.8,1.423,1.172,2.147a24.949,24.949,0,0,0,1.459,2.555c.264.391.532.8.747,1.137l.03.047q.227.35.455.7c.037.056.037.056.012.1-.121.2-.229.408-.335.611l-.006.012c-.059.113-.118.226-.18.338-.086.157-.171.314-.256.475a12.07,12.07,0,0,1-.879,1.475,6.741,6.741,0,0,0-.611.971,19.588,19.588,0,0,1-1.113,1.863l-.471.73c-.457.709-.929,1.441-1.384,2.179-.268.435-.405.692-.55.965-.115.216-.234.44-.438.786l-.2.341a1.811,1.811,0,0,0-.192.486.659.659,0,0,0,1.223.474l.13-.217c.153-.256.363-.606.552-.933.131-.228.255-.446.375-.657l.068-.119c.569-1,1.06-1.87,1.919-3.138.287-.423.556-.867.816-1.3l.208-.341c.14-.229.279-.466.4-.674l.055-.093c.119-.2.237-.4.358-.6.1-.156.2-.319.283-.449.139-.217.282-.442.416-.676.183-.321.348-.638.508-.946l.017-.033.136-.259a26.213,26.213,0,0,1,1.68,2.769c.357.685.734,1.35,1.122,1.977.161.261.326.519.472.746l.038.059c.409.639.832,1.3,1.183,1.989.226.442.476.881.743,1.3s.544.827.8,1.2l.276.405a1.384,1.384,0,0,0,.218.257.6.6,0,0,0,.4.155H630a.662.662,0,0,0,.25-.066.586.586,0,0,0,.366-.567,1.051,1.051,0,0,0-.112-.467c-.14-.249-.3-.489-.453-.724l-.032-.049c-.109-.165-.227-.333-.331-.481l-.011-.016a9.062,9.062,0,0,1-.623-.969c-.565-1.071-1.114-2.022-1.679-2.908l-.129-.2c-.4-.624-.81-1.269-1.151-1.929-.435-.844-.916-1.681-1.469-2.559-.227-.36-.47-.725-.686-1.048l-.139-.209c.039-.061.078-.122.118-.186l.026-.043c.074-.12.152-.245.235-.36a26.525,26.525,0,0,0,1.908-3.08c.3-.566.646-1.17,1.061-1.848.309-.5.63-1.008.939-1.5l.043-.068c.2-.311.445-.7.677-1.071.114-.183.221-.367.325-.545l.016-.028c.127-.219.271-.466.423-.7.251-.385.507-.762.756-1.126l.046-.068c.169-.248.337-.5.5-.745A.752.752,0,0,0,631,.5.629.629,0,0,0,630.708.1' transform='translate(-488.425 0)'/%3E%3Cpath id='패스_120' data-name='패스 120' d='M813.039,24.076c-.1,0-.209-.006-.338,0l-.973,0c-.526,0-1.122,0-1.691-.017-.214,0-.446-.023-.633-.038l-.023,0c-.214-.017-.456-.036-.7-.04-.575-.008-1.142-.005-1.691,0h-.071c-1.091.007-2.219.014-3.335-.067-.544-.039-1.126-.034-1.55-.031h-.013c-.183,0-.366,0-.549,0-.212,0-.413.011-.635.025l-.073,0,.092-.17c.229-.42.465-.855.708-1.281.28-.49.566-.979.819-1.41l.024-.042c.214-.364.506-.864.779-1.339.515-.9,1.037-1.817,1.5-2.627l.959-1.688c.36-.633.72-1.266,1.084-1.908l.02-.036c.87-1.533,1.769-3.118,2.674-4.68.665-1.149,1.37-2.289,2.053-3.392l.112-.182c.282-.454.592-.925.868-1.344l.01-.016q.224-.338.445-.677l.138-.211c.137-.209.279-.425.409-.651a.824.824,0,0,0,.086-.741.854.854,0,0,0-.578-.482,1.611,1.611,0,0,0-.44-.081l-.142,0c-.591-.007-1.327-.018-2.034-.006-.255,0-.516.022-.726.037H809.6c-.248.017-.5.035-.755.036-.519,0-1.073,0-1.517,0h-.033c-.713-.006-1.521-.013-2.317.005-.166,0-.332.009-.5.015h-.016a11.8,11.8,0,0,1-1.643-.021,9.93,9.93,0,0,0-2.728.076.612.612,0,0,0-.553.559.622.622,0,0,0,.438.663,1.245,1.245,0,0,0,.528.055,8.277,8.277,0,0,1,1.792-.043l.177.015.139.012c.314.028.639.057.97.057q3.166,0,6.145-.018l2.07-.008-.215.315-.013.019c-.254.373-.542.8-.81,1.218-.2.321-.392.643-.574.955l-.009.015c-.179.3-.364.619-.555.922l-.021.032c-.728,1.15-1.481,2.34-2.168,3.555-.864,1.529-1.744,3.051-2.6,4.522l-.13.226q-.634,1.1-1.265,2.193c-.678,1.179-1.355,2.368-2.013,3.534-.473.838-.965,1.717-1.324,2.359l-.843,1.5a1.007,1.007,0,0,0-.122.761c.018.072.031.146.046.224l0,.011a.655.655,0,0,0,.789.588c.1-.011.194-.023.291-.035.19-.025.392-.05.594-.057.767-.019,1.4-.022,2-.009.345.007.692.027,1.027.047l.044,0c.232.013.52.03.8.04.258.009.527.009.723.008h.092c.185,0,.331,0,.486,0,.288.007.6.023.811.033l.06,0a13.678,13.678,0,0,0,1.781.01,8.043,8.043,0,0,1,1.171.032l.371.027c.394.025.915.053,1.457.053.263,0,.507-.006.747-.019.219-.012.434-.029.638-.053.588-.066.655-.469.656-.64a.69.69,0,0,0-.685-.7' transform='translate(-634.066 -0.739)'/%3E%3Cpath id='패스_121' data-name='패스 121' d='M723.065.811a.907.907,0,0,0-.331.3c-.432.7-.769,1.254-1.061,1.75-.253.431-.516.889-.69,1.191l-.025.043c-.4.693-.811,1.409-1.239,2.105-.7,1.146-1.45,2.279-2.171,3.374l-.065.1c-.224.341-.465.677-.7,1l-.012.017c-.171.239-.313.438-.458.646-.032.045-.063.094-.1.151q-.408-.594-.814-1.188c-.049-.071-.1-.141-.148-.211l-.022-.032c-.112-.158-.239-.337-.345-.514-.4-.655-.787-1.317-1.167-1.957l-.523-.881c-.04-.067-.078-.126-.115-.178a14.26,14.26,0,0,1-1.557-2.672,13.476,13.476,0,0,0-1.117-2.016c-.151-.238-.314-.458-.472-.672L709.8.982a.593.593,0,0,0-.7-.238.619.619,0,0,0-.42.6.933.933,0,0,0,.241.62,11.529,11.529,0,0,1,1.316,2.186l.086.19a14.808,14.808,0,0,0,.714,1.429c.4.672.812,1.332,1.216,1.977l.012.019c.249.4.506.808.757,1.217.12.2.233.4.343.6.135.244.274.5.433.744.422.66.869,1.319,1.3,1.957l.156.231a.918.918,0,0,0,.2.2l.007.006a.6.6,0,0,1,.066.059l.011.012c.007.151.011.3.015.475v.029c0,.147.009.329.017.507.006.115.019.228.031.329a3.26,3.26,0,0,1,.029.341c.021,1.675.04,3.435.054,5.234.005.656,0,1.239-.012,1.783,0,.184-.021.378-.036.566-.014.173-.029.352-.035.533-.012.336-.013.679-.014.985l0,.393c0,.035,0,.069,0,.1v.023a2.191,2.191,0,0,0,.008.363.628.628,0,0,0,.385.515.611.611,0,0,0,.226.043h.033a.67.67,0,0,0,.387-.154.749.749,0,0,0,.283-.607c0-.3.009-.608.025-.917.006-.121.019-.249.03-.352a5.327,5.327,0,0,0,.036-.579c-.016-2.1-.039-4.28-.059-6.2l-.018-1.762c0-.091-.007-.178-.012-.251l-.027-.349c-.021-.259-.041-.527-.053-.786a.277.277,0,0,1,.045-.1c.081-.131.171-.263.251-.381l.018-.026c.052-.076.1-.152.154-.229q.108-.165.214-.331c.1-.15.226-.355.355-.541.158-.228.325-.461.472-.666l.015-.02c.278-.387.565-.787.83-1.2.766-1.191,1.457-2.3,2.112-3.4.357-.6.7-1.211,1.022-1.8l.013-.023c.156-.282.311-.564.469-.845l.061-.109c.09-.16.191-.342.3-.513.166-.271.329-.532.5-.8l.235-.375a.589.589,0,0,0-.037-.758.615.615,0,0,0-.778-.12' transform='translate(-562.313 -0.561)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
@@ -1114,7 +1194,7 @@ p{
     background-position: center;
     background-size: contain;
     position: relative;
-    width: 14.56rem;
+    /* width: 14.56rem; */
     height: 32rem;
 }
 
@@ -1123,7 +1203,7 @@ p{
     /************** main *******************/
     .box-con{
         flex-flow: row wrap;
-        width: 73vw;
+        width: 90vw;
         height: auto;
     }
     .leftbox{
@@ -1137,27 +1217,28 @@ p{
         border-right: none;
         align-items: start;
         border-bottom: 0.18rem solid #88fd93;
-        justify-content: flex-start;
-        padding-top: 1.2em;
+        /* justify-content: flex-start;
+        padding-top: 1.2em; */
     }
     .rightbox{
         width: 100%;
     }
     .box-con .midbox .li-group {
-        font-size: 3.5vh;
+        font-size: 3vh;
     }
     .box-con .midbox .li-group .li-group-item {
         padding-top: 0.3em;
         padding-bottom: 0.3em;
     }
     .inputWrap {
-        width: 50vw;
+        width: 65vw;
         left: 1.5vh;
-        top: 8vh;
+        margin-top: -6rem;
     }
     .inputWrap input {
         width: inherit;
         height: 4.5vh;
+        font-size: 1.1rem;
     }
     .sbtn {
         left: calc(100% - 12vw);
@@ -1174,6 +1255,7 @@ p{
     }
     .box-con .rightbox .li-contents-box .li-contents{
         font-size: 1.2rem;
+        line-height: 1.7rem;
     }
     .li-contents p:nth-of-type(1){
         padding-top: 1rem;
@@ -1188,10 +1270,11 @@ p{
         padding-right: 0;
     }
     .logo-imgbox {
-        height: 22%;
+        height: 25%;
     }
     .meowartfont {
         font-size: 1.8rem;
+        line-height: 2.2rem;
     }
     .scanvas-logo{
         width: 30vw;
@@ -1210,7 +1293,7 @@ p{
         margin-right: 0;
     }
     .search-res-h{
-        font-size: 1em;
+        font-size: 1.1rem;
     }
     
     /****************** scanvas ********************/ 
@@ -1294,8 +1377,9 @@ p{
 
     .xyz-3dscan p{
         height: 30rem;
-        width: 20rem;
+        width: 85vw;
         line-height: 2rem;
+        text-align: left;
     }
     .xyz-focus {
         margin-left: 1rem;
@@ -1362,13 +1446,19 @@ p{
     }
 
     .xyz-service p {
+        width: 85vw;
+        text-align: left;
         font-size: 1rem;
         line-height: 2rem;
-        margin: 0 1rem;
     }
 
     .xyz-service-b {
         padding: 0;
+        width: 85vw;
+    }
+
+    .xyz-service-b p{
+        text-align: center;
     }
 
     .xyz-pencil{
@@ -1376,10 +1466,41 @@ p{
         height: 2rem;
     }
 
+    /****************** sketchbox ******************/
+
+    .sketch-contents{
+        position: relative;
+        width: fit-content;
+    }
+    .sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
+        padding-top: 0;
+        width: 2rem;
+        height: 2rem;
+    }
+    .skechboxaccount{
+        text-decoration: none;
+        color: #000;
+        font-size: 3rem;
+        font-family: 'Uhbeemysen','sans-serif';
+    }
+
+    .xyzworm{
+        width: 11rem;
+        height: 3rem;
+        top: calc(100vh - 85%);
+        left: calc(100vw - 96%);
+    }
+    .xyzworm.right{
+        width: 8rem;
+        height: 2.2rem;
+        top: calc(100vh - 35%);
+        left: calc(100vw - 38%);
+    }
+
     /****************** GPU ********************/ 
     .postoutline{
-        width: 22rem;
-        height: 22rem;
+        width: 21rem;
+        height: 21rem;
     }
     .post-contents{
         width: 90%;
@@ -1417,11 +1538,6 @@ p{
         color: #88fd93;
     }
 
-    /* .gpuinsta{
-        width: 2rem;
-        height: 2rem;
-        padding-top: 1.2rem;
-    } */
     .gpu-insta:hover{
         cursor: crosshair;
     }
@@ -1442,22 +1558,23 @@ p{
     }
     .meowart-logo-img .meowart-logo-white{
         margin: 0 auto;
-        width: 90%;
+        width: 93%;
     }
     .cat-img{
         margin-top: -14%;
         margin-bottom: -6.5%;
     }
     .cat-img img{
-        height: 10vh;
-        margin-right: 8vw;
+        height: 11vh;
+        margin-right: 2vw;
         padding-top: 2rem;
     }
     .meowart-youtube{
         color: #fff;
-        font-size: 3rem;
-        padding-top: 1rem;
-        transform: translateY(-15%);
+        font-size: 14.5vw;
+        padding-top: 0;
+        padding-left: 4vw;
+        transform: translateY(-10%);
     }
     .meowaccount{
         color: #fff;
@@ -1469,14 +1586,31 @@ p{
         height: 45%;
     }
     .cat-img-jelly img{
-        height: 7.5vh;
-        margin-bottom: 34vh;
+        height: 10vh;
+        margin-bottom: 30vh;
     }
 
     /*************************************** design ***************************************/
     .xyz-designpage{
-        width: 100vw;
-        height: auto;
+        /* width: auto;
+        height: auto; */
+        overflow-y: scroll;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+
+    .xyz-designpage::-webkit-scrollbar{
+        width: 5px;
+        background-color: #fff;
+    }
+    
+    .xyz-designpage::-webkit-scrollbar-thumb{
+        background-color: #88fd93;
+    }
+    .xyz-d-cover{
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1486,12 +1620,13 @@ p{
         height: 3.25rem;
     }
     .xyzd-logobox{
-        height: 8rem;
+        height: 5rem;
         align-items: center;
+        margin-top: 5rem;
     }
-    .xyz-d-circle.logo{
+    /* .xyz-d-circle.logo{
         margin-left: -6.2rem;
-    }
+    } */
     .xyzd-l-background{
         width: 65vw;
         padding-right: 0;
@@ -1499,23 +1634,29 @@ p{
     .xyzd-l-background .xyz-l-b.top >div{
         width: calc(100% /15);
     }
-    .xyz-l-b.top{
-        width: 100%;
-        display: flex;
+    /* .xyz-l-b{
+        width: 14.625rem;
+        height: 29.368rem;
+    } */
+    .top{
+        justify-content: space-between;
     }
-    .xyz-l-b.mid{
+    .mid{
         width: 100%;
         height: 32rem;
+        background-color: #88fd93;
+    }
+    .bottom{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
     .xyzd-l-background .xyz-l-b.bottom >div{
         width: calc(100% /15);
     }
-    .xyz-l-b.bottom{
-        width: 100%;
-    }
-    .xyzd-l-con{
+    /* .xyzd-l-con{
         position: absolute;
-    }
+    } */
     .xyz-designpage .xyzd-l-background .xyzd-l-con .scanvas-logoimg{
         width: 10rem;
     }
@@ -1532,42 +1673,45 @@ p{
     } */
     .xyz-weave{
         width: 65vw;
-        height: calc((75vw / 15) * 32);;
+        height: calc((65vw / 15) * 32);;
     }
-    .xyz-d-circle.logo{
+    /* .xyz-d-circle.logo{
         margin-left: -5.2rem;
-    }
+    } */
     .xyz-d-logotitle{
         margin-left: 0;
     }
-    .xyz-d-circle.palette{
+    /* .xyz-d-circle.palette{
         margin-left: 4rem;
-    }
+        margin-top: 3rem;
+    } */
     .xyz-d-p-title{
         margin-left: 0;
+        /* margin-top: 3rem; */
     }
     .xyzd-f-background{
-        width: 65vw;        
+        width: 65vw;
+        padding-bottom: 5rem;     
     }
-    .xyz-d-circle.font{
+    /* .xyz-d-circle.font{
         margin-left: 8.6rem;
-    }
+    } */
     .xyzd-f-background .xyz-f-b.top >div{
         width: calc(100% /15);
     }
-    .xyz-f-b.top{
+    /* .xyz-f-b.top{
         display: flex;
     }
     .xyz-f-b.mid{
         width: 100%;
         height: 32rem;
-    }
+    } */
     .xyzd-f-background .xyz-f-b.bottom >div{
         width: calc(100% /15);
     }
-    .xyz-f-b.bottom{
+    /* .xyz-f-b.bottom{
         padding-bottom: 10vh;
-    }
+    } */
     .xyzd-f-con{
         font-size: 1.25rem;
     }
@@ -1618,6 +1762,7 @@ p{
     }
     .box-con .rightbox .li-contents-box .li-contents{
         font-size: 1rem;
+        line-height: 1.7rem;
     }
     .li-contents p:nth-of-type(1){
         padding-top: 1.5rem;
@@ -1635,6 +1780,10 @@ p{
     }
     .meowartfont {
         font-size: 1.2rem;
+    }
+
+    .search-res-h{
+        font-size: 1rem;
     }
 
     /****************** scanvas ********************/ 
@@ -1793,6 +1942,37 @@ p{
         height: 2rem;
     }
 
+    /****************** sketchbox ******************/
+    .sketch-contents{
+        position: relative;
+        width: fit-content;
+    }
+
+    .sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
+        padding-top: 0;
+        width: 2rem;
+        height: 2rem;
+    }
+    .skechboxaccount{
+        text-decoration: none;
+        color: #000;
+        font-size: 2.8rem;
+        font-family: 'Uhbeemysen','sans-serif';
+    }
+
+    .xyzworm{
+        width: 10rem;
+        height: 2.8rem;
+        top: calc(100vh - 90%);
+        left: calc(100vw - 96%);
+    }
+    .xyzworm.right{
+        width: 8rem;
+        height: 2.2rem;
+        top: calc(100vh - 30%);
+        left: calc(100vw - 30%);
+    }
+
     /****** GPU *******/ 
     .postoutline{
         width: 21rem;
@@ -1802,7 +1982,7 @@ p{
         width: 90%;       
     }
     .gpu-logo-post{
-        height: 6vh;
+        height: 20vh;
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -1811,9 +1991,11 @@ p{
         margin: 0;
         line-height: 2.5rem;
         padding-bottom: 1.3rem;
+        font-size: 1.1rem;
     }
     .gpu-text .smile{
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        margin-top: -2rem;
     }
     .gpu-adress{
         margin-left: 0;
@@ -1821,15 +2003,17 @@ p{
     }
     .gpu-adress .gpu-web{
         font-weight: 400;
+        font-size: 1.1rem;
     }
     .gpu-web:hover{
         cursor: crosshair;
         color: #88fd93;
     }
-    .gpuinsta{
+
+    .xyzinsta{
         width: 2rem;
         height: 2rem;
-        padding-top: 1.2rem;
+        padding-top: 1rem;
     }
     .gpu-insta:hover{
         cursor: crosshair;
@@ -1851,23 +2035,23 @@ p{
         margin: -12vh 0 0 0;
     }
     .cat-img img{
-        height: 22vh;
+        height: 28vh;
         margin-right: 8vw;
     }
     .meowart-youtube{
-        font-size: 14.5vh;
-        padding-left: 5.9vw;
+        font-size: 4rem;
+        padding-left: 5vw;
         color: #fff;
     }
     .cat-img-jelly img{
-        height: 10vh;
-        margin-bottom: 30vh;
+        height: 20vh;
+        margin-bottom: 10vh;
     }
 
     /*************************************** design ***************************************/
     .xyz-designpage{
-        width: 100vw;
-        height: auto;
+        /* width: 100vw;
+        height: auto; */
         flex-direction: row;
         gap: 3vw;
         padding-bottom: 10vh;
@@ -1888,6 +2072,7 @@ p{
     }
     .xyzd-l-background{
         width: 28vw;
+        height: auto;
         padding-right: 0;
     }
     .xyzd-l-background .xyz-l-b.top >div{
@@ -1909,9 +2094,9 @@ p{
     .xyz-l-b.bottom{
         width: 100%;
     }
-    .xyzd-l-con{
+    /* .xyzd-l-con{
         position: absolute;
-    }
+    } */
     .xyzlogo_black{
         width: 2rem;
         margin-bottom: 0;
@@ -1949,17 +2134,21 @@ p{
         height: calc((28vw / 15) * 32);;
     }
     .xyz-d-circle.logo{
-        margin-left: -5.2rem;
+        margin-left: -4.2rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .xyz-d-logotitle{
         margin-left: 0;
     }
     .xyz-d-circle.palette{
         margin-left: 4rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .xyz-d-p-title{
         margin-left: 0;
-        width: 12rem;
+        width: 11rem;
     }
     .xyz-d-fonttitle{
         width: 8rem;
@@ -1969,6 +2158,8 @@ p{
     }
     .xyz-d-circle.font{
         margin-left: 8.6rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .xyzd-f-background{
         height: auto;
@@ -2060,6 +2251,10 @@ p{
         font-size: 1.2rem;
     }
 
+    .search-res-h{
+        font-size: 1.1rem;
+    }
+
     /****** scanvas ******/
     .scanvaspage .xyzfolder {
         display: flex;
@@ -2070,13 +2265,70 @@ p{
         z-index: 100;
     }
 
+    .xyz-closefolder {
+        left: 50%;
+        top: 55%;
+        transform: translateX(-50%);
+        display: block;
+        position: absolute;
+    }
+
     .xyz3d{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .xyzvr{
         height: 80vh;
     }
+    .xyz-features{
+        font-size: 1.3rem;
+    }
+
+    .xyzpc{
+        width: 22rem;
+        height: 15rem;
+    }
+
+    .xyzpc p{
+        padding-top: 5rem;
+        font-size: 1.3rem;
+    }
+
+    .xyzmouse{
+        font-size: 1.7rem;
+    }
+
+     /****************** sketchbox ******************/
+     .sketch-contents{
+        position: relative;
+        width: fit-content;
+    }
+
+    .sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
+        padding-top: 0;
+        width: 2rem;
+        height: 2rem;
+    }
+    .skechboxaccount{
+        text-decoration: none;
+        color: #000;
+        font-size: 3.7rem;
+        font-family: 'Uhbeemysen','sans-serif';
+    }
+
+    .xyzworm{
+        width: 11rem;
+        height: 3rem;
+        top: calc(100vh - 90%);
+        left: calc(100vw - 96%);
+    }
+    .xyzworm.right{
+        width: 9rem;
+        height: 2.5rem;
+        top: calc(100vh - 20%);
+        left: calc(100vw - 20%);
+    }
+
 
     /****** GPU *******/ 
     .postoutline{
@@ -2087,7 +2339,7 @@ p{
         width: 90%;       
     }
     .gpu-logo-post{
-        height: 6vh;
+        height: 20vh;
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -2096,13 +2348,16 @@ p{
         margin: 0;
         line-height: 2.5rem;
         padding-bottom: 1.3rem;
+        font-size: 1.1rem;
     }
     .gpu-text .smile{
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        margin-top: -1.5rem;
     }
     .gpu-adress{
         margin-left: 0;
         width: 10rem;
+        font-size: 1.1rem;
     }
     .gpu-adress .gpu-web{
         font-weight: 400;
@@ -2111,10 +2366,10 @@ p{
         cursor: crosshair;
         color: #88fd93;
     }
-    .gpuinsta{
+    .xyzinsta{
         width: 2rem;
         height: 2rem;
-        padding-top: 1.2rem;
+        padding-top: 1rem;
     }
     .gpu-insta:hover{
         cursor: crosshair;
@@ -2137,16 +2392,16 @@ p{
         margin: -12vh 0 0 0;
     }
     .cat-img img{
-        height: 22vh;
+        height: 26vh;
         margin-right: 8vw;
     }
     .meowart-youtube{
         padding-left: 6.9vw;
-        font-size: 6vw;
+        font-size: 5rem;
     }
     .cat-img-jelly img{
-        height: 10vh;
-        margin-bottom: 30vh;
+        height: 20vh;
+        margin-bottom: 10vh;
         margin-left: 5%;
     }
 
@@ -2174,10 +2429,12 @@ p{
     }
     .xyzd-l-background{
         width: 28vw;
+        height: auto;
         padding-right: 0;
     }
     .xyzd-l-background .xyz-l-b.top >div{
-        width: calc(27vw / 15);
+        /* width: calc(27vw / 15); */
+        width: calc(27.9vw / 15);
         height: 1.1rem;
     }
     .xyz-l-b.top{
@@ -2195,9 +2452,9 @@ p{
     .xyz-l-b.bottom{
         width: 100%;
     }
-    .xyzd-l-con{
+    /* .xyzd-l-con{
         position: absolute;
-    }
+    } */
     .xyzlogo_black{
         width: 2rem;
         margin-bottom: 0.8rem;
@@ -2242,6 +2499,8 @@ p{
     }
     .xyz-d-circle.palette{
         margin-left: 4rem;
+        width: 3.25rem;
+        height: 3.25rem;
     }
     .xyz-d-p-title{
         margin-left: 0;
@@ -2251,13 +2510,11 @@ p{
         width: 8rem;
     }
     .xyzd-f-background{
+        height: auto;
         width: 28vw;        
     }
     .xyz-d-circle.font{
         margin-left: 8.6rem;
-    }
-    .xyzd-f-background{
-        height: auto;
     }
     .xyzd-f-background .xyz-f-b.top >div{
         width: calc(27vw /15);
@@ -2318,13 +2575,14 @@ p{
         font-size: 3.5vh;
     }
     .inputWrap {
-        width: 50vw;
+        width: 53vw;
         left: 1.5vh;
-        top: 5vh;
+        top: 1vh;
     }
     .inputWrap input {
         width: inherit;
         height: 4.5vh;
+        font-size: 1.6rem;
     }
     .sbtn {
         left: calc(100% - 12vw);
@@ -2341,7 +2599,8 @@ p{
         padding-right: 1rem;
     }
     .box-con .rightbox .li-contents-box .li-contents{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        line-height: 2.3rem;
     }
     .li-contents p:nth-of-type(1){
         padding-top: 1rem;
@@ -2359,7 +2618,8 @@ p{
         height: 22%;
     }
     .meowartfont {
-        font-size: 1.8rem;
+        font-size: 2.3rem;
+        line-height: 3rem;
     }
     .scanvas-logo{
         width: 30vw;
@@ -2379,10 +2639,10 @@ p{
         margin-right: 0;
     }
     .search-res-h{
-        font-size: 1em;
+        font-size: 1.6rem;
     }
 
-    /* scanvas */
+    /***************** scanvas ********************/
     .xyz3d{
         font-size: 2rem;
     }
@@ -2394,6 +2654,41 @@ p{
 
     .xyzpc p{
         padding-top: 4.5rem;
+        font-size: 1.3rem;
+    }
+
+    .xyzmouse{
+        font-size: 1.8rem;
+    }
+
+    /************************* sketchbox *************************/
+    .sketch-contents{
+        position: relative;
+        width: fit-content;
+    }
+    .sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
+        padding-top: 0;
+        width: 3rem;
+        height: 3rem;
+    }
+    .skechboxaccount{
+        text-decoration: none;
+        color: #000;
+        font-size: 5rem;
+        font-family: 'Uhbeemysen','sans-serif';
+    }
+
+    .xyzworm{
+        width: 15.5rem;
+        height: 4.2rem;
+        top: calc(100vh - 86%);
+        left: calc(100vw - 96%);
+    }
+    .xyzworm.right{
+        width: 12rem;
+        height: 3.4rem;
+        top: calc(100vh - 35%);
+        left: calc(100vw - 28%);
     }
 
 
@@ -2406,7 +2701,7 @@ p{
         width: 90%;       
     }
     .gpu-logo-post{
-        height: 6vh;
+        height: 8vh;
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -2415,6 +2710,7 @@ p{
         margin: 0;
         line-height: 2.5rem;
         padding-bottom: 1.3rem;
+        font-size: 1.3rem;
     }
     .gpu-text .smile{
         font-size: 2.5rem;
@@ -2425,12 +2721,13 @@ p{
     }
     .gpu-adress .gpu-web{
         font-weight: 400;
+        font-size: 1.3rem;
     }
     .gpu-web:hover{
         cursor: crosshair;
         color: #88fd93;
     }
-    .gpuinsta{
+    .xyzinsta{
         width: 2rem;
         height: 2rem;
         padding-top: 1.2rem;
@@ -2501,14 +2798,52 @@ p{
     .xyz3d{
         font-size: 2rem;
     }
+
+    .xyz-features{
+        font-size: 1.3rem;
+    }
     .xyzpc{
         width: 20rem;
         height: 15rem;
     }
 
+
     .xyzpc p{
         padding-top: 4.5rem;
+        font-size: 1.3rem;
     }
+
+    /****************** sketchbox ******************/
+       .sketch-contents{
+        position: relative;
+        width: fit-content;
+    }
+
+    .sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
+        padding-top: 0;
+        width: 2rem;
+        height: 2rem;
+    }
+    .skechboxaccount{
+        text-decoration: none;
+        color: #000;
+        font-size: 4.5rem;
+        font-family: 'Uhbeemysen','sans-serif';
+    }
+
+    .xyzworm{
+        width: 16rem;
+        height: 4.5rem;
+        top: calc(100vh - 87%);
+        left: calc(100vw - 88%);
+    }
+    .xyzworm.right{
+        width: 13rem;
+        height: 3.7rem;
+        top: calc(100vh - 30%);
+        left: calc(100vw - 30%);
+    }
+
     /************************ meowart ************************/
     .meowartpage{
         width: 100vw;
@@ -2526,17 +2861,16 @@ p{
         margin: -12vh 0 0 0;
     }
     .cat-img img{
-        height: 15%;
-        width: 15%;
+        height: 20vh;
         margin-right: 8vw;
     }
     .meowart-youtube{
-        padding-left: 6.9vw;
+        padding-left: 6vw;
         font-size: 8vw;
     }
     .cat-img-jelly img{
-        height: 7vh;
-        margin-bottom: 33vh;
+        height: 15vh;
+        margin-bottom: 20vh;
         margin-left: 5%;
     }
     
