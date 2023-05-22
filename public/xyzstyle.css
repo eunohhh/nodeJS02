@@ -88,7 +88,6 @@ p{
     font-size: 1.75rem;
     margin: 0;
     color: #00ee17;
-    
 }
 .li-group{
     display: none;
@@ -292,7 +291,6 @@ p{
     justify-content: center;
     z-index: 100;
 }
-
 .xyz4 p{
     text-align: center;
     position: relative;
@@ -314,7 +312,6 @@ p{
 .threedscan{
     background-color: #e5e5e5;
 }
-
 .threedscan >div{
     width: 4.45rem;
     height: 1rem;
@@ -330,7 +327,6 @@ p{
 .xyzfeatures{
     background-color: #88fd93;
 }
-
 .xyzfeatures >div{
     width: 4.45rem;
     height: 1rem;
@@ -345,9 +341,7 @@ p{
 }
 .xyzservice{
     background-color: #99dced;
-    
 }
-
 .xyzservice >div{
     width: 4.45rem;
     height: 1rem;
@@ -363,7 +357,6 @@ p{
 .xyzspace{
     background-color: #ffff00;
 }
-
 .xyzspace >div{
     width: 4.45rem;
     height: 1rem;
@@ -410,7 +403,6 @@ p{
     height: 1.3rem;
     box-sizing: border-box;
 }
-
 .xyz-grey{
     box-sizing: content-box;
     width: 4.45rem;
@@ -472,7 +464,6 @@ p{
     position: relative;
     margin-top: 15rem;
 }
-
 .xyz-3dscan p{
     height: 30rem;
     display: flex;
@@ -490,7 +481,6 @@ p{
     padding-top: 2rem;
     gap: 1.5rem;
 }
-
 .xyz-focus >div{
     height: 2rem;
     width: 2rem;
@@ -508,7 +498,6 @@ p{
     height: 1.5rem;
     border: 0.3rem solid #ffff00;
 }
-
 .xyz3d{
     font-family: 'raleway', 'sans-serif';
     font-size: 2.5rem;
@@ -592,25 +581,21 @@ p{
     justify-content: center;
     align-items: center; */
 }
-
 .sketch-contents{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
     padding-top: 0;
 }
-
 .skechboxaccount{
     text-decoration: none;
     color: #000;
     font-size: 5rem;
-    font-family: 'Uhbee mysen','sans-serif';
+    font-family: 'Uhbeemysen','sans-serif';
 }
-
 .xyzbrush img {
     position: fixed;
     display: flex;
@@ -618,7 +603,6 @@ p{
     width: 15rem;
     height: 15rem;
 }
-
 .xyzworm{
     position: fixed;
     width: 20rem;
@@ -627,7 +611,6 @@ p{
     left: calc(100vw - 85%);
     transform: rotate(-30deg);
 }
-
 .xyzworm.right{
     position: fixed;
     width: 16rem;
@@ -636,19 +619,16 @@ p{
     left: calc(100vw - 30%);
     transform: rotate(183deg);
 }
-
 .cls-1{
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: xyzdash 3s linear forwards infinite;
 }
-
 @keyframes xyzdash {
     to {
         stroke-dashoffset: 0;
     }
 }
-
 .skechboxaccount:hover{
     color: #88fd93;
     cursor: crosshair;

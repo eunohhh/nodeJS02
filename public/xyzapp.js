@@ -101,10 +101,9 @@ if(topDivMain !== null && topDivMain !== undefined){
 
     // apply to top div
     topDivMain.insertAdjacentElement('beforeend', mainDiv); // maindiv to top maindiv(screenxyz)
-        
+
 
     const delRegex = /[{}()<>`~!@#$%^&*|\[\]\\\'\";:\/?|\r\n]/gim; // useful Regex when delete special characters or prevent attack, need del nbsp add \s
-
 
     /** ============== main page selectors ================ */
     // main page
@@ -246,53 +245,140 @@ if(topDivMain !== null && topDivMain !== undefined){
 
 /** ============== if scanvas page do this ================ */
 if(topDivScan !== null && topDivScan !== undefined){
-    let xyzcl = document.querySelector('.xyz-closefolder');
-    let xyzex = document.querySelector('.xyz-exfolder');
-    
-    xyzcl.addEventListener('click', function(){
-        this.style.display = 'none';
-        xyzex.style.display = 'block';
-    })
+    const scanvas = forBind.scanvas;
 
-    let xyzDownLoad = document.querySelector('.xyzpc p');
-        xyzDownLoad.style.cursor = 'crosshair';
-    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
-    xyzDownLoad.addEventListener('click', function(){
-        window.open(downHref);
-    });
+    let logoImg = `<div class="${scanvas.logo}"></div>`;
+    topDivScan.insertAdjacentHTML('beforeend', logoImg);
+
+    let exFolder = document.createElement('div');
+        exFolder.setAttribute('class', scanvas.ex);
+    
+        let exFolderUpper = document.createElement('div');
+            exFolderUpper.setAttribute('class', scanvas.exUp);
+
+            let folder = document.createElement('div');
+                folder.setAttribute('class', scanvas.exFol);
+
+            scanvas.xyz4.forEach((e,i)=>{
+                let template = `<div class="${e[0]}"><div><div class="${e[1]}"></div></div><p>${e[2]}</p></div>`;
+                folder.insertAdjacentHTML('beforeend', template);
+            });
+
+            exFolderUpper.insertAdjacentElement('beforeend', folder);
+        exFolder.insertAdjacentElement('beforeend', exFolderUpper);
+    
+        let cont = document.createElement('div');
+            cont.setAttribute('class', scanvas.cont);
+
+        let contIn = document.createElement('div');
+            contIn.setAttribute('class', scanvas.contIn);
+
+        let contTempl = `<p>${scanvas.contStr}</p><div class="${scanvas.contFocus}"><div></div><div></div><div><div></div></div></div>`;
+            contIn.insertAdjacentHTML('beforeend', contTempl);
+        
+            cont.insertAdjacentElement('beforeend', contIn);
+        exFolder.insertAdjacentElement('beforeend', cont);
+
+        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="${scanvas.vr[4]}"></div></div>`;
+        exFolder.insertAdjacentHTML('beforeend', vrTempl);
+
+        let featureTemp = `<div class="${scanvas.feat[0]}"><p>${scanvas.feat[1]}</p><div class="${scanvas.feat[2]}"><p>${scanvas.feat[3]}<br><span>${scanvas.feat[4]}</span></p></div><div class="${scanvas.feat[5]}"><p>${scanvas.feat[6]}</p></div><div></div></div>`;
+        exFolder.insertAdjacentHTML('beforeend', featureTemp);
+
+        let services = document.createElement('div');
+            services.setAttribute('class', scanvas.serv[0]);
+        
+        let servTemp = `<p class="${scanvas.serv[1]}">${scanvas.serv[2]}</p><p>${scanvas.serv[3]}</p><div class="${scanvas.serv[4]}"></div><div class="${scanvas.serv[5]}"><p>${scanvas.serv[6]}</p></div>`;
+        services.insertAdjacentHTML('beforeend', servTemp);
+        exFolder.insertAdjacentElement('beforeend', services);
+
+    topDivScan.insertAdjacentElement('beforeend', exFolder);
+
+    let closeFol = document.createElement('div');
+        closeFol.setAttribute('class', scanvas.closed);
+        
+        let closeFolWrap = document.createElement('div');
+            closeFolWrap.setAttribute('class', scanvas.closedWrap);
+
+            let closeTemp = `<div><div class="${scanvas.closeGrey[0]}"><div class="${scanvas.closeGrey[1]}"></div></div><div class="${scanvas.wrapone[0]}"><div class="${scanvas.wrapone[1][0]}"></div><div class="${scanvas.wrapone[1][1]}"></div><div class="${scanvas.wrapone[1][2]}"></div></div></div>`;
+            closeFolWrap.insertAdjacentHTML('beforeend', closeTemp);
+        
+            let forwardTemp = `<div class="${scanvas.forward[0]}"><p>${scanvas.forward[1]}</p></div>`;
+            closeFolWrap.insertAdjacentHTML('beforeend', forwardTemp);
+
+        closeFol.insertAdjacentElement('beforeend', closeFolWrap);
+
+    topDivScan.insertAdjacentElement('beforeend', closeFol);
 
     let xyzMouse = document.querySelector('.xyzmouse');
         xyzMouse.style.cursor = 'crosshair';
-    let goHref = 'https://screenxyz.net/help';
-    xyzMouse.addEventListener('click',function(){
-        window.open(goHref);
-    });
-
+    let xyzDownLoad = document.querySelector('.xyzpc p');
+        xyzDownLoad.style.cursor = 'crosshair';
     let xyzSerB = document.querySelector('.xyz-service-b');
         xyzSerB.style.cursor = 'crosshair';
-    xyzSerB.addEventListener('click', function(){
-        window.open('https://screenxyz.net/contact/');
-    });
-
-
-
-
-
     let scanBtn = document.querySelectorAll('.xyz-focus div');
+
+    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
+    let goHref = 'https://screenxyz.net/help';
+
+    closeFol.addEventListener('click', function(){
+        this.style.display = 'none';
+        exFolder.style.display = 'block';
+    })
 
     scanBtn.forEach(function(e,i,a){
         e.style.cursor = 'crosshair';
         let scanHref = ['https://screenxyz.net','https://screenxyz.net/spaces','https://screenxyz.net/contact'];
         e.addEventListener('click', function(){
-            window.open(scanHref[i])
-        });
+            window.open(scanHref[i]);
+        })
     });
 
-};
+    xyzDownLoad.addEventListener('click', function(){
+        window.open(downHref);
+    });
 
+    xyzMouse.addEventListener('click',function(){
+        window.open(goHref);
+    });
+
+    xyzSerB.addEventListener('click', function(){
+        window.open('https://screenxyz.net/contact/');
+    });
+};
 
 /** ============== if sketchbox page do this ================ */
 if(topDivSketch !== null && topDivSketch !== undefined){
+    const sketch = forBind.sketchbox;
+
+    let brushBox = document.createElement('div');
+        brushBox.setAttribute('class', sketch.brush);
+
+    sketch.brushImg.forEach((e,i) => {
+        let img = document.createElement('img');
+            img.setAttribute('src', e);
+        brushBox.insertAdjacentElement('beforeend', img);
+    });
+    topDivSketch.insertAdjacentElement('beforeend', brushBox);
+
+    let skeCont = document.createElement('div');
+        skeCont.setAttribute('class', sketch.sCon[0]);
+
+        let temp1 =`<a href="${sketch.href}" class="${sketch.sCon[1]}" target="_blank"><div class="${sketch.sCon[2]}"></div></a>`;
+        skeCont.insertAdjacentHTML('beforeend', temp1);
+
+        let temp2 = `<a href="${sketch.href}" class="${sketch.sCon[3]}" target="_blank"><p>${sketch.sCon[4]}</p></a>`;
+        skeCont.insertAdjacentHTML('beforeend', temp2);
+        
+    topDivSketch.insertAdjacentElement('beforeend', skeCont);
+
+    sketch.worm.forEach((e,i)=>{
+            let worm = document.createElement('div');
+                worm.setAttribute('class', e);
+            worm.insertAdjacentHTML('beforeend', sketch.svg);
+        topDivSketch.insertAdjacentElement('beforeend', worm);
+    })
+
     let brush = document.querySelectorAll('.xyzbrush img');
 
     let brushrandom = (min, max) => {
