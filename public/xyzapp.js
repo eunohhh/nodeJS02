@@ -3,6 +3,98 @@ import forBind from "./binddb.js"; // import bind DB
 import gltfObjs from "./modelsInfo.js"; // import model gltfs
 "use strict";
 
+document.body.style.margin = '0';
+document.body.style.height = '100%';
+document.body.style.boxSizing = 'border-box';
+document.body.style.overflowY = 'auto';
+let checker; //바디의 높이가 변화하는지 체크용
+
+/** ============== top level selectors && function ================ */
+const isNotHover = () => {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}; // =========> mobile device check function
+const isMobile = () => {
+	return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}; // =========> mobile device check function
+
+const ourClass = document.querySelector('.xyz-web-dev') // ======================> our common class name
+const topDivMain = document.getElementById('screenxyz');  // ===============> main page
+const topDivScan = document.getElementById('scanvaspage');  // =============> scanvas page
+const topDivSketch = document.getElementById('sketchboxpage'); // ==========> sketchbox page
+const topDivMeow = document.getElementById('meowartpage'); // ==============> meowart page
+const topDivGpu = document.getElementById('gpupage'); // ===================> GPU page
+const topDivDesign = document.getElementById('xyz-designpage'); // =========> desing page
+
+if(ourClass !== undefined && ourClass !== null){
+    mainDivSwitcher(ourClass);
+}
+/** ============== set def vh for media query && resize ============== */
+
+setScreenSize(); // 최초 페이지 로드시 vh 세팅 함수 실행
+window.addEventListener('resize', ()=>{
+    if(ourClass !== undefined && ourClass !== null){
+        setScreenSize(); // 화면 리사이즈(가로모드 세로모드 전환) 발생시 다시 vh 세팅 함수 실행
+        mainDivSwitcher(ourClass); // 리사이즈 시 메인디브 스위쳐 함수 다시 실행
+    }
+});
+function setScreenSize(){
+    let vh = window.innerHeight * 0.01; // 현재 창의 세로 높이를 구해서 100으로 나눠서 1/100 값을 구함
+    document.documentElement.style.setProperty('--vh', `${vh}px`); // 현재 document 의 :root 스타일에 1vh 를 위에 구한 값으로 설정
+};
+
+function setMainDivH(target){
+    checker = document.querySelector('body').clientHeight;
+    let curHeight = window.innerHeight; // 현재 창높이 변수 저장
+    let eleTop = document.querySelector('.elementor-location-header') // 엘리멘터 헤더 높이 변수 저장
+    let eleFoot = document.querySelector('.elementor-location-footer') // 엘리멘터 푸터 높이 변수 저장
+    let perfectDiv;
+    if(eleTop !== undefined && eleTop !== null || eleFoot !== undefined && eleFoot !== null ){
+        console.log(checker) // 바디의 현재 높이
+        console.log(curHeight) // 현재 브라우저 창 높이
+        if(checker === curHeight){ // 바디 높이 === 현재 창높이 
+            console.log('바디높이가 윈도우 높이와 일치합니다.')
+            perfectDiv = curHeight;
+            target.style.height = '100%';
+        } else if(checker > curHeight){
+            console.log('바디높이가 윈도우 높이보다 큽니다. 메인디브 = 메인디브')
+            perfectDiv = ourClass.clientHeight;
+            target.style.height = '100%';
+        } else if(checker < curHeight){
+            console.log('바디높이가 윈도우 높이보다 작습니다. 윈도우-헤더-푸터')
+            perfectDiv = curHeight - eleTop.clientHeight - eleFoot.clientHeight; // 정확한 우리가만든 div 높이값;
+            target.style.height = `${perfectDiv}px`; // 파라미터로 적용할 목표 div 받아서 계산한 높이값 강제 적용
+        }
+    } 
+    
+    return console.log('모든것이 정상입니다');
+}
+
+// 최초 로드시 실행 되는게 아니라, 최초에는 if 메인디브가 switch 면 실행
+// 리사이즈 이벤트 발생시 다시 switch 실행
+
+function mainDivSwitcher(target){
+    switch(target.getAttribute('id')){
+        case 'screenxyz':
+            setMainDivH(target);
+            break;
+        case 'scanvaspage':
+            setMainDivH(target);
+            break;
+        case 'sketchboxpage':
+            setMainDivH(target);
+            break;
+        case 'meowartpage':
+            setMainDivH(target);
+            break;
+        case 'gpupage':
+            setMainDivH(target);
+            break;
+        case 'xyz-designpage':
+            setMainDivH(target);
+            break;
+    }
+}
+
 /** ============== set DB =============== */
 let dbToArr = []; // arr for DBjson copy
 let dbObj = {}; // obj for DBjson coy
@@ -21,21 +113,6 @@ dbToArr.forEach((e, i)=>{ // start from shallow copied array
 });
 let reducedKeywords = [...new Set(everyKeywords)]; // reduce keywords
 // console.log(reducedKeywords);
-
-/** ============== top level selectors && function ================ */
-const isNotHover = () => {
-	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-}; // =========> mobile device check function
-const isMobile = () => {
-	return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-}; // =========> mobile device check function
-
-const topDivMain = document.querySelector('.screenxyz');  // ===============> main page
-const topDivScan = document.querySelector('.scanvaspage');  // =============> scanvas page
-const topDivSketch = document.querySelector('.sketchboxpage'); // ==========> sketchbox page
-const topDivMeow = document.querySelector('.meowartpage'); // ==============> meowart page
-const topDivGpu = document.querySelector('.gpupage'); // ===================> GPU page
-const topDivDesign = document.querySelector('.xyz-designpage'); // =========> desing page
 
 /** ============== if main page do this ================ */
 if(topDivMain !== null && topDivMain !== undefined){
@@ -304,7 +381,7 @@ if(topDivScan !== null && topDivScan !== undefined){
         let contIn = document.createElement('div');
             contIn.setAttribute('class', scanvas.contIn);
 
-        let contTempl = `<p>${scanvas.contStr}</p><div class="${scanvas.contFocus}"><div></div><div></div><div><div></div></div></div>`;
+        let contTempl = `<div class="${scanvas.contFocus}"><div></div><div></div><div><div></div></div></div><p>${scanvas.contStr}</p>`;
             contIn.insertAdjacentHTML('beforeend', contTempl);
         
             cont.insertAdjacentElement('beforeend', contIn);
@@ -322,6 +399,16 @@ if(topDivScan !== null && topDivScan !== undefined){
         let servTemp = `<p class="${scanvas.serv[1]}">${scanvas.serv[2]}</p><p>${scanvas.serv[3]}</p><div class="${scanvas.serv[4]}"></div><div class="${scanvas.serv[5]}"><p>${scanvas.serv[6]}</p></div>`;
         services.insertAdjacentHTML('beforeend', servTemp);
         exFolder.insertAdjacentElement('beforeend', services);
+
+        let xyzTop = document.createElement('div');
+            xyzTop.setAttribute('class', 'xyztop');
+        let topTri = document.createElement('div');
+        let topStr = document.createElement('div');
+            topStr.innerHTML = 'top';
+
+        xyzTop.insertAdjacentElement('beforeend', topTri);
+        xyzTop.insertAdjacentElement('beforeend', topStr);
+        exFolder.insertAdjacentElement('beforeend',xyzTop);
 
     topDivScan.insertAdjacentElement('beforeend', exFolder);
 
@@ -341,6 +428,7 @@ if(topDivScan !== null && topDivScan !== undefined){
 
     topDivScan.insertAdjacentElement('beforeend', closeFol);
 
+    //여기서부터 기능
     let xyzMouse = document.querySelector('.xyzmouse');
         xyzMouse.style.cursor = 'crosshair';
     let xyzDownLoad = document.querySelector('.xyzpc p');
@@ -348,13 +436,19 @@ if(topDivScan !== null && topDivScan !== undefined){
     let xyzSerB = document.querySelector('.xyz-service-b');
         xyzSerB.style.cursor = 'crosshair';
     let scanBtn = document.querySelectorAll('.xyz-focus div');
-    let firstMoveTo = document.querySelector('.xyz-3dscan p');
+    let firstMoveTo = document.querySelector('.xyz-focus');
         firstMoveTo.setAttribute('id', 'xyzfirst');
     let secondMoveTo = document.querySelector('.xyz-features');
         secondMoveTo.setAttribute('id', 'xyzsecond');
     let thirdMoveTo = document.querySelector('.xyz-service');
         thirdMoveTo.setAttribute('id', 'xyzthird');
     let photog = document.querySelector('.xyzphoto');
+    let iframeBox = document.querySelector('.xyzvr');
+    let moveTop = document.querySelector('.xyztop');
+    let scanLogo = document.querySelector('.scanvas-logoimg');
+        scanLogo.setAttribute('id', 'scanlogo');
+    
+    moveToTop(moveTop, '#scanlogo');
 
     let toPageBind = gltfObjs.slice(0, 3);
     toPageBind.forEach((e)=>{
@@ -363,30 +457,33 @@ if(topDivScan !== null && topDivScan !== undefined){
         let modelV = document.createElement('model-viewer');
             modelV.setAttribute('src', e.obj);
             modelV.setAttribute('alt', e.name);
-            modelV.setAttribute('poster', '');
+            modelV.setAttribute('poster', e.poster);
             modelV.setAttribute('shadow-intensity', '1');
             modelV.setAttribute('camera-controls', true);
             modelV.setAttribute('touch-action', 'pan-y');
             modelV.setAttribute('auto-rotate', true);
-            // modelV.setAttribute('camera-orbit', '45deg 55deg 120m');
-            // modelV.setAttribute('disable-tap', true);
-
         modelBox.insertAdjacentElement('beforeend', modelV);
         photog.insertAdjacentElement('beforeend', modelBox);
-    })
-   
+    });
+
+    let iframe = document.createElement('iframe');
+        iframe.setAttribute('height', '100%');
+        iframe.setAttribute('width', '99.5%');
+        iframe.setAttribute('allow', 'xr-spatial-tracking');
+        iframe.setAttribute('src', `https://screenxyz.net/${scanvas.iframe[3]}`);
+    iframeBox.insertAdjacentElement('beforeend', iframe);
 
     let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
     let goHref = 'https://screenxyz.net/help';
 
     closeFol.addEventListener('click', function(){
+        mainDivSwitcher(ourClass);
         this.style.display = 'none';
         exFolder.style.display = 'block';
     })
 
     scanBtn.forEach(function(e,i,a){
-        e.style.cursor = 'crosshair';
-        let scanHref = ['https://screenxyz.net','https://screenxyz.net/spaces','https://screenxyz.net/contact'];
+        let scanHref = ['https://screenxyz.net/dayeonji','https://screenxyz.net/model-viewer','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo'];
         e.addEventListener('click', function(){
             window.open(scanHref[i]);
         })
@@ -406,10 +503,7 @@ if(topDivScan !== null && topDivScan !== undefined){
 
     let xyzFcl = document.querySelector('.xyzfolder');
     xyzFcl.addEventListener('click', function(e){
-        // console.log(e.target)
-        // console.log(e.target.getAttribute('class'));
         let str = e.target.innerText
-        // console.log(str)
         
         if(typeof str === 'string'){
             switch(str){
@@ -431,16 +525,7 @@ if(topDivScan !== null && topDivScan !== undefined){
             }
         }
     })
-
-   
-    
-   
 };
-
-window.addEventListener('scroll', function(e){
-    console.log(window.scrollY)
-})
-
 /** ============== if sketchbox page do this ================ */
 if(topDivSketch !== null && topDivSketch !== undefined){
     const sketch = forBind.sketchbox;
@@ -485,7 +570,7 @@ if(topDivSketch !== null && topDivSketch !== undefined){
     });
 
     let xyzpaint = function(e){
-        let newBrush = ['../screenweb_asset/brush1.png', '../screenweb_asset/brush2.png', '../screenweb_asset/brush3.png', '../screenweb_asset/brush4.png'];
+        let newBrush = ['../assets/screenweb_asset/brush1.png', '../assets/screenweb_asset/brush2.png', '../assets/screenweb_asset/brush3.png', '../assets/screenweb_asset/brush4.png'];
         let brushdiv = document.createElement('div');
             brushdiv.style.position = 'relative';
         let brushimg = document.createElement('img');
@@ -494,7 +579,6 @@ if(topDivSketch !== null && topDivSketch !== undefined){
         brushdiv.insertAdjacentElement('beforeend', brushimg)
         brushdiv.style.top = `calc(${e.y}px - 8em)`;
         brushdiv.style.left = `calc(${e.x}px - 8em)`;
-        console.log(brushdiv)
 
         document.querySelector('.xyzbrush').appendChild(brushdiv)
 
@@ -514,6 +598,7 @@ if(topDivSketch !== null && topDivSketch !== undefined){
 
 /** ============== if meowart page do this ================ */
 if(topDivMeow !== null && topDivMeow !== undefined){
+    document.body.style.backgroundColor = '#88fd93';
     const meowart = forBind.meowart;
 
     let meowLogo = `<div class="${meowart.logoClass[0]}"><div class="${meowart.logoClass[1]}"></div></div>`;
@@ -555,6 +640,22 @@ if(topDivMeow !== null && topDivMeow !== undefined){
         }
         requestAnimationFrame(changeColor);
     }
+
+    let xyzTop = document.createElement('div');
+        xyzTop.setAttribute('class', 'xyztop');
+    let topTri = document.createElement('div');
+    let topStr = document.createElement('div');
+        topStr.innerHTML = 'top';
+
+    xyzTop.insertAdjacentElement('beforeend', topTri);
+    xyzTop.insertAdjacentElement('beforeend', topStr);
+    topDivMeow.insertAdjacentElement('beforeend',xyzTop);
+
+
+    let moveTop = document.querySelector('.xyztop');
+    let meowLoImg = document.querySelector('.meowart-logo-img');
+        meowLoImg.setAttribute('id', 'meowlogo')
+    moveToTop(moveTop, '#meowlogo');
 }
 
 /** ============== if GPU page do this ================ */
@@ -679,4 +780,10 @@ if(topDivDesign !== null && topDivDesign !== undefined){
             where.insertAdjacentElement('beforeend', bottom);
         }
     }
+}
+
+function moveToTop(topBtn, where){
+    topBtn.addEventListener('click', function(){
+        document.location.href = where;
+    });
 }
