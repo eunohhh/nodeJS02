@@ -1,5 +1,6 @@
 import searchDB from "./searchdb.js" // import DBjson
 import forBind from "./binddb.js"; // import bind DB
+import gltfObjs from "./modelsInfo.js"; // import model gltfs
 "use strict";
 
 /** ============== set DB =============== */
@@ -91,8 +92,8 @@ if(topDivMain !== null && topDivMain !== undefined){
     for(let i = 0; i < shorten.length; i++){
         let rightCon = document.createElement('div');
             rightCon.setAttribute('class', 'li-contents');
-        let p = `<p>${shorten[i][0]}</p><p>${shorten[i][1]}</p><p><a>${shorten[i][2]}</a><p>`;
-        let div = `<div class="${shorten[i][3]}"><div class="${shorten[i][4]}"></div></div>`;
+        let p = `<p>${shorten[i][0]}</p><p>${shorten[i][1]}</p><p data-lib = "${shorten[i][5]}">${shorten[i][2]}<p>`;
+        let div = `<div class="${shorten[i][3]}"><div data-icon = "${shorten[i][5]}"class="${shorten[i][4]}"></div></div>`;
         rightCon.insertAdjacentHTML('beforeend', p);
         rightCon.insertAdjacentHTML('beforeend', div);
 
@@ -129,6 +130,32 @@ if(topDivMain !== null && topDivMain !== undefined){
     /** ============== main page app ================ */
     mainContents[3].firstChild.setAttribute('class', 'meowartfont'); // append meowart font hardcoding...
    
+
+    rightBox.addEventListener('click', function(e){
+        let lib = e.target.dataset.lib;
+        let icon = e.target.dataset.icon;
+        if(typeof lib === 'string' || typeof icon === 'string'){
+           mainSwitch(lib);
+           mainSwitch(icon);
+        };
+
+        function mainSwitch(target){
+            switch(target){
+                case 'scanvas':
+                    window.open(main.rightBox.href[0])
+                    break;
+                case 'sketchbox':
+                    window.open(main.rightBox.href[1])
+                    break;
+                case 'meowart':
+                    window.open(main.rightBox.href[2])
+                    break;
+                case 'gpu':
+                    window.open(main.rightBox.href[3])
+                    break;  
+            }
+        }
+    })
 
     leftIconBox.addEventListener('click', (e)=>{ // add event listner to left icons
         let ifSearched = document.querySelector('.search-res-div');
@@ -250,7 +277,7 @@ if(topDivMain !== null && topDivMain !== undefined){
 /** ============== if scanvas page do this ================ */
 if(topDivScan !== null && topDivScan !== undefined){
     const scanvas = forBind.scanvas;
-
+    
     let logoImg = `<div class="${scanvas.logo}"></div>`;
     topDivScan.insertAdjacentHTML('beforeend', logoImg);
 
@@ -321,6 +348,33 @@ if(topDivScan !== null && topDivScan !== undefined){
     let xyzSerB = document.querySelector('.xyz-service-b');
         xyzSerB.style.cursor = 'crosshair';
     let scanBtn = document.querySelectorAll('.xyz-focus div');
+    let firstMoveTo = document.querySelector('.xyz-3dscan p');
+        firstMoveTo.setAttribute('id', 'xyzfirst');
+    let secondMoveTo = document.querySelector('.xyz-features');
+        secondMoveTo.setAttribute('id', 'xyzsecond');
+    let thirdMoveTo = document.querySelector('.xyz-service');
+        thirdMoveTo.setAttribute('id', 'xyzthird');
+    let photog = document.querySelector('.xyzphoto');
+
+    let toPageBind = gltfObjs.slice(0, 3);
+    toPageBind.forEach((e)=>{
+        let modelBox = document.createElement('div');
+            modelBox.setAttribute('class', 'xyz-models');
+        let modelV = document.createElement('model-viewer');
+            modelV.setAttribute('src', e.obj);
+            modelV.setAttribute('alt', e.name);
+            modelV.setAttribute('poster', '');
+            modelV.setAttribute('shadow-intensity', '1');
+            modelV.setAttribute('camera-controls', true);
+            modelV.setAttribute('touch-action', 'pan-y');
+            modelV.setAttribute('auto-rotate', true);
+            // modelV.setAttribute('camera-orbit', '45deg 55deg 120m');
+            // modelV.setAttribute('disable-tap', true);
+
+        modelBox.insertAdjacentElement('beforeend', modelV);
+        photog.insertAdjacentElement('beforeend', modelBox);
+    })
+   
 
     let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
     let goHref = 'https://screenxyz.net/help';
@@ -349,7 +403,43 @@ if(topDivScan !== null && topDivScan !== undefined){
     xyzSerB.addEventListener('click', function(){
         window.open('https://screenxyz.net/contact/');
     });
+
+    let xyzFcl = document.querySelector('.xyzfolder');
+    xyzFcl.addEventListener('click', function(e){
+        // console.log(e.target)
+        // console.log(e.target.getAttribute('class'));
+        let str = e.target.innerText
+        // console.log(str)
+        
+        if(typeof str === 'string'){
+            switch(str){
+                case '3D scan?':
+                    document.location.href = `#xyzfirst`;
+                break;
+
+                case 'features' :
+                    document.location.href = '#xyzsecond';
+                break;
+
+                case 'service' :
+                    document.location.href = '#xyzthird';
+                break;
+
+                case 'space' :
+                    window.open('https://screenxyz.net/spaces')
+                break;                
+            }
+        }
+    })
+
+   
+    
+   
 };
+
+window.addEventListener('scroll', function(e){
+    console.log(window.scrollY)
+})
 
 /** ============== if sketchbox page do this ================ */
 if(topDivSketch !== null && topDivSketch !== undefined){
@@ -368,10 +458,10 @@ if(topDivSketch !== null && topDivSketch !== undefined){
     let skeCont = document.createElement('div');
         skeCont.setAttribute('class', sketch.sCon[0]);
 
-        let temp1 =`<a href="${sketch.href}" class="${sketch.sCon[1]}" target="_blank"><div class="${sketch.sCon[2]}"></div></a>`;
+        let temp1 =`<div class="${sketch.sCon[1]}"><div class="${sketch.sCon[2]}"></div></div>`;
         skeCont.insertAdjacentHTML('beforeend', temp1);
 
-        let temp2 = `<a href="${sketch.href}" class="${sketch.sCon[3]}" target="_blank"><p>${sketch.sCon[4]}</p></a>`;
+        let temp2 = `<div class="${sketch.sCon[3]}"><p>${sketch.sCon[4]}</p></div>`;
         skeCont.insertAdjacentHTML('beforeend', temp2);
         
     topDivSketch.insertAdjacentElement('beforeend', skeCont);
@@ -393,6 +483,33 @@ if(topDivSketch !== null && topDivSketch !== undefined){
         brush[i].style.top = `${brushrandom(0, window.innerHeight - 240)}px`;
         brush[i].style.left = `${brushrandom(0, window.innerWidth - 240)}px`;
     });
+
+    let xyzpaint = function(e){
+        let newBrush = ['../screenweb_asset/brush1.png', '../screenweb_asset/brush2.png', '../screenweb_asset/brush3.png', '../screenweb_asset/brush4.png'];
+        let brushdiv = document.createElement('div');
+            brushdiv.style.position = 'relative';
+        let brushimg = document.createElement('img');
+            brushimg.setAttribute('src', newBrush[rand(0, 3)]);
+
+        brushdiv.insertAdjacentElement('beforeend', brushimg)
+        brushdiv.style.top = `calc(${e.y}px - 8em)`;
+        brushdiv.style.left = `calc(${e.x}px - 8em)`;
+        console.log(brushdiv)
+
+        document.querySelector('.xyzbrush').appendChild(brushdiv)
+
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    };
+    window.addEventListener('click', xyzpaint)
+
+    let instaIcon = document.querySelector('.xyzinsta');
+    instaIcon.addEventListener('click', ()=>{
+        window.open(sketch.href)
+    })
+    instaIcon.classList.add('animate__animated')
+    instaIcon.classList.add('animate__flash')
 };
 
 /** ============== if meowart page do this ================ */
@@ -466,7 +583,7 @@ if(topDivGpu !== null && topDivGpu !== undefined){
         addForAni.setAttribute('class', 'animate__animated animate__bounce');
     let instaForAni = document.querySelector(`.${gpu.instaSvgClass}`);
         instaForAni.classList.add('animate__animated');
-        instaForAni.classList.add('animate__headShake');
+        instaForAni.classList.add('animate__fadeIn');
 }
 
 /** ============== if Design page do this ================ */
