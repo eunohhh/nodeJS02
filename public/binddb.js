@@ -11,10 +11,10 @@ const forBind = {
             href : ['https://screenxyz.net/scanvas', 'https://screenxyz.net/sketchbox', 'https://screenxyz.net/meowart', 'https://screenxyz.net/gpu'],
             divCon : [
                 ['[screenxyz studio]','right there with you,<br>over the screen.','','x','x',''],
-                ['공간 및 사물 3d scan . . .', '', '▶ go library', 'logo-imgbox', 'scanvas-logo','scanvas'],
-                ['══════ ✥.❖.✥ ══════<br>다양한 작품 모음집', '', '▶ go library', 'logo-imgbox', 'sketchbox-logo','sketchbox'],
-                ['https://<br>www.youtube.com/<br>@meowart_o_o', '', '▶ go library', 'logo-imgbox', 'meowart-logo','meowart'],
-                ['전시를 기획하고 운영하는 공간입니다.', '', '▶ go library', 'logo-imgbox', 'gpu-logo','gpu']
+                ['공간 및 사물 3d scan . . .', '', '<span class="material-icons-outlined">arrow_right</span> go library', 'logo-imgbox', 'scanvas-logo','scanvas'],
+                ['══════ ✥.❖.✥ ══════<br>다양한 작품 모음집', '', '<span class="material-icons-outlined">arrow_right</span> go library', 'logo-imgbox', 'sketchbox-logo','sketchbox'],
+                ['https://<br>www.youtube.com/<br>@meowart_o_o', '', '<span class="material-icons-outlined">arrow_right</span> go library', 'logo-imgbox', 'meowart-logo','meowart'],
+                ['전시를 기획하고 운영하는 공간입니다.', '', '<span class="material-icons-outlined">arrow_right</span> go library', 'logo-imgbox', 'gpu-logo','gpu']
             ]
         }
     },

@@ -7,7 +7,10 @@ document.body.style.margin = '0';
 document.body.style.height = '100%';
 document.body.style.boxSizing = 'border-box';
 document.body.style.overflowY = 'auto';
-let checker; //바디의 높이가 변화하는지 체크용
+let checkerH; // checker for body height changes...
+let checkerW; // checker for body width changes...
+const firstWidth = window.innerWidth; // when app start, check the window width
+const firstHeight = window.innerHeight; // when app start, check the window width
 
 /** ============== top level selectors && function ================ */
 const isNotHover = () => {
@@ -32,6 +35,7 @@ if(ourClass !== undefined && ourClass !== null){
 
 setScreenSize(); // 최초 페이지 로드시 vh 세팅 함수 실행
 window.addEventListener('resize', ()=>{
+    checkerW = document.querySelector('body').clientWidth;
     if(ourClass !== undefined && ourClass !== null){
         setScreenSize(); // 화면 리사이즈(가로모드 세로모드 전환) 발생시 다시 vh 세팅 함수 실행
         mainDivSwitcher(ourClass); // 리사이즈 시 메인디브 스위쳐 함수 다시 실행
@@ -42,40 +46,9 @@ function setScreenSize(){
     document.documentElement.style.setProperty('--vh', `${vh}px`); // 현재 document 의 :root 스타일에 1vh 를 위에 구한 값으로 설정
 };
 
-function setMainDivH(target){
-    checker = document.querySelector('body').clientHeight;
-    let curHeight = window.innerHeight; // 현재 창높이 변수 저장
-    let eleTop = document.querySelector('.elementor-location-header') // 엘리멘터 헤더 높이 변수 저장
-    let eleFoot = document.querySelector('.elementor-location-footer') // 엘리멘터 푸터 높이 변수 저장
-    let perfectDiv;
-    if(eleTop !== undefined && eleTop !== null || eleFoot !== undefined && eleFoot !== null ){
-        console.log(checker) // 바디의 현재 높이
-        console.log(curHeight) // 현재 브라우저 창 높이
-        if(checker === curHeight){ // 바디 높이 === 현재 창높이 
-            console.log('바디높이가 윈도우 높이와 일치합니다.')
-            perfectDiv = curHeight;
-            target.style.height = '100%';
-        } else if(checker > curHeight){
-            console.log('바디높이가 윈도우 높이보다 큽니다. 메인디브 = 메인디브')
-            perfectDiv = ourClass.clientHeight;
-            target.style.height = '100%';
-        } else if(checker < curHeight){
-            console.log('바디높이가 윈도우 높이보다 작습니다. 윈도우-헤더-푸터')
-            perfectDiv = curHeight - eleTop.clientHeight - eleFoot.clientHeight; // 정확한 우리가만든 div 높이값;
-            target.style.height = `${perfectDiv}px`; // 파라미터로 적용할 목표 div 받아서 계산한 높이값 강제 적용
-        }
-    } 
-    
-    return console.log('모든것이 정상입니다');
-}
-
-// 최초 로드시 실행 되는게 아니라, 최초에는 if 메인디브가 switch 면 실행
-// 리사이즈 이벤트 발생시 다시 switch 실행
-
 function mainDivSwitcher(target){
     switch(target.getAttribute('id')){
         case 'screenxyz':
-            setMainDivH(target);
             break;
         case 'scanvaspage':
             setMainDivH(target);
@@ -93,6 +66,67 @@ function mainDivSwitcher(target){
             setMainDivH(target);
             break;
     }
+}
+
+function setMainDivH(target){
+    checkerH = document.querySelector('body').clientHeight;
+    checkerW = document.querySelector('body').clientWidth;
+    let curHeight = window.innerHeight; // current inner height
+    let eleTop = document.querySelector('.elementor-location-header'); // 엘리멘터 헤더 높이 변수 저장
+    let eleFoot = document.querySelector('.elementor-location-footer'); // 엘리멘터 푸터 높이 변수 저장
+    let openState = document.querySelector('.xyz-exfolder');
+    let perfectH;
+    if(eleTop !== undefined && eleTop !== null || eleFoot !== undefined && eleFoot !== null ){
+        if(checkerH === firstHeight && checkerH === curHeight){ // 바디 높이 === 현재 창높이 
+            console.log('바디높이가 윈도우 높이와 일치합니다')
+            perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+            if(ourClass.clientHeight <= curHeight ){
+                console.log('높이일치, 메인디브 <= 현재높이 높이수정')
+                target.style.height = `${perfectH}px`;
+            } else {
+                console.log('높이일치, 메인디브 > 현재높이 높이 100%')
+                target.style.height = '100%';
+            }
+        } else if(checkerH > firstHeight || checkerH > curHeight){
+            console.log('바디높이가 윈도우 높이보다 큽니다');
+            perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+            if(ourClass.clientHeight >= curHeight){
+                // console.log('엥?', openState.clientHeight)
+                if(openState.clientHeight > 0){
+                    console.log('열려있음')
+                    target.style.height = '100%';
+                } else if(openState.clientHeight <= 0){
+                    console.log('닫혀있음')
+                    target.style.height = `${perfectH}px`;
+                } else if(!openState){
+                    console.log('스캔버스아님')
+                    target.style.height = '100%';
+                }
+            } else {
+                console.log('닫혀있음 변화')
+                target.style.height = `${perfectH}px`
+            }        
+        } else if(checkerH < firstHeight || checkerH < curHeight){ /** 여기가 중요 */
+            console.log('바디높이가 윈도우 높이보다 작습니다')
+            perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight; // 정확한 우리가만든 div 높이값;
+            if(ourClass.clientHeight >= curHeight){
+                console.log('열려있음 그대로')
+                target.style.height = '100%';
+            } else {
+                console.log('닫혀있거나 스캔버스 아님 변화****')
+                target.style.height = `${perfectH}px`; // 파라미터로 적용할 목표 div 받아서 계산한 높이값 강제 적용
+            }
+        }
+       
+        if(firstWidth > checkerW || firstWidth < checkerW){
+            console.log('바디 넓이가 변하였습니다');
+            let tempCheckerH = document.querySelector('body').clientHeight; // 바디 전체의 높이
+            if(tempCheckerH <= window.innerHeight){ // 바디 전체의 높이가 윈도우 높이 보다 작으면
+                target.style.height = window.innerHeight - eleTop.clientHeight - eleFoot.clientHeight; 
+            }    
+        }
+    } 
+    // return console.log('모든것이 정상입니다');
 }
 
 /** ============== set DB =============== */
@@ -477,13 +511,14 @@ if(topDivScan !== null && topDivScan !== undefined){
     let goHref = 'https://screenxyz.net/help';
 
     closeFol.addEventListener('click', function(){
-        mainDivSwitcher(ourClass);
+        // mainDivSwitcher(ourClass);
+        topDivScan.style.height = '100%'
         this.style.display = 'none';
         exFolder.style.display = 'block';
     })
 
     scanBtn.forEach(function(e,i,a){
-        let scanHref = ['https://screenxyz.net/dayeonji','https://screenxyz.net/model-viewer','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo'];
+        let scanHref = ['https://screenxyz.net/model-viewer','https://screenxyz.net/dayeonji','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo'];
         e.addEventListener('click', function(){
             window.open(scanHref[i]);
         })

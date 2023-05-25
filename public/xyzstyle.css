@@ -7,6 +7,10 @@ body::-webkit-scrollbar-thumb{
     background-color: #88fd93;
 }
 
+input[type=search]{
+    transition: none;
+}
+
 /************************ font ************************/
 @font-face {
     font-family: 'D2Coding';
@@ -119,24 +123,29 @@ p{
     height: 4vh;
     width: 16vw;
     left: 1vh;
-    bottom: 8.5vh;
+    bottom: 9vh;
     display: none;
 }
 .inputWrap-show{
     display: inline-block;
 }
 .inputWrap input {
-    padding-right: 2rem;
+    padding: 0;
     height: inherit;
     width: 16.5vw;
     border: none;
     border-style: solid;
     border-width: 0.13rem;
-    border-radius: 3px;
-    border-color: #00ee17;
+    border-radius: 0;
+    border-color: #88fd93;
     color: #88fd93;
     font-family: "D2Coding ligature", "sans-serif";
     font-size: 1.1rem;
+}
+
+[type=search]{
+    outline-offset: 0; 
+    -webkit-appearance: none;
 }
 .inputWrap input:focus {
     outline-color: #00ee17;
@@ -170,12 +179,16 @@ p{
     font-size: 1.8rem;
     text-align: center;
     position: absolute;
-    top: -0.3vw;
-    left: calc(100% - 1vw);
+    top: -1vw;
+    left: calc(100% - 1.7vw);
     border: none;
     outline: none;
     cursor: pointer;
 }
+.btnClear:hover{
+    color: #00ee17;
+}
+
 .rightbox{
     width: 37vw;
     height: 40vh;
@@ -195,10 +208,10 @@ p{
     font-family: "D2Coding ligature", "sans-serif";
     color: #00ee17;
     height: 100%;
+    padding-top: 1.8rem;
 }
 .li-contents p:nth-of-type(1){
-    height: 10%;
-    padding-top: 2.5rem;
+    height: 20%;
 }
 .li-contents p:nth-of-type(2){
     height: 45%;
@@ -207,6 +220,8 @@ p{
     text-align: right;
     padding-right: 1rem;
     height: 10%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .li-contents p:nth-of-type(3):hover{
@@ -260,7 +275,7 @@ p{
 .sbtn {
     position: absolute;
     top: 0;
-    left: calc(100% - 2.8vw);
+    left: calc(100% - 2.9vw);
     padding: 1vh 0.8vh;
     color: #00ee17;
     font-size: 1.2rem;
@@ -269,6 +284,11 @@ p{
     outline: none;
     background: none;
 }
+
+.sbtn:hover{
+    color: #00ee17;
+}
+
 .search-res-div{
     width: 100%;
     height: 100%;
@@ -278,12 +298,17 @@ p{
     overflow: auto;
     padding-left: 2.5vw;
     color: #00ee17;
+    justify-content: center;
+    gap: 0.5rem;
 }
-
-.search-res-h{
+.search-res-div a{
+    text-decoration: none;
+}
+.search-res-div h3{
     font-family: "D2Coding ligature", "sans-serif";
     font-size: 1.4rem;
     font-weight: 500;
+    color:#00ee17;
 }
 
 .search-res-div::-webkit-scrollbar{
@@ -305,6 +330,7 @@ p{
 /************************ scanvas ************************/
 #scanvaspage{
     width: 100%;
+    height: 100%;
     position: relative;
     /* height: 100vh;
     height: calc(var(--vh, 1vh) * 100); */
@@ -565,6 +591,11 @@ p{
     text-align: center;
     margin-top: 7.3rem;
 }
+
+.xyz3d p{
+    background-color: #88fd93;
+}
+
 .xyzvr{
     margin-top: 2rem;
     margin-bottom: 10rem;
@@ -675,6 +706,7 @@ p{
 .xyz-closefolder{
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     height: 100%;
 }
@@ -1048,7 +1080,7 @@ p{
 }
 
 .sketchbox-logo{
-    background-image: url("./0_main/sketchbox-logo.png");
+    background-image: url("https://screenxyz.net/assets/screenweb_asset/sketchbox-logo.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -1266,7 +1298,7 @@ p{
     .inputWrap {
         width: 65vw;
         left: 1.5vh;
-        margin-top: -6rem;
+        margin-top: 3.4rem;
     }
     .inputWrap input {
         width: inherit;
@@ -1275,13 +1307,12 @@ p{
     }
     .sbtn {
         left: calc(100% - 12vw);
-        font-size: 1.2em;
+        font-size: 1.5em;
         padding: 1vh 0.5vh;
-        line-height: 2.5vh;
     }
     .btnClear {
-        left: calc(100% - 5.5vw);
-        top: calc(100% - 9.5vw);
+        left: calc(100% - 8.5vw);
+        top: calc(100% - 11.6vw);
     }
     .box-con .rightbox .li-contents-box {
         padding-right: 1rem;
@@ -1289,6 +1320,7 @@ p{
     .box-con .rightbox .li-contents-box .li-contents{
         font-size: 1.2rem;
         line-height: 1.7rem;
+        padding-top: 0;
     }
     .li-contents p:nth-of-type(1){
         padding-top: 1rem;
@@ -1298,59 +1330,53 @@ p{
         height: 42%;
     }
     .li-contents p:nth-of-type(3){
-        height: 8%;
+        height: 9.5%;
         line-height: 10vw;
         padding-right: 0;
     }
     .logo-imgbox {
-        height: 25%;
+        height: 30%;
     }
     .meowartfont {
         font-size: 1.8rem;
         line-height: 2.2rem;
     }
     .scanvas-logo{
-        width: 30vw;
+        width: 35vw;
         margin-right: 0;
     }
     .sketchbox-logo{
-        width: 30vw;
+        width: 35vw;
         margin-right: 0;
     }
     .meowart-logo{
-        width: 30vw;
+        width: 35vw;
         margin-right: 0;
     }
     .gpu-logo{
         width: 16vw;
         margin-right: 0;
     }
-    .search-res-h{
+    .search-res-div h3{
         font-size: 1.1rem;
     }
     
     /************************ scanvas ************************/
     .xyz-closefolder{
-        position: absolute;
-        top : 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        padding-top: 6rem;
     }
     #scanvaspage .scanvas-logoimg{
         margin: 0 auto;
         width: 21.5rem;
-        /* padding-top: 15rem; */
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 6rem;
     }
-    /* #scanvaspage{
-        overflow-y: scroll;
-    }
-    #scanvaspage::-webkit-scrollbar{
-        width: 5px;
-        background-color: #fff;
-    }
-    #scanvaspage::-webkit-scrollbar-thumb{
-        background-color: #88fd93;
-    } */
     .xyzfolder-wrap {
         margin-top: 0;
         height: 15rem;
@@ -1378,39 +1404,47 @@ p{
         width: 3rem;
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
-        margin-top: -0.9rem;
+        margin-top: -0.8rem;
     }
 
     .xyzfeatures >div {
         width: 3rem;
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
-        margin-top: -0.9rem;
+        margin-top: -0.8rem;
     }
     .xyzservice >div {
         width: 3rem;
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
-        margin-top: -0.9rem;
+        margin-top: -0.8rem;
     }
     .xyzspace >div {
         width: 3rem;
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
-        margin-top: -0.9rem;
+        margin-top: -0.8rem;
     }
     .xyzline {
-        width: 3rem;
-        margin-top: 0.7rem;
+        width: 2.88rem;
+        margin-top: 0.65rem;
     }
-   
+    .xyzline.sky{
+        width: 2.88rem;
+        margin-top: 0.65rem;
+        margin-left: 0;
+    }
+    .xyzline.yellow{
+        width: 2.88rem;
+        margin-top: 0.65rem;
+        margin-left: 0;
+    }
     .xyz4 p {
         top: 41%;
         font-size: 1.2rem;
     }
 
     .xyz-exfolder .scanvas-contents .xyz-3dscan {
-        margin-top: 7rem;
         font-size: 1rem;
     }
 
@@ -1485,7 +1519,7 @@ p{
 
     .xyz-service{
         margin-top: 30vh;
-        margin-bottom: 31vh;
+        margin-bottom: 25vh;
     }
 
     .xyz-service .xyz-servicetltle {
@@ -1515,8 +1549,8 @@ p{
     }
 
     .xyztop{
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
         right: 0.5rem;
         bottom: 0.5rem;
     }
@@ -1528,7 +1562,7 @@ p{
     }
     
     .xyztop >div:nth-child(2){
-        font-size: 1.1rem;
+        font-size: 0.8rem;
     }
 
     /************************ sketchbox ************************/
@@ -1819,16 +1853,17 @@ p{
         font-size: 1.2rem;
     }
 
-    .search-res-h{
+    .search-res-div h3{
         font-size: 1rem;
     }
 
     /************************ scanvas ************************/
     .xyz-closefolder{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
     }
     #scanvaspage .scanvas-logoimg{
         margin: 0 1rem;
@@ -2326,7 +2361,7 @@ p{
         font-size: 1.2rem;
     }
 
-    .search-res-h{
+    .search-res-div h3{
         font-size: 1.1rem;
     }
 
@@ -2341,11 +2376,11 @@ p{
     }
 
     .xyz-closefolder {
-        left: 50%;
-        top: 55%;
-        transform: translateX(-50%);
-        display: block;
-        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
     }
 
     .xyz3d{
@@ -2758,7 +2793,7 @@ p{
         margin-top: 1rem;
         margin-right: 0;
     }
-    .search-res-h{
+    .search-res-div h3{
         font-size: 1.6rem;
     }
 
