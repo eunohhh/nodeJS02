@@ -1,3 +1,36 @@
+/************************ font ************************/
+@import url('https://screenxyz.net/wp-content/uploads/2023/05/D2Coding-Ver1.3.2-20180524-ligature.ttf');
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://screenxyz.net/wp-content/uploads/2023/05/D2Coding-Ver1.3.2-20180524-ligature.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://screenxyz.net/wp-content/uploads/2023/05/DungGeunMo.woff');
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://screenxyz.net/wp-content/uploads/2023/05/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://screenxyz.net/wp-content/uploads/2023/05/neodgm.woff');
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://screenxyz.net/wp-content/uploads/2023/05/neodgm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://screenxyz.net/wp-content/uploads/2023/05/UhBeemysen.woff');
+@font-face {
+    font-family: 'UhBeemysen';
+    src: url('https://screenxyz.net/wp-content/uploads/2023/05/UhBeemysen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body::-webkit-scrollbar{
     width: 5px;
     background-color: #fff;
@@ -7,40 +40,58 @@ body::-webkit-scrollbar-thumb{
     background-color: #88fd93;
 }
 
-input[type=search]{
-    transition: none;
+[type=button]:focus,[type=button]:hover,[type=submit]:focus,[type=submit]:hover,button:focus{
+    /* outline: 0px auto rgba(0,0,0,0); */
+    outline: none;
 }
 
-/************************ font ************************/
-@font-face {
-    font-family: 'D2Coding';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+button{
+    -webkit-tap-highlight-color: transparent;
 }
-@font-face {
-    font-family: 'DungGeunMo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+
+input[type=search]{
+    outline: #88fd93 solid 3px;
+    outline-offset: -2px;
+    -webkit-appearance: textfield;
+    appearance: textfiled;
+    /* transition: all 0s; */
+    border: 1px solid #88fd93;
+    border-radius: 1px;
+    transition: all ;
 }
-@font-face {
-    font-family: 'NeoDunggeunmo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+input[type=search]:focus{
+    outline: none;
+    border-color: #88fd93;
 }
-@font-face {
-    font-family: 'UhBeemysen';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+input[type=search]:focus-visible{
+    outline: #88fd93 solid 3px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+input[type=search]:focus-within{
+    outline: #88fd93 solid 1px;
+}
 
 /************************ main ************************/
+.xyz-landscape{
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    background-color: #88fd93;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DungGeunMo', 'NeoDunggeunmo','sans-serif';
+    z-index: 500;
+    font-size: 2rem;
+    font-weight: 700;
+    opacity: 0;
+}
+.xyz-slow{
+    opacity: 1;
+    transition: all .3s;
+}
 p{
     margin-block-start: 0;
     margin-block-end: 0;
@@ -91,7 +142,7 @@ p{
 .box-con .midbox .li-group{
     padding-left: 0.8vw;
     list-style: none;
-    font-family: "D2Coding ligature", "sans-serif";
+    font-family: "D2Coding", "sans-serif";
     font-weight: 500;
     font-size: 1.75rem;
     margin: 0;
@@ -133,24 +184,34 @@ p{
     padding: 0;
     height: inherit;
     width: 16.5vw;
-    border: none;
+    /* border: none; */
     border-style: solid;
     border-width: 0.13rem;
-    border-radius: 0;
+    /* border-radius: 0px; */
+    /* -webkit-border-radius : 0px; */
     border-color: #88fd93;
+    background: none;
     color: #88fd93;
-    font-family: "D2Coding ligature", "sans-serif";
+    font-family: "D2Coding", "sans-serif";
     font-size: 1.1rem;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; 
+    outline-style: none;
 }
 
-[type=search]{
+.inputWrap input[type=search]{
     outline-offset: 0; 
     -webkit-appearance: none;
+    appearance: none;
 }
 .inputWrap input:focus {
-    outline-color: #00ee17;
+    /* outline: 0; */
     color: #00ee17;
 }
+
 .inputWrap input:focus::-ms-clear,
 .inputWrap input:focus::-ms-reveal{
 	display: none;
@@ -181,6 +242,7 @@ p{
     position: absolute;
     top: -1vw;
     left: calc(100% - 1.7vw);
+    padding: 0;
     border: none;
     outline: none;
     cursor: pointer;
@@ -205,7 +267,7 @@ p{
 .box-con .rightbox .li-contents-box .li-contents{
     font-size: 1.4rem;
     font-weight: 500;
-    font-family: "D2Coding ligature", "sans-serif";
+    font-family: "D2Coding", "sans-serif";
     color: #00ee17;
     height: 100%;
     padding-top: 1.8rem;
@@ -305,7 +367,7 @@ p{
     text-decoration: none;
 }
 .search-res-div h3{
-    font-family: "D2Coding ligature", "sans-serif";
+    font-family: "D2Coding", "sans-serif";
     font-size: 1.4rem;
     font-weight: 500;
     color:#00ee17;
@@ -735,6 +797,7 @@ p{
     text-decoration: none;
     color: #000;
     font-size: 5rem;
+    line-height: 5.2rem;
     font-family: 'Uhbeemysen','sans-serif';
 }
 .xyzbrush img {
@@ -746,16 +809,16 @@ p{
 }
 .xyzworm{
     position: fixed;
-    width: 20rem;
-    height: 7.5rem;
+    width: 16rem;
+    height: 4.2rem;
     top: calc(100vh - 80%);
     left: calc(100vw - 85%);
     transform: rotate(-30deg);
 }
 .xyzworm.right{
     position: fixed;
-    width: 16rem;
-    height: 6rem;
+    width: 12rem;
+    height: 3.2rem;
     top: calc(100vh - 30%);
     left: calc(100vw - 30%);
     transform: rotate(183deg);
@@ -782,6 +845,7 @@ p{
 /************************ meowart ************************/
 #meowartpage{
     /* background-color: #88fd93; */
+    height: 100%;
     width: 100%;
     /* height: 100vh;
     height: calc(var(--vh, 1vh) * 100); */
@@ -791,7 +855,7 @@ p{
 }
 
 .meowart-logo-img{
-    padding-top: 14rem;
+    padding-top: 5rem;
 }
 .meowart-logo-img .meowart-logo-white{
     background-repeat: no-repeat;
@@ -809,7 +873,7 @@ p{
 }
 .cat-img img{
     position: relative;
-    height: 25vh;
+    height: 24vh;
     margin-right: 18vw;
     animation: catfloat 2s ease-in Infinite Alternate;
 }
@@ -820,14 +884,20 @@ p{
     padding-left: 6.9vw;
     box-sizing: border-box;
 }
+
+.meowart-youtube a{
+    color: #FFF;
+}
+
+.meowart-youtube a:hover{
+    color: #ffaced;
+    cursor: crosshair;
+}
 .meowaccount{
     text-decoration: none;
     color: #fff;
 }
-.meowaccount:hover{
-    color: #ffaced;
-    cursor: crosshair;
-}
+
 .cat-img-jelly{
     display: flex;
     height: 45%;
@@ -837,7 +907,8 @@ p{
     position: relative;
     height: 12vh;
     margin-left: 4vw;
-    margin-bottom: 20vh;
+    margin-top: 7vh;
+    margin-bottom: 15vh;
     animation: jellyfloat 2s ease-in Infinite Alternate;
 }
 
@@ -904,12 +975,13 @@ p{
 
 /************************ design ************************/
 #xyz-designpage{
+    width: 100%;
     /* height: 100vh;
     height: calc(var(--vh, 1vh) * 100); */
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+    transform: translate(-50%, -50%); */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1140,7 +1212,7 @@ p{
     background-size: contain;
     width: 2.3rem;
     height: 2.5rem;
-    padding-top: 1.75rem;
+    padding-top: 3.5rem;
 }
 
 .scanvas-logoimg{
@@ -1298,7 +1370,7 @@ p{
     .inputWrap {
         width: 65vw;
         left: 1.5vh;
-        margin-top: 3.4rem;
+        margin-top: 1rem;
     }
     .inputWrap input {
         width: inherit;
@@ -1311,8 +1383,8 @@ p{
         padding: 1vh 0.5vh;
     }
     .btnClear {
-        left: calc(100% - 8.5vw);
-        top: calc(100% - 11.6vw);
+        left: calc(100% - 4vw);
+        top: calc(100% - 10.3vw);
     }
     .box-con .rightbox .li-contents-box {
         padding-right: 1rem;
@@ -1340,6 +1412,7 @@ p{
     .meowartfont {
         font-size: 1.8rem;
         line-height: 2.2rem;
+        font-weight: 500;
     }
     .scanvas-logo{
         width: 35vw;
@@ -1356,6 +1429,10 @@ p{
     .gpu-logo{
         width: 16vw;
         margin-right: 0;
+    }
+    .search-res-div{
+        padding-top: 1vh;
+        padding-bottom: 1vh;
     }
     .search-res-div h3{
         font-size: 1.1rem;
@@ -1376,6 +1453,10 @@ p{
         left: 50%;
         transform: translateX(-50%);
         padding-top: 6rem;
+    }
+
+    .xyzfolder-upper{
+        height: 83vh;
     }
     .xyzfolder-wrap {
         margin-top: 0;
@@ -1580,19 +1661,20 @@ p{
         text-decoration: none;
         color: #000;
         font-size: 3rem;
+        line-height: 3.2rem;
         font-family: 'Uhbeemysen','sans-serif';
     }
 
     .xyzworm{
-        width: 11rem;
+        width: 9rem;
         height: 3rem;
-        top: calc(100vh - 85%);
+        top: calc(100vh - 83%);
         left: calc(100vw - 96%);
     }
     .xyzworm.right{
-        width: 8rem;
+        width: 7.5rem;
         height: 2.2rem;
-        top: calc(100vh - 35%);
+        top: calc(100vh - 43%);
         left: calc(100vw - 38%);
     }
 
@@ -1600,6 +1682,7 @@ p{
     .postoutline{
         width: 21rem;
         height: 21rem;
+        top: 42%;
     }
     .post-contents{
         width: 90%;
@@ -1623,6 +1706,7 @@ p{
     }
     .gpu-text .smile{
         font-size: 2rem;
+        margin-top: -1rem;
     }
     .gpu-adress{
         margin-left: 0;
@@ -1644,11 +1728,12 @@ p{
     .gpu-adress .gpu-insta .xyzinsta{
         width: 1.8rem;
         height: 1.8rem;
-        padding-top: 1rem;
+        padding-top: 3rem;
+        margin-bottom: 0;
     }
     /************************ meowart ************************/
     .meowart-logo-img{
-        padding-top: 5rem;
+        padding-top: 1rem;
     }
     .meowart-logo-img .meowart-logo-white{
         margin: 0 auto;
@@ -1659,7 +1744,7 @@ p{
         margin-bottom: -6.5%;
     }
     .cat-img img{
-        height: 11vh;
+        height: 14vh;
         margin-right: 2vw;
         padding-top: 2rem;
     }
@@ -1668,7 +1753,8 @@ p{
         font-size: 14.5vw;
         padding-top: 0;
         padding-left: 4vw;
-        transform: translateY(-10%);
+        transform: translateY(-5%);
+        line-height: 3.9rem;
     }
     .meowaccount{
         color: #fff;
@@ -1680,8 +1766,9 @@ p{
         height: 45%;
     }
     .cat-img-jelly img{
-        height: 10vh;
-        margin-bottom: 30vh;
+        height: 8vh;
+        /* margin-bottom: 20vh; */
+        margin-top: 4vh;
     }
 
     /************************ design ************************/
@@ -1706,6 +1793,7 @@ p{
         justify-content: center;
         align-items: center;
         transform: none;
+        margin-bottom: 15vh;
     }
     .xyz-d-circle{
         width: 3.25rem;
@@ -1719,6 +1807,7 @@ p{
    
     .xyzd-l-background{
         width: 65vw;
+        height: auto;
         padding-right: 0;
     }
     .xyzd-l-background .xyz-l-b.top >div{
@@ -1730,7 +1819,7 @@ p{
     }
     .mid{
         width: 100%;
-        height: 32rem;
+        height: 35rem;
         background-color: #88fd93;
     }
     .bottom{
@@ -1767,7 +1856,7 @@ p{
     }
     .xyzd-f-background{
         width: 65vw;
-        padding-bottom: 5rem;     
+        height: auto;
     }
    
     .xyzd-f-background .xyz-f-b.top >div{
@@ -1776,17 +1865,73 @@ p{
     
     .xyz-f-b.mid{
         width: 100%;
-        height: 32rem;
-    } */
+        height: 35rem;
+    }
     .xyzd-f-background .xyz-f-b.bottom >div{
         width: calc(100% /15);
     }
     
     .xyzd-f-con{
         font-size: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
+@media screen and (max-width : 375px) and (orientation: portrait) {
+    .search-res-div{
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        justify-content: unset;
+        overflow-y: scroll;
+    }
+    
+    .inputWrap{
+        margin-top: 3.4rem;
+    }
+    .meowartfont{
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+
+    #scanvaspage .scanvas-logoimg{
+        padding-top: 8rem;
+    }
+    
+    .xyzfolder-upper{
+        height: 100vh;
+    }
+    
+    .xyzworm{
+        width: 8rem;
+        height: 2.2rem;
+        top: calc(100vh - 85%);
+        left: calc(100vw - 96%);
+    }
+
+    .xyzworm.right {
+        width: 7rem;
+        height: 2rem;
+        top: calc(100vh - 40%);
+        left: calc(100vw - 38%);
+    }
+
+    .sketch-contents{
+        padding-top: 3rem;
+    }
+    .gpu-text .smile{
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .gpu-adress .gpu-insta .xyzinsta {
+        width: 1.8rem;
+        height: 1.8rem;
+        padding-top: 3rem;
+        margin-bottom: -0.5rem;
+    }
+}
 @media screen and (min-width : 576px) and (max-width : 767px) and (orientation: landscape){
 
     /************************ main ************************/
@@ -1821,12 +1966,12 @@ p{
         width: inherit;
     }
     .sbtn {
-        left: calc(100% - 7vw);
-        line-height: 6vh;
+        left: calc(100% - 6.5vw);
+        /* line-height: 9vh; */
     }
     .btnClear {
-        left: calc(100% - 3.2vw);
-        line-height: 6vh;
+        left: calc(100% - 2.5vw);
+        line-height: 8vh;
     }
     .box-con .rightbox .li-contents-box {
         word-break: keep-all;
@@ -1863,9 +2008,13 @@ p{
         justify-content: center;
         align-items: center;
         position: relative;
-        height: 100%;
+        height: 100vh;
+        width: 100vw;
+        background-color: #FFF;
+        z-index: 400;
     }
     #scanvaspage .scanvas-logoimg{
+        display: none;
         margin: 0 1rem;
         width: 11rem;
         padding-top: 15rem;
@@ -2041,7 +2190,11 @@ p{
     /************************ sketchbox ************************/
     .sketch-contents{
         position: relative;
+        margin: 0 auto;
         width: fit-content;
+        top: 0;
+        left: 0;
+        transform: none;
     }
 
     #sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
@@ -2057,20 +2210,23 @@ p{
     }
 
     .xyzworm{
-        width: 10rem;
+        position: absolute;
+        width: 9rem;
         height: 2.8rem;
-        top: calc(100vh - 90%);
-        left: calc(100vw - 96%);
+        top: calc(100vh - 85%);
+        left: calc(100vw - 98%);
     }
     .xyzworm.right{
-        width: 8rem;
+        position: absolute;
+        width: 7.5rem;
         height: 2.2rem;
-        top: calc(100vh - 30%);
-        left: calc(100vw - 30%);
+        top: calc(100vh - 22%);
+        left: calc(100vw - 22%);
     }
 
     /************************ gpu ************************/
     .postoutline{
+        top: 64%;
         width: 21rem;
         height: 21rem;
     }
@@ -2085,13 +2241,13 @@ p{
     }    
     .post-contents .gpu-text{
         margin: 0;
-        line-height: 2.5rem;
+        line-height: 2.1rem;
         padding-bottom: 1.3rem;
         font-size: 1.1rem;
     }
     .gpu-text .smile{
         font-size: 1.8rem;
-        margin-top: -2rem;
+        margin-top: -0.5rem;
     }
     .gpu-adress{
         margin-left: 0;
@@ -2109,7 +2265,7 @@ p{
     .xyzinsta{
         width: 2rem;
         height: 2rem;
-        padding-top: 1rem;
+        padding-top: 3rem;
     }
     .gpu-insta:hover{
         cursor: crosshair;
@@ -2121,22 +2277,28 @@ p{
     }
     .meowart-logo-img .meowart-logo-white{
         margin-left: 1.9rem;
+        width: 70vw;
+        height: 30vh;
     }
     .cat-img{
         margin: -12vh 0 0 0;
     }
     .cat-img img{
-        height: 28vh;
-        margin-right: 8vw;
+        height: 30vh;
+        margin-top: 3rem;
+        margin-right: 10vw;
     }
     .meowart-youtube{
-        font-size: 4rem;
+        font-size: 5rem;
         padding-left: 5vw;
+        margin-top: -2.5rem;
+        line-height: 5.7rem;
         color: #fff;
     }
     .cat-img-jelly img{
         height: 20vh;
-        margin-bottom: 10vh;
+        margin-top: 15vh;
+        margin-bottom: 20vh;
     }
 
     /************************ design ************************/
@@ -2330,12 +2492,12 @@ p{
         width: inherit;
     }
     .sbtn {
-        left: calc(100% - 6.5vw);
-        line-height: 6vh;
+        left: calc(100% - 5vw);
+        /* line-height: 6vh; */
     }
     .btnClear {
-        left: calc(100% - 3.2vw);
-        line-height: 7vh;
+        left: calc(100% - 2vw);
+        line-height: 9vh;
     }
     .box-con .rightbox .li-contents-box {
         word-break: keep-all;
@@ -2380,9 +2542,14 @@ p{
         justify-content: center;
         align-items: center;
         position: relative;
-        height: 100%;
+        height: 100vh;
+        width: 100vw;
+        background-color: #FFF;
+        z-index: 400;
     }
-
+    #scanvaspage .scanvas-logoimg{
+        display: none;
+    }
     .xyz3d{
         font-size: 1.6rem;
     }
@@ -2434,7 +2601,11 @@ p{
     /************************ sketchbox ************************/
      .sketch-contents{
         position: relative;
+        margin: 0 auto;
         width: fit-content;
+        top: 0;
+        left: 0;
+        transform: none;
     }
 
     #sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
@@ -2450,19 +2621,22 @@ p{
     }
 
     .xyzworm{
-        width: 11rem;
+        position: absolute;
+        width: 9rem;
         height: 3rem;
-        top: calc(100vh - 90%);
+        top: calc(100vh - 85%);
         left: calc(100vw - 96%);
     }
     .xyzworm.right{
-        width: 9rem;
+        position: absolute;
+        width: 7.5rem;
         height: 2.5rem;
         top: calc(100vh - 20%);
         left: calc(100vw - 20%);
     }
     /************************ gpu ************************/
     .postoutline{
+        top: 64%;
         width: 21rem;
         height: 21rem;
     }
@@ -2477,13 +2651,13 @@ p{
     }    
     .post-contents .gpu-text{
         margin: 0;
-        line-height: 2.5rem;
+        line-height: 2.2rem;
         padding-bottom: 1.3rem;
         font-size: 1.1rem;
     }
     .gpu-text .smile{
         font-size: 1.8rem;
-        margin-top: -1.5rem;
+        margin-top: -1rem;
     }
     .gpu-adress{
         margin-left: 0;
@@ -2500,7 +2674,7 @@ p{
     .xyzinsta{
         width: 2rem;
         height: 2rem;
-        padding-top: 1rem;
+        padding-top: 2.5rem;
     }
     .gpu-insta:hover{
         cursor: crosshair;
@@ -2511,24 +2685,28 @@ p{
         padding-top: 17vh;
     }
     .meowart-logo-img .meowart-logo-white{
-        width: 55vw;
+        width: 70vw;
+        height: 25vh;
         margin-left: 6%;
     }
     .cat-img{
         margin: -12vh 0 0 0;
     }
     .cat-img img{
-        height: 26vh;
+        height: 30vh;
         margin-right: 8vw;
+        margin-top: 7vh;
     }
     .meowart-youtube{
         padding-left: 6.9vw;
-        font-size: 5rem;
+        line-height: 6rem;
+        font-size: 6rem;
     }
     .cat-img-jelly img{
         height: 20vh;
-        margin-bottom: 10vh;
+        margin-bottom: 15vh;
         margin-left: 5%;
+        margin-top: 7%;
     }
 
     /************************ design ************************/
@@ -2825,41 +3003,47 @@ p{
         height: 15rem;
     }
 
+    .xyzfolder-upper{
+        height: 90vh;
+    }
+
     /************************ sketchbox ************************/
     .sketch-contents{
+        padding-top: 5rem;
         position: relative;
         width: fit-content;
     }
     #sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
         padding-top: 0;
-        width: 3rem;
-        height: 3rem;
+        width: 2.2rem;
+        height: 2.2rem;
     }
     .skechboxaccount{
         text-decoration: none;
         color: #000;
-        font-size: 5rem;
+        font-size: 4rem;
+        line-height: 5rem;
         font-family: 'Uhbeemysen','sans-serif';
     }
 
     .xyzworm{
-        width: 15.5rem;
-        height: 4.2rem;
-        top: calc(100vh - 86%);
-        left: calc(100vw - 96%);
+        width: 10rem;
+        height: 2.8rem;
+        top: calc(100vh - 80%);
+        left: calc(100vw - 91%);
     }
     .xyzworm.right{
-        width: 12rem;
-        height: 3.4rem;
-        top: calc(100vh - 35%);
+        width: 8rem;
+        height: 2.2rem;
+        top: calc(100vh - 40%);
         left: calc(100vw - 28%);
     }
-
 
     /************************ gpu ************************/
     .postoutline{
         width: 50vw;
         height: 50vh;
+        top: 42%;
     }
     .post-contents{
         width: 90%;       
@@ -2878,6 +3062,7 @@ p{
     }
     .gpu-text .smile{
         font-size: 2.5rem;
+        padding-bottom: 0.5rem;
     }
     .gpu-adress{
         margin-left: 0;
@@ -2894,7 +3079,7 @@ p{
     .xyzinsta{
         width: 2rem;
         height: 2rem;
-        padding-top: 1.2rem;
+        padding-top: 3.5rem;
     }
     .gpu-insta:hover{
         cursor: crosshair;
@@ -2902,28 +3087,30 @@ p{
 
     /************************ meowart ************************/
     .meowart-logo-img{
-        padding-top: 17vh;
+        padding-top: 1vh;
     }
     .meowart-logo-img .meowart-logo-white{
-        width: 68%;
+        width: 65%;
         margin-left: 6%;
     }
     .cat-img{
         margin: -5vh 0 0 0;
     }
     .cat-img img{
-        height: 11vh;
+        height: 11.5vh;
         margin-right: 8vw;
+        margin-top: 1rem;
     }
     .meowart-youtube{
         line-height: 6rem;
         padding-left: 6%;
-        font-size: 4rem;
+        font-size: 4.2rem;
         transform: translateY(-20%);
     }
     .cat-img-jelly img{
-        height: 7vh;
-        margin-bottom: 33vh;
+        height: 7.5vh;
+        margin-top: 1rem;
+        margin-bottom: 12vh;
         margin-left: 5%;
     }
 }
@@ -2966,16 +3153,31 @@ p{
         height: 15rem;
     }
 
-
     .xyzpc p{
         padding-top: 4.5rem;
         font-size: 1.3rem;
     }
 
+    .xyzline{
+        width: 4.35rem;
+        margin-top: 0.84rem;
+    }
+
+    .xyzline.yellow{
+        width: 4.36rem;
+    }
+
+    .xyzfolder-upper{
+        height: 98vh;
+    }
     /************************ sketchbox ************************/
     .sketch-contents{
         position: relative;
+        margin: 0 auto;
         width: fit-content;
+        top: 25%;
+        left: 0;
+        transform: none;
     }
 
     #sketchboxpage .sketch-contents .skechboxinsta .xyzinsta{
@@ -2986,29 +3188,30 @@ p{
     .skechboxaccount{
         text-decoration: none;
         color: #000;
-        font-size: 4.5rem;
+        font-size: 4rem;
+        line-height: 4rem;
         font-family: 'Uhbeemysen','sans-serif';
     }
 
     .xyzworm{
-        width: 16rem;
-        height: 4.5rem;
-        top: calc(100vh - 87%);
+        width: 10rem;
+        height: 2.8rem;
+        top: calc(100vh - 80%);
         left: calc(100vw - 88%);
     }
     .xyzworm.right{
-        width: 13rem;
-        height: 3.7rem;
-        top: calc(100vh - 30%);
-        left: calc(100vw - 30%);
+        width: 8rem;
+        height: 2.2rem;
+        top: calc(100vh - 40%);
+        left: calc(100vw - 20%);
     }
 
     /************************ meowart ************************/
     .meowart-logo-img{
-        padding-top: 17vh;
+        padding-top: 1vh;
     }
     .meowart-logo-img .meowart-logo-white{
-        width: 55vw;
+        width: 65vw;
         margin-left: 6%;
     }
     .cat-img{
@@ -3016,16 +3219,69 @@ p{
     }
     .cat-img img{
         height: 20vh;
+        margin-top: 3vw;
         margin-right: 8vw;
     }
     .meowart-youtube{
         padding-left: 6vw;
         font-size: 8vw;
+        line-height: 8rem;
     }
     .cat-img-jelly img{
-        height: 15vh;
+        height: 13vh;
+        margin-top: 10vh;
         margin-bottom: 20vh;
         margin-left: 5%;
+    }
+    /************************ gpu ************************/
+    .postoutline{
+        width: 20rem;
+        height: 20rem;
+        top: 45%;
+    }
+    .post-contents{
+        width: 18rem;       
+    }
+    .gpu-logo-post{
+        height: 10vh;
+    }
+    .gpu-logoimg{
+        margin-right: 0;
+    }    
+    .post-contents .gpu-text{
+        margin: 0;
+        line-height: 2rem;
+        padding-bottom: 1.3rem;
+        font-size: 1.1rem;
+    }
+    .gpu-text .smile{
+        font-size: 1.8rem;
+        padding-bottom: 0.5rem;
+        margin-top: -1rem;
+    }
+    .gpu-adress{
+        margin-left: 0;
+        width: 10rem;
+    }
+    .gpu-adress .gpu-web{
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
+    .gpu-web:hover{
+        cursor: crosshair;
+        color: #88fd93;
+    }
+    .xyzinsta{
+        width: 2rem;
+        height: 2rem;
+        padding-top: 3.5rem;
+    }
+    .gpu-insta:hover{
+        cursor: crosshair;
+    }
+    
+    .xyzinsta{
+        padding-top: 3rem;
     }
     
     /************************ design ************************/

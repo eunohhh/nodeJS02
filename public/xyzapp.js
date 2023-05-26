@@ -19,6 +19,16 @@ const isNotHover = () => {
 const isMobile = () => {
 	return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }; // =========> mobile device check function
+const getAgentSystem = () =>{
+    if(!("navigator" in window)){
+      return "unknown";
+    }
+    const platform = (navigator.userAgentData?.platform || navigator.platform)?.toLowerCase();
+   if(platform.startsWith("win")) return "windows";
+   if(platform.startsWith("mac")) return "macos";
+   if(platform.startsWith("linux")) return "linux";
+   return "unknown";
+  }
 
 const ourClass = document.querySelector('.xyz-web-dev') // ======================> our common class name
 const topDivMain = document.getElementById('screenxyz');  // ===============> main page
@@ -34,6 +44,7 @@ if(ourClass !== undefined && ourClass !== null){
 /** ============== set def vh for media query && resize ============== */
 
 setScreenSize(); // 최초 페이지 로드시 vh 세팅 함수 실행
+window.addEventListener("orientationchange", ()=> { window.dispatchEvent(new Event("resize")),false });
 window.addEventListener('resize', ()=>{
     checkerW = document.querySelector('body').clientWidth;
     if(ourClass !== undefined && ourClass !== null){
@@ -52,18 +63,38 @@ function mainDivSwitcher(target){
             break;
         case 'scanvaspage':
             setMainDivH(target);
+            dontLandscape()
             break;
         case 'sketchboxpage':
             setMainDivH(target);
             break;
         case 'meowartpage':
-            setMainDivH(target);
+            // setMainDivH(target);
             break;
         case 'gpupage':
             setMainDivH(target);
             break;
         case 'xyz-designpage':
-            setMainDivH(target);
+            let curHeight = window.innerHeight;
+            let eleTop = document.querySelector('.elementor-location-header'); 
+            let eleFoot = document.querySelector('.elementor-location-footer'); 
+            if(window.innerWidth > window.innerHeight && !isMobile()){
+                console.log('디자인페이지 가로형 pc');
+                if(window.innerWidth <= 1024){
+                    console.log('가로형인데 아무튼 1024px 보다 작음 스크롤생기게')
+                    target.style.height = '100vh';
+                } else {
+                    let pH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+                    target.style.height = `${pH}px`;
+                }
+            } else if(window.innerWidth < window.innerHeight && isMobile()) {
+                console.log('디자인페이지 모바일 세로형');
+                target.style.height = '100%';
+            } else if(/iPad/i.test(navigator.userAgent)) {
+                console.log('디자인페이지 아이패드')
+                let pH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+                target.style.height = `${pH}px`
+            }
             break;
     }
 }
@@ -92,19 +123,30 @@ function setMainDivH(target){
             perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
             if(ourClass.clientHeight >= curHeight){
                 // console.log('엥?', openState.clientHeight)
-                if(openState.clientHeight > 0){
+                if(openState && openState.clientHeight > 0){
                     console.log('열려있음')
                     target.style.height = '100%';
-                } else if(openState.clientHeight <= 0){
+                } else if(openState && openState.clientHeight <= 0){
                     console.log('닫혀있음')
                     target.style.height = `${perfectH}px`;
                 } else if(!openState){
                     console.log('스캔버스아님')
-                    target.style.height = '100%';
+                    if(/iPad/i.test(navigator.userAgent)){
+                        console.log('스캔버스 아니고 아이패드임')
+                        perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+                        target.style.height = `${perfectH}px`
+                    } else if(window.innerWidth > window.innerHeight){
+                        console.log('가로모드임 높이 100vh')
+                        target.style.height = '100vh';
+                    } else if(window.innerWidth < window.innerHeight){
+                        console.log('세로모드임 높이 재조정')
+                        perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+                        target.style.height = `${perfectH}px`;
+                    }
                 }
             } else {
-                console.log('닫혀있음 변화')
-                target.style.height = `${perfectH}px`
+                console.log('닫혀있음 변화');
+                target.style.height = `${perfectH}px`;
             }        
         } else if(checkerH < firstHeight || checkerH < curHeight){ /** 여기가 중요 */
             console.log('바디높이가 윈도우 높이보다 작습니다')
@@ -113,20 +155,58 @@ function setMainDivH(target){
                 console.log('열려있음 그대로')
                 target.style.height = '100%';
             } else {
-                console.log('닫혀있거나 스캔버스 아님 변화****')
-                target.style.height = `${perfectH}px`; // 파라미터로 적용할 목표 div 받아서 계산한 높이값 강제 적용
+                console.log('닫혀있거나 스캔버스 아님 변화****');
+                if(/iPad/i.test(navigator.userAgent)){
+                    console.log('닫혀있거나 스캔버스 아니고 아이패드임');
+                    perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
+                    target.style.height = `${perfectH}px`
+                } else {
+                    window.innerWidth > window.innerHeight && getAgentSystem() === 'unknown' ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
+                }
             }
         }
-       
         if(firstWidth > checkerW || firstWidth < checkerW){
             console.log('바디 넓이가 변하였습니다');
             let tempCheckerH = document.querySelector('body').clientHeight; // 바디 전체의 높이
             if(tempCheckerH <= window.innerHeight){ // 바디 전체의 높이가 윈도우 높이 보다 작으면
-                target.style.height = window.innerHeight - eleTop.clientHeight - eleFoot.clientHeight; 
+                console.log('여기도 걸리냐?')
+                perfectH = window.innerHeight - eleTop.clientHeight - eleFoot.clientHeight;
+                target.style.height = `${perfectH}px`;
             }    
         }
     } 
-    // return console.log('모든것이 정상입니다');
+}
+
+function dontLandscape(){
+    if(isMobile() && window.matchMedia('(orientation: portrait)').matches){
+        let toDel = document.querySelector('.xyz-landscape');
+        if(toDel !== undefined && toDel !== null){
+            toDel.remove();
+        }
+
+    } else if(isMobile() && window.matchMedia('(orientation: landscape)').matches){
+        let toDel = document.querySelector('.xyz-landscape');
+        if(toDel !== undefined && toDel !== null){
+            toDel.remove();
+        } else {
+            let str = ['◡̈', 'looks good in portrait mode', '세로모드에서 잘 보여요'];
+            let bg = document.createElement('div');
+                bg.setAttribute('class', 'xyz-landscape');
+            let warn;
+            str.forEach((e)=>{
+                    warn = document.createElement('p');
+                    warn.innerHTML = e;
+                bg.insertAdjacentElement('beforeend', warn);
+            })
+            bg.querySelectorAll('p')[2].style.fontSize = '1.5rem';
+            bg.querySelectorAll('p')[2].style.paddingTop = '0.5rem';
+
+            document.body.insertAdjacentElement('afterbegin', bg)
+            setTimeout(()=>{
+                bg.classList.add('xyz-slow');
+            },20)
+        }
+    }
 }
 
 /** ============== set DB =============== */
@@ -575,6 +655,12 @@ if(topDivSketch !== null && topDivSketch !== undefined){
     });
     topDivSketch.insertAdjacentElement('beforeend', brushBox);
 
+
+    let worm_1 = document.createElement('div');
+        worm_1.setAttribute('class', sketch.worm[0]);
+    worm_1.insertAdjacentHTML('beforeend', sketch.svg);
+    topDivSketch.insertAdjacentElement('beforeend', worm_1);
+
     let skeCont = document.createElement('div');
         skeCont.setAttribute('class', sketch.sCon[0]);
 
@@ -586,12 +672,10 @@ if(topDivSketch !== null && topDivSketch !== undefined){
         
     topDivSketch.insertAdjacentElement('beforeend', skeCont);
 
-    sketch.worm.forEach((e,i)=>{
-            let worm = document.createElement('div');
-                worm.setAttribute('class', e);
-            worm.insertAdjacentHTML('beforeend', sketch.svg);
-        topDivSketch.insertAdjacentElement('beforeend', worm);
-    })
+    let worm_2 = document.createElement('div');
+        worm_2.setAttribute('class', sketch.worm[1]);
+    worm_2.insertAdjacentHTML('beforeend', sketch.svg);
+    topDivSketch.insertAdjacentElement('beforeend', worm_2);
 
     let brush = document.querySelectorAll('.xyzbrush img');
 
