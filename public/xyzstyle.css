@@ -1904,17 +1904,17 @@ p{
     }
     
     .xyzworm{
-        width: 8rem;
+        width: 7rem;
         height: 2.2rem;
-        top: calc(100vh - 85%);
+        top: calc(100vh - 99%);
         left: calc(100vw - 96%);
     }
 
     .xyzworm.right {
-        width: 7rem;
+        width: 6rem;
         height: 2rem;
         top: calc(100vh - 40%);
-        left: calc(100vw - 38%);
+        left: calc(100vw - 32%);
     }
 
     .sketch-contents{

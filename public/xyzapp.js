@@ -21,14 +21,14 @@ const isMobile = () => {
 }; // =========> mobile device check function
 const getAgentSystem = () =>{
     if(!("navigator" in window)){
-      return "unknown";
+        
     }
     const platform = (navigator.userAgentData?.platform || navigator.platform)?.toLowerCase();
-   if(platform.startsWith("win")) return "windows";
-   if(platform.startsWith("mac")) return "macos";
-   if(platform.startsWith("linux")) return "linux";
-   return "unknown";
-  }
+    if(platform.startsWith("win")) return "windows";
+    if(platform.startsWith("mac")) return "macos";
+    if(platform.startsWith("linux")) return "linux";
+    return "unknown";
+}
 
 const ourClass = document.querySelector('.xyz-web-dev') // ======================> our common class name
 const topDivMain = document.getElementById('screenxyz');  // ===============> main page
@@ -711,8 +711,10 @@ if(topDivSketch !== null && topDivSketch !== undefined){
     instaIcon.addEventListener('click', ()=>{
         window.open(sketch.href)
     })
-    instaIcon.classList.add('animate__animated')
-    instaIcon.classList.add('animate__flash')
+    instaIcon.classList.add('animate__animated');
+    instaIcon.classList.add('animate__flash');
+    instaIcon.classList.add('animate__infinite');
+    instaIcon.classList.add('animate__slow');
 };
 
 /** ============== if meowart page do this ================ */
@@ -743,14 +745,14 @@ if(topDivMeow !== null && topDivMeow !== undefined){
         let start = new Date().getTime();
         let counter = 0;
         let isPink = false;
-        meowtablet.style.transition = `all 1s`;
+        meowtablet.style.transition = `all 0.8s`;
         let changeColor = function() {
             let ts = new Date().getTime();
-            if (ts - 6000 > start) {
+            if (ts - 12000 > start) {
             // console.log('End');
             } else {
                 counter ++;
-                if( counter % 90 === 0 ){
+                if( counter % 60 === 0 ){
                     meowtablet.style.color = isPink ? '#fff' : '#ffaced';
                     isPink = !isPink;
                 }
@@ -800,10 +802,12 @@ if(topDivGpu !== null && topDivGpu !== undefined){
     topDivGpu.insertAdjacentElement('beforeend', firstBox);
 
     let addForAni = document.querySelector(`.${gpu.addClass}`).firstChild;
-        addForAni.setAttribute('class', 'animate__animated animate__bounce');
+        addForAni.setAttribute('class', 'animate__animated animate__bounce animate__infinite animate__slow');
     let instaForAni = document.querySelector(`.${gpu.instaSvgClass}`);
         instaForAni.classList.add('animate__animated');
         instaForAni.classList.add('animate__fadeIn');
+        instaForAni.classList.add('animate__infinite');
+        instaForAni.classList.add('animate__slow')
 }
 
 /** ============== if Design page do this ================ */
