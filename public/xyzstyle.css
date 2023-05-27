@@ -90,7 +90,7 @@ input[type=search]:focus-within{
 }
 .xyz-slow{
     opacity: 1;
-    transition: all .3s;
+    transition: all .1s;
 }
 p{
     margin-block-start: 0;
@@ -663,6 +663,23 @@ p{
     margin-bottom: 10rem;
     background-color: beige;
     height: 60vh;
+}
+
+.xyzviewopen{
+    font-family: 'D2Coding','serif';
+    font-size: 1.6rem;
+    color: #88fd93;
+    width: 15rem;
+    padding: 1rem 2rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3rem;
+    border: 1px solid #88fd93;
+}
+
+.xyzviewopen:hover{
+    cursor: crosshair;
 }
 .xyzphoto{
     margin-top: 2rem;
@@ -1454,7 +1471,6 @@ p{
         transform: translateX(-50%);
         padding-top: 6rem;
     }
-
     .xyzfolder-upper{
         height: 83vh;
     }
@@ -1550,6 +1566,13 @@ p{
     .xyzvr{
         margin-top: 1rem;
         margin-bottom: 8rem;
+    }
+
+    .xyzviewopen{
+        font-size: 1rem;
+        width: 10rem;
+        padding: 0.5rem 1rem;
+        margin-top: 1.5rem;
     }
     .xyzvr iframe{
         width: 99%;       
@@ -1880,6 +1903,7 @@ p{
 }
 
 @media screen and (max-width : 375px) and (orientation: portrait) {
+    /************************ main ***********************/
     .search-res-div{
         padding-top: 3vh;
         padding-bottom: 3vh;
@@ -1895,14 +1919,23 @@ p{
         font-size: 1.6rem;
     }
 
+    /************************ scanvas ***********************/
     #scanvaspage .scanvas-logoimg{
         padding-top: 8rem;
+    }
+
+    .xyzviewopen{
+        font-size: 1rem;
+        width: 10rem;
+        padding: 0.5rem 1rem;
+        margin-top: 1.5rem;
     }
     
     .xyzfolder-upper{
         height: 100vh;
     }
-    
+
+    /************************ sketchbox ***********************/
     .xyzworm{
         width: 7rem;
         height: 2.2rem;
@@ -1920,6 +1953,8 @@ p{
     .sketch-contents{
         padding-top: 3rem;
     }
+
+    /************************ gpu ***********************/
     .gpu-text .smile{
         font-size: 2rem;
         margin-top: 0;
@@ -2001,192 +2036,6 @@ p{
     .search-res-div h3{
         font-size: 1rem;
     }
-
-    /************************ scanvas ************************/
-    .xyz-closefolder{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100vh;
-        width: 100vw;
-        background-color: #FFF;
-        z-index: 400;
-    }
-    #scanvaspage .scanvas-logoimg{
-        display: none;
-        margin: 0 1rem;
-        width: 11rem;
-        padding-top: 15rem;
-    }
-
-    #scanvaspage .xyzfolder{
-        display: flex;
-        max-width: 30rem;
-        gap: 7vh 4vw;
-        flex-wrap: wrap;
-        justify-content: center;
-        z-index: 100;
-    }
-    #scanvaspage .xyzfolder >div {
-        width: 10.1rem;
-        height: 6rem;
-        border-radius: 0 0.5rem 0.5rem;
-    }
-
-    .threedscan >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.9rem;
-    }
-
-    .xyzfeatures >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.9rem;
-    }
-    .xyzservice >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.9rem;
-    }
-    .xyzspace >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.9rem;
-    }
-    .xyzline {
-        width: 3rem;
-        margin-top: 0.7rem;
-    }
-    
-    .xyz4 p {
-        top: 41%;
-        font-size: 1.2rem;
-    }
-
-    .xyz-exfolder .scanvas-contents .xyz-3dscan {
-        margin-top: 7rem;
-        font-size: 1rem;
-        height: 25rem;
-    }
-
-    .xyz-3dscan p{
-        height: 20rem;
-        width: 30rem;
-        line-height: 2rem;
-    }
-    .xyz-focus {
-        margin-left: 1rem;
-        padding-top: 1rem;
-        gap: 1rem;
-    }
-
-    .xyz3d{
-        font-size: 1.3rem;
-        font-weight: 500;
-        margin-top: 5rem;
-    }
-
-    .xyzvr{
-        margin-top: 1rem;
-        margin-bottom: 8rem;
-        height: 80vh;
-    }
-
-    .xyzvr iframe{
-        width: 99%;
-    }
-
-    .xyzphoto{
-        margin-top: 1rem;
-        margin-bottom: 8rem;
-        height: 40vh;
-    }
-
-    .xyz-models model-viewer{
-        width: 8rem;
-        height: 12rem;
-    }
-    .xyz-features{
-        font-size: 1.1rem;
-        line-height: 4rem;
-    }
-    .xyzpc{
-        position: relative;
-        width: 16rem;
-        height: 12rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    .xyzpc p{
-        box-sizing: border-box;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font-size: 1.1rem;
-        padding-top: 3rem;
-        text-align: center;
-    }
-
-    .xyzmouse{
-        width: 5rem;
-        height: 6.2rem;
-        font-size: 1.4rem;
-        margin-top: 2rem;
-    }
-
-    .xyzmouse p{
-        padding-top: 1rem;
-        padding-left: 0.2rem;
-    }
-
-    .xyz-service{
-        margin-top: 9rem;
-        margin-bottom: 10rem;
-    }
-
-    .xyz-service .xyz-servicetltle {
-        font-size: 1.4rem;
-        padding-bottom: 1rem;
-    }
-
-    .xyz-service p {
-        font-size: 1rem;
-        line-height: 2rem;
-        margin: 0 1rem;
-    }
-
-    .xyz-service-b {
-        padding: 0;
-    }
-
-    .xyz-pencil{
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .xyztop{
-        width: 3rem;
-        height: 3rem;
-        right: 0.5rem;
-        bottom: 0.5rem;
-    }
-    
-    .xyztop >div:nth-child(1){
-        border-bottom: 0.4rem solid #fff;
-        border-left: 0.4rem solid transparent;
-        border-right: 0.4rem solid transparent;
-    }
-    
-    .xyztop >div:nth-child(2){
-        font-size: 1.1rem;
-    }
-
     /************************ sketchbox ************************/
     .sketch-contents{
         position: relative;
@@ -2526,78 +2375,6 @@ p{
     .search-res-div h3{
         font-size: 1.1rem;
     }
-
-    /************************ scanvas ************************/
-    #scanvaspage .xyzfolder {
-        display: flex;
-        max-width: 40rem;
-        gap: 7vh 4vw;
-        flex-wrap: wrap;
-        justify-content: center;
-        z-index: 100;
-    }
-
-    .xyz-closefolder {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100vh;
-        width: 100vw;
-        background-color: #FFF;
-        z-index: 400;
-    }
-    #scanvaspage .scanvas-logoimg{
-        display: none;
-    }
-    .xyz3d{
-        font-size: 1.6rem;
-    }
-
-    .xyzvr{
-        height: 80vh;
-    }
-    .xyz-features{
-        font-size: 1.3rem;
-    }
-
-    .xyzpc{
-        width: 22rem;
-        height: 15rem;
-    }
-
-    .xyzpc p{
-        padding-top: 5rem;
-        font-size: 1.3rem;
-    }
-
-    .xyzmouse{
-        font-size: 1.7rem;
-    }
-
-    .xyz-models model-viewer {
-        width: 10rem;
-        height: 15rem;
-    }
-
-    .xyztop{
-        width: 3rem;
-        height: 3rem;
-        right: 0.5rem;
-        bottom: 0.5rem;
-    }
-    
-    .xyztop >div:nth-child(1){
-        border-bottom: 0.4rem solid #fff;
-        border-left: 0.4rem solid transparent;
-        border-right: 0.4rem solid transparent;
-    }
-    
-    .xyztop >div:nth-child(2){
-        font-size: 1.1rem;
-    }
-
-
     /************************ sketchbox ************************/
      .sketch-contents{
         position: relative;
@@ -2873,6 +2650,133 @@ p{
     }
 }
 
+/* 갤럭시탭세로 */
+@media screen and (min-width: 576px) and (max-width: 767px) and (orientation:portrait){
+    /************************ main ************************/
+    .box-con{
+        flex-flow: row wrap;
+        width: 70vw;
+        height: auto;
+    }
+    .leftbox{
+        width: 20%;
+        box-sizing: border-box;
+        border-bottom: 0.18rem solid #88fd93;
+    }
+    .midbox{
+        width: 80%;
+        box-sizing: border-box;
+        border-right: none;
+        align-items: start;
+        border-bottom: 0.18rem solid #88fd93;
+    }
+    .rightbox{
+        width: 100%;
+    }
+
+    .box-con .midbox .li-group {
+        font-size: 2rem;
+    }
+    .inputWrap{
+        width: 50vw;
+        bottom: 12vh;
+    }
+    .inputWrap input{
+        width: 52vw;
+        font-size: 1.4rem;
+    }
+
+    .sbtn{
+        font-size: 1.5rem;
+        left: calc(100% - 7.5vw);
+        padding-top: 1rem;
+    }
+
+    .btnClear{
+        font-size: 2.2rem;
+        left: calc(100% - 1.5vw);
+    }
+
+    .meowartfont{
+        font-weight: 500;
+    }
+    /************************ scanvas ************************/
+    .xyzline{
+        width: 4.36rem;
+        margin-top: 0.8rem;
+    }
+
+    .xyzline.sky{
+        width: 4.35rem;
+    }
+    .xyzline.yellow{
+        width: 4.35rem;
+    }
+
+    .xyzphoto{
+        margin-top: 7rem;
+        margin-bottom: 2rem;
+        flex-direction: column;
+        height: 100%;
+        display: flex;
+    }
+    /************************ sketchbox ************************/
+    .skechboxaccount{
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+    }
+
+    .xyzworm{
+        width: 10rem;
+        height: 2.7rem;
+        top: calc(100vh - 70%);
+        left: calc(100vw - 93%);
+    }
+
+    .xyzworm.right{
+        width: 8rem;
+        height: 2.2rem;
+        top: calc(100vh - 38%);
+        left: calc(100vw - 25%);
+    }
+    /************************ meowart ************************/
+    .cat-img img{
+        height: 12vh;
+        margin-right: 5vw;
+    }
+    .meowart-logo-img{
+        padding-top: 0;
+    }
+    .meowart-logo-img .meowart-logo-white {
+        width: 75vw;
+        height: 20vh;
+        margin-left: 3vw;
+    }
+
+    .meowart-youtube{
+        font-size: 10vw;
+        padding-left: 3vw;
+    }
+
+    .cat-img-jelly img{
+        height: 9vh;
+        margin-left: 4vw;
+    }
+
+    /************************ design ************************/
+    .xyz-d-cover {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vh;
+    }
+
+    .xyzd-logobox{
+        margin-top: 5rem;
+    }
+
+}
+
+
 @media screen and (min-width: 768px) and (max-width: 991px) and (orientation:portrait){
     /************************ main ************************/
     .box-con{
@@ -3115,6 +3019,7 @@ p{
     }
 }
 
+
 @media screen and (min-width: 992px) and (max-width: 1199px) and (orientation:landscape){
     /************************ main ************************/
     .box-con{
@@ -3135,40 +3040,6 @@ p{
     .btnClear{
         line-height: 4vh;
         left: calc(100% - 0.08vw);
-    }
-
-    /************************ sanvas ************************/
-    #scanvaspage .xyzfolder{
-        max-width: 40rem;
-    }
-    .xyz3d{
-        font-size: 2rem;
-    }
-
-    .xyz-features{
-        font-size: 1.3rem;
-    }
-    .xyzpc{
-        width: 20rem;
-        height: 15rem;
-    }
-
-    .xyzpc p{
-        padding-top: 4.5rem;
-        font-size: 1.3rem;
-    }
-
-    .xyzline{
-        width: 4.35rem;
-        margin-top: 0.84rem;
-    }
-
-    .xyzline.yellow{
-        width: 4.36rem;
-    }
-
-    .xyzfolder-upper{
-        height: 98vh;
     }
     /************************ sketchbox ************************/
     .sketch-contents{
@@ -3289,3 +3160,68 @@ p{
         font-size: 1.8rem;
     }
 } 
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) and (orientation:landscape){
+    /************************ main ************************/
+    .box-con .midbox .li-group {
+        font-size: 1.45rem;
+    }
+
+    .meowartfont {
+        font-weight: 500;
+    }
+
+    .box-con .rightbox .li-contents-box .li-contents {
+        padding-top: 1.3rem;
+    }
+
+    .inputWrap{
+        bottom: 6vh;
+    }
+
+    .sbtn{
+        top: calc(100% - 4.5vh);
+        left: calc(100% - 3.5vw);
+    }
+
+    .btnClear{
+        left: calc(100% - 1vw);
+    }
+    .search-res-div{
+        justify-content: unset;
+    }
+
+    /************************ sketchbox ************************/
+    .skechboxaccount{
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .xyzworm{
+        width: 12rem;
+        height: 3.2rem;
+    }
+
+    .xyzworm.right{
+        width: 9rem;
+        height: 2.5rem;
+    }
+    /************************ meowart ************************/
+    .meowart-logo-img .meowart-logo-white{
+        margin-left: 6.9vw;
+    }
+
+    .cat-img{
+        margin: 2rem;
+    }
+
+    .meowart-youtube{
+        margin-top: -5rem;
+    }
+    /************************ design ************************/
+    .xyz-d-cover{
+        margin-top: 12vh;
+        margin-bottom: 10vh;
+    }
+
+}

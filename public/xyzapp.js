@@ -180,18 +180,29 @@ function setMainDivH(target){
 function dontLandscape(){
     if(isMobile() && window.matchMedia('(orientation: portrait)').matches){
         let toDel = document.querySelector('.xyz-landscape');
+        let toDelw = document.querySelector('.xyzbgwhite');
+        
         if(toDel !== undefined && toDel !== null){
+            toDelw.remove();
             toDel.remove();
         }
 
     } else if(isMobile() && window.matchMedia('(orientation: landscape)').matches){
         let toDel = document.querySelector('.xyz-landscape');
+        let toDelw = document.querySelector('.xyzbgwhite');
         if(toDel !== undefined && toDel !== null){
+            toDelw.remove();
             toDel.remove();
         } else {
             let str = ['◡̈', 'looks good in portrait mode', '세로모드에서 잘 보여요'];
             let bg = document.createElement('div');
                 bg.setAttribute('class', 'xyz-landscape');
+            let bgWhite = document.createElement('div');
+                bgWhite.setAttribute('class', 'xyzbgwhite');
+                bgWhite.style.height = "100vh";
+                bgWhite.style.width = "100vw";
+                bgWhite.style.zIndex = "400";
+                bgWhite.style.backgroundColor = "#fff";
             let warn;
             str.forEach((e)=>{
                     warn = document.createElement('p');
@@ -201,6 +212,7 @@ function dontLandscape(){
             bg.querySelectorAll('p')[2].style.fontSize = '1.5rem';
             bg.querySelectorAll('p')[2].style.paddingTop = '0.5rem';
 
+            document.body.insertAdjacentElement('afterbegin', bgWhite)
             document.body.insertAdjacentElement('afterbegin', bg)
             setTimeout(()=>{
                 bg.classList.add('xyz-slow');
@@ -501,7 +513,7 @@ if(topDivScan !== null && topDivScan !== undefined){
             cont.insertAdjacentElement('beforeend', contIn);
         exFolder.insertAdjacentElement('beforeend', cont);
 
-        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="${scanvas.vr[4]}"></div></div>`;
+        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="xyzviewopen">go to viewer</div><div class="${scanvas.vr[4]}"></div></div>`;
         exFolder.insertAdjacentHTML('beforeend', vrTempl);
 
         let featureTemp = `<div class="${scanvas.feat[0]}"><p>${scanvas.feat[1]}</p><div class="${scanvas.feat[2]}"><p>${scanvas.feat[3]}<br><span>${scanvas.feat[4]}</span></p></div><div class="${scanvas.feat[5]}"><p>${scanvas.feat[6]}</p></div><div></div></div>`;
@@ -561,6 +573,11 @@ if(topDivScan !== null && topDivScan !== undefined){
     let moveTop = document.querySelector('.xyztop');
     let scanLogo = document.querySelector('.scanvas-logoimg');
         scanLogo.setAttribute('id', 'scanlogo');
+    let viewopen = document.querySelector('.xyzviewopen');
+
+    viewopen.addEventListener('click', function(){
+        window.open("https://screenxyz.net/model-viewer");
+    });
     
     moveToTop(moveTop, '#scanlogo');
 
