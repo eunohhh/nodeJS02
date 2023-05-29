@@ -70,7 +70,6 @@ input[type=search]:focus-within{
     outline: #88fd93 solid 1px;
 }
 
-/************************ main ************************/
 .xyz-landscape{
     width: 100vw;
     height: 100vh;
@@ -88,6 +87,10 @@ input[type=search]:focus-within{
     font-weight: 700;
     opacity: 0;
 }
+.xyz-landscape object{
+    width: 3rem;
+    height: 3rem;
+}
 .xyz-slow{
     opacity: 1;
     transition: all .1s;
@@ -97,6 +100,7 @@ p{
     margin-block-end: 0;
     font-weight: 400;
 }
+/************************ main ************************/
 #screenxyz{
     background-color: #88fd93;
     width: 100%;
@@ -443,16 +447,32 @@ p{
     border: 1px solid #707070;
     border-radius: 0 1.3rem 1.3rem;
     font-family: 'raleway', 'sans-serif';
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
 }
-.xyzline{
+/* .xyzline{
     width: 4.4rem;
     height: 0.6rem;
     margin-top: 0.9rem;
-}
+} */
 .threedscan{
     background-color: #e5e5e5;
 }
-.threedscan >div{
+.threedscan::before{
+    content: '';
+    box-sizing: border-box;
+    width: 4.45rem;
+    height: 1rem;
+    border:1px solid #707070;
+    border-bottom: none;
+    border-radius: 0 1.3rem 0 0;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: -1rem;
+    left: -1px;
+}
+/* .threedscan >div{
     width: 4.45rem;
     height: 1rem;
     margin-top: -1rem;
@@ -460,14 +480,27 @@ p{
     background-color: #e5e5e5;
     border: 1px solid #707070;
     border-radius: 0 1.3rem 0 0;
-}
-.xyzline.grey{
+} */
+/* .xyzline.grey{
     background-color: #e5e5e5;
-}
+} */
 .xyzfeatures{
     background-color: #88fd93;
 }
-.xyzfeatures >div{
+.xyzfeatures::before{
+    content: '';
+    box-sizing: border-box;
+    width: 4.45rem;
+    height: 1rem;
+    border:1px solid #707070;
+    border-bottom: none;
+    border-radius: 0 1.3rem 0 0;
+    background-color: #88fd93;
+    position: absolute;
+    top: -1rem;
+    left: -1px;
+}
+/* .xyzfeatures >div{
     width: 4.45rem;
     height: 1rem;
     margin-top: -1rem;
@@ -475,14 +508,27 @@ p{
     background-color: #88fd93;
     border: 1px solid #707070;
     border-radius: 0 1.3rem 0 0;
-}
-.xyzline.green{
+} */
+/* .xyzline.green{
     background-color: #88fd93;
-}
+} */
 .xyzservice{
     background-color: #99dced;
 }
-.xyzservice >div{
+.xyzservice::before{
+    content: '';
+    box-sizing: border-box;
+    width: 4.45rem;
+    height: 1rem;
+    border:1px solid #707070;
+    border-bottom: none;
+    border-radius: 0 1.3rem 0 0;
+    background-color: #99dced;
+    position: absolute;
+    top: -1rem;
+    left: -1px;
+}
+/* .xyzservice >div{
     width: 4.45rem;
     height: 1rem;
     margin-top: -1rem;
@@ -490,17 +536,30 @@ p{
     background-color: #99dced;
     border: 1px solid #707070;
     border-radius: 0 1.3rem 0 0;
-}
-.xyzline.sky{
+} */
+/* .xyzline.sky{
     background-color: #99dced;
     height: 0.7rem;
     margin-top: 0.8rem;
     width: 4.37rem;
-}
+} */
 .xyzspace{
     background-color: #ffff00;
 }
-.xyzspace >div{
+.xyzspace::before{
+    content: '';
+    box-sizing: border-box;
+    width: 4.45rem;
+    height: 1rem;
+    border:1px solid #707070;
+    border-bottom: none;
+    border-radius: 0 1.3rem 0 0;
+    background-color: #ffff00;
+    position: absolute;
+    top: -1rem;
+    left: -1px;
+}
+/* .xyzspace >div{
     width: 4.45rem;
     height: 1rem;
     margin-top: -1rem;
@@ -508,13 +567,13 @@ p{
     background-color: #ffff00;
     border: 1px solid #707070;
     border-radius: 0 1.3rem 0 0;
-}
-.xyzline.yellow{
+} */
+/* .xyzline.yellow{
     background-color: #ffff00;
     height: 0.7rem;
     margin-top: 0.8rem;
     width: 4.37rem;
-}
+} */
 .xyzfolder-wrap{
     width: 16.5rem;
     display: flex;
@@ -637,6 +696,7 @@ p{
     background-color: #ffff00;
 }
 .xyz-focus div:nth-child(3){
+    box-sizing: border-box;
     background-color: #88fd93;
     width: 2rem;
     height: 2rem;
@@ -705,10 +765,30 @@ p{
     font-family: 'DungGeunMo', 'NeoDunggeunmo','sans-serif';
     font-size: 1.5rem;
     text-align: center;
-    line-height: 8rem;
+    line-height: 5rem;
     padding-top: 18vh;
 }
+.xyz-features object{
+    display: inline;
+    width: 3vw;
+    height: 3vw;
+    position: relative;
+    bottom: 4px;
+}
+.smily{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.xyz-features p{
+    position: relative;
+    top: 20%;
+    display: inline;
+}
 .xyzpc p{
+    position: relative;
+    top: 20%;
     color: #fff;
     font-size: 1.5rem;
     line-height: 3rem;
@@ -962,6 +1042,7 @@ p{
     display: flex;
     justify-content: right;
     margin-right: -3rem;
+    margin-top: -2rem;
 }
 .post-contents .gpu-text{
     margin-left: -3rem;
@@ -969,9 +1050,18 @@ p{
     line-height: 3rem;
     padding-bottom: 2rem;
 }
-.gpu-text .smile{
-    font-size: 2.5rem;
+.smily.g{
+    justify-content: flex-start;
 }
+.smily.g object{
+    width: 2.6rem;
+    height: 2.6rem;
+    position: relative;
+    bottom: 4px;
+}
+/* .gpu-text .smile{
+    font-size: 2.5rem;
+} */
 .gpu-adress{
     margin-left: -3rem;
     width: 10rem;
@@ -1497,14 +1587,34 @@ p{
         border-radius: 0 0.5rem 0.5rem;
     }
 
-    .threedscan >div {
+    /* .threedscan >div {
         width: 3rem;
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
         margin-top: -0.8rem;
-    }
+    } */
 
-    .xyzfeatures >div {
+    .threedscan::before{
+        width: 3rem;
+        height: 0.8rem;
+        top: -0.778rem;
+    }
+    .xyzfeatures::before{
+        width: 3rem;
+        height: 0.8rem;
+        top: -0.778rem;
+    }
+    .xyzservice::before{
+        width: 3rem;
+        height: 0.8rem;
+        top: -0.778rem;
+    }
+    .xyzspace::before{
+        width: 3rem;
+        height: 0.8rem;
+        top: -0.778rem;
+    }
+    /* .xyzfeatures >div {
         width: 3rem;
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
@@ -1521,8 +1631,8 @@ p{
         border-radius: 0 0.8rem 0 0;
         height: 0.8rem;
         margin-top: -0.8rem;
-    }
-    .xyzline {
+    } */
+    /* .xyzline {
         width: 2.88rem;
         margin-top: 0.65rem;
     }
@@ -1535,7 +1645,7 @@ p{
         width: 2.88rem;
         margin-top: 0.65rem;
         margin-left: 0;
-    }
+    } */
     .xyz4 p {
         top: 41%;
         font-size: 1.2rem;
@@ -1601,10 +1711,9 @@ p{
     }
     .xyzpc p{
         box-sizing: border-box;
-        position: absolute;
-        width: 100%;
-        height: 100%;
         font-size: 1.1rem;
+        position: relative;
+        top: 18%;
         padding-top: 3rem;
         text-align: center;
     }
@@ -1617,7 +1726,8 @@ p{
     }
 
     .xyzmouse p{
-        padding-top: 1rem;
+        position: relative;
+        top: 20%;
         padding-left: 0.2rem;
     }
 
@@ -1717,7 +1827,7 @@ p{
     .gpu-logo-post{
         width: 20vw;
         height: 12vh;
-        transform: translateY(-10%);
+        transform: translateY(-2%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -1754,6 +1864,17 @@ p{
         padding-top: 3rem;
         margin-bottom: 0;
     }
+    .smily.g{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        height: 1.7rem;
+    }
+    .smily.g object{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
     /************************ meowart ************************/
     .meowart-logo-img{
         padding-top: 1rem;
@@ -1827,7 +1948,7 @@ p{
         align-items: center;
         margin-top: 5rem;
     }
-   
+
     .xyzd-l-background{
         width: 65vw;
         height: auto;
@@ -1836,7 +1957,7 @@ p{
     .xyzd-l-background .xyz-l-b.top >div{
         width: calc(100% /15);
     }
-   
+
     .top{
         justify-content: space-between;
     }
@@ -1933,6 +2054,18 @@ p{
     
     .xyzfolder-upper{
         height: 100vh;
+    }
+    .threedscan::before{
+        top: -0.789rem;
+    }
+    .xyzfeatures::before{
+        top: -0.789rem;
+    }
+    .xyzservice::before{
+        top: -0.789rem;
+    }   
+    .xyzspace::before{
+        top: -0.789rem;
     }
 
     /************************ sketchbox ***********************/
@@ -2084,6 +2217,7 @@ p{
     }
     .gpu-logo-post{
         height: 20vh;
+        transform: translateY(20%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -2376,7 +2510,7 @@ p{
         font-size: 1.1rem;
     }
     /************************ sketchbox ************************/
-     .sketch-contents{
+    .sketch-contents{
         position: relative;
         margin: 0 auto;
         width: fit-content;
@@ -2422,6 +2556,7 @@ p{
     }
     .gpu-logo-post{
         height: 20vh;
+        transform: translateY(20%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -2776,7 +2911,6 @@ p{
 
 }
 
-
 @media screen and (min-width: 768px) and (max-width: 991px) and (orientation:portrait){
     /************************ main ************************/
     .box-con{
@@ -2880,6 +3014,9 @@ p{
     }
 
     /************************ scanvas ************************/
+    #scanvaspage .xyzfolder{
+        max-width: 40rem;
+    }
     .xyz3d{
         font-size: 2rem;
     }
@@ -2893,7 +3030,18 @@ p{
         padding-top: 4.5rem;
         font-size: 1.3rem;
     }
-
+    .threedscan::before{
+        top: -0.975rem;
+    }
+    .xyzfeatures::before{
+        top: -0.975rem;
+    }
+    .xyzservice::before{
+        top: -0.95rem;
+    }
+    .xyzspace::before{
+        top: -0.95rem;
+    }
     .xyzmouse{
         font-size: 1.8rem;
     }
@@ -2954,6 +3102,7 @@ p{
     }
     .gpu-logo-post{
         height: 8vh;
+        transform: translateY(10%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -3018,6 +3167,36 @@ p{
         margin-left: 5%;
     }
 }
+@media screen and (min-width: 992px) and (max-width: 1025px) and (orientation:portrait){
+    #scanvaspage .xyzfolder{
+        max-width: 50rem;
+    }
+    .threedscan::before{
+        top: -0.97rem;
+    }
+    .xyzfeatures::before{
+        top: -0.97rem;
+    }
+    .xyzservice::before{
+        top: -0.95rem;
+    }
+    .xyzspace::before{
+        top: -0.95rem;
+    }
+    /************************ gpu ************************/
+    .post-contents .gpu-text {
+        margin-top: -2.5rem;
+    }
+    .gpu-logo-post{
+        width: 10vw;
+        height: 13vh;
+    }
+    .xyzinsta{
+        padding-top: 2rem;
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}
 
 
 @media screen and (min-width: 992px) and (max-width: 1199px) and (orientation:landscape){
@@ -3040,6 +3219,22 @@ p{
     .btnClear{
         line-height: 4vh;
         left: calc(100% - 0.08vw);
+    }
+    /************************ scanvas ************************/
+    #scanvaspage .xyzfolder{
+        max-width: 40rem;
+    }
+    .threedscan::before{
+        top: -0.95rem;
+    }
+    .xyzfeatures::before{
+        top: -0.95rem;
+    }
+    .xyzservice::before{
+        top: -0.97rem;
+    }
+    .xyzspace::before{
+        top: -0.97rem;
     }
     /************************ sketchbox ************************/
     .sketch-contents{
@@ -3115,6 +3310,7 @@ p{
     }
     .gpu-logo-post{
         height: 10vh;
+        transform: translateY(24%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -3153,6 +3349,8 @@ p{
     
     .xyzinsta{
         padding-top: 3rem;
+        width: 1.6rem;
+        height: 1.6rem;
     }
     
     /************************ design ************************/
@@ -3162,6 +3360,21 @@ p{
 } 
 
 @media screen and (min-width: 1200px) and (max-width: 1440px) and (orientation:landscape){
+    #scanvaspage .xyzfolder{
+        max-width: 40rem;
+    }
+    .threedscan::before{
+        top: -0.975rem;
+    }
+    .xyzfeatures::before{
+        top: -0.975rem;
+    }
+    .xyzservice::before{
+        top: -0.95rem;
+    }
+    .xyzspace::before{
+        top: -0.95rem;
+    }
     /************************ main ************************/
     .box-con .midbox .li-group {
         font-size: 1.45rem;
@@ -3217,6 +3430,11 @@ p{
 
     .meowart-youtube{
         margin-top: -5rem;
+    }
+    /************************ gpu ************************/
+    .gpu-logo-post{
+        width: 10vw;
+        height: 13vh;
     }
     /************************ design ************************/
     .xyz-d-cover{

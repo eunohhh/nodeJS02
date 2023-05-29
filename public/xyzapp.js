@@ -2,7 +2,7 @@ import searchDB from "./searchdb.js" // import DBjson
 import forBind from "./binddb.js"; // import bind DB
 import gltfObjs from "./modelsInfo.js"; // import model gltfs
 "use strict";
-
+console.log(navigator.userAgent)
 document.body.style.margin = '0';
 document.body.style.height = '100%';
 document.body.style.boxSizing = 'border-box';
@@ -17,7 +17,7 @@ const isNotHover = () => {
 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }; // =========> mobile device check function
 const isMobile = () => {
-	return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+	return /Android|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }; // =========> mobile device check function
 const getAgentSystem = () =>{
     if(!("navigator" in window)){
@@ -194,7 +194,7 @@ function dontLandscape(){
             toDelw.remove();
             toDel.remove();
         } else {
-            let str = ['◡̈', 'looks good in portrait mode', '세로모드에서 잘 보여요'];
+            let str = ['looks good in portrait mode', '세로모드에서 잘 보여요'];
             let bg = document.createElement('div');
                 bg.setAttribute('class', 'xyz-landscape');
             let bgWhite = document.createElement('div');
@@ -204,13 +204,15 @@ function dontLandscape(){
                 bgWhite.style.zIndex = "400";
                 bgWhite.style.backgroundColor = "#fff";
             let warn;
+            let smile = `<div class="smily"><object data="../assets/screenweb_asset/xyzsmilewhite.svg"></object></div>`;
+            bg.insertAdjacentHTML('beforeend', smile)
             str.forEach((e)=>{
                     warn = document.createElement('p');
                     warn.innerHTML = e;
                 bg.insertAdjacentElement('beforeend', warn);
             })
-            bg.querySelectorAll('p')[2].style.fontSize = '1.5rem';
-            bg.querySelectorAll('p')[2].style.paddingTop = '0.5rem';
+            bg.querySelectorAll('p')[1].style.fontSize = '1.5rem';
+            bg.querySelectorAll('p')[1].style.paddingTop = '0.5rem';
 
             document.body.insertAdjacentElement('afterbegin', bgWhite)
             document.body.insertAdjacentElement('afterbegin', bg)
@@ -332,14 +334,13 @@ if(topDivMain !== null && topDivMain !== undefined){
 
     /** ============== main page app ================ */
     mainContents[3].firstChild.setAttribute('class', 'meowartfont'); // append meowart font hardcoding...
-   
 
     rightBox.addEventListener('click', function(e){
         let lib = e.target.dataset.lib;
         let icon = e.target.dataset.icon;
         if(typeof lib === 'string' || typeof icon === 'string'){
-           mainSwitch(lib);
-           mainSwitch(icon);
+            mainSwitch(lib);
+            mainSwitch(icon);
         };
 
         function mainSwitch(target){
@@ -516,7 +517,7 @@ if(topDivScan !== null && topDivScan !== undefined){
         let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="xyzviewopen">go to viewer</div><div class="${scanvas.vr[4]}"></div></div>`;
         exFolder.insertAdjacentHTML('beforeend', vrTempl);
 
-        let featureTemp = `<div class="${scanvas.feat[0]}"><p>${scanvas.feat[1]}</p><div class="${scanvas.feat[2]}"><p>${scanvas.feat[3]}<br><span>${scanvas.feat[4]}</span></p></div><div class="${scanvas.feat[5]}"><p>${scanvas.feat[6]}</p></div><div></div></div>`;
+        let featureTemp = `<div class="${scanvas.feat[0]}"><div class="smily"><object data="../assets/screenweb_asset/xyzsmileblack.svg"></object><p>${scanvas.feat[1]}</p></div><div class="${scanvas.feat[2]}"><p>${scanvas.feat[3]}<br><span>${scanvas.feat[4]}</span></p></div><div class="${scanvas.feat[5]}"><p>${scanvas.feat[6]}</p></div><div></div></div>`;
         exFolder.insertAdjacentHTML('beforeend', featureTemp);
 
         let services = document.createElement('div');
@@ -706,6 +707,8 @@ if(topDivSketch !== null && topDivSketch !== undefined){
     });
 
     let xyzpaint = function(e){
+        let eleTop = document.querySelector('.elementor-location-header'); // 엘리멘터 헤더 높이 변수 저장
+        
         let newBrush = ['../assets/screenweb_asset/brush1.png', '../assets/screenweb_asset/brush2.png', '../assets/screenweb_asset/brush3.png', '../assets/screenweb_asset/brush4.png'];
         let brushdiv = document.createElement('div');
             brushdiv.style.position = 'relative';
@@ -713,8 +716,17 @@ if(topDivSketch !== null && topDivSketch !== undefined){
             brushimg.setAttribute('src', newBrush[rand(0, 3)]);
 
         brushdiv.insertAdjacentElement('beforeend', brushimg)
-        brushdiv.style.top = `calc(${e.y}px - 8em)`;
-        brushdiv.style.left = `calc(${e.x}px - 8em)`;
+        if(eleTop){
+            if(eleTop.clientHeight + 50 > e.y){ 
+                brushdiv.style.top = `20px`;
+            }else{
+                brushdiv.style.top = `calc(${e.y}px - 8rem)`;
+            }
+        }
+        // brushdiv.style.top = `calc(${e.y}px - 8rem)`;
+        brushdiv.style.left = `calc(${e.x}px - 8rem)`;
+        brushdiv.style.zIndex = '-10';
+
 
         document.querySelector('.xyzbrush').appendChild(brushdiv)
 
@@ -808,7 +820,7 @@ if(topDivGpu !== null && topDivGpu !== undefined){
     let gpuLogo = `<div class="${gpu.firLogoClass}"><div class="${gpu.secLogoclass}"></div></div>`;
     secondBox.insertAdjacentHTML('beforeend', gpuLogo);
 
-    let gpuText = `<div class="${gpu.txtClass}"><p class="${gpu.txtSmile}">◡̈</p><p>${gpu.txtStr}</p></div>`;
+    let gpuText = `<div class="${gpu.txtClass}"><div class="smily g"><object data="../assets/screenweb_asset/xyzsmileblack.svg"></object></div><p>${gpu.txtStr}</p></div>`;
     secondBox.insertAdjacentHTML('beforeend', gpuText);
 
     let gpuAdd = `<div class="${gpu.addClass}"><p><a href="${gpu.addAHref}" class="${gpu.addAClass}" target="_blank">${gpu.addAstr}</a></p><a href="${gpu.instaHref}" class="${gpu.instaClass}" target="_blank"><div class="${gpu.instaSvgClass}"></div></a></div>`;
