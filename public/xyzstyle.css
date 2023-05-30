@@ -31,15 +31,23 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body::-webkit-scrollbar{
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #88fd93;
+}
+
+/* body::-webkit-scrollbar{
     width: 5px;
     background-color: #fff;
 }
 
 body::-webkit-scrollbar-thumb{
     background-color: #88fd93;
-}
-
+} */
 [type=button]:focus,[type=button]:hover,[type=submit]:focus,[type=submit]:hover,button:focus{
     /* outline: 0px auto rgba(0,0,0,0); */
     outline: none;
@@ -244,8 +252,8 @@ p{
     font-size: 1.8rem;
     text-align: center;
     position: absolute;
-    top: -1vw;
-    left: calc(100% - 1.7vw);
+    top: -1vh;
+    left: calc(100% - 1vw);
     padding: 0;
     border: none;
     outline: none;
@@ -288,6 +296,7 @@ p{
     height: 10%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .li-contents p:nth-of-type(3):hover{
@@ -424,7 +433,7 @@ p{
 }
 #scanvaspage .xyzfolder{
     display: flex;
-    max-width: 55rem;
+    max-width: 38rem;
     gap: 7vh 4vw;
     flex-wrap: wrap;
     justify-content: center;
@@ -498,7 +507,7 @@ p{
     background-color: #88fd93;
     position: absolute;
     top: -1rem;
-    left: -1px;
+    left: -0.5px;
 }
 /* .xyzfeatures >div{
     width: 4.45rem;
@@ -770,10 +779,11 @@ p{
 }
 .xyz-features object{
     display: inline;
-    width: 3vw;
-    height: 3vw;
+    width: 2vw;
+    /* height: 3vw; */
     position: relative;
-    bottom: 4px;
+    /* bottom: 4px; */
+    margin-right: 1vw;
 }
 .smily{
     display: flex;
@@ -908,16 +918,16 @@ p{
     position: fixed;
     width: 16rem;
     height: 4.2rem;
-    top: calc(100vh - 80%);
-    left: calc(100vw - 85%);
+    top: 14rem;
+    left: 11rem;
     transform: rotate(-30deg);
 }
 .xyzworm.right{
     position: fixed;
     width: 12rem;
     height: 3.2rem;
-    top: calc(100vh - 30%);
-    left: calc(100vw - 30%);
+    top: 40rem;
+    left: 90rem;
     transform: rotate(183deg);
 }
 
@@ -1469,6 +1479,7 @@ p{
     }
     .box-con .midbox .li-group {
         font-size: 3vh;
+        line-height: 5vh;
     }
     .box-con .midbox .li-group .li-group-item {
         padding-top: 0.3em;
@@ -1559,7 +1570,7 @@ p{
         width: 21.5rem;
         left: 50%;
         transform: translateX(-50%);
-        padding-top: 6rem;
+        padding-top: 21vh;
     }
     .xyzfolder-upper{
         height: 83vh;
@@ -1587,65 +1598,31 @@ p{
         border-radius: 0 0.5rem 0.5rem;
     }
 
-    /* .threedscan >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.8rem;
-    } */
-
     .threedscan::before{
         width: 3rem;
         height: 0.8rem;
         top: -0.778rem;
+        left: -0.5px;
     }
     .xyzfeatures::before{
         width: 3rem;
         height: 0.8rem;
         top: -0.778rem;
+        left: -0.5px;
     }
     .xyzservice::before{
         width: 3rem;
         height: 0.8rem;
         top: -0.778rem;
+        left: -0.5px;
     }
     .xyzspace::before{
         width: 3rem;
         height: 0.8rem;
         top: -0.778rem;
+        left: -0.5px;
     }
-    /* .xyzfeatures >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.8rem;
-    }
-    .xyzservice >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.8rem;
-    }
-    .xyzspace >div {
-        width: 3rem;
-        border-radius: 0 0.8rem 0 0;
-        height: 0.8rem;
-        margin-top: -0.8rem;
-    } */
-    /* .xyzline {
-        width: 2.88rem;
-        margin-top: 0.65rem;
-    }
-    .xyzline.sky{
-        width: 2.88rem;
-        margin-top: 0.65rem;
-        margin-left: 0;
-    }
-    .xyzline.yellow{
-        width: 2.88rem;
-        margin-top: 0.65rem;
-        margin-left: 0;
-    } */
+ 
     .xyz4 p {
         top: 41%;
         font-size: 1.2rem;
@@ -1682,7 +1659,7 @@ p{
         font-size: 1rem;
         width: 10rem;
         padding: 0.5rem 1rem;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
     }
     .xyzvr iframe{
         width: 99%;       
@@ -1702,6 +1679,10 @@ p{
         font-size: 1.1rem;
         line-height: 4rem;
     }
+
+    .xyz-features object{
+        width: 5.5vw;
+    }
     .xyzpc{
         position: relative;
         width: 16rem;
@@ -1713,8 +1694,8 @@ p{
         box-sizing: border-box;
         font-size: 1.1rem;
         position: relative;
-        top: 18%;
-        padding-top: 3rem;
+        /* top: 18%;
+        padding-top: 3rem; */
         text-align: center;
     }
 
@@ -1801,14 +1782,14 @@ p{
     .xyzworm{
         width: 9rem;
         height: 3rem;
-        top: calc(100vh - 83%);
-        left: calc(100vw - 96%);
+        top: 7.5rem;
+        left: 1rem;
     }
     .xyzworm.right{
         width: 7.5rem;
         height: 2.2rem;
-        top: calc(100vh - 43%);
-        left: calc(100vw - 38%);
+        top: 30rem;
+        left: 16rem;
     }
 
     /************************ gpu ************************/
@@ -2033,54 +2014,47 @@ p{
     }
     
     .inputWrap{
-        margin-top: 3.4rem;
+        margin-top: 2.8rem;
     }
     .meowartfont{
         font-weight: 600;
         font-size: 1.6rem;
     }
 
-    /************************ scanvas ***********************/
-    #scanvaspage .scanvas-logoimg{
-        padding-top: 8rem;
-    }
-
-    .xyzviewopen{
-        font-size: 1rem;
-        width: 10rem;
-        padding: 0.5rem 1rem;
-        margin-top: 1.5rem;
-    }
-    
+    /************************ scanvas ***********************/    
     .xyzfolder-upper{
         height: 100vh;
     }
     .threedscan::before{
         top: -0.789rem;
+        left: -1px;
     }
     .xyzfeatures::before{
         top: -0.789rem;
+        left: -1px;
     }
     .xyzservice::before{
-        top: -0.789rem;
+        top: -0.78rem;
+        left: -1px;
     }   
     .xyzspace::before{
-        top: -0.789rem;
+        top: -0.78rem;
+        left: -1px;
     }
 
     /************************ sketchbox ***********************/
     .xyzworm{
         width: 7rem;
         height: 2.2rem;
-        top: calc(100vh - 99%);
-        left: calc(100vw - 96%);
+        top: 6rem;
+        left: 1rem;
     }
 
     .xyzworm.right {
         width: 6rem;
         height: 2rem;
-        top: calc(100vh - 40%);
-        left: calc(100vw - 32%);
+        top: 25rem;
+        left: 16rem;
     }
 
     .sketch-contents{
@@ -2123,6 +2097,7 @@ p{
     }
     .box-con .midbox .li-group {
         font-size: 5vh;
+        line-height: 2rem;
     }
     .inputWrap {
         width: 27vw;
@@ -2147,13 +2122,14 @@ p{
     .box-con .rightbox .li-contents-box .li-contents{
         font-size: 1rem;
         line-height: 1.7rem;
+        padding-top: 1.2rem;
     }
     .li-contents p:nth-of-type(1){
-        padding-top: 1.5rem;
+        /* padding-top: 1.5rem; */
         height: 20%;
     }
     .li-contents p:nth-of-type(2){
-        height: 40%;
+        height: 45%;
     }
     .li-contents p:nth-of-type(3){
         height: 10%;
@@ -2174,7 +2150,7 @@ p{
         position: relative;
         margin: 0 auto;
         width: fit-content;
-        top: 0;
+        top: 20%;
         left: 0;
         transform: none;
     }
@@ -2188,22 +2164,23 @@ p{
         text-decoration: none;
         color: #000;
         font-size: 2.8rem;
+        line-height: 3rem;
         font-family: 'Uhbeemysen','sans-serif';
     }
 
     .xyzworm{
         position: absolute;
-        width: 9rem;
-        height: 2.8rem;
-        top: calc(100vh - 85%);
-        left: calc(100vw - 98%);
+        width: 8rem;
+        height: 2.2rem;
+        top: 5rem;
+        left: 3rem;
     }
     .xyzworm.right{
         position: absolute;
-        width: 7.5rem;
-        height: 2.2rem;
-        top: calc(100vh - 22%);
-        left: calc(100vw - 22%);
+        width: 7rem;
+        height: 2rem;
+        top: 20rem;
+        left: 34rem;
     }
 
     /************************ gpu ************************/
@@ -2464,39 +2441,46 @@ p{
     }
     .box-con .midbox .li-group {
         font-size: 5vh;
+        line-height: 2.5rem;
     }
     .inputWrap {
         width: 27vw;
         height: 7.5vh;
         left: 2vh;
         bottom: 14vh;
+        margin-top: -1.8rem;
     }
     .inputWrap input {
         width: inherit;
     }
     .sbtn {
         left: calc(100% - 5vw);
+        top: 0.6vh;
         /* line-height: 6vh; */
     }
     .btnClear {
         left: calc(100% - 2vw);
         line-height: 9vh;
+        top: -1.7vh;    
     }
+
     .box-con .rightbox .li-contents-box {
         word-break: keep-all;
     }
     .box-con .rightbox .li-contents-box .li-contents{
-        font-size: 1rem;
+        font-size: 1.1rem;
+        padding-top: 1.5rem;
     }
     .li-contents p:nth-of-type(1){
-        padding-top: 1.5rem;
+        /* padding-top: 1.5rem; */
         height: 20%;
+        font-weight: 500;
     }
     .li-contents p:nth-of-type(2){
         height: 40%;
     }
     .li-contents p:nth-of-type(3){
-        height: 10%;
+        height: 15%;
         line-height: 10vw;
     }
     .logo-imgbox {
@@ -2509,12 +2493,15 @@ p{
     .search-res-div h3{
         font-size: 1.1rem;
     }
+    .material-icons-outlined{
+        font-size: 1.8rem;
+    }
     /************************ sketchbox ************************/
     .sketch-contents{
         position: relative;
         margin: 0 auto;
         width: fit-content;
-        top: 0;
+        top: 15%;
         left: 0;
         transform: none;
     }
@@ -2528,6 +2515,7 @@ p{
         text-decoration: none;
         color: #000;
         font-size: 3.7rem;
+        line-height: 4rem;
         font-family: 'Uhbeemysen','sans-serif';
     }
 
@@ -2535,15 +2523,15 @@ p{
         position: absolute;
         width: 9rem;
         height: 3rem;
-        top: calc(100vh - 85%);
-        left: calc(100vw - 96%);
+        top: 5rem;
+        left: 3rem;
     }
     .xyzworm.right{
         position: absolute;
         width: 7.5rem;
         height: 2.5rem;
-        top: calc(100vh - 20%);
-        left: calc(100vw - 20%);
+        top: 21rem;
+        left: 44rem;
     }
     /************************ gpu ************************/
     .postoutline{
@@ -2864,15 +2852,15 @@ p{
     .xyzworm{
         width: 10rem;
         height: 2.7rem;
-        top: calc(100vh - 70%);
-        left: calc(100vw - 93%);
+        /* top: calc(100vh - 70%);
+        left: calc(100vw - 93%); */
     }
 
     .xyzworm.right{
         width: 8rem;
         height: 2.2rem;
-        top: calc(100vh - 38%);
-        left: calc(100vw - 25%);
+        /* top: calc(100vh - 38%);
+        left: calc(100vw - 25%); */
     }
     /************************ meowart ************************/
     .cat-img img{
@@ -2936,7 +2924,8 @@ p{
         width: 100%;
     }
     .box-con .midbox .li-group {
-        font-size: 3.5vh;
+        font-size: 2rem;
+        line-height: 3.5rem;
     }
     .box-con .midbox .li-group .li-group-item {
         padding-top: 0.3em;
@@ -2948,7 +2937,7 @@ p{
     .inputWrap {
         width: 53vw;
         left: 1.5vh;
-        top: 1vh;
+        top: 6vh;
     }
     .inputWrap input {
         width: inherit;
@@ -2956,15 +2945,16 @@ p{
         font-size: 1.6rem;
     }
     .sbtn {
-        left: calc(100% - 12vw);
-        font-size: 1.2em;
+        left: calc(100% - 9vw);
+        font-size: 1.5rem;
         padding: 1vh 0.5vh;
         line-height: 2.5vh;
     }
     .btnClear {
-        left: calc(100% - 5.5vw);
-        top: 0.3vh;
+        left: calc(100% - 4vw);
+        top: 0.2vh;
         line-height: 3vh;
+        font-size: 2.5rem;
     }
     .box-con .rightbox .li-contents-box {
         padding-right: 1rem;
@@ -2974,14 +2964,14 @@ p{
         line-height: 2.3rem;
     }
     .li-contents p:nth-of-type(1){
-        padding-top: 1rem;
+        /* padding-top: 1rem; */
         height: 20%;
     }
     .li-contents p:nth-of-type(2){
         height: 42%;
     }
     .li-contents p:nth-of-type(3){
-        height: 8%;
+        height: 5vh;
         line-height: 10vw;
         padding-right: 0;
     }
@@ -3081,14 +3071,14 @@ p{
     .xyzworm{
         width: 10rem;
         height: 2.8rem;
-        top: calc(100vh - 80%);
-        left: calc(100vw - 91%);
+        top: 15rem;
+        left: 3rem;
     }
     .xyzworm.right{
         width: 8rem;
         height: 2.2rem;
-        top: calc(100vh - 40%);
-        left: calc(100vw - 28%);
+        top: 41rem;
+        left: 38rem;
     }
 
     /************************ gpu ************************/
@@ -3167,7 +3157,7 @@ p{
         margin-left: 5%;
     }
 }
-@media screen and (min-width: 992px) and (max-width: 1025px) and (orientation:portrait){
+@media screen and (min-width: 992px) and (max-width: 1023px) and (orientation:portrait){
     #scanvaspage .xyzfolder{
         max-width: 50rem;
     }
@@ -3201,6 +3191,9 @@ p{
 
 @media screen and (min-width: 992px) and (max-width: 1199px) and (orientation:landscape){
     /************************ main ************************/
+    .material-icons-outlined{
+        font-size: 1.5rem;
+    }
     .box-con{
         width: 80vw;
     }
@@ -3214,11 +3207,34 @@ p{
         width: 18.5vw;
     }
     .sbtn{
-        left: calc(100% - 2.7vw);
+        left: calc(100% - 2.2vw);
+        top: -0.2vh;
+        font-size: 1.2rem;
     }
     .btnClear{
-        line-height: 4vh;
-        left: calc(100% - 0.08vw);
+        /* line-height: 4vh;
+        left: calc(100% - 0.08vw); */
+        right: calc(100% - 19vw);
+        top: -1.2vh;
+    }
+    .box-con .midbox .li-group{
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+    }
+
+    .box-con .rightbox .li-contents-box .li-contents{
+        font-size: 1rem;
+        padding-top: 1.5rem;
+    }
+
+    .meowartfont{
+        font-size: 1.5rem;
+    }
+    .search-res-div h3{
+        font-size: 1rem;
+    }
+    .inputWrap input{
+        font-size: 1rem;
     }
     /************************ scanvas ************************/
     #scanvaspage .xyzfolder{
@@ -3241,7 +3257,7 @@ p{
         position: relative;
         margin: 0 auto;
         width: fit-content;
-        top: 25%;
+        top: 30%;
         left: 0;
         transform: none;
     }
@@ -3262,19 +3278,19 @@ p{
     .xyzworm{
         width: 10rem;
         height: 2.8rem;
-        top: calc(100vh - 80%);
-        left: calc(100vw - 88%);
+        top: 12rem;
+        left: 5rem;
     }
     .xyzworm.right{
         width: 8rem;
         height: 2.2rem;
-        top: calc(100vh - 40%);
-        left: calc(100vw - 20%);
+        top: 29rem;
+        left: 53rem;
     }
 
     /************************ meowart ************************/
     .meowart-logo-img{
-        padding-top: 1vh;
+        padding-top: 3vh;
     }
     .meowart-logo-img .meowart-logo-white{
         width: 65vw;
@@ -3359,7 +3375,7 @@ p{
     }
 } 
 
-@media screen and (min-width: 1200px) and (max-width: 1440px) and (orientation:landscape){
+@media screen and (min-width: 1200px) and (max-width: 1365px) and (orientation:landscape){
     #scanvaspage .xyzfolder{
         max-width: 40rem;
     }
@@ -3399,6 +3415,7 @@ p{
 
     .btnClear{
         left: calc(100% - 1vw);
+        top: -1.7vh;
     }
     .search-res-div{
         justify-content: unset;
@@ -3442,4 +3459,197 @@ p{
         margin-bottom: 10vh;
     }
 
+}
+@media screen and (min-width: 1024px) and (max-width: 1025px) and (orientation:portrait){
+    /************************ main ************************/
+    .box-con{
+        width: 85vw;
+        height: 30vh;
+    }
+    .box-con .leftbox .lefticon{
+        padding-top: 5.5rem;
+    }
+    .box-con .midbox .li-group{
+        line-height: 3.3rem;
+    }
+    .box-con .rightbox .li-contents-box .li-contents{
+        padding-top: 5.7rem;
+    }
+    .leftbox{
+        width: 6vw;
+    }
+    .midbox{
+        width: 25vw;
+    }
+    .rightbox{
+        width: 54vw;
+    }
+
+    .li-contents p:nth-of-type(1){
+        height: 20%;
+    }
+
+    .li-contents p:nth-of-type(2){
+        height: 35%;
+    }
+
+    .li-contents p:nth-of-type(3){
+        margin-bottom: -1vh;
+    }
+    .gpu-logo{
+        width: 8vw;
+        height: 6vh;
+    }
+    .inputWrap{
+        width: 22vw;
+        margin-top: 1.5rem;
+    }
+    .inputWrap input{
+        width: 22vw;
+    }
+    .sbtn{
+        left: calc(100% - 6vw);
+        font-size: 1.5rem;
+    }
+    .btnClear{
+        font-size: 2.5rem;
+        left: calc(100% - 2vw);
+        top: -0.9vh;
+    }
+    .search-res-div{
+        height: 30vh;
+    }
+
+    .search-res-div h3{
+        font-size: 1.1rem;
+    }
+    /************************ scanvas ************************/
+    #scanvaspage .scanvas-logoimg{
+        width: 25rem;
+    }
+    .xyz3d{
+        font-size: 2rem;
+    }
+    .threedscan::before{
+        top: -0.99rem;
+        left: -1px;
+    }
+    .xyzfeatures::before{
+        top: -0.99rem;
+        left: -1px;
+    }
+    .xyzservice::before{
+        left: -1px;
+    }
+    .xyzspace::before{
+        left: -1px;
+    }
+    /************************ sketchbox ************************/
+    .sketch-contents{
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .xyzworm{
+        width: 13rem;
+        height: 3.5rem;
+        top: 20rem;
+        left: 2rem;
+    }
+    .xyzworm.right{
+        width: 10rem;
+        height: 2.8rem;
+        top: 50rem;
+        left: 50rem;
+    }
+    .skechboxaccount{
+        font-size: 4.6rem;
+    }
+    /************************ meowart ************************/
+    .cat-img img{
+        height: 12vh;
+        margin-right: 6vw;
+    }
+    .meowart-logo-img{
+        padding-top: 2rem;
+    }
+    .meowart-logo-img .meowart-logo-white{
+        width: 75vw;
+        height: 20vh;
+        margin-left: 2vh;
+    }
+    .meowart-youtube{
+        font-size: 5.6rem;
+        padding-left: 2vw;
+    }
+    .cat-img-jelly img{
+        height: 9vh;
+    }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1440px) and (orientation:landscape){
+    /************************ main ************************/
+    .box-con{
+        width: 80vw;
+    }
+    .leftbox{
+        width: 6vw;
+    }
+    .midbox{
+        width: 22vw;
+    }
+    .rightbox{
+        width: 52vw;
+    }
+    .sbtn{
+        left: calc(100% - 3.5vw);
+    }
+    .btnClear{
+        top: -0.6vh;
+    }
+    .inputWrap{
+        left: 0.6vw;
+        margin-top: -1vh;
+        width: 20vw;
+    }
+    .inputWrap input{
+        width: 20.5vw;
+    }
+    .box-con .rightbox .li-contents-box .li-contents{
+        padding-top: 2.5rem;
+    }
+    .search-res-div h3{
+        font-size: 1.2rem;
+    }
+
+    /************************ sketchbox ************************/
+    .xyzworm{
+        width: 13rem;
+        height: 3.5rem;
+        top: 14rem;
+        left: 11rem;
+    }
+    .xyzworm.right{
+        width: 10rem;
+        height: 2.8rem;
+        top: 40rem;
+        left: 60rem; 
+    }
+    /************************ meowart ************************/
+    .meowart-logo-img .meowart-logo-white{
+        width: 75vw;
+        margin-left: 2vw;
+    }
+    .cat-img{
+        padding-top: 4rem;
+    }
+    .cat-img img{
+        height: 18vh;
+        margin-right: 6vw;
+    }
+
+    .meowart-youtube{
+        padding-left: 2vw;
+    }
 }

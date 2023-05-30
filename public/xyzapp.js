@@ -161,7 +161,8 @@ function setMainDivH(target){
                     perfectH = curHeight - eleTop.clientHeight - eleFoot.clientHeight;
                     target.style.height = `${perfectH}px`
                 } else {
-                    window.innerWidth > window.innerHeight && getAgentSystem() === 'unknown' ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
+                    // window.innerWidth > window.innerHeight && getAgentSystem() === 'unknown' ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
+                    window.innerWidth > window.innerHeight ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
                 }
             }
         }
