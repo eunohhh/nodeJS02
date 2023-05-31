@@ -117,6 +117,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    touch-action: none;
 }
 .box-con{
     box-sizing: border-box;
@@ -366,14 +367,12 @@ p{
 
 .search-res-div{
     width: 100%;
-    height: 100%;
+    height: 40vh;
     display: flex;
     flex-direction: column;
-    max-height: 100%;
-    overflow: auto;
+    overflow-y: scroll;
     padding-left: 2.5vw;
     color: #00ee17;
-    justify-content: center;
     gap: 0.5rem;
 }
 .search-res-div a{
@@ -2185,7 +2184,7 @@ p{
 
     /************************ gpu ************************/
     .postoutline{
-        top: 64%;
+        top: 70%;
         width: 21rem;
         height: 21rem;
     }
@@ -3092,7 +3091,7 @@ p{
     }
     .gpu-logo-post{
         height: 8vh;
-        transform: translateY(10%);
+        transform: translateY(18%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -3326,7 +3325,7 @@ p{
     }
     .gpu-logo-post{
         height: 10vh;
-        transform: translateY(24%);
+        transform: translateY(28%);
     }
     .gpu-logoimg{
         margin-right: 0;
@@ -3372,6 +3371,9 @@ p{
     /************************ design ************************/
     .xyzd-f-con :nth-child(5){
         font-size: 1.8rem;
+    }
+    .xyz-d-cover{
+        padding: 3vh 0;
     }
 } 
 

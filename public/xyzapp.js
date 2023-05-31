@@ -312,7 +312,6 @@ if(topDivMain !== null && topDivMain !== undefined){
     // apply to top div
     topDivMain.insertAdjacentElement('beforeend', mainDiv); // maindiv to top maindiv(screenxyz)
 
-
     const delRegex = /[{}()<>`~!@#$%^&*|\[\]\\\'\";:\/?|\r\n]/gim; // useful Regex when delete special characters or prevent attack, need del nbsp add \s
 
     /** ============== main page selectors ================ */
@@ -395,7 +394,9 @@ if(topDivMain !== null && topDivMain !== undefined){
 
     searchInput.addEventListener('keydown', (e)=>{ // when enter keydowned, do searching
         if(e.keyCode === 13){
+            e.preventDefault();
             searching(searchedString);
+            searchInput.blur();
         }
     })
 
@@ -703,7 +704,7 @@ if(topDivSketch !== null && topDivSketch !== undefined){
     }
 
     brush.forEach(function(e,i,a){
-        brush[i].style.top = `${brushrandom(0, window.innerHeight - 240)}px`;
+        brush[i].style.top = `${brushrandom(0, window.innerHeight - 240)+50}px`;
         brush[i].style.left = `${brushrandom(0, window.innerWidth - 240)}px`;
     });
 
