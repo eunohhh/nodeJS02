@@ -162,7 +162,7 @@ function setMainDivH(target){
                     target.style.height = `${perfectH}px`
                 } else {
                     // window.innerWidth > window.innerHeight && getAgentSystem() === 'unknown' ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
-                    window.innerWidth > window.innerHeight ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
+                    window.innerWidth > window.innerHeight && window.innerWidth < 1025 ? target.style.height = '100vh' : target.style.height = `${perfectH}px`;
                 }
             }
         }
@@ -608,7 +608,7 @@ if(topDivScan !== null && topDivScan !== undefined){
     iframeBox.insertAdjacentElement('beforeend', iframe);
 
     let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
-    let goHref = 'https://screenxyz.net/help';
+    let goHref = 'https://screenxyz.net/details';
 
     closeFol.addEventListener('click', function(){
         // mainDivSwitcher(ourClass);
