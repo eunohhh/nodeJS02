@@ -38,6 +38,31 @@ const topDivMeow = document.getElementById('meowartpage'); // ==============> me
 const topDivGpu = document.getElementById('gpupage'); // ===================> GPU page
 const topDivDesign = document.getElementById('xyz-designpage'); // =========> desing page
 
+const dropControl = document.querySelector('.elementor-menu-toggle');
+const topNav = document.querySelector('.elementor-location-header');
+const togBtn = document.querySelector('elementor-menu-toggle__icon--open');
+
+// if(dropControl !== undefined && dropControl !== null && dropControl.style.display !== 'none'){
+//     const innerUl = document.getElementById('menu-2-5b0aa3b');
+//     document.addEventListener('click', (e)=>{
+//         const dropMenu = document.querySelector('.elementor-nav-menu--dropdown');
+//         if( e.target !== togBtn && e.target !== innerUl && e.target !== innerUl.childNodes ) {
+//             if (dropMenu.clientHeight > 0 ) {
+//                 dropControl.classList.remove('elementor-active') 
+//             }
+//         } 
+//     })
+//     document.addEventListener('touchstart', (e)=>{
+//         const dropMenu = document.querySelector('.elementor-nav-menu--dropdown');
+//         if( e.target !== togBtn && e.target !== innerUl && e.target !== innerUl.childNodes ) {
+//             if (dropMenu.clientHeight > 0 ) {
+//                 dropControl.classList.remove('elementor-active') 
+//             }
+//         } 
+//     })
+// }
+
+
 if(ourClass !== undefined && ourClass !== null){
     mainDivSwitcher(ourClass);
 }
@@ -346,16 +371,16 @@ if(topDivMain !== null && topDivMain !== undefined){
         function mainSwitch(target){
             switch(target){
                 case 'scanvas':
-                    window.open(main.rightBox.href[0])
+                    window.location.href = main.rightBox.href[0]
                     break;
                 case 'sketchbox':
-                    window.open(main.rightBox.href[1])
+                    window.location.href = main.rightBox.href[1]
                     break;
                 case 'meowart':
-                    window.open(main.rightBox.href[2])
+                    window.location.href = main.rightBox.href[2]
                     break;
                 case 'gpu':
-                    window.open(main.rightBox.href[3])
+                    window.location.href = main.rightBox.href[3]
                     break;  
             }
         }
@@ -607,7 +632,7 @@ if(topDivScan !== null && topDivScan !== undefined){
         iframe.setAttribute('src', `https://screenxyz.net/${scanvas.iframe[4]}`);
     iframeBox.insertAdjacentElement('beforeend', iframe);
 
-    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
+    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/06/scanvas_propsal.pdf';
     let goHref = 'https://screenxyz.net/details';
 
     closeFol.addEventListener('click', function(){
