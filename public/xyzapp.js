@@ -604,7 +604,7 @@ if(topDivScan !== null && topDivScan !== undefined){
         iframe.setAttribute('height', '100%');
         iframe.setAttribute('width', '99.5%');
         iframe.setAttribute('allow', 'xr-spatial-tracking');
-        iframe.setAttribute('src', `https://screenxyz.net/${scanvas.iframe[3]}`);
+        iframe.setAttribute('src', `https://screenxyz.net/${scanvas.iframe[4]}`);
     iframeBox.insertAdjacentElement('beforeend', iframe);
 
     let downHref = 'https://screenxyz.net/wp-content/uploads/2023/05/%EC%BD%94%ED%8B%B0%EB%93%9C%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf';
@@ -618,7 +618,7 @@ if(topDivScan !== null && topDivScan !== undefined){
     })
 
     scanBtn.forEach(function(e,i,a){
-        let scanHref = ['https://screenxyz.net/model-viewer','https://screenxyz.net/dayeonji','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo'];
+        let scanHref = ['https://screenxyz.net/model-viewer','https://screenxyz.net/necessaries','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo'];
         e.addEventListener('click', function(){
             window.open(scanHref[i]);
         })

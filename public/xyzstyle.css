@@ -729,7 +729,7 @@ p{
 .xyzvr{
     margin-top: 2rem;
     margin-bottom: 10rem;
-    background-color: beige;
+    background-color: transparent;
     height: 60vh;
 }
 
@@ -1649,6 +1649,7 @@ p{
     }
 
     .xyzvr{
+        height: 350px;
         margin-top: 1rem;
         margin-bottom: 8rem;
     }
@@ -2011,7 +2012,9 @@ p{
         justify-content: unset;
         overflow-y: scroll;
     }
-    
+    .xyzvr{
+        height: 350px;
+    }
     .inputWrap{
         margin-top: 2.8rem;
     }
@@ -2854,6 +2857,9 @@ p{
         height: 100%;
         display: flex;
     }
+    .xyzvr{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .skechboxaccount{
         font-size: 3.2rem;
@@ -3059,7 +3065,9 @@ p{
     .xyzfolder-upper{
         height: 90vh;
     }
-
+    .xyzvr{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .sketch-contents{
         padding-top: 5rem;
@@ -3185,6 +3193,9 @@ p{
     .xyzspace::before{
         top: -0.95rem;
     }
+    .xyzvr{
+        height: 350px;
+    }
     /************************ gpu ************************/
     .post-contents .gpu-text {
         margin-top: -2.5rem;
@@ -3263,6 +3274,9 @@ p{
     }
     .xyzspace::before{
         top: -0.97rem;
+    }
+    .xyzvr{
+        height: 350px;
     }
     /************************ sketchbox ************************/
     .sketch-contents{
@@ -3409,6 +3423,9 @@ p{
     }
     .xyzspace::before{
         top: -0.95rem;
+    }
+    .xyzvr{
+        height: 350px;
     }
     /************************ main ************************/
     .box-con .midbox .li-group {
@@ -3563,6 +3580,9 @@ p{
     .xyzspace::before{
         left: -1px;
     }
+    .xyzvr{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .sketch-contents{
         top: 45%;
@@ -3675,7 +3695,9 @@ p{
     .xyzspace::before{
         top: -0.97rem;
     }
-
+    .xyzvr{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .xyzworm{
         width: 13rem;
