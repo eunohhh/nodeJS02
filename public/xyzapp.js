@@ -541,7 +541,7 @@ if(topDivScan !== null && topDivScan !== undefined){
             cont.insertAdjacentElement('beforeend', contIn);
         exFolder.insertAdjacentElement('beforeend', cont);
 
-        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="xyzviewopen">go to viewer</div><div class="${scanvas.vr[4]}"></div></div>`;
+        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="${scanvas.vr[4]}"></div><p>${scanvas.vr[5]}</p><div class="xyzviewopen">go to viewer</div><div class="${scanvas.vr[6]}"></div></div>`;
         exFolder.insertAdjacentHTML('beforeend', vrTempl);
 
         let featureTemp = `<div class="${scanvas.feat[0]}"><div class="smily"><object data="../assets/screenweb_asset/xyzsmileblack.svg"></object><p>${scanvas.feat[1]}</p></div><div class="${scanvas.feat[2]}"><p>${scanvas.feat[3]}<br><span>${scanvas.feat[4]}</span></p></div><div class="${scanvas.feat[5]}"><p>${scanvas.feat[6]}</p></div><div></div></div>`;
@@ -602,6 +602,7 @@ if(topDivScan !== null && topDivScan !== undefined){
     let scanLogo = document.querySelector('.scanvas-logoimg');
         scanLogo.setAttribute('id', 'scanlogo');
     let viewopen = document.querySelector('.xyzviewopen');
+    let vas = document.querySelector('.xyzvirtual');
 
     viewopen.addEventListener('click', function(){
         window.open("https://screenxyz.net/model-viewer");
@@ -659,6 +660,9 @@ if(topDivScan !== null && topDivScan !== undefined){
 
     xyzSerB.addEventListener('click', function(){
         window.open('https://screenxyz.net/contact/');
+    });
+    vas.addEventListener('click', function(){
+        window.open('https://screenxyz.net/sanctum/');
     });
 
     let xyzFcl = document.querySelector('.xyzfolder');

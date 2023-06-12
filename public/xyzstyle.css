@@ -459,11 +459,7 @@ p{
     margin: 0 auto;
     position: relative;
 }
-/* .xyzline{
-    width: 4.4rem;
-    height: 0.6rem;
-    margin-top: 0.9rem;
-} */
+
 .threedscan{
     background-color: #e5e5e5;
 }
@@ -480,18 +476,7 @@ p{
     top: -1rem;
     left: -1px;
 }
-/* .threedscan >div{
-    width: 4.45rem;
-    height: 1rem;
-    margin-top: -1rem;
-    margin-left: -1px;
-    background-color: #e5e5e5;
-    border: 1px solid #707070;
-    border-radius: 0 1.3rem 0 0;
-} */
-/* .xyzline.grey{
-    background-color: #e5e5e5;
-} */
+
 .xyzfeatures{
     background-color: #88fd93;
 }
@@ -508,18 +493,7 @@ p{
     top: -1rem;
     left: -0.5px;
 }
-/* .xyzfeatures >div{
-    width: 4.45rem;
-    height: 1rem;
-    margin-top: -1rem;
-    margin-left: -1px;
-    background-color: #88fd93;
-    border: 1px solid #707070;
-    border-radius: 0 1.3rem 0 0;
-} */
-/* .xyzline.green{
-    background-color: #88fd93;
-} */
+
 .xyzservice{
     background-color: #99dced;
 }
@@ -536,21 +510,7 @@ p{
     top: -1rem;
     left: -1px;
 }
-/* .xyzservice >div{
-    width: 4.45rem;
-    height: 1rem;
-    margin-top: -1rem;
-    margin-left: -1px;
-    background-color: #99dced;
-    border: 1px solid #707070;
-    border-radius: 0 1.3rem 0 0;
-} */
-/* .xyzline.sky{
-    background-color: #99dced;
-    height: 0.7rem;
-    margin-top: 0.8rem;
-    width: 4.37rem;
-} */
+
 .xyzspace{
     background-color: #ffff00;
 }
@@ -567,21 +527,7 @@ p{
     top: -1rem;
     left: -1px;
 }
-/* .xyzspace >div{
-    width: 4.45rem;
-    height: 1rem;
-    margin-top: -1rem;
-    margin-left: -1px;
-    background-color: #ffff00;
-    border: 1px solid #707070;
-    border-radius: 0 1.3rem 0 0;
-} */
-/* .xyzline.yellow{
-    background-color: #ffff00;
-    height: 0.7rem;
-    margin-top: 0.8rem;
-    width: 4.37rem;
-} */
+
 .xyzfolder-wrap{
     width: 16.5rem;
     display: flex;
@@ -731,6 +677,20 @@ p{
     margin-bottom: 10rem;
     background-color: transparent;
     height: 60vh;
+}
+
+.xyzvirtual{
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+    background-color: transparent;
+    height: 60vh;
+    background-image: url('/assets/screenweb_asset/230612virtualartspace_thumb.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.xyzvirtual:hover{
+    cursor: pointer;
 }
 
 .xyzviewopen{
@@ -1653,6 +1613,11 @@ p{
         margin-top: 1rem;
         margin-bottom: 8rem;
     }
+    .xyzvirtual{
+        height: 350px;
+        margin-top: 1rem;
+        margin-bottom: 8rem;
+    }
 
     .xyzviewopen{
         font-size: 1rem;
@@ -2013,6 +1978,9 @@ p{
         overflow-y: scroll;
     }
     .xyzvr{
+        height: 350px;
+    }
+    .xyzvirtual{
         height: 350px;
     }
     .inputWrap{
@@ -2860,6 +2828,10 @@ p{
     .xyzvr{
         height: 350px;
     }
+
+    .xyzvirtual{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .skechboxaccount{
         font-size: 3.2rem;
@@ -3068,6 +3040,9 @@ p{
     .xyzvr{
         height: 350px;
     }
+    .xyzvirtual{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .sketch-contents{
         padding-top: 5rem;
@@ -3196,6 +3171,9 @@ p{
     .xyzvr{
         height: 350px;
     }
+    .xyzvirtual{
+        height: 350px;
+    }
     /************************ gpu ************************/
     .post-contents .gpu-text {
         margin-top: -2.5rem;
@@ -3276,6 +3254,9 @@ p{
         top: -0.97rem;
     }
     .xyzvr{
+        height: 350px;
+    }
+    .xyzvirtual{
         height: 350px;
     }
     /************************ sketchbox ************************/
@@ -3425,6 +3406,9 @@ p{
         top: -0.95rem;
     }
     .xyzvr{
+        height: 350px;
+    }
+    .xyzvirtual{
         height: 350px;
     }
     /************************ main ************************/
@@ -3583,6 +3567,9 @@ p{
     .xyzvr{
         height: 350px;
     }
+    .xyzvirtual{
+        height: 350px;
+    }
     /************************ sketchbox ************************/
     .sketch-contents{
         top: 45%;
@@ -3696,6 +3683,9 @@ p{
         top: -0.97rem;
     }
     .xyzvr{
+        height: 350px;
+    }
+    .xyzvirtual{
         height: 350px;
     }
     /************************ sketchbox ************************/
