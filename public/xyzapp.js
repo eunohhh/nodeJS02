@@ -535,13 +535,13 @@ if(topDivScan !== null && topDivScan !== undefined){
         let contIn = document.createElement('div');
             contIn.setAttribute('class', scanvas.contIn);
 
-        let contTempl = `<div class="${scanvas.contFocus}"><div></div><div></div><div><div></div></div></div><p>${scanvas.contStr}</p>`;
+        let contTempl = `<div class="${scanvas.contFocus}"><div></div><div></div><div><div></div></div><div></div></div><p>${scanvas.contStr}</p>`;
             contIn.insertAdjacentHTML('beforeend', contTempl);
         
             cont.insertAdjacentElement('beforeend', contIn);
         exFolder.insertAdjacentElement('beforeend', cont);
 
-        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="${scanvas.vr[4]}"></div><p>${scanvas.vr[5]}</p><div class="xyzviewopen">go to viewer</div><div class="${scanvas.vr[6]}"></div></div>`;
+        let vrTempl = `<div class="${scanvas.vr[0]}"><p>${scanvas.vr[1]}</p><div class="${scanvas.vr[2]}"></div><p>${scanvas.vr[3]}</p><div class="${scanvas.vr[4]}"></div><div class="xyzvasinfo">"virtual art space는<br>Full 3D webGL 가상 공간 서비스로<br>현재 3타입의 공간을 선택하실 수 있습니다<br>공간샘플을 보시려면 아래 버튼을 클릭하세요"</div><div class="vasopen">서비스공간예시</div><p>${scanvas.vr[5]}</p><div class="xyzviewopen">go to viewer</div><div class="${scanvas.vr[6]}"></div></div>`;
         exFolder.insertAdjacentHTML('beforeend', vrTempl);
 
         let featureTemp = `<div class="${scanvas.feat[0]}"><div class="smily"><object data="../assets/screenweb_asset/xyzsmileblack.svg"></object><p>${scanvas.feat[1]}</p></div><div class="${scanvas.feat[2]}"><p>${scanvas.feat[3]}<br><span>${scanvas.feat[4]}</span></p></div><div class="${scanvas.feat[5]}"><p>${scanvas.feat[6]}</p></div><div></div></div>`;
@@ -603,10 +603,14 @@ if(topDivScan !== null && topDivScan !== undefined){
         scanLogo.setAttribute('id', 'scanlogo');
     let viewopen = document.querySelector('.xyzviewopen');
     let vas = document.querySelector('.xyzvirtual');
+    let vasOpen = document.querySelector('.vasopen');
 
     viewopen.addEventListener('click', function(){
         window.open("https://screenxyz.net/model-viewer");
     });
+    vasOpen.addEventListener('click',function(){
+        window.open("https://screenxyz.net/vas");
+    })
     
     moveToTop(moveTop, '#scanlogo');
 
@@ -644,7 +648,7 @@ if(topDivScan !== null && topDivScan !== undefined){
     })
 
     scanBtn.forEach(function(e,i,a){
-        let scanHref = ['https://screenxyz.net/model-viewer','https://screenxyz.net/necessaries','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo'];
+        let scanHref = ['https://screenxyz.net/model-viewer','https://screenxyz.net/necessaries','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo','https://screenxyz.net/vas'];
         e.addEventListener('click', function(){
             window.open(scanHref[i]);
         })
