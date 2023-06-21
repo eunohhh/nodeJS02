@@ -1,5 +1,5 @@
 export default
-[[{"_id":0,"keywords":"screen,스크린,screenxyz,스튜디오,studio,vr,브이알","title":"스크린홈페이지","url":"https://screenxyz.net"},
+[{"_id":0,"keywords":"screen,스크린,screenxyz,스튜디오,studio,vr,브이알","title":"스크린홈페이지","url":"https://screenxyz.net"},
 {"_id":1,"keywords":"개인정보,개인,정보,개인정보보호,privacy,policy","title":"개인정보처리방침","url":"https://screenxyz.net/privacy-policy"},
 {"_id":2,"keywords":"이용약관,terms,termsofuse,약관","title":"이용약관","url":"https://screenxyz.net/terms-of-use"},
 {"_id":3,"keywords":"3d,3d스캔,3dscan,3dvr,vr,메타포트,matterport,스캔버스,scanvas","title":"3D스캔","url":"https://screenxyz.net/3dscan"},
@@ -31,4 +31,4 @@ export default
 {"_id":29,"keywords":"야외,야외촬영,광대역,3dscan,보라매공원,matterport,vr,360,공원,북서울꿈의숲,북서울,월영지,연못","title":"월영지","url":"https://screenxyz.net/vr/moonpond"},
 {"_id":30,"keywords":"야외,야외촬영,광대역,3dscan,보라매공원,matterport,vr,360,공원,창녕위궁재사,번동,서울번동창녕위궁재사,유적,유적지","title":"서울번동창녕위궁재사","url":"https://screenxyz.net/vr/ritualhouse"},
 {"_id":31,"keywords":"가상공간,가상,메타버스,가상갤러리,갤러리,3d,webgl,full3d,3d,현대미술,조각,미니멀리즘,미니멀,생텀,sanctum","title":"Sanctum","url":"https://screenxyz.net/sanctum"},
-{"_id":32,"keywords":"가상공간,가상,메타버스,가상갤러리,갤러리,3d,webgl,full3d,3d,공간,예시,정방형,세장형,ㄷ자형,예제","title":"vas공간선택","url":"https://screenxyz.net/vas"}]]
+{"_id":32,"keywords":"가상공간,가상,메타버스,가상갤러리,갤러리,3d,webgl,full3d,3d,공간,예시,정방형,세장형,ㄷ자형,예제","title":"vas공간선택","url":"https://screenxyz.net/vas"}]
