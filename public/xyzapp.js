@@ -637,7 +637,7 @@ if(topDivScan !== null && topDivScan !== undefined){
         iframe.setAttribute('src', `https://screenxyz.net/${scanvas.iframe[4]}`);
     iframeBox.insertAdjacentElement('beforeend', iframe);
 
-    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/06/scanvas_proposal.pdf';
+    let downHref = 'https://screenxyz.net/wp-content/uploads/2023/07/scanvas_proposal.pdf';
     let goHref = 'https://screenxyz.net/details';
 
     closeFol.addEventListener('click', function(){
