@@ -634,7 +634,7 @@ if(topDivScan !== null && topDivScan !== undefined){
         iframe.setAttribute('height', '100%');
         iframe.setAttribute('width', '99.5%');
         iframe.setAttribute('allow', 'xr-spatial-tracking');
-        iframe.setAttribute('src', `https://screenxyz.net/${scanvas.iframe[4]}`);
+        iframe.setAttribute('src', `https://xr.screenxyz.net/${scanvas.iframe[4]}`);
     iframeBox.insertAdjacentElement('beforeend', iframe);
 
     let downHref = 'https://screenxyz.net/wp-content/uploads/2023/07/scanvas_proposal.pdf';
@@ -648,7 +648,7 @@ if(topDivScan !== null && topDivScan !== undefined){
     })
 
     scanBtn.forEach(function(e,i,a){
-        let scanHref = ['https://screenxyz.net/model-viewer','https://screenxyz.net/necessaries','https://screenxyz.net/sujanggo','https://screenxyz.net/sujanggo','https://screenxyz.net/vas'];
+        let scanHref = ['https://screenxyz.net/model-viewer','https://xr.screenxyz.net/necessaries','https://xr.screenxyz.net/sujanggo','https://xr.screenxyz.net/sujanggo','https://screenxyz.net/vas'];
         e.addEventListener('click', function(){
             window.open(scanHref[i]);
         })
